@@ -1,0 +1,108 @@
+h1. Exposição Dinâmica ou _High Dynamic Range_
+
+h2. Introdução
+
+Normalmente um artista faz toda a modelagem 3D, depois toda a texturização, nota que seu trabalho está incrível no programa que usou e diz "Está fantástico, pronto para exportar!", depois você abre a Godot, posiciona as luzes e inicia o jogo
+
+Então onde se encaixa o tal de HDR? A ideia é ao invés de trabalhar com cores que vão do preto ao branco (0.0 até 1.0), nós usamos cores mais claras que o branco (como cores entre 0.0 a 8.0)
+
+Para ser mais prático, imagine que uma cena normal, que a intensidade da luz é normalmente 1.0 é trocada para 5.0. A cena ficará muito brilhosa, branca e horrível. Depois disso, a luminosidade da cena será calculada pela media da cor de cada pixel e esse valor é usado para a ajustar a claridade ao valor normal. A última operação é chamada de _tone-mapping_. Finalmente, nós estamos em um lugar parecido com o que iniciamos:
+
+p=. !http://godotengine.org/attachments/212/download!
+
+p=. _Cena normal_
+_Luz estourada_
+_Tonemap_
+
+Porém a cena tem maior contraste, por existir luzes mais fortes. Para que isso tudo vai servir? A ideia é que a intensidade da luz vai mudar conforme você se move pelo mundo, permitindo que situações como essa aconteçam:
+
+p=. !http://godotengine.org/attachments/209/download!
+
+p=. _A caverna parece escura de fora_
+_O mundo parece claro da caverna_
+
+Também é possível colocar um valor limite para o _glow buffer_ dependendo da luminância do pixel. Isso permite um efeito mais realista de clarão na cena.
+
+h2. Formato de Cor Linear (_Linear Color Space_)
+
+O problema desse truque é que os monitores possuem uma curva de gamma para melhor se adaptar a visão humana. Os artistas também criam suas artes em um monitor, então sua arte tem um valor de gamma implicito.
+
+O formato de cor ou _color space_ em que as imagens do computador são criadas é chamado de "sRGB". Tudo o que as pessoas olham em seus computadores, como fotos e vídeos, estão nesse formato de cor.
+
+p=. !http://godotengine.org/attachments/210/download!
+
+O cálculo do HDR requer que a cena seja multiplicada por diferentes valores para ajustar a luminância e exposição a diferentes intensidades de luz e esta curva atrapalha o ajuste, pois nós precisamos de cores no formato _linear space_.
+
+Talvez você se beneficie lendo o "tutorial sobre linear workflow":https://victorphellipe.wordpress.com/tutoriais/tutoriais-em-portugues/linear-workflow-no-blender-e-linux/ de Victor Phillipe em português, ou o "tutorial do blender guru":http://www.loramel.net/blender_minutes/2009/01/linear-workflow-in-blender/ em inglês.
+
+h2. Formato de Cor Linear e o fluxo dos Assets
+
+Trabalhar com HDR não é simplesmente apertar um botão. As imagens devem ser convertidas para o linear color space antes de serem importadas. Há duas maneiras de fazer isso
+
+h3. sRGB->Conversão linear da imagem ao importar
+
+Essa é a forma mais compatível de usar o Linear space e isso vai funcionar em todos os lugares, incluindo todos os celulares. O problema é a perda da qualidade, o sRGB existe para evitar esse problema. Ao usar 8 bits por canal de cor para representar o  sistema de cor linear é ineficiente do ponto de vista do olho humano. Essas texturas já estão muito comprimidas, o que torna o problema algo pior.
+
+De qualquer forma essa é a forma mais simples e apresentada no tutorial de Victor Phellip.
+
+h3. Hardware sRGB->Linear
+
+Essa é a forma mais correta de usar assets no formato linear, pois as texturas serão convertidas na GPU antes de ler a textura por ponto flutuante. Isso funciona bem nos computadores e nos consoles, mas a maioria dos celulares não suportam isso, ou não suportam isso com texturas comprimidas (iOS por exemplo)
+
+h3. Linear->sRGB no final
+
+Depois do render final ser entregue, a imagem em formato linear precisa ser convertida de novo em sRGB. Para fazer isso é simples, basta habiltar a conversão sRGB no "Environment":https://github.com/okamstudio/godot/wiki/class_environment atual. (Veja mais logo a baixo)
+
+Tenha em mente que as conversões sRGB para Linear e Linear para sRGB sempre devem estar *ambas* habilitadas. Caso uma delas não aconteça o resultado sera horrível, digno de um jogo indie experimental.
+
+h2. Parametros do HDR
+
+O HDR é encontrado no recurso "Enviroment":https://github.com/okamstudio/godot/wiki/class_environment. Que é encontrado dentro do nó de "WorldEnviroment":https://github.com/okamstudio/godot/wiki/class_worldenvironment, ou ajustado na câmera. Há vários parametros para o HDR:
+
+p=. !http://godotengine.org/attachments/211/download!
+
+h3. ToneMapper (Mapeador de Tons)
+
+O ToneMapper é o coração do programa. Algumas das opções que o tonemapper tem.
+
+
+* Linear: O mais simples. Ele trabalha ajustando a claridade da cena, mas se a diferença entre as luzes for muito grande, então a cena pode se tornar muito saturada.
+* Log: Parecido com o linear, mas não tão extremo.
+* Reinhardt: O tonemapper classico (embora modificado para não se dessaturar tanto).
+* ReinhardtAutoWhite: Igual ao de cima, mas usa a luminância máxima da cena para ajustar o valor do branco.
+
+h3. Exposure (Exposição)
+
+O mesmo parâmetro de exposição das câmeras do mundo real. Controla quanta luz pode entrar no sensor da câmera. Valores altos resultarão em cenas mais claras, valores mais baixos resultarão em cenas mais escuras.
+
+h3. White (Branco)
+
+Valor máximo para o branco.
+
+h3. Glow Threshold (Limiar de Brilho)
+
+Determina a partir de qual valor o branco vai estourar como o da imagem 2. Os valores variam entre 0.0 e 1.0.
+
+h3. Glow Scale (Escala de Brilho)
+
+Determina qual vai ser o tamanho do branco quando ele estourar.
+
+h3. Min Luminance (Luminância Mínima)
+
+Determina o valor mais baixo para o tonemapper parar de funcionar. Isso permite que as cenas escuras continuem escuras.
+
+h3. Max Luminance (Luminância Máxima)
+
+Determina o valor mais alto para o tonemapper parar de funcionar. Isso permite que as cenas claras continuem claras.
+
+h3. Exposure Adjustment Speed (Ajuste de Velocidade de Exposição)
+
+A auto-exposição vai alterar devagar e vai demorar um tempo para se ajustar, como as nossas câmeras e olhos. Valores altos significa um ajuste mais rápido.
+
+Escrito por Juan Linietsky, Ariel Manzur. Distribuido sob "Creative Commons By":https://creativecommons.org/licenses/by/3.0/legalcode.
+
+Traduzido por Cairé
+
+Tradução Revisada por George Marques
+
+Texto Revisado por
