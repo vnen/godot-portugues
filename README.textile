@@ -1,0 +1,15 @@
+h1. Documentação da Godot Engine em Português
+
+Este repositório tem a finalidade de conter a documentação da Godot Engine em Português e facilitar a contribuição com traduções.
+
+h2. Como contribuir
+
+*Todas as traduções devem ser feitas usando o formato "Textile":http://www.godotengine.org/help/wiki_syntax, pois é o mesmo usado pela wiki do site da Godot, facilitando a publicação.*
+
+1. Abra um "issue":https://github.com/vnen/godot-portugues/issues informando qual página da documentação você vai trabalhar.
+2. Faça um fork deste repositório, envie as mudanças para o seu fork e então faça um "Pull Request":https://github.com/vnen/godot-portugues/pulls. Lembre-se de indicar o issue aberto em seu PR.
+3. Aguarde as revisões e, enquanto isso, aproveite para voltar ao passo 1 com outra página.
+
+h2. Licença
+
+Todo o conteúdo aqui é licenciado sob "Creative Commons Atribuição":http://creativecommons.org/licenses/by/4.0/legalcode.
