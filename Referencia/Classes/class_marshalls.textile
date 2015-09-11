@@ -1,0 +1,14 @@
+h1(#marshalls). Marshalls
+
+h4(#inherits-reference). *Inherits:* "Reference":class_reference
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "String":class_string *"variant&#95;to&#95;base64":#variant_to_base64* *(* var variant *)*
+* void *"base64&#95;to&#95;variant":#base64_to_variant* *(* "String":class_string base64&#95;str *)*
+
+h3(#member-function-description). Member Function Description

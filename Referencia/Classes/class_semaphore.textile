@@ -1,0 +1,14 @@
+h1(#semaphore). Semaphore
+
+h4(#inherits-reference). *Inherits:* "Reference":class_reference
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* Error *"wait":#wait* *(* *)*
+* Error *"post":#post* *(* *)*
+
+h3(#member-function-description). Member Function Description

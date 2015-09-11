@@ -1,0 +1,15 @@
+h1(#visualinstance). VisualInstance
+
+h4(#inherits-spatial). *Inherits:* "Spatial":class_spatial
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;base":#set_base* *(* "RID":class_rid base *)*
+* void *"set&#95;layer&#95;mask":#set_layer_mask* *(* "int":class_int mask *)*
+* "int":class_int *"get&#95;layer&#95;mask":#get_layer_mask* *(* *)* const
+
+h3(#member-function-description). Member Function Description

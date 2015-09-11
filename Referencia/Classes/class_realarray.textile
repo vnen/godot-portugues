@@ -1,0 +1,22 @@
+h1(#realarray). RealArray
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Real Array .
+
+h3(#member-functions). Member Functions
+
+* "float":class_float *"get":#get* *(* "int":class_int idx *)*
+* void *"push&#95;back":#push_back* *(* "float":class_float value *)*
+* void *"resize":#resize* *(* "int":class_int idx *)*
+* void *"set":#set* *(* "int":class_int idx, "float":class_float value *)*
+* "int":class_int *"size":#size* *(* *)*
+* "RealArray":class_realarray *"RealArray":#RealArray* *(* "Array":class_array from *)*
+
+h3(#description). Description
+
+Real Array. Array of floating point values. Can only contain floats. Optimized for memory usage, cant fragment the memory.
+
+h3(#member-function-description). Member Function Description

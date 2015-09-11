@@ -1,0 +1,20 @@
+h1(#colorpickerbutton). ColorPickerButton
+
+h4(#inherits-button). *Inherits:* "Button":class_button
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;color":#set_color* *(* "Color":class_color color *)*
+* "Color":class_color *"get&#95;color":#get_color* *(* *)* const
+* void *"set&#95;edit&#95;alpha":#set_edit_alpha* *(* "bool":class_bool show *)*
+* "bool":class_bool *"is&#95;editing&#95;alpha":#is_editing_alpha* *(* *)* const
+
+h3(#signals). Signals
+
+* *color&#95;changed* *(* "Color":class_color color *)*
+
+h3(#member-function-description). Member Function Description

@@ -1,0 +1,13 @@
+h1(#vsplitcontainer). VSplitContainer
+
+h4(#inherits-splitcontainer). *Inherits:* "SplitContainer":class_splitcontainer
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Vertical split container.
+
+h3(#description). Description
+
+Vertical split container. See "SplitContainer":class_splitcontainer. This goes from left to right.

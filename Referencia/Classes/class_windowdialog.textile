@@ -1,0 +1,39 @@
+h1(#windowdialog). WindowDialog
+
+h4(#inherits-popup). *Inherits:* "Popup":class_popup
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Base class for window dialogs.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;title":#set_title* *(* "String":class_string title *)*
+* "String":class_string *"get&#95;title":#get_title* *(* *)* const
+* "TextureButton":class_texturebutton *"get&#95;close&#95;button":#get_close_button* *(* *)*
+
+h3(#description). Description
+
+Windowdialog is the base class for all window&#45;based dialogs. It's a by&#45;default toplevel "Control":class_control that draws a window decoration and allows motion and resizing.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_title). <a name="set_title">set&#95;title</a>
+
+* void *set&#95;title* *(* "String":class_string title *)*
+
+Set the title of the window.
+
+h4(#get_title). <a name="get_title">get&#95;title</a>
+
+* "String":class_string *get&#95;title* *(* *)* const
+
+Return the title of the window.
+
+h4(#get_close_button). <a name="get_close_button">get&#95;close&#95;button</a>
+
+* "TextureButton":class_texturebutton *get&#95;close&#95;button* *(* *)*
+
+Return the close "TextureButton":class_texturebutton.

@@ -1,0 +1,22 @@
+h1(#stringarray). StringArray
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+String Array .
+
+h3(#member-functions). Member Functions
+
+* "String":class_string *"get":#get* *(* "int":class_int idx *)*
+* void *"push&#95;back":#push_back* *(* "String":class_string string *)*
+* void *"resize":#resize* *(* "int":class_int idx *)*
+* void *"set":#set* *(* "int":class_int idx, "String":class_string string *)*
+* "int":class_int *"size":#size* *(* *)*
+* "StringArray":class_stringarray *"StringArray":#StringArray* *(* "Array":class_array from *)*
+
+h3(#description). Description
+
+String Array. Array of strings. Can only contain strings. Optimized for memory usage, cant fragment the memory.
+
+h3(#member-function-description). Member Function Description

@@ -1,0 +1,42 @@
+h1(#resourceloader). ResourceLoader
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Resource Loader.
+
+h3(#member-functions). Member Functions
+
+* "ResourceInteractiveLoader":class_resourceinteractiveloader *"load&#95;interactive":#load_interactive* *(* "String":class_string path, "String":class_string type&#95;hint=&quot;&quot; *)*
+* "Resource":class_resource *"load":#load* *(* "String":class_string path, "String":class_string type&#95;hint=&quot;&quot;, "bool":class_bool p&#95;no&#95;cache=false *)*
+* "StringArray":class_stringarray *"get&#95;recognized&#95;extensions&#95;for&#95;type":#get_recognized_extensions_for_type* *(* "String":class_string type *)*
+* void *"set&#95;abort&#95;on&#95;missing&#95;resources":#set_abort_on_missing_resources* *(* "bool":class_bool abort *)*
+* "StringArray":class_stringarray *"get&#95;dependencies":#get_dependencies* *(* "String":class_string arg0 *)*
+* "bool":class_bool *"has":#has* *(* "String":class_string arg0 *)*
+
+h3(#description). Description
+
+Resource Loader. This is a static object accessible as "ResourceLoader":class_resourceloader. GDScript has a simplified load() function, though.
+
+h3(#member-function-description). Member Function Description
+
+h4(#load_interactive). <a name="load_interactive">load&#95;interactive</a>
+
+* "ResourceInteractiveLoader":class_resourceinteractiveloader *load&#95;interactive* *(* "String":class_string path, "String":class_string type&#95;hint=&quot;&quot; *)*
+
+Load a resource interactively, the returned object allows to load with high granularity.
+
+h4(#get_recognized_extensions_for_type). <a name="get_recognized_extensions_for_type">get&#95;recognized&#95;extensions&#95;for&#95;type</a>
+
+* "StringArray":class_stringarray *get&#95;recognized&#95;extensions&#95;for&#95;type* *(* "String":class_string type *)*
+
+Return the list of recognized extensions for a resource type.
+
+h4(#set_abort_on_missing_resources). <a name="set_abort_on_missing_resources">set&#95;abort&#95;on&#95;missing&#95;resources</a>
+
+* void *set&#95;abort&#95;on&#95;missing&#95;resources* *(* "bool":class_bool abort *)*
+
+Change the behavior on missing sub&#45;resources. Default is to abort load.

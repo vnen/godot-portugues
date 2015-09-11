@@ -1,0 +1,23 @@
+h1(#graphedit). GraphEdit
+
+h4(#inherits-control). *Inherits:* "Control":class_control
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* Error *"connect&#95;node":#connect_node* *(* "String":class_string from, "int":class_int from&#95;port, "String":class_string to, "int":class_int to&#95;port *)*
+* "bool":class_bool *"is&#95;node&#95;connected":#is_node_connected* *(* "String":class_string from, "int":class_int from&#95;port, "String":class_string to, "int":class_int to&#95;port *)*
+* void *"disconnect&#95;node":#disconnect_node* *(* "String":class_string from, "int":class_int from&#95;port, "String":class_string to, "int":class_int to&#95;port *)*
+* "Array":class_array *"get&#95;connection&#95;list":#get_connection_list* *(* *)* const
+* void *"set&#95;right&#95;disconnects":#set_right_disconnects* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;right&#95;disconnects&#95;enabled":#is_right_disconnects_enabled* *(* *)* const
+
+h3(#signals). Signals
+
+* *disconnection&#95;request* *(* "String":class_string from, "int":class_int from&#95;slot, "String":class_string to, "int":class_int to&#95;slot *)*
+* *connection&#95;request* *(* "String":class_string from, "int":class_int from&#95;slot, "String":class_string to, "int":class_int to&#95;slot *)*
+
+h3(#member-function-description). Member Function Description

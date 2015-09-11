@@ -1,0 +1,7 @@
+h1(#canvasitemshadergraph). CanvasItemShaderGraph
+
+h4(#inherits-shadergraph). *Inherits:* "ShaderGraph":class_shadergraph
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description

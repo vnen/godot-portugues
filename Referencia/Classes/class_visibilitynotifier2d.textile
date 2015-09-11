@@ -1,0 +1,22 @@
+h1(#visibilitynotifier2d). VisibilityNotifier2D
+
+h4(#inherits-node2d). *Inherits:* "Node2D":class_node2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;rect":#set_rect* *(* "Rect2":class_rect2 rect *)*
+* "Rect2":class_rect2 *"get&#95;rect":#get_rect* *(* *)* const
+* "bool":class_bool *"is&#95;on&#95;screen":#is_on_screen* *(* *)* const
+
+h3(#signals). Signals
+
+* *enter&#95;screen* *(* *)*
+* *enter&#95;viewport* *(* "Object":class_object viewport *)*
+* *exit&#95;screen* *(* *)*
+* *exit&#95;viewport* *(* "Object":class_object viewport *)*
+
+h3(#member-function-description). Member Function Description

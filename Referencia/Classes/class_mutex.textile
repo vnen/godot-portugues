@@ -1,0 +1,15 @@
+h1(#mutex). Mutex
+
+h4(#inherits-reference). *Inherits:* "Reference":class_reference
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"lock":#lock* *(* *)*
+* Error *"try&#95;lock":#try_lock* *(* *)*
+* void *"unlock":#unlock* *(* *)*
+
+h3(#member-function-description). Member Function Description

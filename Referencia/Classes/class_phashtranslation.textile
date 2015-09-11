@@ -1,0 +1,19 @@
+h1(#phashtranslation). PHashTranslation
+
+h4(#inherits-translation). *Inherits:* "Translation":class_translation
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Optimized translation.
+
+h3(#member-functions). Member Functions
+
+* void *"generate":#generate* *(* "Translation":class_translation from *)*
+
+h3(#description). Description
+
+Optimized translation. Uses real&#45;time compressed translations, which results in very small dictionaries.
+
+h3(#member-function-description). Member Function Description

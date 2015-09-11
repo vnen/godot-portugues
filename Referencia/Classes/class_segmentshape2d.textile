@@ -1,0 +1,22 @@
+h1(#segmentshape2d). SegmentShape2D
+
+h4(#inherits-shape2d). *Inherits:* "Shape2D":class_shape2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Segment Shape for 2D Collision Detection.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;a":#set_a* *(* "Vector2":class_vector2 a *)*
+* "Vector2":class_vector2 *"get&#95;a":#get_a* *(* *)* const
+* void *"set&#95;b":#set_b* *(* "Vector2":class_vector2 b *)*
+* "Vector2":class_vector2 *"get&#95;b":#get_b* *(* *)* const
+
+h3(#description). Description
+
+Segment Shape for 2D Collision Detection, consists of two points, 'a' and 'b'.
+
+h3(#member-function-description). Member Function Description

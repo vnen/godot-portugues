@@ -1,0 +1,183 @@
+h1(#physics2ddirectbodystate). Physics2DDirectBodyState
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Direct access object to a physics body in the "Physics2DServer":class_physics2dserver.
+
+h3(#member-functions). Member Functions
+
+* "Vector2":class_vector2 *"get&#95;total&#95;gravity":#get_total_gravity* *(* *)* const
+* "float":class_float *"get&#95;total&#95;linear&#95;damp":#get_total_linear_damp* *(* *)* const
+* "float":class_float *"get&#95;total&#95;angular&#95;damp":#get_total_angular_damp* *(* *)* const
+* "float":class_float *"get&#95;inverse&#95;mass":#get_inverse_mass* *(* *)* const
+* "float":class_float *"get&#95;inverse&#95;inertia":#get_inverse_inertia* *(* *)* const
+* void *"set&#95;linear&#95;velocity":#set_linear_velocity* *(* "Vector2":class_vector2 velocity *)*
+* "Vector2":class_vector2 *"get&#95;linear&#95;velocity":#get_linear_velocity* *(* *)* const
+* void *"set&#95;angular&#95;velocity":#set_angular_velocity* *(* "float":class_float velocity *)*
+* "float":class_float *"get&#95;angular&#95;velocity":#get_angular_velocity* *(* *)* const
+* void *"set&#95;transform":#set_transform* *(* "Matrix32":class_matrix32 transform *)*
+* "Matrix32":class_matrix32 *"get&#95;transform":#get_transform* *(* *)* const
+* void *"set&#95;sleep&#95;state":#set_sleep_state* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;sleeping":#is_sleeping* *(* *)* const
+* "int":class_int *"get&#95;contact&#95;count":#get_contact_count* *(* *)* const
+* "Vector2":class_vector2 *"get&#95;contact&#95;local&#95;pos":#get_contact_local_pos* *(* "int":class_int contact&#95;idx *)* const
+* "Vector2":class_vector2 *"get&#95;contact&#95;local&#95;normal":#get_contact_local_normal* *(* "int":class_int contact&#95;idx *)* const
+* "int":class_int *"get&#95;contact&#95;local&#95;shape":#get_contact_local_shape* *(* "int":class_int contact&#95;idx *)* const
+* "RID":class_rid *"get&#95;contact&#95;collider":#get_contact_collider* *(* "int":class_int contact&#95;idx *)* const
+* "Vector2":class_vector2 *"get&#95;contact&#95;collider&#95;pos":#get_contact_collider_pos* *(* "int":class_int contact&#95;idx *)* const
+* "int":class_int *"get&#95;contact&#95;collider&#95;id":#get_contact_collider_id* *(* "int":class_int contact&#95;idx *)* const
+* "Object":class_object *"get&#95;contact&#95;collider&#95;object":#get_contact_collider_object* *(* "int":class_int contact&#95;idx *)* const
+* "int":class_int *"get&#95;contact&#95;collider&#95;shape":#get_contact_collider_shape* *(* "int":class_int contact&#95;idx *)* const
+* void *"get&#95;contact&#95;collider&#95;shape&#95;metadata":#get_contact_collider_shape_metadata* *(* "int":class_int contact&#95;idx *)* const
+* "Vector2":class_vector2 *"get&#95;contact&#95;collider&#95;velocity&#95;at&#95;pos":#get_contact_collider_velocity_at_pos* *(* "int":class_int contact&#95;idx *)* const
+* "float":class_float *"get&#95;step":#get_step* *(* *)* const
+* void *"integrate&#95;forces":#integrate_forces* *(* *)*
+* "Physics2DDirectSpaceState":class_physics2ddirectspacestate *"get&#95;space&#95;state":#get_space_state* *(* *)*
+
+h3(#description). Description
+
+Direct access object to a physics body in the "Physics2DServer":class_physics2dserver. This object is passed via the direct state callback of rigid/character bodies, and is intended for changing the direct state of that body.
+
+h3(#member-function-description). Member Function Description
+
+h4(#get_total_gravity). <a name="get_total_gravity">get&#95;total&#95;gravity</a>
+
+* "Vector2":class_vector2 *get&#95;total&#95;gravity* *(* *)* const
+
+Return the total gravity vector being currently applied to this body.
+
+h4(#get_inverse_mass). <a name="get_inverse_mass">get&#95;inverse&#95;mass</a>
+
+* "float":class_float *get&#95;inverse&#95;mass* *(* *)* const
+
+Return the inverse of the mass of the body.
+
+h4(#get_inverse_inertia). <a name="get_inverse_inertia">get&#95;inverse&#95;inertia</a>
+
+* "float":class_float *get&#95;inverse&#95;inertia* *(* *)* const
+
+Return the inverse of the inertia of the body.
+
+h4(#set_linear_velocity). <a name="set_linear_velocity">set&#95;linear&#95;velocity</a>
+
+* void *set&#95;linear&#95;velocity* *(* "Vector2":class_vector2 velocity *)*
+
+Change the linear velocity of the body.
+
+h4(#get_linear_velocity). <a name="get_linear_velocity">get&#95;linear&#95;velocity</a>
+
+* "Vector2":class_vector2 *get&#95;linear&#95;velocity* *(* *)* const
+
+Return the current linear velocity of the body.
+
+h4(#set_angular_velocity). <a name="set_angular_velocity">set&#95;angular&#95;velocity</a>
+
+* void *set&#95;angular&#95;velocity* *(* "float":class_float velocity *)*
+
+Change the angular velocity of the body.
+
+h4(#get_angular_velocity). <a name="get_angular_velocity">get&#95;angular&#95;velocity</a>
+
+* "float":class_float *get&#95;angular&#95;velocity* *(* *)* const
+
+Return the angular velocity of the body.
+
+h4(#set_transform). <a name="set_transform">set&#95;transform</a>
+
+* void *set&#95;transform* *(* "Matrix32":class_matrix32 transform *)*
+
+Change the transform matrix of the body.
+
+h4(#get_transform). <a name="get_transform">get&#95;transform</a>
+
+* "Matrix32":class_matrix32 *get&#95;transform* *(* *)* const
+
+Return the transform matrix of the body.
+
+h4(#set_sleep_state). <a name="set_sleep_state">set&#95;sleep&#95;state</a>
+
+* void *set&#95;sleep&#95;state* *(* "bool":class_bool enabled *)*
+
+Set the sleeping state of the body, only affects character/rigid bodies.
+
+h4(#is_sleeping). <a name="is_sleeping">is&#95;sleeping</a>
+
+* "bool":class_bool *is&#95;sleeping* *(* *)* const
+
+Return true if this body is currently sleeping (not active).
+
+h4(#get_contact_count). <a name="get_contact_count">get&#95;contact&#95;count</a>
+
+* "int":class_int *get&#95;contact&#95;count* *(* *)* const
+
+Return the amount of contacts this body has with other bodies. Note that by default this returns 0 unless bodies are configured to log contacts.
+
+h4(#get_contact_local_pos). <a name="get_contact_local_pos">get&#95;contact&#95;local&#95;pos</a>
+
+* "Vector2":class_vector2 *get&#95;contact&#95;local&#95;pos* *(* "int":class_int contact&#95;idx *)* const
+
+Return the local position (of this body) of the contact point.
+
+h4(#get_contact_local_shape). <a name="get_contact_local_shape">get&#95;contact&#95;local&#95;shape</a>
+
+* "int":class_int *get&#95;contact&#95;local&#95;shape* *(* "int":class_int contact&#95;idx *)* const
+
+Return the local shape index of the collision.
+
+h4(#get_contact_collider). <a name="get_contact_collider">get&#95;contact&#95;collider</a>
+
+* "RID":class_rid *get&#95;contact&#95;collider* *(* "int":class_int contact&#95;idx *)* const
+
+Return the RID of the collider.
+
+h4(#get_contact_collider_pos). <a name="get_contact_collider_pos">get&#95;contact&#95;collider&#95;pos</a>
+
+* "Vector2":class_vector2 *get&#95;contact&#95;collider&#95;pos* *(* "int":class_int contact&#95;idx *)* const
+
+Return the contact position in the collider.
+
+h4(#get_contact_collider_id). <a name="get_contact_collider_id">get&#95;contact&#95;collider&#95;id</a>
+
+* "int":class_int *get&#95;contact&#95;collider&#95;id* *(* "int":class_int contact&#95;idx *)* const
+
+Return the object id of the collider.
+
+h4(#get_contact_collider_object). <a name="get_contact_collider_object">get&#95;contact&#95;collider&#95;object</a>
+
+* "Object":class_object *get&#95;contact&#95;collider&#95;object* *(* "int":class_int contact&#95;idx *)* const
+
+Return the collider object, this depends on how it was created (will return a scene node if such was used to create it).
+
+h4(#get_contact_collider_shape). <a name="get_contact_collider_shape">get&#95;contact&#95;collider&#95;shape</a>
+
+* "int":class_int *get&#95;contact&#95;collider&#95;shape* *(* "int":class_int contact&#95;idx *)* const
+
+Return the collider shape index.
+
+h4(#get_contact_collider_velocity_at_pos). <a name="get_contact_collider_velocity_at_pos">get&#95;contact&#95;collider&#95;velocity&#95;at&#95;pos</a>
+
+* "Vector2":class_vector2 *get&#95;contact&#95;collider&#95;velocity&#95;at&#95;pos* *(* "int":class_int contact&#95;idx *)* const
+
+Return the linear velocity vector at contact point of the collider.
+
+h4(#get_step). <a name="get_step">get&#95;step</a>
+
+* "float":class_float *get&#95;step* *(* *)* const
+
+Return the timestep (delta) used for the simulation.
+
+h4(#integrate_forces). <a name="integrate_forces">integrate&#95;forces</a>
+
+* void *integrate&#95;forces* *(* *)*
+
+Call the built&#45;in force integration code.
+
+h4(#get_space_state). <a name="get_space_state">get&#95;space&#95;state</a>
+
+* "Physics2DDirectSpaceState":class_physics2ddirectspacestate *get&#95;space&#95;state* *(* *)*
+
+Return the current state of space, useful for queries.

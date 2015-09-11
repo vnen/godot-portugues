@@ -1,0 +1,46 @@
+h1(#lineshape2d). LineShape2D
+
+h4(#inherits-shape2d). *Inherits:* "Shape2D":class_shape2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Line shape for 2D collision objects.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;normal":#set_normal* *(* "Vector2":class_vector2 normal *)*
+* "Vector2":class_vector2 *"get&#95;normal":#get_normal* *(* *)* const
+* void *"set&#95;d":#set_d* *(* "float":class_float d *)*
+* "float":class_float *"get&#95;d":#get_d* *(* *)* const
+
+h3(#description). Description
+
+Line shape for 2D collision objects. It works like a 2D plane and will not allow any body to go to the negative side. Not recommended for rigid bodies, and usually not recommended for static bodies either because it forces checks against it on every frame.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_normal). <a name="set_normal">set&#95;normal</a>
+
+* void *set&#95;normal* *(* "Vector2":class_vector2 normal *)*
+
+Set the line normal.
+
+h4(#get_normal). <a name="get_normal">get&#95;normal</a>
+
+* "Vector2":class_vector2 *get&#95;normal* *(* *)* const
+
+Return the line normal.
+
+h4(#set_d). <a name="set_d">set&#95;d</a>
+
+* void *set&#95;d* *(* "float":class_float d *)*
+
+Set the line distance from the origin.
+
+h4(#get_d). <a name="get_d">get&#95;d</a>
+
+* "float":class_float *get&#95;d* *(* *)* const
+
+Return the line distance from the origin.

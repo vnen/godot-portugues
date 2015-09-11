@@ -1,0 +1,225 @@
+h1(#rigidbody2d). RigidBody2D
+
+h4(#inherits-physicsbody2d). *Inherits:* "PhysicsBody2D":class_physicsbody2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Rigid body 2D node.
+
+h3(#member-functions). Member Functions
+
+* void *"&#95;integrate&#95;forces":#_integrate_forces* *(* "Physics2DDirectBodyState":class_physics2ddirectbodystate state *)* virtual
+* void *"set&#95;mode":#set_mode* *(* "int":class_int mode *)*
+* "int":class_int *"get&#95;mode":#get_mode* *(* *)* const
+* void *"set&#95;mass":#set_mass* *(* "float":class_float mass *)*
+* "float":class_float *"get&#95;mass":#get_mass* *(* *)* const
+* void *"set&#95;weight":#set_weight* *(* "float":class_float weight *)*
+* "float":class_float *"get&#95;weight":#get_weight* *(* *)* const
+* void *"set&#95;friction":#set_friction* *(* "float":class_float friction *)*
+* "float":class_float *"get&#95;friction":#get_friction* *(* *)* const
+* void *"set&#95;bounce":#set_bounce* *(* "float":class_float bounce *)*
+* "float":class_float *"get&#95;bounce":#get_bounce* *(* *)* const
+* void *"set&#95;gravity&#95;scale":#set_gravity_scale* *(* "float":class_float gravity&#95;scale *)*
+* "float":class_float *"get&#95;gravity&#95;scale":#get_gravity_scale* *(* *)* const
+* void *"set&#95;linear&#95;damp":#set_linear_damp* *(* "float":class_float linear&#95;damp *)*
+* "float":class_float *"get&#95;linear&#95;damp":#get_linear_damp* *(* *)* const
+* void *"set&#95;angular&#95;damp":#set_angular_damp* *(* "float":class_float angular&#95;damp *)*
+* "float":class_float *"get&#95;angular&#95;damp":#get_angular_damp* *(* *)* const
+* void *"set&#95;linear&#95;velocity":#set_linear_velocity* *(* "Vector2":class_vector2 linear&#95;velocity *)*
+* "Vector2":class_vector2 *"get&#95;linear&#95;velocity":#get_linear_velocity* *(* *)* const
+* void *"set&#95;angular&#95;velocity":#set_angular_velocity* *(* "float":class_float angular&#95;velocity *)*
+* "float":class_float *"get&#95;angular&#95;velocity":#get_angular_velocity* *(* *)* const
+* void *"set&#95;max&#95;contacts&#95;reported":#set_max_contacts_reported* *(* "int":class_int amount *)*
+* "int":class_int *"get&#95;max&#95;contacts&#95;reported":#get_max_contacts_reported* *(* *)* const
+* void *"set&#95;use&#95;custom&#95;integrator":#set_use_custom_integrator* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;using&#95;custom&#95;integrator":#is_using_custom_integrator* *(* *)*
+* void *"set&#95;contact&#95;monitor":#set_contact_monitor* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;contact&#95;monitor&#95;enabled":#is_contact_monitor_enabled* *(* *)* const
+* void *"set&#95;continuous&#95;collision&#95;detection&#95;mode":#set_continuous_collision_detection_mode* *(* "int":class_int mode *)*
+* "int":class_int *"get&#95;continuous&#95;collision&#95;detection&#95;mode":#get_continuous_collision_detection_mode* *(* *)* const
+* void *"set&#95;axis&#95;velocity":#set_axis_velocity* *(* "Vector2":class_vector2 axis&#95;velocity *)*
+* void *"apply&#95;impulse":#apply_impulse* *(* "Vector2":class_vector2 pos, "Vector2":class_vector2 impulse *)*
+* void *"set&#95;applied&#95;force":#set_applied_force* *(* "Vector2":class_vector2 force *)*
+* "Vector2":class_vector2 *"get&#95;applied&#95;force":#get_applied_force* *(* *)* const
+* void *"set&#95;sleeping":#set_sleeping* *(* "bool":class_bool sleeping *)*
+* "bool":class_bool *"is&#95;sleeping":#is_sleeping* *(* *)* const
+* void *"set&#95;can&#95;sleep":#set_can_sleep* *(* "bool":class_bool able&#95;to&#95;sleep *)*
+* "bool":class_bool *"is&#95;able&#95;to&#95;sleep":#is_able_to_sleep* *(* *)* const
+* "bool":class_bool *"test&#95;motion":#test_motion* *(* "Vector2":class_vector2 motion, "float":class_float margin=0.08, "Physics2DTestMotionResult":class_physics2dtestmotionresult result=NULL *)*
+* "Array":class_array *"get&#95;colliding&#95;bodies":#get_colliding_bodies* *(* *)* const
+
+h3(#signals). Signals
+
+* *body&#95;enter* *(* "Object":class_object body *)*
+* *body&#95;enter&#95;shape* *(* "int":class_int body&#95;id, "Object":class_object body, "int":class_int body&#95;shape, "int":class_int local&#95;shape *)*
+* *body&#95;exit* *(* "Object":class_object body *)*
+* *body&#95;exit&#95;shape* *(* "int":class_int body&#95;id, "Object":class_object body, "int":class_int body&#95;shape, "int":class_int local&#95;shape *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *MODE&#95;STATIC* = *1* &#45; Static mode (does not move, can't be moved).
+* *MODE&#95;KINEMATIC* = *3*
+* *MODE&#95;RIGID* = *0* &#45; Rigid body, can move and rotate.
+* *MODE&#95;CHARACTER* = *2* &#45; Character body, can move but not rotate.
+* *CCD&#95;MODE&#95;DISABLED* = *0*
+* *CCD&#95;MODE&#95;CAST&#95;RAY* = *1*
+* *CCD&#95;MODE&#95;CAST&#95;SHAPE* = *2*
+
+h3(#description). Description
+
+Rigid body 2D node. This node is used for placing rigid bodies in the scene. It can contain a number of shapes, and also shift state between regular Rigid Body to Character or even Static. Character mode forbids the node from being rotated. This node can have a custom force integrator function, for writing complex physics motion behavior per node.
+
+bc. As a warning, don't change this node position every frame or very often. Sporadic changes work fine, but physics runs at a different granularity (fixed hz) than usual rendering (process callback) and maybe even in a separate thread, so changing this from a process loop will yield strange behavior.
+
+
+h3(#member-function-description). Member Function Description
+
+h4(#integrate_forces-void-_integrate_forces-physics2ddirectbodystate-state-virtual). <a name="_integrate_forces">&#95;integrate&#95;forces</a> &#42; void *&#95;integrate&#95;forces* *(* "Physics2DDirectBodyState":class_physics2ddirectbodystate state *)* virtual
+
+Override this function to use a custom force integrator. This allows to hook up to the physics processing and alter the simulation state for the object on every frame.
+
+h4(#set_mode). <a name="set_mode">set&#95;mode</a>
+
+* void *set&#95;mode* *(* "int":class_int mode *)*
+
+Set the body mode, fromt he MODE&#95;&#42; enum. This allows to change to a static body or a character body.
+
+h4(#get_mode). <a name="get_mode">get&#95;mode</a>
+
+* "int":class_int *get&#95;mode* *(* *)* const
+
+Return the current body mode, see [set&#95;mode].
+
+h4(#set_mass). <a name="set_mass">set&#95;mass</a>
+
+* void *set&#95;mass* *(* "float":class_float mass *)*
+
+Set the body mass.
+
+h4(#get_mass). <a name="get_mass">get&#95;mass</a>
+
+* "float":class_float *get&#95;mass* *(* *)* const
+
+Return the body mass.
+
+h4(#set_weight). <a name="set_weight">set&#95;weight</a>
+
+* void *set&#95;weight* *(* "float":class_float weight *)*
+
+Set the body mass given standard earth&#45;weight (gravity 9.8). Not really useful for 2D since most measuers for this node are in pixels.
+
+h4(#get_weight). <a name="get_weight">get&#95;weight</a>
+
+* "float":class_float *get&#95;weight* *(* *)* const
+
+Return the body mass given standard earth&#45;weight (gravity 9.8).
+
+h4(#set_friction). <a name="set_friction">set&#95;friction</a>
+
+* void *set&#95;friction* *(* "float":class_float friction *)*
+
+Set the body friction, from 0 (friction less) to 1 (full friction).
+
+h4(#get_friction). <a name="get_friction">get&#95;friction</a>
+
+* "float":class_float *get&#95;friction* *(* *)* const
+
+Return the body friction.
+
+h4(#set_bounce). <a name="set_bounce">set&#95;bounce</a>
+
+* void *set&#95;bounce* *(* "float":class_float bounce *)*
+
+Set the body bounciness, from 0 (no bounce) to 1 (bounce).
+
+h4(#get_bounce). <a name="get_bounce">get&#95;bounce</a>
+
+* "float":class_float *get&#95;bounce* *(* *)* const
+
+Return the body bouncyness.
+
+h4(#set_linear_velocity). <a name="set_linear_velocity">set&#95;linear&#95;velocity</a>
+
+* void *set&#95;linear&#95;velocity* *(* "Vector2":class_vector2 linear&#95;velocity *)*
+
+Set the body linear velocity. Can be used sporadically, but&#42;&#42; DONT SET THIS IN EVERY FRAME &#42;&#42;, because physics may be running in another thread and definitely runs at a different granularity. Use [&#95;integrate&#95;forces] as your process loop if you want to have precise control of the body state.
+
+h4(#get_linear_velocity). <a name="get_linear_velocity">get&#95;linear&#95;velocity</a>
+
+* "Vector2":class_vector2 *get&#95;linear&#95;velocity* *(* *)* const
+
+Return the body linear velocity. This changes by physics granularity. See [set&#95;linear&#95;velocity].
+
+h4(#set_angular_velocity). <a name="set_angular_velocity">set&#95;angular&#95;velocity</a>
+
+* void *set&#95;angular&#95;velocity* *(* "float":class_float angular&#95;velocity *)*
+
+Set the body angular velocity. Can be used sporadically, but&#42;&#42; DONT SET THIS IN EVERY FRAME &#42;&#42;, because physics may be running in another thread and definitely runs at a different granularity. Use [&#95;integrate&#95;forces] as your process loop if you want to have precise control of the body state.
+
+h4(#get_angular_velocity). <a name="get_angular_velocity">get&#95;angular&#95;velocity</a>
+
+* "float":class_float *get&#95;angular&#95;velocity* *(* *)* const
+
+Return the body angular velocity. This changes by physics granularity. See [set&#95;angular&#95;velocity].
+
+h4(#set_max_contacts_reported). <a name="set_max_contacts_reported">set&#95;max&#95;contacts&#95;reported</a>
+
+* void *set&#95;max&#95;contacts&#95;reported* *(* "int":class_int amount *)*
+
+Set the maximum contacts to report. Bodies can keep a log of the contacts with other bodies, this is enabled by setting the maximum amount of contacts reported to a number greater than 0.
+
+h4(#get_max_contacts_reported). <a name="get_max_contacts_reported">get&#95;max&#95;contacts&#95;reported</a>
+
+* "int":class_int *get&#95;max&#95;contacts&#95;reported* *(* *)* const
+
+Return the maximum contacts that can be reported. See [set&#95;max&#95;contacts&#95;reported].
+
+h4(#set_use_custom_integrator). <a name="set_use_custom_integrator">set&#95;use&#95;custom&#95;integrator</a>
+
+* void *set&#95;use&#95;custom&#95;integrator* *(* "bool":class_bool enable *)*
+
+Set to true if the body shall not do any internal force integration at all (like gravity or air friction). Only the [&#95;integrate&#95;forces] will be able to integrate them if overrided.
+
+h4(#is_using_custom_integrator). <a name="is_using_custom_integrator">is&#95;using&#95;custom&#95;integrator</a>
+
+* "bool":class_bool *is&#95;using&#95;custom&#95;integrator* *(* *)*
+
+Return true if the body is not doing any built&#45;in force integration.
+
+h4(#set_contact_monitor). <a name="set_contact_monitor">set&#95;contact&#95;monitor</a>
+
+* void *set&#95;contact&#95;monitor* *(* "bool":class_bool enabled *)*
+
+Enable contact monitoring. (the signals to notify when a body entered/exited collision).
+
+h4(#is_contact_monitor_enabled). <a name="is_contact_monitor_enabled">is&#95;contact&#95;monitor&#95;enabled</a>
+
+* "bool":class_bool *is&#95;contact&#95;monitor&#95;enabled* *(* *)* const
+
+Return wether contact monitoring is enabled.
+
+h4(#set_axis_velocity). <a name="set_axis_velocity">set&#95;axis&#95;velocity</a>
+
+* void *set&#95;axis&#95;velocity* *(* "Vector2":class_vector2 axis&#95;velocity *)*
+
+Set an axis velocity. The velocity in the given vector axis will be set as the given vector length. (This is useful for jumping behavior).
+
+h4(#apply_impulse). <a name="apply_impulse">apply&#95;impulse</a>
+
+* void *apply&#95;impulse* *(* "Vector2":class_vector2 pos, "Vector2":class_vector2 impulse *)*
+
+Apply a positioned impulse (which will be affected by the body mass and shape).
+
+h4(#set_can_sleep). <a name="set_can_sleep">set&#95;can&#95;sleep</a>
+
+* void *set&#95;can&#95;sleep* *(* "bool":class_bool able&#95;to&#95;sleep *)*
+
+Set the body ability to fall asleep when not moving. This saves an enormous amount of processor time when there are plenty of rigid bodies (non static) in a scene.
+
+h4(#is_able_to_sleep). <a name="is_able_to_sleep">is&#95;able&#95;to&#95;sleep</a>
+
+* "bool":class_bool *is&#95;able&#95;to&#95;sleep* *(* *)* const
+
+Return true if the body has the ability to fall asleep when not moving. See [set&#95;can&#95;sleep].

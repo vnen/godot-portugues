@@ -1,0 +1,16 @@
+h1(#vector3array). Vector3Array
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "Vector3":class_vector3 *"get":#get* *(* "int":class_int idx *)*
+* void *"push&#95;back":#push_back* *(* "Vector3":class_vector3 vector3 *)*
+* void *"resize":#resize* *(* "int":class_int idx *)*
+* void *"set":#set* *(* "int":class_int idx, "Vector3":class_vector3 vector3 *)*
+* "int":class_int *"size":#size* *(* *)*
+* "Vector3Array":class_vector3array *"Vector3Array":#Vector3Array* *(* "Array":class_array from *)*
+
+h3(#member-function-description). Member Function Description

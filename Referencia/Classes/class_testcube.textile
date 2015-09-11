@@ -1,0 +1,7 @@
+h1(#testcube). TestCube
+
+h4(#inherits-geometryinstance). *Inherits:* "GeometryInstance":class_geometryinstance
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description

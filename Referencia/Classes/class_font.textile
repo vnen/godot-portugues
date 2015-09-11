@@ -1,0 +1,120 @@
+h1(#font). Font
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Internationalized font and text drawing support.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;height":#set_height* *(* "float":class_float px *)*
+* "float":class_float *"get&#95;height":#get_height* *(* *)* const
+* void *"set&#95;ascent":#set_ascent* *(* "float":class_float px *)*
+* "float":class_float *"get&#95;ascent":#get_ascent* *(* *)* const
+* "float":class_float *"get&#95;descent":#get_descent* *(* *)* const
+* void *"add&#95;kerning&#95;pair":#add_kerning_pair* *(* "int":class_int char&#95;a, "int":class_int char&#95;b, "int":class_int kerning *)*
+* "int":class_int *"get&#95;kerning&#95;pair":#get_kerning_pair* *(* "int":class_int arg0, "int":class_int arg1 *)* const
+* void *"add&#95;texture":#add_texture* *(* "Texture":class_texture texture *)*
+* void *"add&#95;char":#add_char* *(* "int":class_int character, "int":class_int texture, "Rect2":class_rect2 rect, "Vector2":class_vector2 align=Vector2(0,0), "float":class_float advance=&#45;1 *)*
+* "int":class_int *"get&#95;texture&#95;count":#get_texture_count* *(* *)* const
+* "Texture":class_texture *"get&#95;texture":#get_texture* *(* "int":class_int idx *)* const
+* "Vector2":class_vector2 *"get&#95;char&#95;size":#get_char_size* *(* "int":class_int char, "int":class_int next=0 *)* const
+* "Vector2":class_vector2 *"get&#95;string&#95;size":#get_string_size* *(* "String":class_string string *)* const
+* void *"set&#95;distance&#95;field&#95;hint":#set_distance_field_hint* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;distance&#95;field&#95;hint":#is_distance_field_hint* *(* *)* const
+* void *"clear":#clear* *(* *)*
+* void *"draw":#draw* *(* "RID":class_rid canvas&#95;item, "Vector2":class_vector2 pos, "String":class_string string, "Color":class_color modulate=Color(1,1,1,1), "int":class_int clip&#95;w=&#45;1 *)* const
+* "float":class_float *"draw&#95;char":#draw_char* *(* "RID":class_rid canvas&#95;item, "Vector2":class_vector2 pos, "int":class_int char, "int":class_int next=&#45;1, "Color":class_color modulate=Color(1,1,1,1) *)* const
+
+h3(#description). Description
+
+Font contains an unicode compatible character set, as well as the ability to draw it with variable width, ascent, descent and kerning. For creating fonts from TTF files (or other font formats), see the editor support for fonts. TODO check wikipedia for graph of ascent/baseline/descent/height/etc.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_height). <a name="set_height">set&#95;height</a>
+
+* void *set&#95;height* *(* "float":class_float px *)*
+
+Set the total font height (ascent plus descent) in pixels.
+
+h4(#get_height). <a name="get_height">get&#95;height</a>
+
+* "float":class_float *get&#95;height* *(* *)* const
+
+Return the total font height (ascent plus descent) in pixels.
+
+h4(#set_ascent). <a name="set_ascent">set&#95;ascent</a>
+
+* void *set&#95;ascent* *(* "float":class_float px *)*
+
+Set the font ascent (number of pixels above the baseline).
+
+h4(#get_ascent). <a name="get_ascent">get&#95;ascent</a>
+
+* "float":class_float *get&#95;ascent* *(* *)* const
+
+Return the font ascent (number of pixels above the baseline).
+
+h4(#get_descent). <a name="get_descent">get&#95;descent</a>
+
+* "float":class_float *get&#95;descent* *(* *)* const
+
+Return the font descent (number of pixels below the baseline).
+
+h4(#add_kerning_pair). <a name="add_kerning_pair">add&#95;kerning&#95;pair</a>
+
+* void *add&#95;kerning&#95;pair* *(* "int":class_int char&#95;a, "int":class_int char&#95;b, "int":class_int kerning *)*
+
+Add a kerning pair to the "Font":class_font as a difference. Kerning pairs are special cases where a typeface advance is determined by the next character.
+
+h4(#get_kerning_pair). <a name="get_kerning_pair">get&#95;kerning&#95;pair</a>
+
+* "int":class_int *get&#95;kerning&#95;pair* *(* "int":class_int arg0, "int":class_int arg1 *)* const
+
+Return a kerning pair as a difference. Kerning pairs are special cases where a typeface advance is determined by the next character.
+
+h4(#add_texture). <a name="add_texture">add&#95;texture</a>
+
+* void *add&#95;texture* *(* "Texture":class_texture texture *)*
+
+Add a texture to the "Font":class_font.
+
+h4(#add_char). <a name="add_char">add&#95;char</a>
+
+* void *add&#95;char* *(* "int":class_int character, "int":class_int texture, "Rect2":class_rect2 rect, "Vector2":class_vector2 align=Vector2(0,0), "float":class_float advance=&#45;1 *)*
+
+Add a character to the font, where &quot;character&quot; is the unicode value, &quot;texture&quot; is the texture index, &quot;rect&quot; is the region in the texture (in pixels!), &quot;align&quot; is the (optional) alignment for the character and &quot;advance&quot; is the (optional) advance.
+
+h4(#get_char_size). <a name="get_char_size">get&#95;char&#95;size</a>
+
+* "Vector2":class_vector2 *get&#95;char&#95;size* *(* "int":class_int char, "int":class_int next=0 *)* const
+
+Return the size of a character, optionally taking kerning into account if the next character is provided.
+
+h4(#get_string_size). <a name="get_string_size">get&#95;string&#95;size</a>
+
+* "Vector2":class_vector2 *get&#95;string&#95;size* *(* "String":class_string string *)* const
+
+Return the size of a string, taking kerning and advance into account.
+
+h4(#clear). <a name="clear">clear</a>
+
+* void *clear* *(* *)*
+
+Clear all the font data.
+
+h4(#draw). <a name="draw">draw</a>
+
+* void *draw* *(* "RID":class_rid canvas&#95;item, "Vector2":class_vector2 pos, "String":class_string string, "Color":class_color modulate=Color(1,1,1,1), "int":class_int clip&#95;w=&#45;1 *)* const
+
+Draw &quot;string&quot; into a canvas item using the font at a given &quot;pos&quot; position, with &quot;modulate&quot; color, and optionally clipping the width. &quot;pos&quot; specifies te baseline, not the top. To draw from the top, _ascent_ must be added to the Y axis.
+
+h4(#draw_char). <a name="draw_char">draw&#95;char</a>
+
+* "float":class_float *draw&#95;char* *(* "RID":class_rid canvas&#95;item, "Vector2":class_vector2 pos, "int":class_int char, "int":class_int next=&#45;1, "Color":class_color modulate=Color(1,1,1,1) *)* const
+
+Draw character &quot;char&quot; into a canvas item using the font at a given &quot;pos&quot; position, with &quot;modulate&quot; color, and optionally kerning if &quot;next&quot; is apassed. clipping the width. &quot;pos&quot; specifies te baseline, not the top. To draw from the top, _ascent_ must be added to the Y axis. The width used by the character is returned, making this function useful for drawing strings character by character.

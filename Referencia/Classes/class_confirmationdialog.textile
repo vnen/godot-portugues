@@ -1,0 +1,25 @@
+h1(#confirmationdialog). ConfirmationDialog
+
+h4(#inherits-acceptdialog). *Inherits:* "AcceptDialog":class_acceptdialog
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Dialog for confirmation of actions.
+
+h3(#member-functions). Member Functions
+
+* "Button":class_button *"get&#95;cancel":#get_cancel* *(* *)*
+
+h3(#description). Description
+
+Dialog for confirmation of actions. This dialog inherits from "AcceptDialog":class_acceptdialog, but has by default an OK and Cancel buton (in host OS order).
+
+h3(#member-function-description). Member Function Description
+
+h4(#get_cancel). <a name="get_cancel">get&#95;cancel</a>
+
+* "Button":class_button *get&#95;cancel* *(* *)*
+
+Return the cancel button.

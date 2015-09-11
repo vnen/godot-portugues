@@ -1,0 +1,22 @@
+h1(#visibilitynotifier). VisibilityNotifier
+
+h4(#inherits-spatial). *Inherits:* "Spatial":class_spatial
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;aabb":#set_aabb* *(* "AABB":class_aabb rect *)*
+* "AABB":class_aabb *"get&#95;aabb":#get_aabb* *(* *)* const
+* "bool":class_bool *"is&#95;on&#95;screen":#is_on_screen* *(* *)* const
+
+h3(#signals). Signals
+
+* *enter&#95;screen* *(* *)*
+* *enter&#95;camera* *(* "Object":class_object camera *)*
+* *exit&#95;screen* *(* *)*
+* *exit&#95;camera* *(* "Object":class_object camera *)*
+
+h3(#member-function-description). Member Function Description

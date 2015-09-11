@@ -1,0 +1,58 @@
+h1(#global-scope). &#64;Global Scope
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Global scope constants and variables.
+
+h3(#member-variables). Member Variables
+
+* "Performance":class_performance *Performance*
+* "Globals":class_globals *Globals*
+* "IP":class_ip *IP*
+* "Geometry":class_geometry *Geometry*
+* "ResourceLoader":class_resourceloader *ResourceLoader*
+* "ResourceSaver":class_resourcesaver *ResourceSaver*
+* "PathRemap":class_pathremap *PathRemap*
+* "OS":class_os *OS*
+* "Reference":class_reference *Marshalls*
+* "TranslationServer":class_translationserver *TranslationServer*
+* "TranslationServer":class_translationserver *TS*
+* "Input":class_input *Input*
+* "InputMap":class_inputmap *InputMap*
+* "VisualServer":class_visualserver *VisualServer*
+* "VisualServer":class_visualserver *VS*
+* "AudioServer":class_audioserver *AudioServer*
+* "AudioServer":class_audioserver *AS*
+* "PhysicsServer":class_physicsserver *PhysicsServer*
+* "PhysicsServer":class_physicsserver *PS*
+* "Physics2DServer":class_physics2dserver *Physics2DServer*
+* "Physics2DServer":class_physics2dserver *PS2D*
+* "SpatialSound2DServer":class_spatialsound2dserver *SpatialSoundServer*
+* "SpatialSound2DServer":class_spatialsound2dserver *SS*
+* "SpatialSound2DServer":class_spatialsound2dserver *SpatialSound2DServer*
+* "SpatialSound2DServer":class_spatialsound2dserver *SS2D*
+
+h3(#numeric-constants). Numeric Constants
+
+* *MARGIN&#95;LEFT* = *0* &#45; Left margin, used usually for [Control] or [StyleBox] derived classes.
+* *MARGIN&#95;TOP* = *1* &#45; Top margin, used usually for [Control] or [StyleBox] derived classes.
+* *MARGIN&#95;RIGHT* = *2* &#45; Right margin, used usually for [Control] or [StyleBox] derived classes.
+* *MARGIN&#95;BOTTOM* = *3* &#45; Bottom margin, used usually for [Control] or [StyleBox] derived classes.
+* *VERTICAL* = *1* &#45; General vertical alignment, used usually for [Separator], [ScrollBar], [Slider], etc.
+* *HORIZONTAL* = *0* &#45; General horizontal alignment, used usually for [Separator], [ScrollBar], [Slider], etc.
+* *HALIGN&#95;LEFT* = *0* &#45; Horizontal left alignment, usually for text&#45;derived classes.
+* *HALIGN&#95;CENTER* = *1* &#45; Horizontal center alignment, usually for text&#45;derived classes.
+* *HALIGN&#95;RIGHT* = *2* &#45; Horizontal right alignment, usually for text&#45;derived classes.
+* *VALIGN&#95;TOP* = *0* &#45; Vertical top alignment, usually for text&#45;derived classes.
+* *VALIGN&#95;CENTER* = *1* &#45; Vertical center alignment, usually for text&#45;derived classes.
+* *VALIGN&#95;BOTTOM* = *2* &#45; Vertical bottom alignment, usually for text&#45;derived classes.
+* *SPKEY* = *16777216* &#45; Scancodes with this bit applied are non printable.
+* *KEY&#95;ESCAPE* = *16777217* &#45; Escape Key
+* *KEY&#95;TAB* = *16777218* &#45; Tab Key
+* *KEY&#95;BACKTAB* = *16777219* &#45; Shift&#45;Tab key
+* *KEY&#95;BACKSPACE* = *16777220*
+* *KEY&#95;RETURN* = *16777221*
+* *KEY&#95;ENTER* = *16777222*
+* &#42;&#42;KE

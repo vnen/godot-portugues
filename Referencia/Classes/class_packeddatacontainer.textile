@@ -1,0 +1,14 @@
+h1(#packeddatacontainer). PackedDataContainer
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* Error *"pack":#pack* *(* var value *)*
+* "int":class_int *"size":#size* *(* *)* const
+
+h3(#member-function-description). Member Function Description

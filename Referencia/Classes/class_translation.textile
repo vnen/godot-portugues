@@ -1,0 +1,61 @@
+h1(#translation). Translation
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Language Translation.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;locale":#set_locale* *(* "String":class_string locale *)*
+* "String":class_string *"get&#95;locale":#get_locale* *(* *)* const
+* void *"add&#95;message":#add_message* *(* "String":class_string src&#95;message, "String":class_string xlated&#95;message *)*
+* "String":class_string *"get&#95;message":#get_message* *(* "String":class_string src&#95;message *)* const
+* void *"erase&#95;message":#erase_message* *(* "String":class_string src&#95;message *)*
+* "StringArray":class_stringarray *"get&#95;message&#95;list":#get_message_list* *(* *)* const
+* "int":class_int *"get&#95;message&#95;count":#get_message_count* *(* *)* const
+
+h3(#description). Description
+
+Translations are resources that can be loaded/unloaded on demand. They map a string to another string.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_locale). <a name="set_locale">set&#95;locale</a>
+
+* void *set&#95;locale* *(* "String":class_string locale *)*
+
+Set the locale of the translation.
+
+h4(#get_locale). <a name="get_locale">get&#95;locale</a>
+
+* "String":class_string *get&#95;locale* *(* *)* const
+
+Return the locale of the translation.
+
+h4(#add_message). <a name="add_message">add&#95;message</a>
+
+* void *add&#95;message* *(* "String":class_string src&#95;message, "String":class_string xlated&#95;message *)*
+
+Add a message for translation.
+
+h4(#get_message). <a name="get_message">get&#95;message</a>
+
+* "String":class_string *get&#95;message* *(* "String":class_string src&#95;message *)* const
+
+Return a message for translation.
+
+h4(#erase_message). <a name="erase_message">erase&#95;message</a>
+
+* void *erase&#95;message* *(* "String":class_string src&#95;message *)*
+
+Erase a message.
+
+h4(#get_message_list). <a name="get_message_list">get&#95;message&#95;list</a>
+
+* "StringArray":class_stringarray *get&#95;message&#95;list* *(* *)* const
+
+Return all the messages (keys).

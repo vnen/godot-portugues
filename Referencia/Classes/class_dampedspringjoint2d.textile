@@ -1,0 +1,74 @@
+h1(#dampedspringjoint2d). DampedSpringJoint2D
+
+h4(#inherits-joint2d). *Inherits:* "Joint2D":class_joint2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Damped sprint constraint for 2D physics.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;length":#set_length* *(* "float":class_float length *)*
+* "float":class_float *"get&#95;length":#get_length* *(* *)* const
+* void *"set&#95;rest&#95;length":#set_rest_length* *(* "float":class_float rest&#95;length *)*
+* "float":class_float *"get&#95;rest&#95;length":#get_rest_length* *(* *)* const
+* void *"set&#95;stiffness":#set_stiffness* *(* "float":class_float stiffness *)*
+* "float":class_float *"get&#95;stiffness":#get_stiffness* *(* *)* const
+* void *"set&#95;damping":#set_damping* *(* "float":class_float damping *)*
+* "float":class_float *"get&#95;damping":#get_damping* *(* *)* const
+
+h3(#description). Description
+
+Damped sprint constraint for 2D physics. This resembles a sprint joint that always want to go back to a given length.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_length). <a name="set_length">set&#95;length</a>
+
+* void *set&#95;length* *(* "float":class_float length *)*
+
+Set the maximum length of the sprint joint.
+
+h4(#get_length). <a name="get_length">get&#95;length</a>
+
+* "float":class_float *get&#95;length* *(* *)* const
+
+Return the maximum length of the sprint joint.
+
+h4(#set_rest_length). <a name="set_rest_length">set&#95;rest&#95;length</a>
+
+* void *set&#95;rest&#95;length* *(* "float":class_float rest&#95;length *)*
+
+Set the resting length of the sprint joint. The joint will always try to go to back this length when pulled apart.
+
+h4(#get_rest_length). <a name="get_rest_length">get&#95;rest&#95;length</a>
+
+* "float":class_float *get&#95;rest&#95;length* *(* *)* const
+
+Return the resting length of the sprint joint. The joint will always try to go to back this length when pulled apart.
+
+h4(#set_stiffness). <a name="set_stiffness">set&#95;stiffness</a>
+
+* void *set&#95;stiffness* *(* "float":class_float stiffness *)*
+
+Set the stiffness of the spring joint.
+
+h4(#get_stiffness). <a name="get_stiffness">get&#95;stiffness</a>
+
+* "float":class_float *get&#95;stiffness* *(* *)* const
+
+Return the stiffness of the spring joint.
+
+h4(#set_damping). <a name="set_damping">set&#95;damping</a>
+
+* void *set&#95;damping* *(* "float":class_float damping *)*
+
+Set the damping of the spring joint.
+
+h4(#get_damping). <a name="get_damping">get&#95;damping</a>
+
+* "float":class_float *get&#95;damping* *(* *)* const
+
+Return the damping of the spring joint.

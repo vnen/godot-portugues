@@ -1,0 +1,46 @@
+h1(#streampeer). StreamPeer
+
+h4(#inherits-reference). *Inherits:* "Reference":class_reference
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Abstraction and base class for stream&#45;based protocols.
+
+h3(#member-functions). Member Functions
+
+* "int":class_int *"put&#95;data":#put_data* *(* "RawArray":class_rawarray data *)*
+* "Array":class_array *"put&#95;partial&#95;data":#put_partial_data* *(* "RawArray":class_rawarray data *)*
+* "Array":class_array *"get&#95;data":#get_data* *(* "int":class_int bytes *)*
+* "Array":class_array *"get&#95;partial&#95;data":#get_partial_data* *(* "int":class_int bytes *)*
+
+h3(#description). Description
+
+StreamPeer is an abstration and base class for stream&#45;based protocols (such as TCP or Unix Sockets). It provides an API for sending and receiving data through streams as raw data or strings.
+
+h3(#member-function-description). Member Function Description
+
+h4(#put_data). <a name="put_data">put&#95;data</a>
+
+* "int":class_int *put&#95;data* *(* "RawArray":class_rawarray data *)*
+
+Send a chunk of data through the connection, blocking if necesary until the data is done sending. This function returns an [Error] code.
+
+h4(#put_partial_data). <a name="put_partial_data">put&#95;partial&#95;data</a>
+
+* "Array":class_array *put&#95;partial&#95;data* *(* "RawArray":class_rawarray data *)*
+
+Send a chunk of data through the connection, if all the data could not be sent at once, only part of it will. This function returns two values, an [Error] code and an integer, describing how much data was actually sent.
+
+h4(#get_data). <a name="get_data">get&#95;data</a>
+
+* "Array":class_array *get&#95;data* *(* "int":class_int bytes *)*
+
+Return a chunk data with the received bytes. The amount of bytes to be received can be requested in the &quot;bytes&quot; argument. If not enough bytes are available, the function will block until the desired amount is received. This function returns two values, an [Error] code and a data array.
+
+h4(#get_partial_data). <a name="get_partial_data">get&#95;partial&#95;data</a>
+
+* "Array":class_array *get&#95;partial&#95;data* *(* "int":class_int bytes *)*
+
+Return a chunk data with the received bytes. The amount of bytes to be received can be requested in the &quot;bytes&quot; argument. If not enough bytes are available, the function will return how many were actually received. This function returns two values, an [Error] code, and a data array.

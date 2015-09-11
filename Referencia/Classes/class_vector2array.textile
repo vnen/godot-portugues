@@ -1,0 +1,16 @@
+h1(#vector2array). Vector2Array
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "Vector2":class_vector2 *"get":#get* *(* "int":class_int idx *)*
+* void *"push&#95;back":#push_back* *(* "Vector2":class_vector2 vector2 *)*
+* void *"resize":#resize* *(* "int":class_int idx *)*
+* void *"set":#set* *(* "int":class_int idx, "Vector2":class_vector2 vector2 *)*
+* "int":class_int *"size":#size* *(* *)*
+* "Vector2Array":class_vector2array *"Vector2Array":#Vector2Array* *(* "Array":class_array from *)*
+
+h3(#member-function-description). Member Function Description

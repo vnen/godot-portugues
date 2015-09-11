@@ -1,0 +1,20 @@
+h1(#configfile). ConfigFile
+
+h4(#inherits-reference). *Inherits:* "Reference":class_reference
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;value":#set_value* *(* "String":class_string section, "String":class_string key, var value *)*
+* void *"get&#95;value":#get_value* *(* "String":class_string section, "String":class_string key *)* const
+* "bool":class_bool *"has&#95;section":#has_section* *(* "String":class_string section *)* const
+* "bool":class_bool *"has&#95;section&#95;key":#has_section_key* *(* "String":class_string section, "String":class_string key *)* const
+* "StringArray":class_stringarray *"get&#95;sections":#get_sections* *(* *)* const
+* "StringArray":class_stringarray *"get&#95;section&#95;keys":#get_section_keys* *(* "String":class_string arg0 *)* const
+* Error *"load":#load* *(* "String":class_string path *)*
+* Error *"save":#save* *(* "String":class_string path *)*
+
+h3(#member-function-description). Member Function Description

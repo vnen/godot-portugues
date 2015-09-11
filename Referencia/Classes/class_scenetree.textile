@@ -1,0 +1,55 @@
+h1(#scenetree). SceneTree
+
+h4(#inherits-mainloop). *Inherits:* "MainLoop":class_mainloop
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"notify&#95;group":#notify_group* *(* "int":class_int call&#95;flags, "String":class_string group, "int":class_int notification *)*
+* void *"set&#95;group":#set_group* *(* "int":class_int call&#95;flags, "String":class_string group, "String":class_string property, var value *)*
+* "Array":class_array *"get&#95;nodes&#95;in&#95;group":#get_nodes_in_group* *(* "String":class_string arg0 *)*
+* "Viewport":class_viewport *"get&#95;root":#get_root* *(* *)* const
+* void *"set&#95;auto&#95;accept&#95;quit":#set_auto_accept_quit* *(* "bool":class_bool enabled *)*
+* void *"set&#95;editor&#95;hint":#set_editor_hint* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;editor&#95;hint":#is_editor_hint* *(* *)* const
+* void *"set&#95;edited&#95;scene&#95;root":#set_edited_scene_root* *(* "Object":class_object scene *)*
+* "Object":class_object *"get&#95;edited&#95;scene&#95;root":#get_edited_scene_root* *(* *)* const
+* void *"set&#95;pause":#set_pause* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;paused":#is_paused* *(* *)* const
+* void *"set&#95;input&#95;as&#95;handled":#set_input_as_handled* *(* *)*
+* "int":class_int *"get&#95;node&#95;count":#get_node_count* *(* *)* const
+* "int":class_int *"get&#95;frame":#get_frame* *(* *)* const
+* void *"quit":#quit* *(* *)*
+* void *"set&#95;screen&#95;stretch":#set_screen_stretch* *(* "int":class_int mode, "int":class_int aspect, "Vector2":class_vector2 minsize *)*
+* void *"queue&#95;delete":#queue_delete* *(* "Object":class_object obj *)*
+* void *"call&#95;group":#call_group* *(* "int":class_int flags, "String":class_string group, "String":class_string method, var arg0=NULL, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL *)*
+* void *"set&#95;current&#95;scene":#set_current_scene* *(* "Node":class_node child&#95;node *)*
+* "Node":class_node *"get&#95;current&#95;scene":#get_current_scene* *(* *)* const
+* "int":class_int *"change&#95;scene":#change_scene* *(* "String":class_string path *)*
+* "int":class_int *"change&#95;scene&#95;to":#change_scene_to* *(* "PackedScene":class_packedscene packed&#95;scene *)*
+* "int":class_int *"reload&#95;current&#95;scene":#reload_current_scene* *(* *)*
+
+h3(#signals). Signals
+
+* *screen&#95;resized* *(* *)*
+* *node&#95;removed* *(* "Object":class_object node *)*
+* *tree&#95;changed* *(* *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *GROUP&#95;CALL&#95;DEFAULT* = *0*
+* *GROUP&#95;CALL&#95;REVERSE* = *1*
+* *GROUP&#95;CALL&#95;REALTIME* = *2*
+* *GROUP&#95;CALL&#95;UNIQUE* = *4*
+* *STRETCH&#95;MODE&#95;DISABLED* = *0*
+* *STRETCH&#95;MODE&#95;2D* = *1*
+* *STRETCH&#95;MODE&#95;VIEWPORT* = *2*
+* *STRETCH&#95;ASPECT&#95;IGNORE* = *0*
+* *STRETCH&#95;ASPECT&#95;KEEP* = *1*
+* *STRETCH&#95;ASPECT&#95;KEEP&#95;WIDTH* = *2*
+* *STRETCH&#95;ASPECT&#95;KEEP&#95;HEIGHT* = *3*
+
+h3(#member-function-description). Member Function Description

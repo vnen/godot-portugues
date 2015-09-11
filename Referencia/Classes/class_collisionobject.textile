@@ -1,0 +1,34 @@
+h1(#collisionobject). CollisionObject
+
+h4(#inherits-spatial). *Inherits:* "Spatial":class_spatial
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"&#95;input&#95;event":#_input_event* *(* "Object":class_object camera, "InputEvent":class_inputevent event, "Vector3":class_vector3 click&#95;pos, "Vector3":class_vector3 click&#95;normal, "int":class_int shape&#95;idx *)* virtual
+* void *"add&#95;shape":#add_shape* *(* "Shape":class_shape shape, "Transform":class_transform transform=Transform() *)*
+* "int":class_int *"get&#95;shape&#95;count":#get_shape_count* *(* *)* const
+* void *"set&#95;shape":#set_shape* *(* "int":class_int shape&#95;idx, "Shape":class_shape shape *)*
+* void *"set&#95;shape&#95;transform":#set_shape_transform* *(* "int":class_int shape&#95;idx, "Transform":class_transform transform *)*
+* void *"set&#95;shape&#95;as&#95;trigger":#set_shape_as_trigger* *(* "int":class_int shape&#95;idx, "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;shape&#95;set&#95;as&#95;trigger":#is_shape_set_as_trigger* *(* "int":class_int shape&#95;idx *)* const
+* "Shape":class_shape *"get&#95;shape":#get_shape* *(* "int":class_int shape&#95;idx *)* const
+* "Transform":class_transform *"get&#95;shape&#95;transform":#get_shape_transform* *(* "int":class_int shape&#95;idx *)* const
+* void *"remove&#95;shape":#remove_shape* *(* "int":class_int shape&#95;idx *)*
+* void *"clear&#95;shapes":#clear_shapes* *(* *)*
+* void *"set&#95;ray&#95;pickable":#set_ray_pickable* *(* "bool":class_bool ray&#95;pickable *)*
+* "bool":class_bool *"is&#95;ray&#95;pickable":#is_ray_pickable* *(* *)* const
+* void *"set&#95;capture&#95;input&#95;on&#95;drag":#set_capture_input_on_drag* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"get&#95;capture&#95;input&#95;on&#95;drag":#get_capture_input_on_drag* *(* *)* const
+* "RID":class_rid *"get&#95;rid":#get_rid* *(* *)* const
+
+h3(#signals). Signals
+
+* *mouse&#95;enter* *(* *)*
+* *input&#95;event* *(* "Object":class_object camera, "InputEvent":class_inputevent event, "Vector3":class_vector3 click&#95;pos, "Vector3":class_vector3 click&#95;normal, "int":class_int shape&#95;idx *)*
+* *mouse&#95;exit* *(* *)*
+
+h3(#member-function-description). Member Function Description

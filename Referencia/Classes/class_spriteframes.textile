@@ -1,0 +1,54 @@
+h1(#spriteframes). SpriteFrames
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Sprite frame library for AnimatedSprite.
+
+h3(#member-functions). Member Functions
+
+* void *"add&#95;frame":#add_frame* *(* "Object":class_object frame, "int":class_int atpos=&#45;1 *)*
+* "int":class_int *"get&#95;frame&#95;count":#get_frame_count* *(* *)* const
+* "Object":class_object *"get&#95;frame":#get_frame* *(* "int":class_int idx *)* const
+* void *"set&#95;frame":#set_frame* *(* "int":class_int idx, "Object":class_object txt *)*
+* void *"remove&#95;frame":#remove_frame* *(* "int":class_int idx *)*
+* void *"clear":#clear* *(* *)*
+
+h3(#description). Description
+
+Sprite frame library for "AnimatedSprite":class_animatedsprite.
+
+h3(#member-function-description). Member Function Description
+
+h4(#add_frame). <a name="add_frame">add&#95;frame</a>
+
+* void *add&#95;frame* *(* "Object":class_object frame, "int":class_int atpos=&#45;1 *)*
+
+Add a frame (texture).
+
+h4(#get_frame_count). <a name="get_frame_count">get&#95;frame&#95;count</a>
+
+* "int":class_int *get&#95;frame&#95;count* *(* *)* const
+
+Return the amount of frames.
+
+h4(#get_frame). <a name="get_frame">get&#95;frame</a>
+
+* "Object":class_object *get&#95;frame* *(* "int":class_int idx *)* const
+
+Return a texture (frame).
+
+h4(#remove_frame). <a name="remove_frame">remove&#95;frame</a>
+
+* void *remove&#95;frame* *(* "int":class_int idx *)*
+
+Remove a frame
+
+h4(#clear). <a name="clear">clear</a>
+
+* void *clear* *(* *)*
+
+Clear the frames.

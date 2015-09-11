@@ -1,0 +1,20 @@
+h1(#quad). Quad
+
+h4(#inherits-geometryinstance). *Inherits:* "GeometryInstance":class_geometryinstance
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;axis":#set_axis* *(* "int":class_int axis *)*
+* "int":class_int *"get&#95;axis":#get_axis* *(* *)* const
+* void *"set&#95;size":#set_size* *(* "Vector2":class_vector2 size *)*
+* "Vector2":class_vector2 *"get&#95;size":#get_size* *(* *)* const
+* void *"set&#95;centered":#set_centered* *(* "bool":class_bool centered *)*
+* "bool":class_bool *"is&#95;centered":#is_centered* *(* *)* const
+* void *"set&#95;offset":#set_offset* *(* "Vector2":class_vector2 offset *)*
+* "Vector2":class_vector2 *"get&#95;offset":#get_offset* *(* *)* const
+
+h3(#member-function-description). Member Function Description

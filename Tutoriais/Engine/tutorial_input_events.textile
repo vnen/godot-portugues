@@ -1,0 +1,76 @@
+h1(#inputevent). InputEvent
+
+h3(#what-is-it). What is it?
+
+Managing input is usually complex, no matter the OS or platform. To ease this a little, a special built&#45;in type is provided, "InputEvent":class_inputevent. This datatype can be configured to contain several types of input events. Input Events travel through the engine and can be received in multiple locations, depending on the purpose.
+
+h3(#how-does-it-work). How does it work?
+
+Every input event is originated from the user/player (though it's possible to generate an InputEvent and feed then back to the engine, which is useful for gestures). The OS object for each platform will read events from the device, then feed the to MainLoop. As "SceneTree":class_scenetree is the default MainLoop implementation, events are fed to it.
+
+But SceneTree does not know what to do with the event, so it will give it to the viewports, starting by the &quot;root&quot; "Viewport":class_viewport (the first node of the scene tree). Viewport does quite a lot of stuff with the received input, in order:
+
+<p align="center">
+<img src="images/input_event_flow.png">
+</p>
+# First, it will try to feed the input to the GUI, and see if any control can receive it. If so, the "Control":class_control will be called the virtual function "Control.&#95;input&#95;event":class_control#_input_event and the signal &quot;input&#95;event&quot; will be emitted (This function is re&#45;implementable by script by inheriting from it). If the control wants to &quot;consume&quot; the event, it will call "Control.accept&#95;event":class_control#accept_event and the event will not spread any more.
+# If the GUI does not want the event, the standard &#95;input function will be called in any node with input processing enabled (enable with "Node.set&#95;process&#95;input":class_node#set_process_input) and override "Node.&#95;input":class_node#_input). If any function consumes the event, it can call "SceneTree.set&#95;input&#95;as&#95;handled()":class_scenetree#set_input_as_handled, and the event will not spread any more.
+# If so far no one consumed the event, the unhandled input callback will be called (enable with "Node.set&#95;process&#95;unhandled&#95;input":class_node#set_process_unhandled_input) and override "Node.&#95;unhandled&#95;input":class_node#_unhandled_input). If any function consumes the event, it can call "SceneTree.set&#95;input&#95;as&#95;handled()":class_scenetree#set_input_as_handled, and the event will not spread any more.
+# If no one wanted the event so far, and a "Camera":class_camera is assigned to the Viewport, a ray to the physics world (in the ray direction from he click) will be casted. If this ray hits an object, it will call the "CollisionObject.&#95;input&#95;event":class_collisionobject#_input_event function in the relevant physics object (bodies receive this callback by default, but areas do not. This can be configured through "Area":class_area properties).
+# Finally, if the event was unhandled, it will be passed to the next Viewport in the tree, or it will be ignored.
+
+h3(#anatomy-of-an-inputevent). Anatomy of an InputEvent
+
+"InputEvent":class_inputevent is just a base built&#45;in type, it does not represent anything and only contains some basic information, such as event ID (which is increased for each event), device index, etc. InputEvent has a &quot;type&quot; member. By assigning it, it can become different types of input event. Every type of InputEvent has different properties, according to it's role.
+
+Example of changing event type.
+
+bc(python). # create event
+var ev = InputEvent()
+# set type index
+ev.type=InputEvent.MOUSE_BUTTON
+# button_index is only available for the above type
+ev.button_index=BUTTON_LEFT
+
+
+There are several types of InputEvent, described in the table below:
+
+|_. Event|_. Type Index|_. Description|
+|"InputEvent":class_inputevent|NONE|Empty Input Event|
+|"InputEventKey":class_inputeventkey|KEY|Contains a scancode and unicode value, as well as modifiers|
+|"InputEventMouseButton":class_inputeventmousebutton|MOUSE&#95;BUTTON|Contains click information, such as button, modifiers, etc.|
+|"InputEventMouseMotion":class_inputeventmousemotion|MOUSE&#95;MOTION|Contains motion information, such as relative, absolute positions and speed.|
+|"InputEventJoystickMotion":class_inputeventjoystickmotion|JOYSTICK&#95;MOTION|Contains Joystick/Joypad analog axis information.|
+|"InputEventJoystickButton":class_inputeventjoystickbutton|JOYSTICK&#95;BUTTON|Contains Joystick/Joypad button information.|
+|"InputEventScreenTouch":class_inputeventscreentouch|SCREEN&#95;TOUCH|Contains multi&#45;touch press/release information. (only available on mobile devices)|
+|"InputEventScreenDrag":class_inputeventscreendrag|SCREEN&#95;DRAG|Contains multi&#45;touch drag information. (only available on mobile devices)|
+|"InputEventAction":class_inputeventaction|SCREEN&#95;ACTION|Contains a generic action. These events are often generated by the programmer as feedback. (more on this below)|
+
+h3(#actions). Actions
+
+An InputEvent may or may not represent a pre&#45;defined action. Actions are useful because they abstract the input device when programming the game logic. This allows for:
+
+* The same code to work on different devices with different inputs (ie: keyboard on PC, Joypad on console)
+* Input to be reconfigured at run&#45;time.
+
+Actions can be created from the Project Settings menu in the Actions tab. If you read the "2D Game Tutorial":tutorial_2d, there is an explanation on how does the action editor work.
+
+Any event has the methods "InputEvent.is&#95;action()":class_inputevent#is_action, "InputEvent.is&#95;pressed()":class_inputevent#is_pressed amd "InputEvent.is&#95;echo()":class_inputevent#is_echo.
+
+Alternatively, it may be desired to supply the game back with an action from the game code (a good example of this is detecting gestures). SceneTree (derived from MainLoop) has a method for this: "MainLoop.input&#95;event(ev)":class_mainloop#input_event. You would normally use it like this:
+
+bc(python). var ev = InputEvent()
+ev.type=InputEvent.ACTION
+#set as move_left, pressed
+ev.set_as_action("move_left",true) 
+#feedback
+get_tree().input_event(ev)
+
+
+h3(#inputmap). InputMap
+
+Customizing and re&#45;mapping input from code is often desired. If your whole workflow depends on actions, the "InputMap":class_inputmap singleton is ideal for reassigning or creating different actions at run&#45;time. This singleton is not saved (must be modified manually) and it's state is run from the project settings (engine.cfg). So any dynamic system of this type needs to store settings in the way the programmer sees best fit.
+
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+</ol>

@@ -1,0 +1,58 @@
+h1(#colorarray). ColorArray
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Array of Colors
+
+h3(#member-functions). Member Functions
+
+* "Color":class_color *"get":#get* *(* "int":class_int idx *)*
+* void *"push&#95;back":#push_back* *(* "Color":class_color color *)*
+* void *"resize":#resize* *(* "int":class_int idx *)*
+* void *"set":#set* *(* "int":class_int idx, "Color":class_color color *)*
+* "int":class_int *"size":#size* *(* *)*
+* "ColorArray":class_colorarray *"ColorArray":#ColorArray* *(* "Array":class_array from *)*
+
+h3(#description). Description
+
+Array of Color, can only contains colors. Optimized for memory usage, cant fragment the memory.
+
+h3(#member-function-description). Member Function Description
+
+h4(#get). <a name="get">get</a>
+
+* "Color":class_color *get* *(* "int":class_int idx *)*
+
+Get an index in the array.
+
+h4(#push_back). <a name="push_back">push&#95;back</a>
+
+* void *push&#95;back* *(* "Color":class_color color *)*
+
+Append a value to the array.
+
+h4(#resize). <a name="resize">resize</a>
+
+* void *resize* *(* "int":class_int idx *)*
+
+Resize the array.
+
+h4(#set). <a name="set">set</a>
+
+* void *set* *(* "int":class_int idx, "Color":class_color color *)*
+
+Set an index in the array.
+
+h4(#size). <a name="size">size</a>
+
+* "int":class_int *size* *(* *)*
+
+Return the array size.
+
+h4(#colorarray-1). <a name="ColorArray">ColorArray</a>
+
+* "ColorArray":class_colorarray *ColorArray* *(* "Array":class_array from *)*
+
+Create from a generic array.

@@ -1,0 +1,47 @@
+h1(#resourceinteractiveloader). ResourceInteractiveLoader
+
+h4(#inherits-reference). *Inherits:* "Reference":class_reference
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Interactive Resource Loader.
+
+h3(#member-functions). Member Functions
+
+* "Object":class_object *"get&#95;resource":#get_resource* *(* *)*
+* "int":class_int *"poll":#poll* *(* *)*
+* "int":class_int *"wait":#wait* *(* *)*
+* "int":class_int *"get&#95;stage":#get_stage* *(* *)* const
+* "int":class_int *"get&#95;stage&#95;count":#get_stage_count* *(* *)* const
+
+h3(#description). Description
+
+Interactive Resource Loader. This object is returned by ResourceLoader when performing an interactive load. It allows to load with high granularity, so this is mainly useful for displaying load bars/percentages.
+
+h3(#member-function-description). Member Function Description
+
+h4(#get_resource). <a name="get_resource">get&#95;resource</a>
+
+* "Object":class_object *get&#95;resource* *(* *)*
+
+Return the loaded resource (only if loaded). Otherwise, returns null.
+
+h4(#poll). <a name="poll">poll</a>
+
+* "int":class_int *poll* *(* *)*
+
+Poll the load. If OK is returned, this means poll will have to be called again. If ERR&#95;EOF is returned, them the load has finished and the resource can be obtained by calling [get&#95;resource].
+
+h4(#get_stage). <a name="get_stage">get&#95;stage</a>
+
+* "int":class_int *get&#95;stage* *(* *)* const
+
+Return the load stage. The total amount of stages can be queried with [get&#95;stage&#95;count]
+
+h4(#get_stage_count). <a name="get_stage_count">get&#95;stage&#95;count</a>
+
+* "int":class_int *get&#95;stage&#95;count* *(* *)* const
+
+Return the total amount of stages (calls to [poll] ) needed to completely load this resource.

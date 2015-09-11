@@ -1,0 +1,22 @@
+h1(#immediategeometry). ImmediateGeometry
+
+h4(#inherits-geometryinstance). *Inherits:* "GeometryInstance":class_geometryinstance
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"begin":#begin* *(* "int":class_int primitive, "Texture":class_texture texture *)*
+* void *"set&#95;normal":#set_normal* *(* "Vector3":class_vector3 normal *)*
+* void *"set&#95;tangent":#set_tangent* *(* "Plane":class_plane tangent *)*
+* void *"set&#95;color":#set_color* *(* "Color":class_color color *)*
+* void *"set&#95;uv":#set_uv* *(* "Vector2":class_vector2 uv *)*
+* void *"set&#95;uv2":#set_uv2* *(* "Vector2":class_vector2 uv *)*
+* void *"add&#95;vertex":#add_vertex* *(* "Vector3":class_vector3 pos *)*
+* void *"add&#95;sphere":#add_sphere* *(* "int":class_int lats, "int":class_int lons, "float":class_float radius *)*
+* void *"end":#end* *(* *)*
+* void *"clear":#clear* *(* *)*
+
+h3(#member-function-description). Member Function Description

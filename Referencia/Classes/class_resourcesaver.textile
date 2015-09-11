@@ -1,0 +1,41 @@
+h1(#resourcesaver). ResourceSaver
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Resource Saving Interface.
+
+h3(#member-functions). Member Functions
+
+* "int":class_int *"save":#save* *(* "String":class_string path, "Resource":class_resource resource, "int":class_int arg2=0 *)*
+* "StringArray":class_stringarray *"get&#95;recognized&#95;extensions":#get_recognized_extensions* *(* "Object":class_object type *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *FLAG&#95;RELATIVE&#95;PATHS* = *1*
+* *FLAG&#95;BUNDLE&#95;RESOURCES* = *2*
+* *FLAG&#95;CHANGE&#95;PATH* = *4*
+* *FLAG&#95;OMIT&#95;EDITOR&#95;PROPERTIES* = *8*
+* *FLAG&#95;SAVE&#95;BIG&#95;ENDIAN* = *16*
+* *FLAG&#95;COMPRESS* = *32*
+
+h3(#description). Description
+
+Resource Saving Interface. This interface is used for saving resources to disk.
+
+h3(#member-function-description). Member Function Description
+
+h4(#save). <a name="save">save</a>
+
+* "int":class_int *save* *(* "String":class_string path, "Resource":class_resource resource, "int":class_int arg2=0 *)*
+
+Save a resource to disk, to a given path.
+
+h4(#get_recognized_extensions). <a name="get_recognized_extensions">get&#95;recognized&#95;extensions</a>
+
+* "StringArray":class_stringarray *get&#95;recognized&#95;extensions* *(* "Object":class_object type *)*
+
+Return the list of extensions available for saving a resource of a given type.

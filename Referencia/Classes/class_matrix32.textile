@@ -1,0 +1,38 @@
+h1(#matrix32). Matrix32
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+3x2 Matrix for 2D transforms.
+
+h3(#member-functions). Member Functions
+
+* "Matrix32":class_matrix32 *"affine&#95;inverse":#affine_inverse* *(* *)*
+* "Matrix32":class_matrix32 *"basis&#95;xform":#basis_xform* *(* var v *)*
+* "Matrix32":class_matrix32 *"basis&#95;xform&#95;inv":#basis_xform_inv* *(* var v *)*
+* "Vector2":class_vector2 *"get&#95;origin":#get_origin* *(* *)*
+* "float":class_float *"get&#95;rotation":#get_rotation* *(* *)*
+* "Vector2":class_vector2 *"get&#95;scale":#get_scale* *(* *)*
+* "Matrix32":class_matrix32 *"interpolate&#95;with":#interpolate_with* *(* "Matrix32":class_matrix32 m, "float":class_float c *)*
+* "Matrix32":class_matrix32 *"inverse":#inverse* *(* *)*
+* "Matrix32":class_matrix32 *"orthonormalized":#orthonormalized* *(* *)*
+* "Matrix32":class_matrix32 *"rotated":#rotated* *(* "float":class_float phi *)*
+* "Matrix32":class_matrix32 *"scaled":#scaled* *(* "Vector2":class_vector2 scale *)*
+* "Matrix32":class_matrix32 *"translated":#translated* *(* "Vector2":class_vector2 offset *)*
+* "Matrix32":class_matrix32 *"xform":#xform* *(* var v *)*
+* "Matrix32":class_matrix32 *"xform&#95;inv":#xform_inv* *(* var v *)*
+* "Matrix32":class_matrix32 *"Matrix32":#Matrix32* *(* "Vector2":class_vector2 x&#95;axis, "Vector2":class_vector2 y&#95;axis, "Vector2":class_vector2 origin *)*
+* "Matrix32":class_matrix32 *"Matrix32":#Matrix32* *(* "Transform":class_transform from *)*
+
+h3(#member-variables). Member Variables
+
+* "float":class_float *x*
+* "float":class_float *y*
+* "float":class_float *o*
+
+h3(#description). Description
+
+3x2 Matrix for 2D transforms.
+
+h3(#member-function-description). Member Function Description

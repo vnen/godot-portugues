@@ -1,0 +1,102 @@
+h1(#buttonarray). ButtonArray
+
+h4(#inherits-control). *Inherits:* "Control":class_control
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Array of Buttons.
+
+h3(#member-functions). Member Functions
+
+* void *"add&#95;button":#add_button* *(* "String":class_string text *)*
+* void *"add&#95;icon&#95;button":#add_icon_button* *(* "Object":class_object icon, "String":class_string text=&quot;&quot; *)*
+* void *"set&#95;button&#95;text":#set_button_text* *(* "int":class_int button, "String":class_string text *)*
+* void *"set&#95;button&#95;icon":#set_button_icon* *(* "int":class_int button, "Object":class_object icon *)*
+* "String":class_string *"get&#95;button&#95;text":#get_button_text* *(* "int":class_int button *)* const
+* "Object":class_object *"get&#95;button&#95;icon":#get_button_icon* *(* "int":class_int button *)* const
+* "int":class_int *"get&#95;button&#95;count":#get_button_count* *(* *)* const
+* "int":class_int *"get&#95;selected":#get_selected* *(* *)* const
+* "int":class_int *"get&#95;hovered":#get_hovered* *(* *)* const
+* void *"set&#95;selected":#set_selected* *(* "int":class_int button *)*
+* void *"erase&#95;button":#erase_button* *(* "int":class_int button *)*
+* void *"clear":#clear* *(* *)*
+
+h3(#signals). Signals
+
+* *button&#95;selected* *(* "int":class_int button *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *ALIGN&#95;BEGIN* = *0* &#45; Align buttons at the begining.
+* *ALIGN&#95;CENTER* = *1* &#45; Align buttons in the middle.
+* *ALIGN&#95;END* = *2* &#45; Align buttons at the end.
+* *ALIGN&#95;FILL* = *3* &#45; Spread the buttons, but keep them small.
+* *ALIGN&#95;EXPAND&#95;FILL* = *4* &#45; Spread the buttons, but expand them.
+
+h3(#description). Description
+
+Array of Buttons. A Button array is useful to have an array of buttons laid out vertically or horizontally. Only one can be selected. This is useful for joypad based interfaces and option menus.
+
+h3(#member-function-description). Member Function Description
+
+h4(#add_button). <a name="add_button">add&#95;button</a>
+
+* void *add&#95;button* *(* "String":class_string text *)*
+
+Add a new button.
+
+h4(#set_button_icon). <a name="set_button_icon">set&#95;button&#95;icon</a>
+
+* void *set&#95;button&#95;icon* *(* "int":class_int button, "Object":class_object icon *)*
+
+Set the icon of an existing button.
+
+h4(#get_button_text). <a name="get_button_text">get&#95;button&#95;text</a>
+
+* "String":class_string *get&#95;button&#95;text* *(* "int":class_int button *)* const
+
+Return the text of an existing button.
+
+h4(#get_button_icon). <a name="get_button_icon">get&#95;button&#95;icon</a>
+
+* "Object":class_object *get&#95;button&#95;icon* *(* "int":class_int button *)* const
+
+Return the icon of an existing button.
+
+h4(#get_button_count). <a name="get_button_count">get&#95;button&#95;count</a>
+
+* "int":class_int *get&#95;button&#95;count* *(* *)* const
+
+Return the amount of buttons in the array.
+
+h4(#get_selected). <a name="get_selected">get&#95;selected</a>
+
+* "int":class_int *get&#95;selected* *(* *)* const
+
+Return the currently selected button in the array.
+
+h4(#get_hovered). <a name="get_hovered">get&#95;hovered</a>
+
+* "int":class_int *get&#95;hovered* *(* *)* const
+
+Return the currently hovered button in the array.
+
+h4(#set_selected). <a name="set_selected">set&#95;selected</a>
+
+* void *set&#95;selected* *(* "int":class_int button *)*
+
+Sekect a button in the array.
+
+h4(#erase_button). <a name="erase_button">erase&#95;button</a>
+
+* void *erase&#95;button* *(* "int":class_int button *)*
+
+Remove a button in the array, by index.
+
+h4(#clear). <a name="clear">clear</a>
+
+* void *clear* *(* *)*
+
+Clear the button array.

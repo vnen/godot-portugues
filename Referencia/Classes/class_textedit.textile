@@ -1,0 +1,269 @@
+h1(#textedit). TextEdit
+
+h4(#inherits-control). *Inherits:* "Control":class_control
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Multiline text editing control.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;text":#set_text* *(* "String":class_string text *)*
+* void *"insert&#95;text&#95;at&#95;cursor":#insert_text_at_cursor* *(* "String":class_string text *)*
+* "int":class_int *"get&#95;line&#95;count":#get_line_count* *(* *)* const
+* "String":class_string *"get&#95;text":#get_text* *(* *)*
+* "String":class_string *"get&#95;line":#get_line* *(* "int":class_int arg0 *)* const
+* void *"cursor&#95;set&#95;column":#cursor_set_column* *(* "int":class_int column *)*
+* void *"cursor&#95;set&#95;line":#cursor_set_line* *(* "int":class_int line *)*
+* "int":class_int *"cursor&#95;get&#95;column":#cursor_get_column* *(* *)* const
+* "int":class_int *"cursor&#95;get&#95;line":#cursor_get_line* *(* *)* const
+* void *"set&#95;readonly":#set_readonly* *(* "bool":class_bool enable *)*
+* void *"set&#95;wrap":#set_wrap* *(* "bool":class_bool enable *)*
+* void *"set&#95;max&#95;chars":#set_max_chars* *(* "int":class_int amount *)*
+* void *"cut":#cut* *(* *)*
+* void *"copy":#copy* *(* *)*
+* void *"paste":#paste* *(* *)*
+* void *"select&#95;all":#select_all* *(* *)*
+* void *"select":#select* *(* "int":class_int from&#95;line, "int":class_int from&#95;column, "int":class_int to&#95;line, "int":class_int to&#95;column *)*
+* "bool":class_bool *"is&#95;selection&#95;active":#is_selection_active* *(* *)* const
+* "int":class_int *"get&#95;selection&#95;from&#95;line":#get_selection_from_line* *(* *)* const
+* "int":class_int *"get&#95;selection&#95;from&#95;column":#get_selection_from_column* *(* *)* const
+* "int":class_int *"get&#95;selection&#95;to&#95;line":#get_selection_to_line* *(* *)* const
+* "int":class_int *"get&#95;selection&#95;to&#95;column":#get_selection_to_column* *(* *)* const
+* "String":class_string *"get&#95;selection&#95;text":#get_selection_text* *(* *)* const
+* "String":class_string *"get&#95;word&#95;under&#95;cursor":#get_word_under_cursor* *(* *)* const
+* "IntArray":class_intarray *"search":#search* *(* "String":class_string flags, "int":class_int from&#95;line, "int":class_int from&#95;column, "int":class_int to&#95;line *)* const
+* void *"undo":#undo* *(* *)*
+* void *"redo":#redo* *(* *)*
+* void *"clear&#95;undo&#95;history":#clear_undo_history* *(* *)*
+* void *"set&#95;syntax&#95;coloring":#set_syntax_coloring* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;syntax&#95;coloring&#95;enabled":#is_syntax_coloring_enabled* *(* *)* const
+* void *"add&#95;keyword&#95;color":#add_keyword_color* *(* "String":class_string keyword, "Color":class_color color *)*
+* void *"add&#95;color&#95;region":#add_color_region* *(* "String":class_string begin&#95;key, "String":class_string end&#95;key, "Color":class_color color, "bool":class_bool line&#95;only=false *)*
+* void *"set&#95;symbol&#95;color":#set_symbol_color* *(* "Color":class_color color *)*
+* void *"set&#95;custom&#95;bg&#95;color":#set_custom_bg_color* *(* "Color":class_color color *)*
+* void *"clear&#95;colors":#clear_colors* *(* *)*
+
+h3(#signals). Signals
+
+* *text&#95;changed* *(* *)*
+* *cursor&#95;changed* *(* *)*
+* *request&#95;completion* *(* *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *SEARCH&#95;MATCH&#95;CASE* = *1* &#45; Match case when searching.
+* *SEARCH&#95;WHOLE&#95;WORDS* = *2* &#45; Match whole words when searching.
+* *SEARCH&#95;BACKWARDS* = *4* &#45; Search from end to begining.
+
+h3(#description). Description
+
+TextEdit is meant for editing large, multiline text. It also has facilities for editing code, such as syntax highlighting support and multiple levels of undo/redo.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_text). <a name="set_text">set&#95;text</a>
+
+* void *set&#95;text* *(* "String":class_string text *)*
+
+Set the entire text.
+
+h4(#insert_text_at_cursor). <a name="insert_text_at_cursor">insert&#95;text&#95;at&#95;cursor</a>
+
+* void *insert&#95;text&#95;at&#95;cursor* *(* "String":class_string text *)*
+
+Insert a given text at the cursor position.
+
+h4(#get_line_count). <a name="get_line_count">get&#95;line&#95;count</a>
+
+* "int":class_int *get&#95;line&#95;count* *(* *)* const
+
+Return the amount of total lines in the text.
+
+h4(#get_text). <a name="get_text">get&#95;text</a>
+
+* "String":class_string *get&#95;text* *(* *)*
+
+Return the whole text.
+
+h4(#get_line). <a name="get_line">get&#95;line</a>
+
+* "String":class_string *get&#95;line* *(* "int":class_int arg0 *)* const
+
+Return the text of a specific line.
+
+h4(#cursor_set_column). <a name="cursor_set_column">cursor&#95;set&#95;column</a>
+
+* void *cursor&#95;set&#95;column* *(* "int":class_int column *)*
+
+Set the current column of the text editor.
+
+h4(#cursor_set_line). <a name="cursor_set_line">cursor&#95;set&#95;line</a>
+
+* void *cursor&#95;set&#95;line* *(* "int":class_int line *)*
+
+Set the current line of the text editor.
+
+h4(#cursor_get_column). <a name="cursor_get_column">cursor&#95;get&#95;column</a>
+
+* "int":class_int *cursor&#95;get&#95;column* *(* *)* const
+
+Return the column the editing cursor is at.
+
+h4(#cursor_get_line). <a name="cursor_get_line">cursor&#95;get&#95;line</a>
+
+* "int":class_int *cursor&#95;get&#95;line* *(* *)* const
+
+Return the line the editing cursor is at.
+
+h4(#set_readonly). <a name="set_readonly">set&#95;readonly</a>
+
+* void *set&#95;readonly* *(* "bool":class_bool enable *)*
+
+Set the text editor as read&#45;only. Text can be displayed but not edited.
+
+h4(#set_wrap). <a name="set_wrap">set&#95;wrap</a>
+
+* void *set&#95;wrap* *(* "bool":class_bool enable *)*
+
+Enable text wrapping when it goes beyond he edge of what is visible.
+
+h4(#set_max_chars). <a name="set_max_chars">set&#95;max&#95;chars</a>
+
+* void *set&#95;max&#95;chars* *(* "int":class_int amount *)*
+
+Set the maximum amount of characters editable.
+
+h4(#cut). <a name="cut">cut</a>
+
+* void *cut* *(* *)*
+
+Cut the current selection.
+
+h4(#copy). <a name="copy">copy</a>
+
+* void *copy* *(* *)*
+
+Copy the current selection.
+
+h4(#paste). <a name="paste">paste</a>
+
+* void *paste* *(* *)*
+
+Paste the current selection.
+
+h4(#select_all). <a name="select_all">select&#95;all</a>
+
+* void *select&#95;all* *(* *)*
+
+Select all the text.
+
+h4(#select). <a name="select">select</a>
+
+* void *select* *(* "int":class_int from&#95;line, "int":class_int from&#95;column, "int":class_int to&#95;line, "int":class_int to&#95;column *)*
+
+Perform selection, from line/column to line/column.
+
+h4(#is_selection_active). <a name="is_selection_active">is&#95;selection&#95;active</a>
+
+* "bool":class_bool *is&#95;selection&#95;active* *(* *)* const
+
+Return true if the selection is active.
+
+h4(#get_selection_from_line). <a name="get_selection_from_line">get&#95;selection&#95;from&#95;line</a>
+
+* "int":class_int *get&#95;selection&#95;from&#95;line* *(* *)* const
+
+Return the selection begin line.
+
+h4(#get_selection_from_column). <a name="get_selection_from_column">get&#95;selection&#95;from&#95;column</a>
+
+* "int":class_int *get&#95;selection&#95;from&#95;column* *(* *)* const
+
+Return the selection begin column.
+
+h4(#get_selection_to_line). <a name="get_selection_to_line">get&#95;selection&#95;to&#95;line</a>
+
+* "int":class_int *get&#95;selection&#95;to&#95;line* *(* *)* const
+
+Return the selection end line.
+
+h4(#get_selection_to_column). <a name="get_selection_to_column">get&#95;selection&#95;to&#95;column</a>
+
+* "int":class_int *get&#95;selection&#95;to&#95;column* *(* *)* const
+
+Return the selection end column.
+
+h4(#get_selection_text). <a name="get_selection_text">get&#95;selection&#95;text</a>
+
+* "String":class_string *get&#95;selection&#95;text* *(* *)* const
+
+Return the text inside the selection.
+
+h4(#search). <a name="search">search</a>
+
+* "IntArray":class_intarray *search* *(* "String":class_string flags, "int":class_int from&#95;line, "int":class_int from&#95;column, "int":class_int to&#95;line *)* const
+
+Perform a search inside the text. Search flags can be specified in the SEARCH&#95;&#42; enum.
+
+h4(#undo). <a name="undo">undo</a>
+
+* void *undo* *(* *)*
+
+Perform undo operation.
+
+h4(#redo). <a name="redo">redo</a>
+
+* void *redo* *(* *)*
+
+Perform redo operation.
+
+h4(#clear_undo_history). <a name="clear_undo_history">clear&#95;undo&#95;history</a>
+
+* void *clear&#95;undo&#95;history* *(* *)*
+
+Clear the undo history.
+
+h4(#set_syntax_coloring). <a name="set_syntax_coloring">set&#95;syntax&#95;coloring</a>
+
+* void *set&#95;syntax&#95;coloring* *(* "bool":class_bool enable *)*
+
+Set to enable the syntax coloring.
+
+h4(#is_syntax_coloring_enabled). <a name="is_syntax_coloring_enabled">is&#95;syntax&#95;coloring&#95;enabled</a>
+
+* "bool":class_bool *is&#95;syntax&#95;coloring&#95;enabled* *(* *)* const
+
+Return true if the syntax coloring is enabled.
+
+h4(#add_keyword_color). <a name="add_keyword_color">add&#95;keyword&#95;color</a>
+
+* void *add&#95;keyword&#95;color* *(* "String":class_string keyword, "Color":class_color color *)*
+
+Add a keyword and it's color.
+
+h4(#add_color_region). <a name="add_color_region">add&#95;color&#95;region</a>
+
+* void *add&#95;color&#95;region* *(* "String":class_string begin&#95;key, "String":class_string end&#95;key, "Color":class_color color, "bool":class_bool line&#95;only=false *)*
+
+Add color region (given the delimiters) and it's colors.
+
+h4(#set_symbol_color). <a name="set_symbol_color">set&#95;symbol&#95;color</a>
+
+* void *set&#95;symbol&#95;color* *(* "Color":class_color color *)*
+
+Set the color for symbols.
+
+h4(#set_custom_bg_color). <a name="set_custom_bg_color">set&#95;custom&#95;bg&#95;color</a>
+
+* void *set&#95;custom&#95;bg&#95;color* *(* "Color":class_color color *)*
+
+Set a custom background color. A background color with alpha==0 disables this.
+
+h4(#clear_colors). <a name="clear_colors">clear&#95;colors</a>
+
+* void *clear&#95;colors* *(* *)*
+
+Clear all the syntax coloring information.

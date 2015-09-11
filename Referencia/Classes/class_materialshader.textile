@@ -1,0 +1,7 @@
+h1(#materialshader). MaterialShader
+
+h4(#inherits-shader). *Inherits:* "Shader":class_shader
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description

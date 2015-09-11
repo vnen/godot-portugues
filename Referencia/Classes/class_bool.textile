@@ -1,0 +1,19 @@
+h1(#bool). bool
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Boolean built&#45;in type
+
+h3(#member-functions). Member Functions
+
+* "bool":class_bool *"bool":#bool* *(* "int":class_int from *)*
+* "bool":class_bool *"bool":#bool* *(* "float":class_float from *)*
+* "bool":class_bool *"bool":#bool* *(* "String":class_string from *)*
+
+h3(#description). Description
+
+Boolean built&#45;in type.
+
+h3(#member-function-description). Member Function Description

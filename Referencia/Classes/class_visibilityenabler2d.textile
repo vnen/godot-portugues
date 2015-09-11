@@ -1,0 +1,21 @@
+h1(#visibilityenabler2d). VisibilityEnabler2D
+
+h4(#inherits-visibilitynotifier2d). *Inherits:* "VisibilityNotifier2D":class_visibilitynotifier2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;enabler":#set_enabler* *(* "int":class_int enabler, "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;enabler&#95;enabled":#is_enabler_enabled* *(* "int":class_int enabler *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *ENABLER&#95;FREEZE&#95;BODIES* = *1*
+* *ENABLER&#95;PAUSE&#95;ANIMATIONS* = *0*
+* *ENABLER&#95;PAUSE&#95;PARTICLES* = *2*
+* *ENABLER&#95;MAX* = *3*
+
+h3(#member-function-description). Member Function Description

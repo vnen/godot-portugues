@@ -1,0 +1,22 @@
+h1(#world2d). World2D
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Class that has everything pertaining to a 2D world.
+
+h3(#member-functions). Member Functions
+
+* "RID":class_rid *"get&#95;canvas":#get_canvas* *(* *)*
+* "RID":class_rid *"get&#95;space":#get_space* *(* *)*
+* "RID":class_rid *"get&#95;sound&#95;space":#get_sound_space* *(* *)*
+* "Physics2DDirectSpaceState":class_physics2ddirectspacestate *"get&#95;direct&#95;space&#95;state":#get_direct_space_state* *(* *)*
+
+h3(#description). Description
+
+Class that has everything pertaining to a 2D world. A physics space, a visual scenario and a sound space. 2D nodes register their resources into the current 2D world.
+
+h3(#member-function-description). Member Function Description

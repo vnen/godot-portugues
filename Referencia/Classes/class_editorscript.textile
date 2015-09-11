@@ -1,0 +1,15 @@
+h1(#editorscript). EditorScript
+
+h4(#inherits-reference). *Inherits:* "Reference":class_reference
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"&#95;run":#_run* *(* *)* virtual
+* void *"add&#95;root&#95;node":#add_root_node* *(* "Object":class_object node *)*
+* "Object":class_object *"get&#95;scene":#get_scene* *(* *)*
+
+h3(#member-function-description). Member Function Description

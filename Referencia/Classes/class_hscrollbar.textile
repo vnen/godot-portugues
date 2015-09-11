@@ -1,0 +1,13 @@
+h1(#hscrollbar). HScrollBar
+
+h4(#inherits-scrollbar). *Inherits:* "ScrollBar":class_scrollbar
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Horizontal scroll bar.
+
+h3(#description). Description
+
+Horizontal scroll bar. See "ScrollBar":class_scrollbar. This one goes from left (min) to right (max).

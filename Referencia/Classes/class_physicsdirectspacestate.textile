@@ -1,0 +1,26 @@
+h1(#physicsdirectspacestate). PhysicsDirectSpaceState
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "Dictionary":class_dictionary *"intersect&#95;ray":#intersect_ray* *(* "Vector3":class_vector3 from, "Vector3":class_vector3 to, "Array":class_array exclude=Array(), "int":class_int layer&#95;mask=2147483647, "int":class_int type&#95;mask=15 *)*
+* "Array":class_array *"intersect&#95;shape":#intersect_shape* *(* "PhysicsShapeQueryParameters":class_physicsshapequeryparameters shape, "int":class_int max&#95;results=32 *)*
+* "Array":class_array *"cast&#95;motion":#cast_motion* *(* "PhysicsShapeQueryParameters":class_physicsshapequeryparameters shape, "Vector3":class_vector3 motion *)*
+* "Array":class_array *"collide&#95;shape":#collide_shape* *(* "PhysicsShapeQueryParameters":class_physicsshapequeryparameters shape, "int":class_int max&#95;results=32 *)*
+* "Dictionary":class_dictionary *"get&#95;rest&#95;info":#get_rest_info* *(* "PhysicsShapeQueryParameters":class_physicsshapequeryparameters shape *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *TYPE&#95;MASK&#95;STATIC&#95;BODY* = *1*
+* *TYPE&#95;MASK&#95;KINEMATIC&#95;BODY* = *2*
+* *TYPE&#95;MASK&#95;RIGID&#95;BODY* = *4*
+* *TYPE&#95;MASK&#95;CHARACTER&#95;BODY* = *8*
+* *TYPE&#95;MASK&#95;AREA* = *16*
+* *TYPE&#95;MASK&#95;COLLISION* = *15*
+
+h3(#member-function-description). Member Function Description
