@@ -136,6 +136,8 @@ Como uma nota à parte, para referência futura e um pouco fora de contexto (afi
 
 h3(#continua). Continua...
 
-Este tutorial trata de "Cenas" e "Nós", mas até agora só existe +uma+ cena e +um+ nó! Não se preocupe, o [[próximo tutorial}] cuidará disso...
+Este tutorial trata de "Cenas" e "Nós", mas até agora só existe +uma+ cena e +um+ nó! Não se preocupe, o [[Instanciando|próximo tutorial]] cuidará disso...
 
 _Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license._
+
+_Traduzido por George Marques._
