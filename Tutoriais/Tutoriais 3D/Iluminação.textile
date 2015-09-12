@@ -1,0 +1,72 @@
+h1. Iluminação _Lighting_
+
+h2. Introdução
+
+Lâmpadas emitem luz que se misturam com o material e produzem cores visiveis. A luz pode vim de diferentes fontes na cena:
+
+* De um material, na entrada de _emission color_ (Isso não afeta outros objetos, ao menos que você faça um bake da cena).
+* Nós de lâmpadas: Direcional, ponto e área (respectivamente _Directional_, _Omni_ e _Spot_).
+* Luz do ambiente que pode ser configurado no nó _Environment_.
+* _Baked Light_ (Luz não dinamica, pré-computada para reduzir o custo de processamento, leia Light Baking).
+
+A cor de emissão é uma propriedade do material (_emission color_), já visto em tutoriais anteriores sobre materiais (leia ele antes se você ainda não entendeu bem).
+
+h2. Nós das lâmpadas
+
+Como falamos antes, há três tipos de nós de lâmpadas: Direcional, ponto e área. Cada uma serve para algo diferente que será detalhada abaixo, mas primeiro vamos ver os parametros mais comuns para as lâmpadas
+
+p=. !http://www.godotengine.org/attachments/199/download!
+
+Cada coisa tem uma função especifica
+
+**Enable*: As lâmpadas podem ser desabilitadas a qualquer momento.
+**Bake Mode*: Quando você usa luzes pré-calculadas, você pode configurar essa lâmpada a partir dessa propriedade. As lâmpadas podem ser calculadas mesmo que estejam desabilitadas na opção _Enable_, isso permite que você configure lâmpadas que só aparecerão no bake e outras que não aparecerão no bake.
+**Energy*: Esse valor é o multiplicador da intensidade da luz, isso é especialmente útil para lâmpadas área, ponto e cenas HDR, por que isso pode criar lugares muito brilhantes perto dos emissores de luz
+**Diffuse and Specular*: Esses valores são multiplicados pelas cores difusas do material, então um valor branco não significa que a luz será branca, significa que a cor original do objeto vai permanecer.
+**Operator*: Isso permite que algumas lâmpadas tenham valor negativo, para escurecer, ao invés de clarear.
+**Projector*: Lâmpadas podem projetar uma textura como cor difusa (Por enquanto é suportado apenas nas lâmpadas do tipo área).
+
+h3. Luz Direcional (Directional Light)
+
+Essa é a luz mais comum para representar o sol. Essa também é a forma mais barata para o computador processar e deve ser usada sempre que possível (Contudo, essa não é a sombra mais barata para o computador, falaremos disso em outro tutorial). As luzes direcionais são representadas por uma grande seta, que representa a direção da luz, entretanto a posição da lâmpada não afeta a luz de nenhuma forma, ela pode ser colocada em qualquer lugar.
+
+p=. !http://www.godotengine.org/attachments/197/download!
+
+Basicamente as faces viradas para a luz são claras, as que não são viradas, são escuras. Cada luz tem seus parametros especificos, mas as luzes direcionais são lindas e simples em sua forma natural.
+
+h3. Ponto de Luz (Omni Light)
+
+O ponto de luz espalha luz a uma certa distância, um valor dado pelo _radius_ controlado pelo usuário. A atenuação diminui a intensidade da insidência da luz até alcançar o valor 0.0 na linha divisória. Essa fonte de luz representa lâmpadas ou qualquer tipo de fonte de luz que venha de um ponto.
+
+p=. !http://www.godotengine.org/attachments/198/download!
+
+No mundo real a atenuação desse tipo de luz é expresso pelo quadrado inverso, uma função que nunca chega ao zero e possui valores infinitos próximos a zero.
+
+Isso faz esse tipo de luz inconveniente para os artistas, mas a Godot simula eles por um valor exponêncial controlado pelo artista.
+
+p=. !http://www.godotengine.org/attachments/196/download!
+
+h3. Luz de área (Spot Light)
+
+A luz de área é parecida com a luz pontual, exceto porque ela opera em um ânulo limitado (ou _cutoff_). Ela é muito útil para simular lanternas, luz do carro, etc. Esse tipo de luz é atenuada para a direção desse ponto vermelho na imagem.
+
+p=. !http://www.godotengine.org/attachments/200/download!
+
+h2. Luz Ambiente (Ambient Light)
+
+A luz ambiente pode ser encontrado entre as propriedades do _WorldEnvironment_ (Se lembre que pode haver apenas um _WorldEnvironment_ por cena). A luz ambiente consiste em uma luz uniforme. Essa luz é aplicada da mesma forma para cada pixels exibido da cena, com exceção de objetos que usam luzes pre-computadas (_Baked Light_).
+
+H2. Luz pré-computada (Baked Light)
+
+Luzes desse tipo servem muito bem como luzes do ambiente. Ela serve também para outros propositos, como computar luzes de emissores que não estarão no jogo final e para calcular a luz indireta refletida pelo cenário, para dar mais realismo a cena (Veja o tutorial de _Baked Light_)
+
+
+Juan Linietsky, Ariel Manzur, Distributed under the terms of the CC By license.
+
+Traduzido por Cairé
+
+Tradução revisada por
+
+Texto revisado por
+
+Imagens compartilhadas por TheoXD.
