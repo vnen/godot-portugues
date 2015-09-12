@@ -1,0 +1,84 @@
+h1(#richtextlabel). RichTextLabel
+
+h4(#inherits-control). *Inherits:* "Control":class_control
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Label that displays rich text.
+
+h3(#member-functions). Member Functions
+
+* void *"add&#95;text":#add_text* *(* "String":class_string text *)*
+* void *"add&#95;image":#add_image* *(* "Texture":class_texture image *)*
+* void *"newline":#newline* *(* *)*
+* void *"push&#95;font":#push_font* *(* "Object":class_object font *)*
+* void *"push&#95;color":#push_color* *(* "Color":class_color color *)*
+* void *"push&#95;align":#push_align* *(* "int":class_int align *)*
+* void *"push&#95;indent":#push_indent* *(* "int":class_int level *)*
+* void *"push&#95;list":#push_list* *(* "int":class_int type *)*
+* void *"push&#95;meta":#push_meta* *(* var data *)*
+* void *"push&#95;underline":#push_underline* *(* *)*
+* void *"pop":#pop* *(* *)*
+* void *"clear":#clear* *(* *)*
+* void *"set&#95;meta&#95;underline":#set_meta_underline* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;meta&#95;underlined":#is_meta_underlined* *(* *)* const
+* void *"set&#95;scroll&#95;active":#set_scroll_active* *(* "bool":class_bool active *)*
+* "bool":class_bool *"is&#95;scroll&#95;active":#is_scroll_active* *(* *)* const
+* void *"set&#95;scroll&#95;follow":#set_scroll_follow* *(* "bool":class_bool follow *)*
+* "bool":class_bool *"is&#95;scroll&#95;following":#is_scroll_following* *(* *)* const
+* "Object":class_object *"get&#95;v&#95;scroll":#get_v_scroll* *(* *)*
+* void *"set&#95;tab&#95;size":#set_tab_size* *(* "int":class_int spaces *)*
+* "int":class_int *"get&#95;tab&#95;size":#get_tab_size* *(* *)* const
+* void *"set&#95;selection&#95;enabled":#set_selection_enabled* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;selection&#95;enabled":#is_selection_enabled* *(* *)* const
+* "int":class_int *"parse&#95;bbcode":#parse_bbcode* *(* "String":class_string bbcode *)*
+* "int":class_int *"append&#95;bbcode":#append_bbcode* *(* "String":class_string bbcode *)*
+* void *"set&#95;bbcode":#set_bbcode* *(* "String":class_string text *)*
+* "String":class_string *"get&#95;bbcode":#get_bbcode* *(* *)* const
+* void *"set&#95;use&#95;bbcode":#set_use_bbcode* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;using&#95;bbcode":#is_using_bbcode* *(* *)* const
+
+h3(#signals). Signals
+
+* *meta&#95;clicked* *(* "Nil":class_nil meta *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *ALIGN&#95;LEFT* = *0*
+* *ALIGN&#95;CENTER* = *1*
+* *ALIGN&#95;RIGHT* = *2*
+* *ALIGN&#95;FILL* = *3*
+* *LIST&#95;NUMBERS* = *0*
+* *LIST&#95;LETTERS* = *1*
+* *LIST&#95;DOTS* = *2*
+* *ITEM&#95;MAIN* = *0*
+* *ITEM&#95;TEXT* = *1*
+* *ITEM&#95;IMAGE* = *2*
+* *ITEM&#95;NEWLINE* = *3*
+* *ITEM&#95;FONT* = *4*
+* *ITEM&#95;COLOR* = *5*
+* *ITEM&#95;UNDERLINE* = *6*
+* *ITEM&#95;ALIGN* = *7*
+* *ITEM&#95;INDENT* = *8*
+* *ITEM&#95;LIST* = *9*
+* *ITEM&#95;META* = *10*
+
+h3(#description). Description
+
+Label that displays rich text. Rich text can contain custom text, fonts, images and some basic formatting. It also adapts itself to given width/heights.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_selection_enabled). <a name="set_selection_enabled">set&#95;selection&#95;enabled</a>
+
+* void *set&#95;selection&#95;enabled* *(* "bool":class_bool enabled *)*
+
+Set to true if selecting the text inside this richtext is allowed.
+
+h4(#is_selection_enabled). <a name="is_selection_enabled">is&#95;selection&#95;enabled</a>
+
+* "bool":class_bool *is&#95;selection&#95;enabled* *(* *)* const
+
+Return true if selecting the text inside this richtext is allowed.

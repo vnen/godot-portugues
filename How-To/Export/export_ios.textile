@@ -1,0 +1,46 @@
+h2(#exporting-for-ios). Exporting for iOS
+
+Exporting for iOS is done manually at the moment. These are the steps to load your game in an XCode project, where you can deploy to a device, publish, etc.
+
+h4(#requirements). Requirements
+
+* Download XCode for iOS
+* Download the export templates: http://www.godotengine.org/wp/download/
+* Since there is no automatic deployer yet, unzip export&#95;templates.tpz manually and extract GodotiOSXCode.zip from it.
+
+The zip contains an XCode project, &quot;godot&#95;ios.xcodeproj&quot;, an empty data.pck file and the engine executable. Open the project, and modify the game name, icon, organization, provisioning signing certificate identities (??), etc.
+
+h4(#add-your-project-data). Add your project data
+
+Using the Godot editor, "export your project for Windows":export_pc, to obtain the &quot;data.pck&quot; file. Replace the empty data.pck on the XCode project with the new one, and run/archive.
+
+If you want to test your scenes on the ios device as you edit them, you can add your game directory to the project (instead of data.pck), and add a property &quot;godot&#95;path&quot; to the Info.plist, with the name of your directory as its value.
+
+!images/godot_path.png!
+
+
+Alternatively you can add all the files from your game directly, with &quot;engine.cfg&quot; at the root.
+
+h3(#loading-files-from-a-host). Loading files from a host
+
+Sometimes your game becomes too big and deploying to the device takes too long every time you run. In that case you can deploy only the engine executable, and serve the game files from your computer.
+
+h4(#setting-up-the-file-host). Setting up the file host
+
+On your PC, open the editor, and click the right&#45;most icon on the top&#45;center group of icons, and select &quot;Enable File Server&quot;. The icon turns red. Your PC will open a port and accept connections to serve files from your project's directory (so enable your local firewall accordingly).
+
+!images/rfs_server.png!
+
+
+h4(#setting-up-the-game). Setting up the game
+
+On XCode, click on your app name (top left, next to the &quot;Stop&quot; button), and select &quot;Edit Scheme&quot;. Go to the &quot;Arguments&quot; tab, and add 2 arguments, &quot;&#45;rfs&quot; and the IP of your PC.
+
+!images/edit_scheme.png!
+
+
+When you run, your device will connect to the host and open the files remotely. Note that the directory with the game data (&quot;platformer&quot;) is no longer added to the project, only the engine executable.
+
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+</ol>

@@ -1,0 +1,13 @@
+h1(#pinjoint2d). PinJoint2D
+
+h4(#inherits-joint2d). *Inherits:* "Joint2D":class_joint2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Pin Joint for 2D Shapes.
+
+h3(#description). Description
+
+Pin Joint for 2D Rigid Bodies. It pins 2 bodies (rigid or static) together, or a single body to a fixed position in space.

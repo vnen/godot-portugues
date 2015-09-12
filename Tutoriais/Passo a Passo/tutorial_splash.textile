@@ -1,0 +1,40 @@
+h1(#splash-screen). Splash Screen
+
+h3(#tutorial). Tutorial
+
+This will be a simple tutorial to cement the basic idea of how the GUI subsystem works. The goal will be to create a really simple, static, splash screen.
+
+Following is a file with the assets that will be used:
+
+"robisplash&#95;assets.zip":media/robisplash_assets.zip
+
+h3(#setting-up). Setting Up
+
+Create a scene with screen resolution 800x450, and set it up like this:
+
+<p align="center">
+<img src="images/robisplashscene.png">
+</p>
+<p align="center">
+<img src="images/robisplashpreview.png">
+</p>
+The nodes 'background&quot; and &quot;logo&quot; are of "TextureFrame":class_textureframe type. These have a special property for setting the texture to be displayed, just load the corresponding file.
+
+<p align="center">
+<img src="images/texframe.png">
+</p>
+The node &quot;start&quot; is a "TextureButton":class_texturebutton, it takes several images for different states, but only the normal and pressed will be supplied in this example:
+
+<p align="center">
+<img src="images/texbutton.png">
+</p>
+Finally, the node &quot;copyright&quot; is a "Label":class_label. Labels can be set a custom font by editing the following property:
+
+<p align="center">
+<img src="images/label.png">
+</p>
+As a side note, the font was imported from a TTF, there is a "specific tutorial":import_fonts for importing fonts.
+
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+</ol>

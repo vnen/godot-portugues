@@ -1,0 +1,209 @@
+h1(#physicsserver). PhysicsServer
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "RID":class_rid *"shape&#95;create":#shape_create* *(* "int":class_int type *)*
+* void *"shape&#95;set&#95;data":#shape_set_data* *(* "RID":class_rid shape, var data *)*
+* "int":class_int *"shape&#95;get&#95;type":#shape_get_type* *(* "RID":class_rid shape *)* const
+* void *"shape&#95;get&#95;data":#shape_get_data* *(* "RID":class_rid shape *)* const
+* "RID":class_rid *"space&#95;create":#space_create* *(* *)*
+* void *"space&#95;set&#95;active":#space_set_active* *(* "RID":class_rid space, "bool":class_bool active *)*
+* "bool":class_bool *"space&#95;is&#95;active":#space_is_active* *(* "RID":class_rid space *)* const
+* void *"space&#95;set&#95;param":#space_set_param* *(* "RID":class_rid space, "int":class_int param, "float":class_float value *)*
+* "float":class_float *"space&#95;get&#95;param":#space_get_param* *(* "RID":class_rid space, "int":class_int param *)* const
+* "PhysicsDirectSpaceState":class_physicsdirectspacestate *"space&#95;get&#95;direct&#95;state":#space_get_direct_state* *(* "RID":class_rid space *)*
+* "RID":class_rid *"area&#95;create":#area_create* *(* *)*
+* void *"area&#95;set&#95;space":#area_set_space* *(* "RID":class_rid area, "RID":class_rid space *)*
+* "RID":class_rid *"area&#95;get&#95;space":#area_get_space* *(* "RID":class_rid area *)* const
+* void *"area&#95;set&#95;space&#95;override&#95;mode":#area_set_space_override_mode* *(* "RID":class_rid area, "int":class_int mode *)*
+* "int":class_int *"area&#95;get&#95;space&#95;override&#95;mode":#area_get_space_override_mode* *(* "RID":class_rid area *)* const
+* void *"area&#95;add&#95;shape":#area_add_shape* *(* "RID":class_rid area, "RID":class_rid shape, "Transform":class_transform transform=Transform() *)*
+* void *"area&#95;set&#95;shape":#area_set_shape* *(* "RID":class_rid area, "int":class_int shape&#95;idx, "RID":class_rid shape *)*
+* void *"area&#95;set&#95;shape&#95;transform":#area_set_shape_transform* *(* "RID":class_rid area, "int":class_int shape&#95;idx, "Transform":class_transform transform *)*
+* "int":class_int *"area&#95;get&#95;shape&#95;count":#area_get_shape_count* *(* "RID":class_rid area *)* const
+* "RID":class_rid *"area&#95;get&#95;shape":#area_get_shape* *(* "RID":class_rid area, "int":class_int shape&#95;idx *)* const
+* "Transform":class_transform *"area&#95;get&#95;shape&#95;transform":#area_get_shape_transform* *(* "RID":class_rid area, "int":class_int shape&#95;idx *)* const
+* void *"area&#95;remove&#95;shape":#area_remove_shape* *(* "RID":class_rid area, "int":class_int shape&#95;idx *)*
+* void *"area&#95;clear&#95;shapes":#area_clear_shapes* *(* "RID":class_rid area *)*
+* void *"area&#95;set&#95;param":#area_set_param* *(* "RID":class_rid area, "int":class_int param, var value *)*
+* void *"area&#95;set&#95;transform":#area_set_transform* *(* "RID":class_rid area, "Transform":class_transform transform *)*
+* void *"area&#95;get&#95;param":#area_get_param* *(* "RID":class_rid area, "int":class_int param *)* const
+* "Transform":class_transform *"area&#95;get&#95;transform":#area_get_transform* *(* "RID":class_rid area *)* const
+* void *"area&#95;attach&#95;object&#95;instance&#95;ID":#area_attach_object_instance_ID* *(* "RID":class_rid area, "int":class_int id *)*
+* "int":class_int *"area&#95;get&#95;object&#95;instance&#95;ID":#area_get_object_instance_ID* *(* "RID":class_rid area *)* const
+* void *"area&#95;set&#95;monitor&#95;callback":#area_set_monitor_callback* *(* "RID":class_rid receiver, "Object":class_object method, "String":class_string arg2 *)*
+* void *"area&#95;set&#95;ray&#95;pickable":#area_set_ray_pickable* *(* "RID":class_rid area, "bool":class_bool enable *)*
+* "bool":class_bool *"area&#95;is&#95;ray&#95;pickable":#area_is_ray_pickable* *(* "RID":class_rid area *)* const
+* "RID":class_rid *"body&#95;create":#body_create* *(* "int":class_int mode=2, "bool":class_bool init&#95;sleeping=false *)*
+* void *"body&#95;set&#95;space":#body_set_space* *(* "RID":class_rid body, "RID":class_rid space *)*
+* "RID":class_rid *"body&#95;get&#95;space":#body_get_space* *(* "RID":class_rid body *)* const
+* void *"body&#95;set&#95;mode":#body_set_mode* *(* "RID":class_rid body, "int":class_int mode *)*
+* "int":class_int *"body&#95;get&#95;mode":#body_get_mode* *(* "RID":class_rid body, "int":class_int arg1 *)* const
+* void *"body&#95;add&#95;shape":#body_add_shape* *(* "RID":class_rid body, "RID":class_rid shape, "Transform":class_transform transform=Transform() *)*
+* void *"body&#95;set&#95;shape":#body_set_shape* *(* "RID":class_rid body, "int":class_int shape&#95;idx, "RID":class_rid shape *)*
+* void *"body&#95;set&#95;shape&#95;transform":#body_set_shape_transform* *(* "RID":class_rid body, "int":class_int shape&#95;idx, "Transform":class_transform transform *)*
+* "int":class_int *"body&#95;get&#95;shape&#95;count":#body_get_shape_count* *(* "RID":class_rid body *)* const
+* "RID":class_rid *"body&#95;get&#95;shape":#body_get_shape* *(* "RID":class_rid body, "int":class_int shape&#95;idx *)* const
+* "Transform":class_transform *"body&#95;get&#95;shape&#95;transform":#body_get_shape_transform* *(* "RID":class_rid body, "int":class_int shape&#95;idx *)* const
+* void *"body&#95;remove&#95;shape":#body_remove_shape* *(* "RID":class_rid body, "int":class_int shape&#95;idx *)*
+* void *"body&#95;clear&#95;shapes":#body_clear_shapes* *(* "RID":class_rid body *)*
+* void *"body&#95;attach&#95;object&#95;instance&#95;ID":#body_attach_object_instance_ID* *(* "RID":class_rid body, "int":class_int id *)*
+* "int":class_int *"body&#95;get&#95;object&#95;instance&#95;ID":#body_get_object_instance_ID* *(* "RID":class_rid body *)* const
+* void *"body&#95;set&#95;enable&#95;continuous&#95;collision&#95;detection":#body_set_enable_continuous_collision_detection* *(* "RID":class_rid body, "bool":class_bool enable *)*
+* "bool":class_bool *"body&#95;is&#95;continuous&#95;collision&#95;detection&#95;enabled":#body_is_continuous_collision_detection_enabled* *(* "RID":class_rid body *)* const
+* void *"body&#95;set&#95;param":#body_set_param* *(* "RID":class_rid body, "int":class_int param, "float":class_float value *)*
+* "float":class_float *"body&#95;get&#95;param":#body_get_param* *(* "RID":class_rid body, "int":class_int param *)* const
+* void *"body&#95;set&#95;state":#body_set_state* *(* "RID":class_rid body, "int":class_int state, var value *)*
+* void *"body&#95;get&#95;state":#body_get_state* *(* "RID":class_rid body, "int":class_int state *)* const
+* void *"body&#95;apply&#95;impulse":#body_apply_impulse* *(* "RID":class_rid body, "Vector3":class_vector3 pos, "Vector3":class_vector3 impulse *)*
+* void *"body&#95;set&#95;axis&#95;velocity":#body_set_axis_velocity* *(* "RID":class_rid body, "Vector3":class_vector3 axis&#95;velocity *)*
+* void *"body&#95;set&#95;axis&#95;lock":#body_set_axis_lock* *(* "RID":class_rid body, "int":class_int axis *)*
+* "int":class_int *"body&#95;get&#95;axis&#95;lock":#body_get_axis_lock* *(* "RID":class_rid body *)* const
+* void *"body&#95;add&#95;collision&#95;exception":#body_add_collision_exception* *(* "RID":class_rid body, "RID":class_rid excepted&#95;body *)*
+* void *"body&#95;remove&#95;collision&#95;exception":#body_remove_collision_exception* *(* "RID":class_rid body, "RID":class_rid excepted&#95;body *)*
+* void *"body&#95;set&#95;max&#95;contacts&#95;reported":#body_set_max_contacts_reported* *(* "RID":class_rid body, "int":class_int amount *)*
+* "int":class_int *"body&#95;get&#95;max&#95;contacts&#95;reported":#body_get_max_contacts_reported* *(* "RID":class_rid body *)* const
+* void *"body&#95;set&#95;omit&#95;force&#95;integration":#body_set_omit_force_integration* *(* "RID":class_rid body, "bool":class_bool enable *)*
+* "bool":class_bool *"body&#95;is&#95;omitting&#95;force&#95;integration":#body_is_omitting_force_integration* *(* "RID":class_rid body *)* const
+* void *"body&#95;set&#95;force&#95;integration&#95;callback":#body_set_force_integration_callback* *(* "RID":class_rid body, "Object":class_object receiver, "String":class_string method, var userdata=NULL *)*
+* void *"body&#95;set&#95;ray&#95;pickable":#body_set_ray_pickable* *(* "RID":class_rid body, "bool":class_bool enable *)*
+* "bool":class_bool *"body&#95;is&#95;ray&#95;pickable":#body_is_ray_pickable* *(* "RID":class_rid body *)* const
+* "RID":class_rid *"joint&#95;create&#95;pin":#joint_create_pin* *(* "RID":class_rid body&#95;A, "Vector3":class_vector3 local&#95;A, "RID":class_rid body&#95;B, "Vector3":class_vector3 local&#95;B *)*
+* void *"pin&#95;joint&#95;set&#95;param":#pin_joint_set_param* *(* "RID":class_rid joint, "int":class_int param, "float":class_float value *)*
+* "float":class_float *"pin&#95;joint&#95;get&#95;param":#pin_joint_get_param* *(* "RID":class_rid joint, "int":class_int param *)* const
+* void *"pin&#95;joint&#95;set&#95;local&#95;A":#pin_joint_set_local_A* *(* "RID":class_rid joint, "Vector3":class_vector3 local&#95;A *)*
+* "Vector3":class_vector3 *"pin&#95;joint&#95;get&#95;local&#95;A":#pin_joint_get_local_A* *(* "RID":class_rid joint *)* const
+* void *"pin&#95;joint&#95;set&#95;local&#95;B":#pin_joint_set_local_B* *(* "RID":class_rid joint, "Vector3":class_vector3 local&#95;B *)*
+* "Vector3":class_vector3 *"pin&#95;joint&#95;get&#95;local&#95;B":#pin_joint_get_local_B* *(* "RID":class_rid joint *)* const
+* "RID":class_rid *"joint&#95;create&#95;hinge":#joint_create_hinge* *(* "RID":class_rid body&#95;A, "Transform":class_transform hinge&#95;A, "RID":class_rid body&#95;B, "Transform":class_transform hinge&#95;B *)*
+* void *"hinge&#95;joint&#95;set&#95;param":#hinge_joint_set_param* *(* "RID":class_rid joint, "int":class_int param, "float":class_float value *)*
+* "float":class_float *"hinge&#95;joint&#95;get&#95;param":#hinge_joint_get_param* *(* "RID":class_rid joint, "int":class_int param *)* const
+* void *"hinge&#95;joint&#95;set&#95;flag":#hinge_joint_set_flag* *(* "RID":class_rid joint, "int":class_int flag, "bool":class_bool enabled *)*
+* "bool":class_bool *"hinge&#95;joint&#95;get&#95;flag":#hinge_joint_get_flag* *(* "RID":class_rid joint, "int":class_int flag *)* const
+* "RID":class_rid *"joint&#95;create&#95;slider":#joint_create_slider* *(* "RID":class_rid body&#95;A, "Transform":class_transform local&#95;ref&#95;A, "RID":class_rid body&#95;B, "Transform":class_transform local&#95;ref&#95;B *)*
+* void *"slider&#95;joint&#95;set&#95;param":#slider_joint_set_param* *(* "RID":class_rid joint, "int":class_int param, "float":class_float value *)*
+* "float":class_float *"slider&#95;joint&#95;get&#95;param":#slider_joint_get_param* *(* "RID":class_rid joint, "int":class_int param *)* const
+* "RID":class_rid *"joint&#95;create&#95;cone&#95;twist":#joint_create_cone_twist* *(* "RID":class_rid body&#95;A, "Transform":class_transform local&#95;ref&#95;A, "RID":class_rid body&#95;B, "Transform":class_transform local&#95;ref&#95;B *)*
+* void *"cone&#95;twist&#95;joint&#95;set&#95;param":#cone_twist_joint_set_param* *(* "RID":class_rid joint, "int":class_int param, "float":class_float value *)*
+* "float":class_float *"cone&#95;twist&#95;joint&#95;get&#95;param":#cone_twist_joint_get_param* *(* "RID":class_rid joint, "int":class_int param *)* const
+* "int":class_int *"joint&#95;get&#95;type":#joint_get_type* *(* "RID":class_rid joint *)* const
+* void *"joint&#95;set&#95;solver&#95;priority":#joint_set_solver_priority* *(* "RID":class_rid joint, "int":class_int priority *)*
+* "int":class_int *"joint&#95;get&#95;solver&#95;priority":#joint_get_solver_priority* *(* "RID":class_rid joint *)* const
+* "RID":class_rid *"joint&#95;create&#95;generic&#95;6dof":#joint_create_generic_6dof* *(* "RID":class_rid body&#95;A, "Transform":class_transform local&#95;ref&#95;A, "RID":class_rid body&#95;B, "Transform":class_transform local&#95;ref&#95;B *)*
+* void *"generic&#95;6dof&#95;joint&#95;set&#95;param":#generic_6dof_joint_set_param* *(* "RID":class_rid joint, "int":class_int axis, "int":class_int param, "float":class_float value *)*
+* "float":class_float *"generic&#95;6dof&#95;joint&#95;get&#95;param":#generic_6dof_joint_get_param* *(* "RID":class_rid joint, "int":class_int axis, "int":class_int param *)*
+* void *"generic&#95;6dof&#95;joint&#95;set&#95;flag":#generic_6dof_joint_set_flag* *(* "RID":class_rid joint, "int":class_int axis, "int":class_int flag, "bool":class_bool enable *)*
+* "bool":class_bool *"generic&#95;6dof&#95;joint&#95;get&#95;flag":#generic_6dof_joint_get_flag* *(* "RID":class_rid joint, "int":class_int axis, "int":class_int flag *)*
+* void *"free&#95;rid":#free_rid* *(* "RID":class_rid rid *)*
+* void *"set&#95;active":#set_active* *(* "bool":class_bool active *)*
+* "int":class_int *"get&#95;process&#95;info":#get_process_info* *(* "int":class_int arg0 *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *JOINT&#95;PIN* = *0*
+* *JOINT&#95;HINGE* = *1*
+* *JOINT&#95;SLIDER* = *2*
+* *JOINT&#95;CONE&#95;TWIST* = *3*
+* *JOINT&#95;6DOF* = *4*
+* *PIN&#95;JOINT&#95;BIAS* = *0*
+* *PIN&#95;JOINT&#95;DAMPING* = *1*
+* *PIN&#95;JOINT&#95;IMPULSE&#95;CLAMP* = *2*
+* *HINGE&#95;JOINT&#95;BIAS* = *0*
+* *HINGE&#95;JOINT&#95;LIMIT&#95;UPPER* = *1*
+* *HINGE&#95;JOINT&#95;LIMIT&#95;LOWER* = *2*
+* *HINGE&#95;JOINT&#95;LIMIT&#95;BIAS* = *3*
+* *HINGE&#95;JOINT&#95;LIMIT&#95;SOFTNESS* = *4*
+* *HINGE&#95;JOINT&#95;LIMIT&#95;RELAXATION* = *5*
+* *HINGE&#95;JOINT&#95;MOTOR&#95;TARGET&#95;VELOCITY* = *6*
+* *HINGE&#95;JOINT&#95;MOTOR&#95;MAX&#95;IMPULSE* = *7*
+* *HINGE&#95;JOINT&#95;FLAG&#95;USE&#95;LIMIT* = *0*
+* *HINGE&#95;JOINT&#95;FLAG&#95;ENABLE&#95;MOTOR* = *1*
+* *SLIDER&#95;JOINT&#95;LINEAR&#95;LIMIT&#95;UPPER* = *0*
+* *SLIDER&#95;JOINT&#95;LINEAR&#95;LIMIT&#95;LOWER* = *1*
+* *SLIDER&#95;JOINT&#95;LINEAR&#95;LIMIT&#95;SOFTNESS* = *2*
+* *SLIDER&#95;JOINT&#95;LINEAR&#95;LIMIT&#95;RESTITUTION* = *3*
+* *SLIDER&#95;JOINT&#95;LINEAR&#95;LIMIT&#95;DAMPING* = *4*
+* *SLIDER&#95;JOINT&#95;LINEAR&#95;MOTION&#95;SOFTNESS* = *5*
+* *SLIDER&#95;JOINT&#95;LINEAR&#95;MOTION&#95;RESTITUTION* = *6*
+* *SLIDER&#95;JOINT&#95;LINEAR&#95;MOTION&#95;DAMPING* = *7*
+* *SLIDER&#95;JOINT&#95;LINEAR&#95;ORTHOGONAL&#95;SOFTNESS* = *8*
+* *SLIDER&#95;JOINT&#95;LINEAR&#95;ORTHOGONAL&#95;RESTITUTION* = *9*
+* *SLIDER&#95;JOINT&#95;LINEAR&#95;ORTHOGONAL&#95;DAMPING* = *10*
+* *SLIDER&#95;JOINT&#95;ANGULAR&#95;LIMIT&#95;UPPER* = *11*
+* *SLIDER&#95;JOINT&#95;ANGULAR&#95;LIMIT&#95;LOWER* = *12*
+* *SLIDER&#95;JOINT&#95;ANGULAR&#95;LIMIT&#95;SOFTNESS* = *13*
+* *SLIDER&#95;JOINT&#95;ANGULAR&#95;LIMIT&#95;RESTITUTION* = *14*
+* *SLIDER&#95;JOINT&#95;ANGULAR&#95;LIMIT&#95;DAMPING* = *15*
+* *SLIDER&#95;JOINT&#95;ANGULAR&#95;MOTION&#95;SOFTNESS* = *16*
+* *SLIDER&#95;JOINT&#95;ANGULAR&#95;MOTION&#95;RESTITUTION* = *17*
+* *SLIDER&#95;JOINT&#95;ANGULAR&#95;MOTION&#95;DAMPING* = *18*
+* *SLIDER&#95;JOINT&#95;ANGULAR&#95;ORTHOGONAL&#95;SOFTNESS* = *19*
+* *SLIDER&#95;JOINT&#95;ANGULAR&#95;ORTHOGONAL&#95;RESTITUTION* = *20*
+* *SLIDER&#95;JOINT&#95;ANGULAR&#95;ORTHOGONAL&#95;DAMPING* = *21*
+* *SLIDER&#95;JOINT&#95;MAX* = *22*
+* *CONE&#95;TWIST&#95;JOINT&#95;SWING&#95;SPAN* = *0*
+* *CONE&#95;TWIST&#95;JOINT&#95;TWIST&#95;SPAN* = *1*
+* *CONE&#95;TWIST&#95;JOINT&#95;BIAS* = *2*
+* *CONE&#95;TWIST&#95;JOINT&#95;SOFTNESS* = *3*
+* *CONE&#95;TWIST&#95;JOINT&#95;RELAXATION* = *4*
+* *G6DOF&#95;JOINT&#95;LINEAR&#95;LOWER&#95;LIMIT* = *0*
+* *G6DOF&#95;JOINT&#95;LINEAR&#95;UPPER&#95;LIMIT* = *1*
+* *G6DOF&#95;JOINT&#95;LINEAR&#95;LIMIT&#95;SOFTNESS* = *2*
+* *G6DOF&#95;JOINT&#95;LINEAR&#95;RESTITUTION* = *3*
+* *G6DOF&#95;JOINT&#95;LINEAR&#95;DAMPING* = *4*
+* *G6DOF&#95;JOINT&#95;ANGULAR&#95;LOWER&#95;LIMIT* = *5*
+* *G6DOF&#95;JOINT&#95;ANGULAR&#95;UPPER&#95;LIMIT* = *6*
+* *G6DOF&#95;JOINT&#95;ANGULAR&#95;LIMIT&#95;SOFTNESS* = *7*
+* *G6DOF&#95;JOINT&#95;ANGULAR&#95;DAMPING* = *8*
+* *G6DOF&#95;JOINT&#95;ANGULAR&#95;RESTITUTION* = *9*
+* *G6DOF&#95;JOINT&#95;ANGULAR&#95;FORCE&#95;LIMIT* = *10*
+* *G6DOF&#95;JOINT&#95;ANGULAR&#95;ERP* = *11*
+* *G6DOF&#95;JOINT&#95;ANGULAR&#95;MOTOR&#95;TARGET&#95;VELOCITY* = *12*
+* *G6DOF&#95;JOINT&#95;ANGULAR&#95;MOTOR&#95;FORCE&#95;LIMIT* = *13*
+* *G6DOF&#95;JOINT&#95;FLAG&#95;ENABLE&#95;LINEAR&#95;LIMIT* = *0*
+* *G6DOF&#95;JOINT&#95;FLAG&#95;ENABLE&#95;ANGULAR&#95;LIMIT* = *1*
+* *G6DOF&#95;JOINT&#95;FLAG&#95;ENABLE&#95;MOTOR* = *2*
+* *SHAPE&#95;PLANE* = *0*
+* *SHAPE&#95;RAY* = *1*
+* *SHAPE&#95;SPHERE* = *2*
+* *SHAPE&#95;BOX* = *3*
+* *SHAPE&#95;CAPSULE* = *4*
+* *SHAPE&#95;CONVEX&#95;POLYGON* = *5*
+* *SHAPE&#95;CONCAVE&#95;POLYGON* = *6*
+* *SHAPE&#95;HEIGHTMAP* = *7*
+* *SHAPE&#95;CUSTOM* = *8*
+* *AREA&#95;PARAM&#95;GRAVITY* = *0*
+* *AREA&#95;PARAM&#95;GRAVITY&#95;VECTOR* = *1*
+* *AREA&#95;PARAM&#95;GRAVITY&#95;IS&#95;POINT* = *2*
+* *AREA&#95;PARAM&#95;GRAVITY&#95;POINT&#95;ATTENUATION* = *3*
+* *AREA&#95;PARAM&#95;DENSITY* = *4*
+* *AREA&#95;PARAM&#95;PRIORITY* = *5*
+* *AREA&#95;SPACE&#95;OVERRIDE&#95;COMBINE* = *1*
+* *AREA&#95;SPACE&#95;OVERRIDE&#95;DISABLED* = *0*
+* *AREA&#95;SPACE&#95;OVERRIDE&#95;REPLACE* = *2*
+* *BODY&#95;MODE&#95;STATIC* = *0*
+* *BODY&#95;MODE&#95;KINEMATIC* = *1*
+* *BODY&#95;MODE&#95;RIGID* = *2*
+* *BODY&#95;MODE&#95;CHARACTER* = *3*
+* *BODY&#95;PARAM&#95;BOUNCE* = *0*
+* *BODY&#95;PARAM&#95;FRICTION* = *1*
+* *BODY&#95;PARAM&#95;MASS* = *2*
+* *BODY&#95;PARAM&#95;MAX* = *3*
+* *BODY&#95;STATE&#95;TRANSFORM* = *0*
+* *BODY&#95;STATE&#95;LINEAR&#95;VELOCITY* = *1*
+* *BODY&#95;STATE&#95;ANGULAR&#95;VELOCITY* = *2*
+* *BODY&#95;STATE&#95;SLEEPING* = *3*
+* *BODY&#95;STATE&#95;CAN&#95;SLEEP* = *4*
+* *AREA&#95;BODY&#95;ADDED* = *0*
+* *AREA&#95;BODY&#95;REMOVED* = *1*
+* *INFO&#95;ACTIVE&#95;OBJECTS* = *0*
+* *INFO&#95;COLLISION&#95;PAIRS* = *1*
+* *INFO&#95;ISLAND&#95;COUNT* = *2*
+
+h3(#member-function-description). Member Function Description

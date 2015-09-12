@@ -1,0 +1,13 @@
+h1(#position2d). Position2D
+
+h4(#inherits-node2d). *Inherits:* "Node2D":class_node2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Generic 2D Position hint for editing.
+
+h3(#description). Description
+
+Generic 2D Position hint for editing. It's just like a plain "Node2D":class_node2d but displays as a cross in the 2D&#45;Editor at all times.

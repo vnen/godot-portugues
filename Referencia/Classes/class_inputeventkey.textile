@@ -1,0 +1,40 @@
+h1(#inputeventkey). InputEventKey
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "bool":class_bool *"is&#95;action":#is_action* *(* "String":class_string action *)*
+* "bool":class_bool *"is&#95;echo":#is_echo* *(* *)*
+* "bool":class_bool *"is&#95;pressed":#is_pressed* *(* *)*
+* void *"set&#95;as&#95;action":#set_as_action* *(* "String":class_string action, "bool":class_bool pressed *)*
+
+h3(#member-variables). Member Variables
+
+* "int":class_int *type*
+* "int":class_int *device*
+* "int":class_int *ID*
+* "bool":class_bool *shift*
+* "bool":class_bool *alt*
+* "bool":class_bool *control*
+* "bool":class_bool *meta*
+* "bool":class_bool *pressed*
+* "bool":class_bool *echo*
+* "int":class_int *scancode*
+* "int":class_int *unicode*
+
+h3(#numeric-constants). Numeric Constants
+
+* *NONE* = *0*
+* *KEY* = *1*
+* *MOUSE&#95;MOTION* = *2*
+* *MOUSE&#95;BUTTON* = *3*
+* *JOYSTICK&#95;MOTION* = *4*
+* *JOYSTICK&#95;BUTTON* = *5*
+* *SCREEN&#95;TOUCH* = *6*
+* *SCREEN&#95;DRAG* = *7*
+* *ACTION* = *8*
+
+h3(#member-function-description). Member Function Description

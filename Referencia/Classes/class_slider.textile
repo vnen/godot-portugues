@@ -1,0 +1,46 @@
+h1(#slider). Slider
+
+h4(#inherits-range). *Inherits:* "Range":class_range
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Base class for GUI Sliders.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;ticks":#set_ticks* *(* "int":class_int count *)*
+* "int":class_int *"get&#95;ticks":#get_ticks* *(* *)* const
+* "bool":class_bool *"get&#95;ticks&#95;on&#95;borders":#get_ticks_on_borders* *(* *)* const
+* void *"set&#95;ticks&#95;on&#95;borders":#set_ticks_on_borders* *(* "bool":class_bool ticks&#95;on&#95;border *)*
+
+h3(#description). Description
+
+Base class for GUI Sliders.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_ticks). <a name="set_ticks">set&#95;ticks</a>
+
+* void *set&#95;ticks* *(* "int":class_int count *)*
+
+Set amount of ticks to display in slider.
+
+h4(#get_ticks). <a name="get_ticks">get&#95;ticks</a>
+
+* "int":class_int *get&#95;ticks* *(* *)* const
+
+Return amounts of ticks to display on slider.
+
+h4(#get_ticks_on_borders). <a name="get_ticks_on_borders">get&#95;ticks&#95;on&#95;borders</a>
+
+* "bool":class_bool *get&#95;ticks&#95;on&#95;borders* *(* *)* const
+
+Return true if ticks are visible on borders.
+
+h4(#set_ticks_on_borders). <a name="set_ticks_on_borders">set&#95;ticks&#95;on&#95;borders</a>
+
+* void *set&#95;ticks&#95;on&#95;borders* *(* "bool":class_bool ticks&#95;on&#95;border *)*
+
+Set true if ticks are visible on borders.

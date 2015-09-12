@@ -1,0 +1,13 @@
+h1(#omnilight). OmniLight
+
+h4(#inherits-light). *Inherits:* "Light":class_light
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+OmniDirectional Light, such as a lightbulb or a candle.
+
+h3(#description). Description
+
+An OmniDirectional light is a type of "Light":class_light node that emits lights in all directions. The light is attenuated through the distance and this attenuation can be configured by changing the energy, radius and attenuation parameters of "Light":class_light. TODO: Image of an omnilight.

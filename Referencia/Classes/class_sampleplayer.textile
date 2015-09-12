@@ -1,0 +1,223 @@
+h1(#sampleplayer). SamplePlayer
+
+h4(#inherits-node). *Inherits:* "Node":class_node
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Sample Player node.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;sample&#95;library":#set_sample_library* *(* "SampleLibrary":class_samplelibrary library *)*
+* "SampleLibrary":class_samplelibrary *"get&#95;sample&#95;library":#get_sample_library* *(* *)* const
+* void *"set&#95;voice&#95;count":#set_voice_count* *(* "int":class_int max&#95;voices *)*
+* "int":class_int *"get&#95;voice&#95;count":#get_voice_count* *(* *)* const
+* "int":class_int *"play":#play* *(* "String":class_string name, "bool":class_bool unique=false *)*
+* void *"stop":#stop* *(* "int":class_int voice *)*
+* void *"stop&#95;all":#stop_all* *(* *)*
+* void *"set&#95;mix&#95;rate":#set_mix_rate* *(* "int":class_int voice, "int":class_int hz *)*
+* void *"set&#95;pitch&#95;scale":#set_pitch_scale* *(* "int":class_int voice, "float":class_float ratio *)*
+* void *"set&#95;volume":#set_volume* *(* "int":class_int voice, "float":class_float nrg *)*
+* void *"set&#95;volume&#95;db":#set_volume_db* *(* "int":class_int voice, "float":class_float nrg *)*
+* void *"set&#95;pan":#set_pan* *(* "int":class_int voice, "float":class_float pan, "float":class_float depth=0, "float":class_float height=0 *)*
+* void *"set&#95;filter":#set_filter* *(* "int":class_int voice, "int":class_int type, "float":class_float cutoff&#95;hz, "float":class_float resonance, "float":class_float gain=0 *)*
+* void *"set&#95;chorus":#set_chorus* *(* "int":class_int voice, "float":class_float send *)*
+* void *"set&#95;reverb":#set_reverb* *(* "int":class_int voice, "int":class_int room&#95;type, "float":class_float send *)*
+* "int":class_int *"get&#95;mix&#95;rate":#get_mix_rate* *(* "int":class_int voice *)* const
+* "float":class_float *"get&#95;pitch&#95;scale":#get_pitch_scale* *(* "int":class_int voice *)* const
+* "float":class_float *"get&#95;volume":#get_volume* *(* "int":class_int voice *)* const
+* "float":class_float *"get&#95;volume&#95;db":#get_volume_db* *(* "int":class_int voice *)* const
+* "float":class_float *"get&#95;pan":#get_pan* *(* "int":class_int voice *)* const
+* "float":class_float *"get&#95;pan&#95;depth":#get_pan_depth* *(* "int":class_int voice *)* const
+* "float":class_float *"get&#95;pan&#95;height":#get_pan_height* *(* "int":class_int voice *)* const
+* "int":class_int *"get&#95;filter&#95;type":#get_filter_type* *(* "int":class_int voice *)* const
+* "float":class_float *"get&#95;filter&#95;cutoff":#get_filter_cutoff* *(* "int":class_int voice *)* const
+* "float":class_float *"get&#95;filter&#95;resonance":#get_filter_resonance* *(* "int":class_int voice *)* const
+* "float":class_float *"get&#95;filter&#95;gain":#get_filter_gain* *(* "int":class_int voice *)* const
+* "float":class_float *"get&#95;chorus":#get_chorus* *(* "int":class_int voice *)* const
+* "float":class_float *"get&#95;reverb&#95;room":#get_reverb_room* *(* "int":class_int voice *)* const
+* "float":class_float *"get&#95;reverb":#get_reverb* *(* "int":class_int voice *)* const
+* void *"set&#95;default&#95;pitch&#95;scale":#set_default_pitch_scale* *(* "float":class_float ratio *)*
+* void *"set&#95;default&#95;volume":#set_default_volume* *(* "float":class_float nrg *)*
+* void *"set&#95;default&#95;volume&#95;db":#set_default_volume_db* *(* "float":class_float db *)*
+* void *"set&#95;default&#95;pan":#set_default_pan* *(* "float":class_float pan, "float":class_float depth=0, "float":class_float height=0 *)*
+* void *"set&#95;default&#95;filter":#set_default_filter* *(* "int":class_int type, "float":class_float cutoff&#95;hz, "float":class_float resonance, "float":class_float gain=0 *)*
+* void *"set&#95;default&#95;chorus":#set_default_chorus* *(* "float":class_float send *)*
+* void *"set&#95;default&#95;reverb":#set_default_reverb* *(* "int":class_int room&#95;type, "float":class_float send *)*
+* "float":class_float *"get&#95;default&#95;pitch&#95;scale":#get_default_pitch_scale* *(* *)* const
+* "float":class_float *"get&#95;default&#95;volume":#get_default_volume* *(* *)* const
+* "float":class_float *"get&#95;default&#95;volume&#95;db":#get_default_volume_db* *(* *)* const
+* "float":class_float *"get&#95;default&#95;pan":#get_default_pan* *(* *)* const
+* "float":class_float *"get&#95;default&#95;pan&#95;depth":#get_default_pan_depth* *(* *)* const
+* "float":class_float *"get&#95;default&#95;pan&#95;height":#get_default_pan_height* *(* *)* const
+* "int":class_int *"get&#95;default&#95;filter&#95;type":#get_default_filter_type* *(* *)* const
+* "float":class_float *"get&#95;default&#95;filter&#95;cutoff":#get_default_filter_cutoff* *(* *)* const
+* "float":class_float *"get&#95;default&#95;filter&#95;resonance":#get_default_filter_resonance* *(* *)* const
+* "float":class_float *"get&#95;default&#95;filter&#95;gain":#get_default_filter_gain* *(* *)* const
+* "float":class_float *"get&#95;default&#95;chorus":#get_default_chorus* *(* *)* const
+* "float":class_float *"get&#95;default&#95;reverb&#95;room":#get_default_reverb_room* *(* *)* const
+* "float":class_float *"get&#95;default&#95;reverb":#get_default_reverb* *(* *)* const
+* "bool":class_bool *"is&#95;active":#is_active* *(* *)* const
+* "bool":class_bool *"is&#95;voice&#95;active":#is_voice_active* *(* "int":class_int voice *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *FILTER&#95;NONE* = *0* &#45; Filter is disabled for voice.
+* *FILTER&#95;LOWPASS* = *1* &#45; Lowpass filter is used for voice.
+* *FILTER&#95;BANDPASS* = *2* &#45; Bandpass filter is used for voice.
+* *FILTER&#95;HIPASS* = *3* &#45; HighPass filter is used for voice.
+* *FILTER&#95;NOTCH* = *4* &#45; Notch filter is used for voice.
+* *FILTER&#95;PEAK* = *5*
+* *FILTER&#95;BANDLIMIT* = *6* &#45; Band&#45;Limit filter is used for voice, in this case resonance is the highpass cutoff.
+* *FILTER&#95;LOW&#95;SHELF* = *7*
+* *FILTER&#95;HIGH&#95;SHELF* = *8*
+* *REVERB&#95;SMALL* = *0* &#45; Small reverb room (house room).
+* *REVERB&#95;MEDIUM* = *1* &#45; Medium reverb room (street)
+* *REVERB&#95;LARGE* = *2* &#45; Large reverb room (Theather)
+* *REVERB&#95;HALL* = *3* &#45; Huge reverb room (cathedral, warehouse).
+
+h3(#description). Description
+
+SamplePlayer is a "Node":class_node meant for simple sample playback. A library of samples is loaded and played back &quot;as is&quot;, without positioning or anything.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_voice_count). <a name="set_voice_count">set&#95;voice&#95;count</a>
+
+* void *set&#95;voice&#95;count* *(* "int":class_int max&#95;voices *)*
+
+Set the amount of simultaneous voices that will be used for playback.
+
+h4(#get_voice_count). <a name="get_voice_count">get&#95;voice&#95;count</a>
+
+* "int":class_int *get&#95;voice&#95;count* *(* *)* const
+
+Return the amount of simultaneous voices that will be used for playback.
+
+h4(#play). <a name="play">play</a>
+
+* "int":class_int *play* *(* "String":class_string name, "bool":class_bool unique=false *)*
+
+Play back sample, given it&quot;apos;s identifier &quot;name&quot;. if &quot;unique&quot; is true, all othere previous samples will be stopped. The voice allocated for playback will be returned.
+
+h4(#stop). <a name="stop">stop</a>
+
+* void *stop* *(* "int":class_int voice *)*
+
+Stop a voice &quot;voice&quot;. (see "play":#play).
+
+h4(#set_mix_rate). <a name="set_mix_rate">set&#95;mix&#95;rate</a>
+
+* void *set&#95;mix&#95;rate* *(* "int":class_int voice, "int":class_int hz *)*
+
+Change the mix rate of a voice &quot;voice&quot; to given &quot;hz&quot;.
+
+h4(#set_pitch_scale). <a name="set_pitch_scale">set&#95;pitch&#95;scale</a>
+
+* void *set&#95;pitch&#95;scale* *(* "int":class_int voice, "float":class_float ratio *)*
+
+Scale the pitch (mix rate) of a voice by a ratio value &quot;ratio&quot;. A ratio of 1.0 means the voice is unscaled.
+
+h4(#set_volume). <a name="set_volume">set&#95;volume</a>
+
+* void *set&#95;volume* *(* "int":class_int voice, "float":class_float nrg *)*
+
+Set the volume of a voice, 0db is maximum volume (every about &#45;6db, volume is reduced in half). &quot;db&quot; does in fact go from zero to negative.
+
+h4(#set_pan). <a name="set_pan">set&#95;pan</a>
+
+* void *set&#95;pan* *(* "int":class_int voice, "float":class_float pan, "float":class_float depth=0, "float":class_float height=0 *)*
+
+Set the panning of a voice. Panning goes from &#45;1 (left) to &#43;1 (right). Optionally, if the hardware supports 3D sound, also set depth and height (also in range &#45;1 to &#43;1).
+
+h4(#set_filter). <a name="set_filter">set&#95;filter</a>
+
+* void *set&#95;filter* *(* "int":class_int voice, "int":class_int type, "float":class_float cutoff&#95;hz, "float":class_float resonance, "float":class_float gain=0 *)*
+
+Set and enable a filter of a voice, with type &quot;type&quot; (see FILTER&#95;&#42; enum), cutoff (0 to 22khz) frequency and resonance (0&#43;).
+
+h4(#set_chorus). <a name="set_chorus">set&#95;chorus</a>
+
+* void *set&#95;chorus* *(* "int":class_int voice, "float":class_float send *)*
+
+Set the chorus send level of a voice (0 to 1). For setting chorus parameters, see "AudioServer":class_audioserver.
+
+h4(#set_reverb). <a name="set_reverb">set&#95;reverb</a>
+
+* void *set&#95;reverb* *(* "int":class_int voice, "int":class_int room&#95;type, "float":class_float send *)*
+
+Set the reverb send level and type of a voice (0 to 1). (see REVERB&#95;&#42; enum for type).
+
+h4(#get_mix_rate). <a name="get_mix_rate">get&#95;mix&#95;rate</a>
+
+* "int":class_int *get&#95;mix&#95;rate* *(* "int":class_int voice *)* const
+
+Return the current mix rate for a given voice.
+
+h4(#get_pitch_scale). <a name="get_pitch_scale">get&#95;pitch&#95;scale</a>
+
+* "float":class_float *get&#95;pitch&#95;scale* *(* "int":class_int voice *)* const
+
+Return the current pitch scale for a given voice.
+
+h4(#get_volume). <a name="get_volume">get&#95;volume</a>
+
+* "float":class_float *get&#95;volume* *(* "int":class_int voice *)* const
+
+Return the current volume (in db) for a given voice. 0db is maximum volume (every about &#45;6db, volume is reduced in half). &quot;db&quot; does in fact go from zero to negative.
+
+h4(#get_pan). <a name="get_pan">get&#95;pan</a>
+
+* "float":class_float *get&#95;pan* *(* "int":class_int voice *)* const
+
+Return the current panning for a given voice. Panning goes from &#45;1 (left) to &#43;1 (right).
+
+h4(#get_pan_depth). <a name="get_pan_depth">get&#95;pan&#95;depth</a>
+
+* "float":class_float *get&#95;pan&#95;depth* *(* "int":class_int voice *)* const
+
+Return the current pan depth for a given voice (not used unless the hardware supports 3D sound)
+
+h4(#get_pan_height). <a name="get_pan_height">get&#95;pan&#95;height</a>
+
+* "float":class_float *get&#95;pan&#95;height* *(* "int":class_int voice *)* const
+
+Return the current pan height for a given voice (not used unless the hardware supports 3D sound)
+
+h4(#get_filter_type). <a name="get_filter_type">get&#95;filter&#95;type</a>
+
+* "int":class_int *get&#95;filter&#95;type* *(* "int":class_int voice *)* const
+
+Return the current filter type in use (see FILTER&#95;&#42; enum) for a given voice.
+
+h4(#get_filter_cutoff). <a name="get_filter_cutoff">get&#95;filter&#95;cutoff</a>
+
+* "float":class_float *get&#95;filter&#95;cutoff* *(* "int":class_int voice *)* const
+
+Return the current filter cutoff for a given voice. Cutoff goes from 0 to 22khz.
+
+h4(#get_filter_resonance). <a name="get_filter_resonance">get&#95;filter&#95;resonance</a>
+
+* "float":class_float *get&#95;filter&#95;resonance* *(* "int":class_int voice *)* const
+
+Return the current filter resonance for a given voice. Resonance goes from 0 up.
+
+h4(#get_chorus). <a name="get_chorus">get&#95;chorus</a>
+
+* "float":class_float *get&#95;chorus* *(* "int":class_int voice *)* const
+
+Return the current chorus send level for a given voice. (0 to 1).
+
+h4(#get_reverb_room). <a name="get_reverb_room">get&#95;reverb&#95;room</a>
+
+* "float":class_float *get&#95;reverb&#95;room* *(* "int":class_int voice *)* const
+
+Return the current reverb room type for a given voice (see REVERB&#95;&#42; enum).
+
+h4(#get_reverb). <a name="get_reverb">get&#95;reverb</a>
+
+* "float":class_float *get&#95;reverb* *(* "int":class_int voice *)* const
+
+Return the current reverb send level for a given voice. (0 to 1).

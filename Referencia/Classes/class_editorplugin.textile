@@ -1,0 +1,37 @@
+h1(#editorplugin). EditorPlugin
+
+h4(#inherits-node). *Inherits:* "Node":class_node
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"apply&#95;changes":#apply_changes* *(* *)* virtual
+* void *"clear":#clear* *(* *)* virtual
+* void *"edit":#edit* *(* "Object":class_object object *)* virtual
+* "bool":class_bool *"forward&#95;input&#95;event":#forward_input_event* *(* "InputEvent":class_inputevent event *)* virtual
+* "bool":class_bool *"forward&#95;spatial&#95;input&#95;event":#forward_spatial_input_event* *(* "Camera":class_camera camera, "InputEvent":class_inputevent event *)* virtual
+* "StringArray":class_stringarray *"get&#95;breakpoints":#get_breakpoints* *(* *)* virtual
+* "String":class_string *"get&#95;name":#get_name* *(* *)* virtual
+* "Dictionary":class_dictionary *"get&#95;state":#get_state* *(* *)* virtual
+* "bool":class_bool *"handles":#handles* *(* "Object":class_object object *)* virtual
+* "bool":class_bool *"has&#95;main&#95;screen":#has_main_screen* *(* *)* virtual
+* void *"make&#95;visible":#make_visible* *(* "bool":class_bool visible *)* virtual
+* void *"set&#95;state":#set_state* *(* "Dictionary":class_dictionary state *)* virtual
+* "Object":class_object *"get&#95;undo&#95;redo":#get_undo_redo* *(* *)*
+* void *"add&#95;custom&#95;control":#add_custom_control* *(* "int":class_int container, "Object":class_object control *)*
+* void *"add&#95;custom&#95;type":#add_custom_type* *(* "String":class_string type, "String":class_string base, "Script":class_script script, "Texture":class_texture icon *)*
+* void *"remove&#95;custom&#95;type":#remove_custom_type* *(* "String":class_string type *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *CONTAINER&#95;TOOLBAR* = *0*
+* *CONTAINER&#95;SPATIAL&#95;EDITOR&#95;MENU* = *1*
+* *CONTAINER&#95;SPATIAL&#95;EDITOR&#95;SIDE* = *2*
+* *CONTAINER&#95;SPATIAL&#95;EDITOR&#95;BOTTOM* = *3*
+* *CONTAINER&#95;CANVAS&#95;EDITOR&#95;MENU* = *4*
+* *CONTAINER&#95;CANVAS&#95;EDITOR&#95;SIDE* = *5*
+
+h3(#member-function-description). Member Function Description

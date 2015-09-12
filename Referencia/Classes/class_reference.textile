@@ -1,0 +1,33 @@
+h1(#reference). Reference
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Base class for anything refcounted.
+
+h3(#member-functions). Member Functions
+
+* "bool":class_bool *"init&#95;ref":#init_ref* *(* *)*
+* void *"reference":#reference* *(* *)*
+* "bool":class_bool *"unreference":#unreference* *(* *)*
+
+h3(#description). Description
+
+Base class for anything refcounted. Resource and many other helper objects inherit this. References keep an internal reference counter so they are only released when no longer in use.
+
+h3(#member-function-description). Member Function Description
+
+h4(#reference-1). <a name="reference">reference</a>
+
+* void *reference* *(* *)*
+
+Increase the internal reference counter. Use this only if you really know what you are doing.
+
+h4(#unreference). <a name="unreference">unreference</a>
+
+* "bool":class_bool *unreference* *(* *)*
+
+Decrease the internal reference counter. Use this only if you really know what you are doing.

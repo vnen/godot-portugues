@@ -1,0 +1,13 @@
+h1(#vbuttonarray). VButtonArray
+
+h4(#inherits-buttonarray). *Inherits:* "ButtonArray":class_buttonarray
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Vertical button array.
+
+h3(#description). Description
+
+Vertical button array. See "ButtonArray":class_buttonarray.

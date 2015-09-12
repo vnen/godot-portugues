@@ -1,0 +1,123 @@
+h1(#mesh). Mesh
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+A "Resource":class_resource that contains vertex&#45;array based geometry.
+
+h3(#member-functions). Member Functions
+
+* void *"add&#95;morph&#95;target":#add_morph_target* *(* "String":class_string name *)*
+* "int":class_int *"get&#95;morph&#95;target&#95;count":#get_morph_target_count* *(* *)* const
+* "String":class_string *"get&#95;morph&#95;target&#95;name":#get_morph_target_name* *(* "int":class_int index *)* const
+* void *"clear&#95;morph&#95;targets":#clear_morph_targets* *(* *)*
+* void *"set&#95;morph&#95;target&#95;mode":#set_morph_target_mode* *(* "int":class_int mode *)*
+* "int":class_int *"get&#95;morph&#95;target&#95;mode":#get_morph_target_mode* *(* *)* const
+* void *"add&#95;surface":#add_surface* *(* "int":class_int primitive, "Array":class_array arrays, "Array":class_array morph&#95;arrays, "bool":class_bool arg3=Array() *)*
+* "int":class_int *"get&#95;surface&#95;count":#get_surface_count* *(* *)* const
+* void *"surface&#95;remove":#surface_remove* *(* "int":class_int surf&#95;idx *)*
+* "int":class_int *"surface&#95;get&#95;array&#95;len":#surface_get_array_len* *(* "int":class_int surf&#95;idx *)* const
+* "int":class_int *"surface&#95;get&#95;array&#95;index&#95;len":#surface_get_array_index_len* *(* "int":class_int surf&#95;idx *)* const
+* "int":class_int *"surface&#95;get&#95;format":#surface_get_format* *(* "int":class_int surf&#95;idx *)* const
+* "int":class_int *"surface&#95;get&#95;primitive&#95;type":#surface_get_primitive_type* *(* "int":class_int surf&#95;idx *)* const
+* void *"surface&#95;set&#95;material":#surface_set_material* *(* "int":class_int surf&#95;idx, "Material":class_material material *)*
+* "Material":class_material *"surface&#95;get&#95;material":#surface_get_material* *(* "int":class_int surf&#95;idx *)* const
+* void *"surface&#95;set&#95;name":#surface_set_name* *(* "int":class_int surf&#95;idx, "String":class_string name *)*
+* "String":class_string *"surface&#95;get&#95;name":#surface_get_name* *(* "int":class_int surf&#95;idx *)* const
+* void *"center&#95;geometry":#center_geometry* *(* *)*
+* void *"regen&#95;normalmaps":#regen_normalmaps* *(* *)*
+* void *"set&#95;custom&#95;aabb":#set_custom_aabb* *(* "AABB":class_aabb aabb *)*
+* "AABB":class_aabb *"get&#95;custom&#95;aabb":#get_custom_aabb* *(* *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *NO&#95;INDEX&#95;ARRAY* = *&#45;1* &#45; Default value used for index&#95;array&#95;len when no indices are present.
+* *ARRAY&#95;WEIGHTS&#95;SIZE* = *4* &#45; Amount of weights/bone indices per vertex (always 4).
+* *ARRAY&#95;VERTEX* = *0* &#45; Vertex array (array of "Vector3": vertices).
+* *ARRAY&#95;NORMAL* = *1* &#45; Normal array (array of "Vector3": normals).
+* *ARRAY&#95;TANGENT* = *2* &#45; Tangent array, array of groups of 4 floats. first 3 floats determine the tangent, and the last the binormal direction as &#45;1 or 1.
+* *ARRAY&#95;COLOR* = *3* &#45; Vertex array (array of "Color": colors).
+* *ARRAY&#95;TEX&#95;UV* = *4* &#45; UV array (array of "Vector3": UVs or float array of groups of 2 floats (u,v)).
+* *ARRAY&#95;TEX&#95;UV2* = *5*
+* *ARRAY&#95;BONES* = *6* &#45; Array of bone indices, as a float array. Each element in groups of 4 floats.
+* *ARRAY&#95;WEIGHTS* = *7* &#45; Array of bone weights, as a float array. Each element in groups of 4 floats.
+* *ARRAY&#95;INDEX* = *8* &#45; Array of integers, used as indices referencing vertices. No index can be beyond the vertex array size.
+* *ARRAY&#95;FORMAT&#95;VERTEX* = *1* &#45; Array format will include vertices (mandatory).
+* *ARRAY&#95;FORMAT&#95;NORMAL* = *2* &#45; Array format will include normals
+* *ARRAY&#95;FORMAT&#95;TANGENT* = *4* &#45; Array format will include tangents
+* *ARRAY&#95;FORMAT&#95;COLOR* = *8* &#45; Array format will include a color array.
+* *ARRAY&#95;FORMAT&#95;TEX&#95;UV* = *16* &#45; Array format will include UVs.
+* *ARRAY&#95;FORMAT&#95;TEX&#95;UV2* = *32*
+* *ARRAY&#95;FORMAT&#95;BONES* = *64* &#45; Array format will include bone indices.
+* *ARRAY&#95;FORMAT&#95;WEIGHTS* = *128* &#45; Array format will include bone weights.
+* *ARRAY&#95;FORMAT&#95;INDEX* = *256* &#45; Index array will be used.
+* *PRIMITIVE&#95;POINTS* = *0* &#45; Render array as points (one vertex equals one point).
+* *PRIMITIVE&#95;LINES* = *1* &#45; Render array as lines (every two vertices a line is created).
+* *PRIMITIVE&#95;LINE&#95;STRIP* = *2* &#45; Render array as line strip.
+* *PRIMITIVE&#95;LINE&#95;LOOP* = *3* &#45; Render array as line loop (like line strip, but closed).
+* *PRIMITIVE&#95;TRIANGLES* = *4* &#45; Render array as triangles (every three vertices a triangle is created).
+* *PRIMITIVE&#95;TRIANGLE&#95;STRIP* = *5* &#45; Render array as triangle strips.
+* *PRIMITIVE&#95;TRIANGLE&#95;FAN* = *6* &#45; Render array as triangle fans.
+
+h3(#description). Description
+
+Mesh is a type of "Resource":class_resource that contains vertex&#45;array based geometry, divided in _surfaces_. Each surface contains a completely separate array and a material used to draw it. Design wise, a mesh with multiple surfaces is prefered to a single surface, because objects created in 3D editing software commonly contain multiple materials.
+
+h3(#member-function-description). Member Function Description
+
+h4(#add_surface). <a name="add_surface">add&#95;surface</a>
+
+* void *add&#95;surface* *(* "int":class_int primitive, "Array":class_array arrays, "Array":class_array morph&#95;arrays, "bool":class_bool arg3=Array() *)*
+
+Create a new surface ("get&#95;surface&#95;count":#get_surface_count will become surf&#95;idx for this. &quot;#10;&quot;#9;&quot;#9;&quot;#9;Surfaces are created to be rendered using a &quot;primitive&quot;, which may be PRIMITIVE&#95;POINTS, PRIMITIVE&#95;LINES, PRIMITIVE&#95;LINE&#95;STRIP, PRIMITIVE&#95;LINE&#95;LOOP, PRIMITIVE&#95;TRIANGLES, PRIMITIVE&#95;TRIANGLE&#95;STRIP, PRIMITIVE&#95;TRIANGLE&#95;FAN. (As a note, when using indices, it is recommended to only use just points, lines or triangles). &quot;#10;&quot;#9;&quot;#9;&quot;#9;The format of a surface determines which arrays it will allocate and hold, so &quot;format&quot; is a combination of ARRAY&#95;FORMAT&#95;&#42; mask constants ORed together. ARRAY&#95;FORMAT&#95;VERTEX must be always present. &quot;array&#95;len&quot; determines the amount of vertices in the array (not primitives!). if ARRAY&#95;FORMAT&#95;INDEX is in the format mask, then it means that an index array will be allocated and &quot;index&#95;array&#95;len&quot; must be passed.
+
+h4(#get_surface_count). <a name="get_surface_count">get&#95;surface&#95;count</a>
+
+* "int":class_int *get&#95;surface&#95;count* *(* *)* const
+
+Return the amount of surfaces that the "Mesh":class_mesh holds.
+
+h4(#surface_remove). <a name="surface_remove">surface&#95;remove</a>
+
+* void *surface&#95;remove* *(* "int":class_int surf&#95;idx *)*
+
+Remove a surface at position surf&#95;idx, shifting greater surfaces one surf&#95;idx slot down.
+
+h4(#surface_get_array_len). <a name="surface_get_array_len">surface&#95;get&#95;array&#95;len</a>
+
+* "int":class_int *surface&#95;get&#95;array&#95;len* *(* "int":class_int surf&#95;idx *)* const
+
+Return the length in vertices of the vertex array in the requested surface (see "add&#95;surface":#add_surface).
+
+h4(#surface_get_array_index_len). <a name="surface_get_array_index_len">surface&#95;get&#95;array&#95;index&#95;len</a>
+
+* "int":class_int *surface&#95;get&#95;array&#95;index&#95;len* *(* "int":class_int surf&#95;idx *)* const
+
+Return the length in indices of the index array in the requested surface (see "add&#95;surface":#add_surface).
+
+h4(#surface_get_format). <a name="surface_get_format">surface&#95;get&#95;format</a>
+
+* "int":class_int *surface&#95;get&#95;format* *(* "int":class_int surf&#95;idx *)* const
+
+Return the format mask of the requested surface (see "add&#95;surface":#add_surface).
+
+h4(#surface_get_primitive_type). <a name="surface_get_primitive_type">surface&#95;get&#95;primitive&#95;type</a>
+
+* "int":class_int *surface&#95;get&#95;primitive&#95;type* *(* "int":class_int surf&#95;idx *)* const
+
+Return the primitive type of the requested surface (see "add&#95;surface":#add_surface).
+
+h4(#surface_set_material). <a name="surface_set_material">surface&#95;set&#95;material</a>
+
+* void *surface&#95;set&#95;material* *(* "int":class_int surf&#95;idx, "Material":class_material material *)*
+
+Set a "Material":class_material for a given surface. Surface will be rendered using this material.
+
+h4(#surface_get_material). <a name="surface_get_material">surface&#95;get&#95;material</a>
+
+* "Material":class_material *surface&#95;get&#95;material* *(* "int":class_int surf&#95;idx *)* const
+
+Return a "Material":class_material in a given surface. Surface is rendered using this material.

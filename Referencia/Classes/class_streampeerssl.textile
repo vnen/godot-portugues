@@ -1,0 +1,23 @@
+h1(#streampeerssl). StreamPeerSSL
+
+h4(#inherits-streampeer). *Inherits:* "StreamPeer":class_streampeer
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* Error *"accept":#accept* *(* "StreamPeer":class_streampeer stream *)*
+* Error *"connect":#connect* *(* "StreamPeer":class_streampeer stream, "bool":class_bool validate&#95;certs=false, "String":class_string for&#95;hostname=&quot;&quot; *)*
+* "int":class_int *"get&#95;status":#get_status* *(* *)* const
+* void *"disconnect":#disconnect* *(* *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *STATUS&#95;DISCONNECTED* = *0*
+* *STATUS&#95;CONNECTED* = *1*
+* *STATUS&#95;ERROR&#95;NO&#95;CERTIFICATE* = *2*
+* *STATUS&#95;ERROR&#95;HOSTNAME&#95;MISMATCH* = *3*
+
+h3(#member-function-description). Member Function Description

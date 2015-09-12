@@ -1,0 +1,13 @@
+h1(#margincontainer). MarginContainer
+
+h4(#inherits-container). *Inherits:* "Container":class_container
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Simple margin container.
+
+h3(#description). Description
+
+Simple margin container. Adds a left margin to anything contained.

@@ -1,0 +1,120 @@
+h1(#optionbutton). OptionButton
+
+h4(#inherits-button). *Inherits:* "Button":class_button
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Button control that provides selectable options when pressed.
+
+h3(#member-functions). Member Functions
+
+* void *"add&#95;item":#add_item* *(* "String":class_string label, "int":class_int id=&#45;1 *)*
+* void *"add&#95;icon&#95;item":#add_icon_item* *(* "Texture":class_texture texture, "String":class_string label, "int":class_int id *)*
+* void *"set&#95;item&#95;text":#set_item_text* *(* "int":class_int idx, "String":class_string text *)*
+* void *"set&#95;item&#95;icon":#set_item_icon* *(* "int":class_int idx, "Texture":class_texture texture *)*
+* void *"set&#95;item&#95;disabled":#set_item_disabled* *(* "int":class_int idx, "bool":class_bool disabled *)*
+* void *"set&#95;item&#95;ID":#set_item_ID* *(* "int":class_int idx, "int":class_int id *)*
+* void *"set&#95;item&#95;metadata":#set_item_metadata* *(* "int":class_int idx, var metadata *)*
+* "String":class_string *"get&#95;item&#95;text":#get_item_text* *(* "int":class_int idx *)* const
+* "Texture":class_texture *"get&#95;item&#95;icon":#get_item_icon* *(* "int":class_int idx *)* const
+* "int":class_int *"get&#95;item&#95;ID":#get_item_ID* *(* "int":class_int idx *)* const
+* void *"get&#95;item&#95;metadata":#get_item_metadata* *(* "int":class_int idx *)* const
+* "bool":class_bool *"is&#95;item&#95;disabled":#is_item_disabled* *(* "int":class_int idx *)* const
+* "int":class_int *"get&#95;item&#95;count":#get_item_count* *(* *)* const
+* void *"add&#95;separator":#add_separator* *(* *)*
+* void *"clear":#clear* *(* *)*
+* void *"select":#select* *(* "int":class_int arg0 *)*
+* "int":class_int *"get&#95;selected":#get_selected* *(* *)* const
+* "int":class_int *"get&#95;selected&#95;ID":#get_selected_ID* *(* *)* const
+* void *"get&#95;selected&#95;metadata":#get_selected_metadata* *(* *)* const
+* void *"remove&#95;item":#remove_item* *(* "int":class_int idx *)*
+
+h3(#signals). Signals
+
+* *item&#95;selected* *(* "int":class_int ID *)*
+
+h3(#description). Description
+
+OptionButton is a type button that provides a selectable list of items when pressed. The item selected becomes the &quot;current&quot; item and is displayed as the button text.
+
+h3(#member-function-description). Member Function Description
+
+h4(#add_item). <a name="add_item">add&#95;item</a>
+
+* void *add&#95;item* *(* "String":class_string label, "int":class_int id=&#45;1 *)*
+
+Add an item, with text &quot;label&quot; and (optionally) id. If no &quot;id&quot; is passed, &quot;id&quot; becomes the item index. New items are appended at the end.
+
+h4(#add_icon_item). <a name="add_icon_item">add&#95;icon&#95;item</a>
+
+* void *add&#95;icon&#95;item* *(* "Texture":class_texture texture, "String":class_string label, "int":class_int id *)*
+
+Add an item, with a &quot;texture&quot; icon, text &quot;label&quot; and (optionally) id. If no &quot;id&quot; is passed, &quot;id&quot; becomes the item index. New items are appended at the end.
+
+h4(#set_item_text). <a name="set_item_text">set&#95;item&#95;text</a>
+
+* void *set&#95;item&#95;text* *(* "int":class_int idx, "String":class_string text *)*
+
+Set the text of an item at index &quot;idx&quot;.
+
+h4(#set_item_icon). <a name="set_item_icon">set&#95;item&#95;icon</a>
+
+* void *set&#95;item&#95;icon* *(* "int":class_int idx, "Texture":class_texture texture *)*
+
+Set the icon of an item at index &quot;idx&quot;.
+
+h4(#set_item_id). <a name="set_item_ID">set&#95;item&#95;ID</a>
+
+* void *set&#95;item&#95;ID* *(* "int":class_int idx, "int":class_int id *)*
+
+Set the ID of an item at index &quot;idx&quot;.
+
+h4(#get_item_text). <a name="get_item_text">get&#95;item&#95;text</a>
+
+* "String":class_string *get&#95;item&#95;text* *(* "int":class_int idx *)* const
+
+Return the text of the item at index &quot;idx&quot;.
+
+h4(#get_item_icon). <a name="get_item_icon">get&#95;item&#95;icon</a>
+
+* "Texture":class_texture *get&#95;item&#95;icon* *(* "int":class_int idx *)* const
+
+Return the icon of the item at index &quot;idx&quot;.
+
+h4(#get_item_id). <a name="get_item_ID">get&#95;item&#95;ID</a>
+
+* "int":class_int *get&#95;item&#95;ID* *(* "int":class_int idx *)* const
+
+Return the ID of the item at index &quot;idx&quot;.
+
+h4(#get_item_count). <a name="get_item_count">get&#95;item&#95;count</a>
+
+* "int":class_int *get&#95;item&#95;count* *(* *)* const
+
+Return the amount of items in the OptionButton.
+
+h4(#add_separator). <a name="add_separator">add&#95;separator</a>
+
+* void *add&#95;separator* *(* *)*
+
+Add a separator to the list of items. Separators help to group items. Separator also takes up an index and is appended at the end.
+
+h4(#clear). <a name="clear">clear</a>
+
+* void *clear* *(* *)*
+
+Clear all the items in the "OptionButton":class_optionbutton.
+
+h4(#select). <a name="select">select</a>
+
+* void *select* *(* "int":class_int arg0 *)*
+
+Select an item by index and make it the current item.
+
+h4(#get_selected). <a name="get_selected">get&#95;selected</a>
+
+* "int":class_int *get&#95;selected* *(* *)* const
+
+Return the current item index

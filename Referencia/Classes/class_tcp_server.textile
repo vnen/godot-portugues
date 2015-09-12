@@ -1,0 +1,46 @@
+h1(#tcp_server). TCP&#95;Server
+
+h4(#inherits-reference). *Inherits:* "Reference":class_reference
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+TCP Server.
+
+h3(#member-functions). Member Functions
+
+* "int":class_int *"listen":#listen* *(* "int":class_int port, "StringArray":class_stringarray accepted&#95;hosts=StringArray() *)*
+* "bool":class_bool *"is&#95;connection&#95;available":#is_connection_available* *(* *)* const
+* "Object":class_object *"take&#95;connection":#take_connection* *(* *)*
+* void *"stop":#stop* *(* *)*
+
+h3(#description). Description
+
+TCP Server class. Listens to connections on a port and returns a StreamPeerTCP when got a connection.
+
+h3(#member-function-description). Member Function Description
+
+h4(#listen). <a name="listen">listen</a>
+
+* "int":class_int *listen* *(* "int":class_int port, "StringArray":class_stringarray accepted&#95;hosts=StringArray() *)*
+
+Listen on a port, alternatively give a white&#45;list of accepted hosts.
+
+h4(#is_connection_available). <a name="is_connection_available">is&#95;connection&#95;available</a>
+
+* "bool":class_bool *is&#95;connection&#95;available* *(* *)* const
+
+Return true if a connection is available for taking.
+
+h4(#take_connection). <a name="take_connection">take&#95;connection</a>
+
+* "Object":class_object *take&#95;connection* *(* *)*
+
+If a connection is available, return a StreamPeerTCP with the connection/
+
+h4(#stop). <a name="stop">stop</a>
+
+* void *stop* *(* *)*
+
+Stop listening.

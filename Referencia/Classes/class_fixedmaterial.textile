@@ -1,0 +1,100 @@
+h1(#fixedmaterial). FixedMaterial
+
+h4(#inherits-material). *Inherits:* "Material":class_material
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Simple Material with a fixed parameter set.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;parameter":#set_parameter* *(* "int":class_int param, var value *)*
+* void *"get&#95;parameter":#get_parameter* *(* "int":class_int param *)* const
+* void *"set&#95;texture":#set_texture* *(* "int":class_int param, "Texture":class_texture texture *)*
+* "Texture":class_texture *"get&#95;texture":#get_texture* *(* "int":class_int param *)* const
+* void *"set&#95;texcoord&#95;mode":#set_texcoord_mode* *(* "int":class_int param, "int":class_int mode *)*
+* "int":class_int *"get&#95;texcoord&#95;mode":#get_texcoord_mode* *(* "int":class_int param *)* const
+* void *"set&#95;fixed&#95;flag":#set_fixed_flag* *(* "int":class_int flag, "bool":class_bool value *)*
+* "bool":class_bool *"get&#95;fixed&#95;flag":#get_fixed_flag* *(* "int":class_int flag *)* const
+* void *"set&#95;uv&#95;transform":#set_uv_transform* *(* "Transform":class_transform transform *)*
+* "Transform":class_transform *"get&#95;uv&#95;transform":#get_uv_transform* *(* *)* const
+* void *"set&#95;light&#95;shader":#set_light_shader* *(* "int":class_int shader *)*
+* "int":class_int *"get&#95;light&#95;shader":#get_light_shader* *(* *)* const
+* void *"set&#95;point&#95;size":#set_point_size* *(* "float":class_float size *)*
+* "float":class_float *"get&#95;point&#95;size":#get_point_size* *(* *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *PARAM&#95;DIFFUSE* = *0* &#45; Diffuse Lighting (light scattered from surface).
+* *PARAM&#95;DETAIL* = *1* &#45; Detail Layer for diffuse lighting.
+* *PARAM&#95;SPECULAR* = *2* &#45; Specular Lighting (light reflected from the surface).
+* *PARAM&#95;EMISSION* = *3* &#45; Emission Lighting (light emitted from the surface)
+* *PARAM&#95;SPECULAR&#95;EXP* = *4* &#45; Specular Exponent (size of the specular dot)
+* *PARAM&#95;GLOW* = *5* &#45; Glow (Visible emitted scattered light).
+* *PARAM&#95;NORMAL* = *6* &#45; Normal Map (irregularity map).
+* *PARAM&#95;SHADE&#95;PARAM* = *7*
+* *PARAM&#95;MAX* = *8* &#45; Maximum amount of parameters
+* *TEXCOORD&#95;SPHERE* = *3*
+* *TEXCOORD&#95;UV* = *0* &#45; Read texture coordinates from the UV array.
+* *TEXCOORD&#95;UV&#95;TRANSFORM* = *1* &#45; Read texture coordinates from the UV array and transform them by uv&#95;xform.
+* *TEXCOORD&#95;UV2* = *2* &#45; Read texture coordinates from the UV2 array.
+* *FLAG&#95;USE&#95;ALPHA* = *0*
+* *FLAG&#95;USE&#95;COLOR&#95;ARRAY* = *1*
+* *FLAG&#95;USE&#95;POINT&#95;SIZE* = *2*
+* *FLAG&#95;DISCARD&#95;ALPHA* = *3*
+
+h3(#description). Description
+
+FixedMaterial is a simple type of material "Resource":class_resource, which contains a fixed amount of paramters. It is the only type of material supported in fixed&#45;pipeline devices and APIs. It is also an often a better alternative to "ShaderMaterial":class_shadermaterial for most simple use cases.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_parameter). <a name="set_parameter">set&#95;parameter</a>
+
+* void *set&#95;parameter* *(* "int":class_int param, var value *)*
+
+Set a parameter, parameters are defined in the PARAM&#95;&#42; enum. The type of each parameter may change, so it&quot;apos;s best to check the enum.
+
+h4(#get_parameter). <a name="get_parameter">get&#95;parameter</a>
+
+* void *get&#95;parameter* *(* "int":class_int param *)* const
+
+Return a parameter, parameters are defined in the PARAM&#95;&#42; enum. The type of each parameter may change, so it&quot;apos;s best to check the enum.
+
+h4(#set_texture). <a name="set_texture">set&#95;texture</a>
+
+* void *set&#95;texture* *(* "int":class_int param, "Texture":class_texture texture *)*
+
+Set a texture. Textures change parameters per texel and are mapped to the model depending on the texcoord mode (see "set&#95;texcoord&#95;mode":#set_texcoord_mode).
+
+h4(#get_texture). <a name="get_texture">get&#95;texture</a>
+
+* "Texture":class_texture *get&#95;texture* *(* "int":class_int param *)* const
+
+Return a texture. Textures change parameters per texel and are mapped to the model depending on the texcoord mode (see "set&#95;texcoord&#95;mode":#set_texcoord_mode).
+
+h4(#set_texcoord_mode). <a name="set_texcoord_mode">set&#95;texcoord&#95;mode</a>
+
+* void *set&#95;texcoord&#95;mode* *(* "int":class_int param, "int":class_int mode *)*
+
+Set the texture coordinate mode. Each texture param (from the PARAM&#95;&#42; enum) has one. It defines how the textures are mapped to the object.
+
+h4(#get_texcoord_mode). <a name="get_texcoord_mode">get&#95;texcoord&#95;mode</a>
+
+* "int":class_int *get&#95;texcoord&#95;mode* *(* "int":class_int param *)* const
+
+Return the texture coordinate mode. Each texture param (from the PARAM&#95;&#42; enum) has one. It defines how the textures are mapped to the object.
+
+h4(#set_uv_transform). <a name="set_uv_transform">set&#95;uv&#95;transform</a>
+
+* void *set&#95;uv&#95;transform* *(* "Transform":class_transform transform *)*
+
+Sets a special transform used to post&#45;transform UV coordinates of the uv&#95;xfrom tecoord mode: TEXCOORD&#95;UV&#95;TRANSFORM
+
+h4(#get_uv_transform). <a name="get_uv_transform">get&#95;uv&#95;transform</a>
+
+* "Transform":class_transform *get&#95;uv&#95;transform* *(* *)* const
+
+Returns the special transform used to post&#45;transform UV coordinates of the uv&#95;xfrom tecoord mode: TEXCOORD&#95;UV&#95;TRANSFORM

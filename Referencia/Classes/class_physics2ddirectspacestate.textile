@@ -1,0 +1,64 @@
+h1(#physics2ddirectspacestate). Physics2DDirectSpaceState
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Direct access object to a space in the "Physics2DServer":class_physics2dserver.
+
+h3(#member-functions). Member Functions
+
+* "Array":class_array *"intersect&#95;point":#intersect_point* *(* "Vector2":class_vector2 point, "int":class_int max&#95;results=32, "Array":class_array exclude=Array(), "int":class_int layer&#95;mask=2147483647, "int":class_int type&#95;mask=15 *)*
+* "Dictionary":class_dictionary *"intersect&#95;ray":#intersect_ray* *(* "Vector2":class_vector2 from, "Vector2":class_vector2 to, "Array":class_array exclude=Array(), "int":class_int layer&#95;mask=2147483647, "int":class_int type&#95;mask=15 *)*
+* "Array":class_array *"intersect&#95;shape":#intersect_shape* *(* "Physics2DShapeQueryParameters":class_physics2dshapequeryparameters shape, "int":class_int max&#95;results=32 *)*
+* "Array":class_array *"cast&#95;motion":#cast_motion* *(* "Physics2DShapeQueryParameters":class_physics2dshapequeryparameters shape *)*
+* "Array":class_array *"collide&#95;shape":#collide_shape* *(* "Physics2DShapeQueryParameters":class_physics2dshapequeryparameters shape, "int":class_int max&#95;results=32 *)*
+* "Dictionary":class_dictionary *"get&#95;rest&#95;info":#get_rest_info* *(* "Physics2DShapeQueryParameters":class_physics2dshapequeryparameters shape *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *TYPE&#95;MASK&#95;STATIC&#95;BODY* = *1*
+* *TYPE&#95;MASK&#95;KINEMATIC&#95;BODY* = *2*
+* *TYPE&#95;MASK&#95;RIGID&#95;BODY* = *4*
+* *TYPE&#95;MASK&#95;CHARACTER&#95;BODY* = *8*
+* *TYPE&#95;MASK&#95;AREA* = *16*
+* *TYPE&#95;MASK&#95;COLLISION* = *15*
+
+h3(#description). Description
+
+Direct access object to a space in the "Physics2DServer":class_physics2dserver. It's used mainly to do queries against objects and areas residing in a given space.
+
+h3(#member-function-description). Member Function Description
+
+h4(#intersect_ray). <a name="intersect_ray">intersect&#95;ray</a>
+
+* "Dictionary":class_dictionary *intersect&#95;ray* *(* "Vector2":class_vector2 from, "Vector2":class_vector2 to, "Array":class_array exclude=Array(), "int":class_int layer&#95;mask=2147483647, "int":class_int type&#95;mask=15 *)*
+
+Intersect a ray in a given space, the returned object is a dictionary with the following fields:
+
+<pre>
+        position: place where ray is stopped
+
+        normal: normal of the object at the point where the ray was stopped 
+
+        shape:  shape index of the object agaisnt which the ray was stopped
+
+        collider_: collider agaisnt which the ray was stopped
+
+        collider_id: collider id of the object agaisnt which the ray was stopped
+
+        collider: collider object agaisnt which the ray was stopped
+
+        rid:  [RID](class_rid) of the object agaisnt which the ray was stopped
+
+        If the ray did not intersect anything, then an empty
+        dictionary (dir.empty()==true) is returned instead.
+</pre>
+
+h4(#intersect_shape). <a name="intersect_shape">intersect&#95;shape</a>
+
+* "Array":class_array *intersect&#95;shape* *(* "Physics2DShapeQueryParameters":class_physics2dshapequeryparameters shape, "int":class_int max&#95;results=32 *)*
+
+Intersect a given shape (RID or "Shape2D":class_shape2d) against the space, the intersected shapes are returned in a special result object.

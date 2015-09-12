@@ -1,0 +1,25 @@
+h1(#packetpeerstream). PacketPeerStream
+
+h4(#inherits-packetpeer). *Inherits:* "PacketPeer":class_packetpeer
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Wrapper to use a PacketPeer over a StreamPeer.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;stream&#95;peer":#set_stream_peer* *(* "StreamPeer":class_streampeer peer *)*
+
+h3(#description). Description
+
+PacketStreamPeer provides a wrapper for working using packets over a stream. This allows for using packet based code with StreamPeers. PacketPeerStream implements a custom protocol over the StreamPeer, so the user should not read or write to the wrapped StreamPeer directly.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_stream_peer). <a name="set_stream_peer">set&#95;stream&#95;peer</a>
+
+* void *set&#95;stream&#95;peer* *(* "StreamPeer":class_streampeer peer *)*
+
+Set the StreamPeer object to be wrapped

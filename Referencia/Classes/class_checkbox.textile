@@ -1,0 +1,7 @@
+h1(#checkbox). CheckBox
+
+h4(#inherits-button). *Inherits:* "Button":class_button
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description

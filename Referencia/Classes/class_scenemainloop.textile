@@ -1,0 +1,141 @@
+h1(#scenemainloop). SceneMainLoop
+
+h4(#inherits-mainloop). *Inherits:* "MainLoop":class_mainloop
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Scene&#45;Based implementation of the MainLoop.
+
+h3(#member-functions). Member Functions
+
+* void *"notify&#95;group":#notify_group* *(* "int":class_int call&#95;flags, "String":class_string group, "int":class_int notification *)*
+* void *"set&#95;group":#set_group* *(* "int":class_int call&#95;flags, "String":class_string group, "String":class_string property, var value *)*
+* "Array":class_array *"get&#95;nodes&#95;in&#95;group":#get_nodes_in_group* *(* "String":class_string arg0 *)*
+* "Viewport":class_viewport *"get&#95;root":#get_root* *(* *)* const
+* void *"set&#95;auto&#95;accept&#95;quit":#set_auto_accept_quit* *(* "bool":class_bool enabled *)*
+* void *"set&#95;editor&#95;hint":#set_editor_hint* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;editor&#95;hint":#is_editor_hint* *(* *)* const
+* void *"set&#95;edited&#95;scene&#95;root":#set_edited_scene_root* *(* "Object":class_object scene *)*
+* "Object":class_object *"get&#95;edited&#95;scene&#95;root":#get_edited_scene_root* *(* *)* const
+* void *"set&#95;pause":#set_pause* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;paused":#is_paused* *(* *)* const
+* void *"set&#95;input&#95;as&#95;handled":#set_input_as_handled* *(* *)*
+* "int":class_int *"get&#95;node&#95;count":#get_node_count* *(* *)* const
+* "int":class_int *"get&#95;frame":#get_frame* *(* *)* const
+* void *"quit":#quit* *(* *)*
+* void *"set&#95;screen&#95;stretch":#set_screen_stretch* *(* "int":class_int mode, "int":class_int aspect, "Vector2":class_vector2 minsize *)*
+* void *"queue&#95;delete":#queue_delete* *(* "Object":class_object obj *)*
+* void *"call&#95;group":#call_group* *(* "int":class_int flags, "String":class_string group, "String":class_string method, var arg0=NULL, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL *)*
+
+h3(#signals). Signals
+
+* *screen&#95;resized* *(* *)*
+* *node&#95;removed* *(* "Object":class_object node *)*
+* *tree&#95;changed* *(* *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *GROUP&#95;CALL&#95;DEFAULT* = *0* &#45; Regular group call flag (no flags).
+* *GROUP&#95;CALL&#95;REVERSE* = *1* &#45; Call a group in inverse&#45;scene order.
+* *GROUP&#95;CALL&#95;REALTIME* = *2* &#45; Call a group immediately (usually calls are delivered on idle).
+* *GROUP&#95;CALL&#95;UNIQUE* = *4* &#45; Call a group only once, even if call is performed many times.
+* *STRETCH&#95;MODE&#95;DISABLED* = *0*
+* *STRETCH&#95;MODE&#95;2D* = *1*
+* *STRETCH&#95;MODE&#95;VIEWPORT* = *2*
+* *STRETCH&#95;ASPECT&#95;IGNORE* = *0*
+* *STRETCH&#95;ASPECT&#95;KEEP* = *1*
+* *STRETCH&#95;ASPECT&#95;KEEP&#95;WIDTH* = *2*
+* *STRETCH&#95;ASPECT&#95;KEEP&#95;HEIGHT* = *3*
+
+h3(#description). Description
+
+Scene implementation of the MainLoop. All scenes edited using the editor are loaded with this main loop, which provides the base for the scene system.
+
+bc. All group operations (get nodes, call, etc) is performed here. All nodes in a group can be called a specific functions, set a property or notified. This happens in scene-order.
+
+
+h3(#member-function-description). Member Function Description
+
+h4(#notify_group). <a name="notify_group">notify&#95;group</a>
+
+* void *notify&#95;group* *(* "int":class_int call&#95;flags, "String":class_string group, "int":class_int notification *)*
+
+Call a notification in all the nodes belonging to a given group. See GROUP&#95;CALL&#95;&#42; enum for options.
+
+h4(#set_group). <a name="set_group">set&#95;group</a>
+
+* void *set&#95;group* *(* "int":class_int call&#95;flags, "String":class_string group, "String":class_string property, var value *)*
+
+Set a property in all the nodes belonging to a given group. See GROUP&#95;CALL&#95;&#42; enum for options.
+
+h4(#get_nodes_in_group). <a name="get_nodes_in_group">get&#95;nodes&#95;in&#95;group</a>
+
+* "Array":class_array *get&#95;nodes&#95;in&#95;group* *(* "String":class_string arg0 *)*
+
+Get all the nods belonging to a given group.
+
+h4(#set_auto_accept_quit). <a name="set_auto_accept_quit">set&#95;auto&#95;accept&#95;quit</a>
+
+* void *set&#95;auto&#95;accept&#95;quit* *(* "bool":class_bool enabled *)*
+
+Set to true if the application will quit automatically when quit is requested (Alt&#45;f4 or ctrl&#45;c).
+
+h4(#set_editor_hint). <a name="set_editor_hint">set&#95;editor&#95;hint</a>
+
+* void *set&#95;editor&#95;hint* *(* "bool":class_bool enable *)*
+
+Set to true to tell nodes and the scene that it is being edited. This is used by editors, not release.
+
+h4(#is_editor_hint). <a name="is_editor_hint">is&#95;editor&#95;hint</a>
+
+* "bool":class_bool *is&#95;editor&#95;hint* *(* *)* const
+
+Return true if the scene is being run inside an editor.
+
+h4(#set_pause). <a name="set_pause">set&#95;pause</a>
+
+* void *set&#95;pause* *(* "bool":class_bool enable *)*
+
+Set pause. The built&#45;in pause system is very basic and only meant to avoid processing nodes not allowed to work in pause mode.
+
+h4(#is_paused). <a name="is_paused">is&#95;paused</a>
+
+* "bool":class_bool *is&#95;paused* *(* *)* const
+
+Return true if the scene is paused.
+
+h4(#set_input_as_handled). <a name="set_input_as_handled">set&#95;input&#95;as&#95;handled</a>
+
+* void *set&#95;input&#95;as&#95;handled* *(* *)*
+
+Handle a current input event (avoid further processing of it).
+
+h4(#get_frame). <a name="get_frame">get&#95;frame</a>
+
+* "int":class_int *get&#95;frame* *(* *)* const
+
+Return the frame index (how many frames were drawn).
+
+h4(#quit). <a name="quit">quit</a>
+
+* void *quit* *(* *)*
+
+Quit the application.
+
+h4(#queue_delete). <a name="queue_delete">queue&#95;delete</a>
+
+* void *queue&#95;delete* *(* "Object":class_object obj *)*
+
+Queue an object for deletion next time the loop goes idle.
+
+h4(#call_group). <a name="call_group">call&#95;group</a>
+
+* void *call&#95;group* *(* "int":class_int flags, "String":class_string group, "String":class_string method, var arg0=NULL, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL *)*
+
+Call a function for all the nodes in a given group.
+
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+</ol>

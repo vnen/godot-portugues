@@ -1,0 +1,112 @@
+h1(#vector3). Vector3
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Vector class, which performs basic 3D vector math operations.
+
+h3(#member-functions). Member Functions
+
+* "Vector3":class_vector3 *"abs":#abs* *(* *)*
+* "Vector3":class_vector3 *"cross":#cross* *(* "Vector3":class_vector3 b *)*
+* "Vector3":class_vector3 *"cubic&#95;interpolate":#cubic_interpolate* *(* "Vector3":class_vector3 b, "Vector3":class_vector3 pre&#95;a, "Vector3":class_vector3 post&#95;b, "float":class_float t *)*
+* "float":class_float *"distance&#95;squared&#95;to":#distance_squared_to* *(* "Vector3":class_vector3 b *)*
+* "float":class_float *"distance&#95;to":#distance_to* *(* "Vector3":class_vector3 b *)*
+* "float":class_float *"dot":#dot* *(* "Vector3":class_vector3 b *)*
+* "Vector3":class_vector3 *"inverse":#inverse* *(* *)*
+* "float":class_float *"length":#length* *(* *)*
+* "float":class_float *"length&#95;squared":#length_squared* *(* *)*
+* "Vector3":class_vector3 *"linear&#95;interpolate":#linear_interpolate* *(* "Vector3":class_vector3 b, "float":class_float t *)*
+* "int":class_int *"max&#95;axis":#max_axis* *(* *)*
+* "int":class_int *"min&#95;axis":#min_axis* *(* *)*
+* "Vector3":class_vector3 *"normalized":#normalized* *(* *)*
+* "Vector3":class_vector3 *"reflect":#reflect* *(* "Vector3":class_vector3 by *)*
+* "Vector3":class_vector3 *"rotated":#rotated* *(* "Vector3":class_vector3 axis, "float":class_float phi *)*
+* "Vector3":class_vector3 *"slide":#slide* *(* "Vector3":class_vector3 by *)*
+* "Vector3":class_vector3 *"snapped":#snapped* *(* "float":class_float by *)*
+* "Vector3":class_vector3 *"Vector3":#Vector3* *(* "float":class_float x, "float":class_float y, "float":class_float z *)*
+
+h3(#member-variables). Member Variables
+
+* "float":class_float *x*
+* "float":class_float *y*
+* "float":class_float *z*
+
+h3(#numeric-constants). Numeric Constants
+
+* *AXIS&#95;X* = *0*
+* *AXIS&#95;Y* = *1*
+* *AXIS&#95;Z* = *2*
+
+h3(#description). Description
+
+Vector3 is one of the core classes of the engine, and includes several built&#45;in helper functions to perform basic vecor math operations.
+
+h3(#member-function-description). Member Function Description
+
+h4(#cross). <a name="cross">cross</a>
+
+* "Vector3":class_vector3 *cross* *(* "Vector3":class_vector3 b *)*
+
+Return the cross product with b.
+
+h4(#cubic_interpolate). <a name="cubic_interpolate">cubic&#95;interpolate</a>
+
+* "Vector3":class_vector3 *cubic&#95;interpolate* *(* "Vector3":class_vector3 b, "Vector3":class_vector3 pre&#95;a, "Vector3":class_vector3 post&#95;b, "float":class_float t *)*
+
+Perform a cubic interpolation between vectors a,b,c,d (b is current), by the given amount (i).
+
+h4(#distance_squared_to). <a name="distance_squared_to">distance&#95;squared&#95;to</a>
+
+* "float":class_float *distance&#95;squared&#95;to* *(* "Vector3":class_vector3 b *)*
+
+Return the squared distance (distance minus the last square root) to b.
+
+h4(#distance_to). <a name="distance_to">distance&#95;to</a>
+
+* "float":class_float *distance&#95;to* *(* "Vector3":class_vector3 b *)*
+
+Return the distance to b.
+
+h4(#dot). <a name="dot">dot</a>
+
+* "float":class_float *dot* *(* "Vector3":class_vector3 b *)*
+
+Return the dot product with b.
+
+h4(#inverse). <a name="inverse">inverse</a>
+
+* "Vector3":class_vector3 *inverse* *(* *)*
+
+Returns the inverse of the vector. this is the same as Vector3( 1.0 / v.x, 1.0 / v.y, 1.0 / v.z )
+
+h4(#length). <a name="length">length</a>
+
+* "float":class_float *length* *(* *)*
+
+Return the length of the vector.
+
+h4(#length_squared). <a name="length_squared">length&#95;squared</a>
+
+* "float":class_float *length&#95;squared* *(* *)*
+
+Return the length of the vector, without the square root step.
+
+h4(#linear_interpolate). <a name="linear_interpolate">linear&#95;interpolate</a>
+
+* "Vector3":class_vector3 *linear&#95;interpolate* *(* "Vector3":class_vector3 b, "float":class_float t *)*
+
+Linearly interpolates the vector to a given one (b), by the given amount (i)
+
+h4(#normalized). <a name="normalized">normalized</a>
+
+* "Vector3":class_vector3 *normalized* *(* *)*
+
+Return a copy of the normalized vector to unit length. This is the same as v / v.length()
+
+h4(#snapped). <a name="snapped">snapped</a>
+
+* "Vector3":class_vector3 *snapped* *(* "float":class_float by *)*
+
+Return a copy of the vector, snapped to the lowest neared multiple.

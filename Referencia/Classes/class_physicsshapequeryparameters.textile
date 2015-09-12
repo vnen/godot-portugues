@@ -1,0 +1,25 @@
+h1(#physicsshapequeryparameters). PhysicsShapeQueryParameters
+
+h4(#inherits-reference). *Inherits:* "Reference":class_reference
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;shape":#set_shape* *(* "Shape":class_shape shape *)*
+* void *"set&#95;shape&#95;rid":#set_shape_rid* *(* "RID":class_rid shape *)*
+* "RID":class_rid *"get&#95;shape&#95;rid":#get_shape_rid* *(* *)* const
+* void *"set&#95;transform":#set_transform* *(* "Transform":class_transform transform *)*
+* "Transform":class_transform *"get&#95;transform":#get_transform* *(* *)* const
+* void *"set&#95;margin":#set_margin* *(* "float":class_float margin *)*
+* "float":class_float *"get&#95;margin":#get_margin* *(* *)* const
+* void *"set&#95;layer&#95;mask":#set_layer_mask* *(* "int":class_int layer&#95;mask *)*
+* "int":class_int *"get&#95;layer&#95;mask":#get_layer_mask* *(* *)* const
+* void *"set&#95;object&#95;type&#95;mask":#set_object_type_mask* *(* "int":class_int object&#95;type&#95;mask *)*
+* "int":class_int *"get&#95;object&#95;type&#95;mask":#get_object_type_mask* *(* *)* const
+* void *"set&#95;exclude":#set_exclude* *(* "Array":class_array exclude *)*
+* "Array":class_array *"get&#95;exclude":#get_exclude* *(* *)* const
+
+h3(#member-function-description). Member Function Description

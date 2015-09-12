@@ -1,0 +1,19 @@
+h1(#flurry). Flurry
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"log&#95;event":#log_event* *(* "String":class_string name, "Dictionary":class_dictionary params *)*
+* void *"log&#95;timed&#95;event":#log_timed_event* *(* "String":class_string name, "Dictionary":class_dictionary params *)*
+* void *"end&#95;timed&#95;event":#end_timed_event* *(* "String":class_string name *)*
+
+h3(#member-function-description). Member Function Description
+
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+</ol>

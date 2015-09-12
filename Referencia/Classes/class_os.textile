@@ -1,0 +1,307 @@
+h1(#os). OS
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Operating System functions.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;clipboard":#set_clipboard* *(* "String":class_string clipboard *)*
+* "String":class_string *"get&#95;clipboard":#get_clipboard* *(* *)* const
+* void *"set&#95;video&#95;mode":#set_video_mode* *(* "Vector2":class_vector2 size, "bool":class_bool fullscreen, "bool":class_bool resizable, "int":class_int screen=0 *)*
+* "Vector2":class_vector2 *"get&#95;video&#95;mode&#95;size":#get_video_mode_size* *(* "int":class_int screen=0 *)* const
+* "bool":class_bool *"is&#95;video&#95;mode&#95;fullscreen":#is_video_mode_fullscreen* *(* "int":class_int screen=0 *)* const
+* "bool":class_bool *"is&#95;video&#95;mode&#95;resizable":#is_video_mode_resizable* *(* "int":class_int screen=0 *)* const
+* "Array":class_array *"get&#95;fullscreen&#95;mode&#95;list":#get_fullscreen_mode_list* *(* "int":class_int screen=0 *)* const
+* "int":class_int *"get&#95;screen&#95;count":#get_screen_count* *(* *)* const
+* "int":class_int *"get&#95;current&#95;screen":#get_current_screen* *(* *)* const
+* void *"set&#95;current&#95;screen":#set_current_screen* *(* "int":class_int screen *)*
+* "Vector2":class_vector2 *"get&#95;screen&#95;position":#get_screen_position* *(* "int":class_int screen=0 *)* const
+* "Vector2":class_vector2 *"get&#95;screen&#95;size":#get_screen_size* *(* "int":class_int screen=0 *)* const
+* "Vector2":class_vector2 *"get&#95;window&#95;position":#get_window_position* *(* *)* const
+* void *"set&#95;window&#95;position":#set_window_position* *(* "Vector2":class_vector2 position *)*
+* "Vector2":class_vector2 *"get&#95;window&#95;size":#get_window_size* *(* *)* const
+* void *"set&#95;window&#95;size":#set_window_size* *(* "Vector2":class_vector2 size *)*
+* void *"set&#95;window&#95;fullscreen":#set_window_fullscreen* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;window&#95;fullscreen":#is_window_fullscreen* *(* *)* const
+* void *"set&#95;window&#95;resizable":#set_window_resizable* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;window&#95;resizable":#is_window_resizable* *(* *)* const
+* void *"set&#95;window&#95;minimized":#set_window_minimized* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;window&#95;minimized":#is_window_minimized* *(* *)* const
+* void *"set&#95;window&#95;maximized":#set_window_maximized* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;window&#95;maximized":#is_window_maximized* *(* *)* const
+* void *"set&#95;iterations&#95;per&#95;second":#set_iterations_per_second* *(* "int":class_int iterations&#95;per&#95;second *)*
+* "int":class_int *"get&#95;iterations&#95;per&#95;second":#get_iterations_per_second* *(* *)* const
+* void *"set&#95;target&#95;fps":#set_target_fps* *(* "int":class_int target&#95;fps *)*
+* "float":class_float *"get&#95;target&#95;fps":#get_target_fps* *(* *)* const
+* void *"set&#95;time&#95;scale":#set_time_scale* *(* "float":class_float time&#95;scale *)*
+* "float":class_float *"get&#95;time&#95;scale":#get_time_scale* *(* *)*
+* "bool":class_bool *"has&#95;touchscreen&#95;ui&#95;hint":#has_touchscreen_ui_hint* *(* *)* const
+* void *"set&#95;window&#95;title":#set_window_title* *(* "String":class_string title *)*
+* void *"set&#95;low&#95;processor&#95;usage&#95;mode":#set_low_processor_usage_mode* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;in&#95;low&#95;processor&#95;usage&#95;mode":#is_in_low_processor_usage_mode* *(* *)* const
+* "int":class_int *"get&#95;processor&#95;count":#get_processor_count* *(* *)* const
+* "String":class_string *"get&#95;executable&#95;path":#get_executable_path* *(* *)* const
+* "int":class_int *"execute":#execute* *(* "String":class_string path, "StringArray":class_stringarray arguments, "bool":class_bool blocking, "Array":class_array output=Array() *)*
+* "int":class_int *"kill":#kill* *(* "int":class_int pid *)*
+* "int":class_int *"shell&#95;open":#shell_open* *(* "String":class_string uri *)*
+* "int":class_int *"get&#95;process&#95;ID":#get_process_ID* *(* *)* const
+* "String":class_string *"get&#95;environment":#get_environment* *(* "String":class_string environment *)* const
+* "bool":class_bool *"has&#95;environment":#has_environment* *(* "String":class_string environment *)* const
+* "String":class_string *"get&#95;name":#get_name* *(* *)* const
+* "StringArray":class_stringarray *"get&#95;cmdline&#95;args":#get_cmdline_args* *(* *)*
+* "Object":class_object *"get&#95;main&#95;loop":#get_main_loop* *(* *)* const
+* "Dictionary":class_dictionary *"get&#95;date":#get_date* *(* *)* const
+* "Dictionary":class_dictionary *"get&#95;time":#get_time* *(* *)* const
+* "int":class_int *"get&#95;unix&#95;time":#get_unix_time* *(* *)* const
+* void *"set&#95;icon":#set_icon* *(* "Image":class_image arg0 *)*
+* void *"delay&#95;usec":#delay_usec* *(* "int":class_int usec *)* const
+* void *"delay&#95;msec":#delay_msec* *(* "int":class_int msec *)* const
+* "int":class_int *"get&#95;ticks&#95;msec":#get_ticks_msec* *(* *)* const
+* "int":class_int *"get&#95;splash&#95;tick&#95;msec":#get_splash_tick_msec* *(* *)* const
+* "String":class_string *"get&#95;locale":#get_locale* *(* *)* const
+* "String":class_string *"get&#95;model&#95;name":#get_model_name* *(* *)* const
+* "String":class_string *"get&#95;custom&#95;level":#get_custom_level* *(* *)* const
+* "bool":class_bool *"can&#95;draw":#can_draw* *(* *)* const
+* "int":class_int *"get&#95;frames&#95;drawn":#get_frames_drawn* *(* *)*
+* "bool":class_bool *"is&#95;stdout&#95;verbose":#is_stdout_verbose* *(* *)* const
+* "bool":class_bool *"can&#95;use&#95;threads":#can_use_threads* *(* *)* const
+* "bool":class_bool *"is&#95;debug&#95;build":#is_debug_build* *(* *)* const
+* void *"dump&#95;memory&#95;to&#95;file":#dump_memory_to_file* *(* "String":class_string file *)*
+* void *"dump&#95;resources&#95;to&#95;file":#dump_resources_to_file* *(* "String":class_string file *)*
+* void *"print&#95;resources&#95;in&#95;use":#print_resources_in_use* *(* "bool":class_bool short=false *)*
+* void *"print&#95;all&#95;resources":#print_all_resources* *(* "String":class_string tofile=&quot;&quot; *)*
+* "int":class_int *"get&#95;static&#95;memory&#95;usage":#get_static_memory_usage* *(* *)* const
+* "int":class_int *"get&#95;static&#95;memory&#95;peak&#95;usage":#get_static_memory_peak_usage* *(* *)* const
+* "int":class_int *"get&#95;dynamic&#95;memory&#95;usage":#get_dynamic_memory_usage* *(* *)* const
+* "String":class_string *"get&#95;data&#95;dir":#get_data_dir* *(* *)* const
+* "String":class_string *"get&#95;system&#95;dir":#get_system_dir* *(* "int":class_int dir *)* const
+* "String":class_string *"get&#95;unique&#95;ID":#get_unique_ID* *(* *)* const
+* "bool":class_bool *"is&#95;ok&#95;left&#95;and&#95;cancel&#95;right":#is_ok_left_and_cancel_right* *(* *)* const
+* "float":class_float *"get&#95;frames&#95;per&#95;second":#get_frames_per_second* *(* *)* const
+* void *"print&#95;all&#95;textures&#95;by&#95;size":#print_all_textures_by_size* *(* *)*
+* void *"print&#95;resources&#95;by&#95;type":#print_resources_by_type* *(* "StringArray":class_stringarray arg0 *)*
+* "int":class_int *"native&#95;video&#95;play":#native_video_play* *(* "String":class_string arg0, "float":class_float arg1, "String":class_string arg2, "String":class_string arg3 *)*
+* "bool":class_bool *"native&#95;video&#95;is&#95;playing":#native_video_is_playing* *(* *)*
+* void *"native&#95;video&#95;stop":#native_video_stop* *(* *)*
+* void *"native&#95;video&#95;pause":#native_video_pause* *(* *)*
+* "String":class_string *"get&#95;scancode&#95;string":#get_scancode_string* *(* "int":class_int code *)* const
+* "bool":class_bool *"is&#95;scancode&#95;unicode":#is_scancode_unicode* *(* "int":class_int code *)* const
+* "int":class_int *"find&#95;scancode&#95;from&#95;string":#find_scancode_from_string* *(* "String":class_string string *)* const
+* void *"set&#95;use&#95;file&#95;access&#95;save&#95;and&#95;swap":#set_use_file_access_save_and_swap* *(* "bool":class_bool enabled *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *DAY&#95;SUNDAY* = *0*
+* *DAY&#95;MONDAY* = *1*
+* *DAY&#95;TUESDAY* = *2*
+* *DAY&#95;WEDNESDAY* = *3*
+* *DAY&#95;THURSDAY* = *4*
+* *DAY&#95;FRIDAY* = *5*
+* *DAY&#95;SATURDAY* = *6*
+* *MONTH&#95;JANUARY* = *0*
+* *MONTH&#95;FEBRUARY* = *1*
+* *MONTH&#95;MARCH* = *2*
+* *MONTH&#95;APRIL* = *3*
+* *MONTH&#95;MAY* = *4*
+* *MONTH&#95;JUNE* = *5*
+* *MONTH&#95;JULY* = *6*
+* *MONTH&#95;AUGUST* = *7*
+* *MONTH&#95;SEPTEMBER* = *8*
+* *MONTH&#95;OCTOBER* = *9*
+* *MONTH&#95;NOVEMBER* = *10*
+* *MONTH&#95;DECEMBER* = *11*
+* *SYSTEM&#95;DIR&#95;DESKTOP* = *0*
+* *SYSTEM&#95;DIR&#95;DCIM* = *1*
+* *SYSTEM&#95;DIR&#95;DOCUMENTS* = *2*
+* *SYSTEM&#95;DIR&#95;DOWNLOADS* = *3*
+* *SYSTEM&#95;DIR&#95;MOVIES* = *4*
+* *SYSTEM&#95;DIR&#95;MUSIC* = *5*
+* *SYSTEM&#95;DIR&#95;PICTURES* = *6*
+* *SYSTEM&#95;DIR&#95;RINGTONES* = *7*
+
+h3(#description). Description
+
+Operating System functions. OS Wraps the most common functionality to communicate with the host Operating System, such as: &#45;Mouse Grabbing &#45;Mouse Cursors
+ &#45;Clipboard &#45;Video Mode &#45;Date &quot; Time &#45;Timers
+ &#45;Environment Variables &#45;Execution of Binaries &#45;Command Line
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_clipboard). <a name="set_clipboard">set&#95;clipboard</a>
+
+* void *set&#95;clipboard* *(* "String":class_string clipboard *)*
+
+Set clipboard to the OS.
+
+h4(#get_clipboard). <a name="get_clipboard">get&#95;clipboard</a>
+
+* "String":class_string *get&#95;clipboard* *(* *)* const
+
+Get clipboard from the host OS.
+
+h4(#set_video_mode). <a name="set_video_mode">set&#95;video&#95;mode</a>
+
+* void *set&#95;video&#95;mode* *(* "Vector2":class_vector2 size, "bool":class_bool fullscreen, "bool":class_bool resizable, "int":class_int screen=0 *)*
+
+Change the video mode.
+
+h4(#get_video_mode_size). <a name="get_video_mode_size">get&#95;video&#95;mode&#95;size</a>
+
+* "Vector2":class_vector2 *get&#95;video&#95;mode&#95;size* *(* "int":class_int screen=0 *)* const
+
+Return the current video mode size.
+
+h4(#is_video_mode_fullscreen). <a name="is_video_mode_fullscreen">is&#95;video&#95;mode&#95;fullscreen</a>
+
+* "bool":class_bool *is&#95;video&#95;mode&#95;fullscreen* *(* "int":class_int screen=0 *)* const
+
+Return true if the current video mode is fullscreen.
+
+h4(#is_video_mode_resizable). <a name="is_video_mode_resizable">is&#95;video&#95;mode&#95;resizable</a>
+
+* "bool":class_bool *is&#95;video&#95;mode&#95;resizable* *(* "int":class_int screen=0 *)* const
+
+Return true if the window is resizable.
+
+h4(#get_fullscreen_mode_list). <a name="get_fullscreen_mode_list">get&#95;fullscreen&#95;mode&#95;list</a>
+
+* "Array":class_array *get&#95;fullscreen&#95;mode&#95;list* *(* "int":class_int screen=0 *)* const
+
+Return the list of fullscreen modes.
+
+h4(#set_iterations_per_second). <a name="set_iterations_per_second">set&#95;iterations&#95;per&#95;second</a>
+
+* void *set&#95;iterations&#95;per&#95;second* *(* "int":class_int iterations&#95;per&#95;second *)*
+
+Set the amount of fixed iterations per second (for fixed process and physics).
+
+h4(#get_iterations_per_second). <a name="get_iterations_per_second">get&#95;iterations&#95;per&#95;second</a>
+
+* "int":class_int *get&#95;iterations&#95;per&#95;second* *(* *)* const
+
+Return the amount of fixed iterations per second (for fixed process and physics).
+
+h4(#set_low_processor_usage_mode). <a name="set_low_processor_usage_mode">set&#95;low&#95;processor&#95;usage&#95;mode</a>
+
+* void *set&#95;low&#95;processor&#95;usage&#95;mode* *(* "bool":class_bool enable *)*
+
+Set to true to enable the low cpu usage mode. In this mode, the screen only redraws when there are changes, and a considerable sleep time is inserted between frames. This way, editors using the engine UI only use very little cpu.
+
+h4(#is_in_low_processor_usage_mode). <a name="is_in_low_processor_usage_mode">is&#95;in&#95;low&#95;processor&#95;usage&#95;mode</a>
+
+* "bool":class_bool *is&#95;in&#95;low&#95;processor&#95;usage&#95;mode* *(* *)* const
+
+Return true if low cpu usage mode is enabled.
+
+h4(#get_executable_path). <a name="get_executable_path">get&#95;executable&#95;path</a>
+
+* "String":class_string *get&#95;executable&#95;path* *(* *)* const
+
+Return the path tot he current engine executable.
+
+h4(#execute). <a name="execute">execute</a>
+
+* "int":class_int *execute* *(* "String":class_string path, "StringArray":class_stringarray arguments, "bool":class_bool blocking, "Array":class_array output=Array() *)*
+
+Execute the binary file in given path, optionally blocking until it returns. A process ID is returned.
+
+h4(#kill). <a name="kill">kill</a>
+
+* "int":class_int *kill* *(* "int":class_int pid *)*
+
+Kill a process ID.
+
+h4(#get_environment). <a name="get_environment">get&#95;environment</a>
+
+* "String":class_string *get&#95;environment* *(* "String":class_string environment *)* const
+
+Return an environment variable.
+
+h4(#has_environment). <a name="has_environment">has&#95;environment</a>
+
+* "bool":class_bool *has&#95;environment* *(* "String":class_string environment *)* const
+
+Return true if an envieronment variable exists.
+
+h4(#get_name). <a name="get_name">get&#95;name</a>
+
+* "String":class_string *get&#95;name* *(* *)* const
+
+Return the name of the host OS.
+
+h4(#get_cmdline_args). <a name="get_cmdline_args">get&#95;cmdline&#95;args</a>
+
+* "StringArray":class_stringarray *get&#95;cmdline&#95;args* *(* *)*
+
+Return the commandline passed to the engine.
+
+h4(#get_main_loop). <a name="get_main_loop">get&#95;main&#95;loop</a>
+
+* "Object":class_object *get&#95;main&#95;loop* *(* *)* const
+
+Return the main loop object (see "MainLoop":class_mainloop).
+
+h4(#get_date). <a name="get_date">get&#95;date</a>
+
+* "Dictionary":class_dictionary *get&#95;date* *(* *)* const
+
+Return the current date.
+
+h4(#get_time). <a name="get_time">get&#95;time</a>
+
+* "Dictionary":class_dictionary *get&#95;time* *(* *)* const
+
+Return the current time.
+
+h4(#delay_usec). <a name="delay_usec">delay&#95;usec</a>
+
+* void *delay&#95;usec* *(* "int":class_int usec *)* const
+
+Delay executing of the current thread by given usecs.
+
+h4(#get_ticks_msec). <a name="get_ticks_msec">get&#95;ticks&#95;msec</a>
+
+* "int":class_int *get&#95;ticks&#95;msec* *(* *)* const
+
+Return the amount of time passed in milliseconds since the engine started.
+
+h4(#get_locale). <a name="get_locale">get&#95;locale</a>
+
+* "String":class_string *get&#95;locale* *(* *)* const
+
+Return the host OS locale.
+
+h4(#can_draw). <a name="can_draw">can&#95;draw</a>
+
+* "bool":class_bool *can&#95;draw* *(* *)* const
+
+Return true if the host OS allows drawing.
+
+h4(#get_frames_drawn). <a name="get_frames_drawn">get&#95;frames&#95;drawn</a>
+
+* "int":class_int *get&#95;frames&#95;drawn* *(* *)*
+
+Return the total amount of frames drawn.
+
+h4(#is_stdout_verbose). <a name="is_stdout_verbose">is&#95;stdout&#95;verbose</a>
+
+* "bool":class_bool *is&#95;stdout&#95;verbose* *(* *)* const
+
+Return true if the engine was executed with &#45;v (verbose stdout).
+
+h4(#get_static_memory_peak_usage). <a name="get_static_memory_peak_usage">get&#95;static&#95;memory&#95;peak&#95;usage</a>
+
+* "int":class_int *get&#95;static&#95;memory&#95;peak&#95;usage* *(* *)* const
+
+Return the max amount of static memory used (only works in debug).
+
+h4(#get_dynamic_memory_usage). <a name="get_dynamic_memory_usage">get&#95;dynamic&#95;memory&#95;usage</a>
+
+* "int":class_int *get&#95;dynamic&#95;memory&#95;usage* *(* *)* const
+
+Return the total amount of dynamic memory used (only works in debug).

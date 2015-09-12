@@ -1,0 +1,66 @@
+h1(#nodepath). NodePath
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Built&#45;in type optimized for path traversing.
+
+h3(#member-functions). Member Functions
+
+* "String":class_string *"get&#95;name":#get_name* *(* "int":class_int idx *)*
+* "int":class_int *"get&#95;name&#95;count":#get_name_count* *(* *)*
+* "String":class_string *"get&#95;property":#get_property* *(* *)*
+* "String":class_string *"get&#95;subname":#get_subname* *(* "int":class_int idx *)*
+* "int":class_int *"get&#95;subname&#95;count":#get_subname_count* *(* *)*
+* "bool":class_bool *"is&#95;absolute":#is_absolute* *(* *)*
+* "bool":class_bool *"is&#95;empty":#is_empty* *(* *)*
+* "NodePath":class_nodepath *"NodePath":#NodePath* *(* "String":class_string from *)*
+
+h3(#description). Description
+
+Built&#45;in type optimized for path traversing. A Node path is an optimized compiled path used for traversing the scene tree. It references nodes and can reference properties in that node, or even reference properties inside the resources of the node.
+
+h3(#member-function-description). Member Function Description
+
+h4(#get_name). <a name="get_name">get&#95;name</a>
+
+* "String":class_string *get&#95;name* *(* "int":class_int idx *)*
+
+Return a path level name.
+
+h4(#get_name_count). <a name="get_name_count">get&#95;name&#95;count</a>
+
+* "int":class_int *get&#95;name&#95;count* *(* *)*
+
+Return the path level count.
+
+h4(#get_property). <a name="get_property">get&#95;property</a>
+
+* "String":class_string *get&#95;property* *(* *)*
+
+Return the property associated (empty if none).
+
+h4(#get_subname). <a name="get_subname">get&#95;subname</a>
+
+* "String":class_string *get&#95;subname* *(* "int":class_int idx *)*
+
+Return the subname level name.
+
+h4(#get_subname_count). <a name="get_subname_count">get&#95;subname&#95;count</a>
+
+* "int":class_int *get&#95;subname&#95;count* *(* *)*
+
+Return the subname count.
+
+h4(#is_absolute). <a name="is_absolute">is&#95;absolute</a>
+
+* "bool":class_bool *is&#95;absolute* *(* *)*
+
+Return true if the node path is absolute (not relative).
+
+h4(#is_empty). <a name="is_empty">is&#95;empty</a>
+
+* "bool":class_bool *is&#95;empty* *(* *)*
+
+Return true if the node path is empty.

@@ -1,0 +1,13 @@
+h1(#collisionpolygon2d). CollisionPolygon2D
+
+h4(#inherits-node2d). *Inherits:* "Node2D":class_node2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Editor&#45;Only class.
+
+h3(#description). Description
+
+Editor&#45;Only class. This is not present when running the game. It's used in the editor to properly edit and position collision shapes in "CollisionObject2D":class_collisionobject2d. This is not accessible from regular code. This class is for editing custom shape polygons.

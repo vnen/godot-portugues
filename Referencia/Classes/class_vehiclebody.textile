@@ -1,0 +1,22 @@
+h1(#vehiclebody). VehicleBody
+
+h4(#inherits-physicsbody). *Inherits:* "PhysicsBody":class_physicsbody
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;mass":#set_mass* *(* "float":class_float mass *)*
+* "float":class_float *"get&#95;mass":#get_mass* *(* *)* const
+* void *"set&#95;friction":#set_friction* *(* "float":class_float friction *)*
+* "float":class_float *"get&#95;friction":#get_friction* *(* *)* const
+* void *"set&#95;engine&#95;force":#set_engine_force* *(* "float":class_float engine&#95;force *)*
+* "float":class_float *"get&#95;engine&#95;force":#get_engine_force* *(* *)* const
+* void *"set&#95;brake":#set_brake* *(* "float":class_float brake *)*
+* "float":class_float *"get&#95;brake":#get_brake* *(* *)* const
+* void *"set&#95;steering":#set_steering* *(* "float":class_float steering *)*
+* "float":class_float *"get&#95;steering":#get_steering* *(* *)* const
+
+h3(#member-function-description). Member Function Description

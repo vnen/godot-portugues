@@ -1,0 +1,31 @@
+h1(#streampeertcp). StreamPeerTCP
+
+h4(#inherits-streampeer). *Inherits:* "StreamPeer":class_streampeer
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+TCP Stream peer.
+
+h3(#member-functions). Member Functions
+
+* "int":class_int *"connect":#connect* *(* "String":class_string host, "int":class_int port *)*
+* "bool":class_bool *"is&#95;connected":#is_connected* *(* *)* const
+* "int":class_int *"get&#95;status":#get_status* *(* *)* const
+* "String":class_string *"get&#95;connected&#95;host":#get_connected_host* *(* *)* const
+* "int":class_int *"get&#95;connected&#95;port":#get_connected_port* *(* *)* const
+* void *"disconnect":#disconnect* *(* *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *STATUS&#95;NONE* = *0*
+* *STATUS&#95;CONNECTING* = *1*
+* *STATUS&#95;CONNECTED* = *2*
+* *STATUS&#95;ERROR* = *3*
+
+h3(#description). Description
+
+TCP Stream peer. This object can be used to connect to TCP servers, or also is returned by a tcp server.
+
+h3(#member-function-description). Member Function Description

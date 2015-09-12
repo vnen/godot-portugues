@@ -1,0 +1,429 @@
+h1(#gdscript). &#64;GDScript
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Built&#45;in GDScript functions.
+
+h3(#member-functions). Member Functions
+
+* "float":class_float *"sin":#sin* *(* "float":class_float s *)*
+* "float":class_float *"cos":#cos* *(* "float":class_float s *)*
+* "float":class_float *"tan":#tan* *(* "float":class_float s *)*
+* "float":class_float *"sinh":#sinh* *(* "float":class_float s *)*
+* "float":class_float *"cosh":#cosh* *(* "float":class_float s *)*
+* "float":class_float *"tanh":#tanh* *(* "float":class_float s *)*
+* "float":class_float *"asin":#asin* *(* "float":class_float s *)*
+* "float":class_float *"acos":#acos* *(* "float":class_float s *)*
+* "float":class_float *"atan":#atan* *(* "float":class_float s *)*
+* "float":class_float *"atan2":#atan2* *(* "float":class_float x, "float":class_float y *)*
+* "float":class_float *"sqrt":#sqrt* *(* "float":class_float s *)*
+* "float":class_float *"fmod":#fmod* *(* "float":class_float x, "float":class_float y *)*
+* "float":class_float *"fposmod":#fposmod* *(* "float":class_float x, "float":class_float y *)*
+* "float":class_float *"floor":#floor* *(* "float":class_float s *)*
+* "float":class_float *"ceil":#ceil* *(* "float":class_float s *)*
+* "float":class_float *"round":#round* *(* "float":class_float s *)*
+* "float":class_float *"abs":#abs* *(* "float":class_float s *)*
+* "float":class_float *"sign":#sign* *(* "float":class_float s *)*
+* "float":class_float *"pow":#pow* *(* "float":class_float x, "float":class_float y *)*
+* "float":class_float *"log":#log* *(* "float":class_float s *)*
+* "float":class_float *"exp":#exp* *(* "float":class_float s *)*
+* "float":class_float *"isnan":#isnan* *(* "float":class_float s *)*
+* "float":class_float *"isinf":#isinf* *(* "float":class_float s *)*
+* "float":class_float *"ease":#ease* *(* "float":class_float s, "float":class_float curve *)*
+* "float":class_float *"decimals":#decimals* *(* "float":class_float step *)*
+* "float":class_float *"stepify":#stepify* *(* "float":class_float s, "float":class_float step *)*
+* "float":class_float *"lerp":#lerp* *(* "float":class_float from, "float":class_float to, "float":class_float weight *)*
+* "float":class_float *"dectime":#dectime* *(* "float":class_float value, "float":class_float amount, "float":class_float step *)*
+* "Nil":class_nil *"randomize":#randomize* *(* *)*
+* "int":class_int *"randi":#randi* *(* *)*
+* "float":class_float *"randf":#randf* *(* *)*
+* "float":class_float *"rand&#95;range":#rand_range* *(* "float":class_float from, "float":class_float to *)*
+* "Nil":class_nil *"seed":#seed* *(* "float":class_float seed *)*
+* "Array":class_array *"rand&#95;seed":#rand_seed* *(* "float":class_float seed *)*
+* "float":class_float *"deg2rad":#deg2rad* *(* "float":class_float deg *)*
+* "float":class_float *"rad2deg":#rad2deg* *(* "float":class_float rad *)*
+* "float":class_float *"linear2db":#linear2db* *(* "float":class_float nrg *)*
+* "float":class_float *"db2linear":#db2linear* *(* "float":class_float db *)*
+* "float":class_float *"max":#max* *(* "float":class_float a, "float":class_float b *)*
+* "float":class_float *"min":#min* *(* "float":class_float a, "float":class_float b *)*
+* "float":class_float *"clamp":#clamp* *(* "float":class_float val, "float":class_float min, "float":class_float max *)*
+* "int":class_int *"nearest&#95;po2":#nearest_po2* *(* "int":class_int val *)*
+* "WeakRef":class_weakref *"weakref":#weakref* *(* "Object":class_object obj *)*
+* "FuncRef":class_funcref *"funcref":#funcref* *(* "Object":class_object instance, "String":class_string funcname *)*
+* "Object":class_object *"convert":#convert* *(* var what, "int":class_int type *)*
+* "String":class_string *"str":#str* *(* var what, var ... *)*
+* "String":class_string *"str":#str* *(* var what, var ... *)*
+* "Nil":class_nil *"print":#print* *(* var what, var ... *)*
+* "Nil":class_nil *"printt":#printt* *(* var what, var ... *)*
+* "Nil":class_nil *"prints":#prints* *(* var what, var ... *)*
+* "Nil":class_nil *"printerr":#printerr* *(* var what, var ... *)*
+* "Nil":class_nil *"printraw":#printraw* *(* var what, var ... *)*
+* "String":class_string *"var2str":#var2str* *(* var var *)*
+* "Nil":class_nil *"str2var:var":#str2var:var* *(* "String":class_string string *)*
+* "Array":class_array *"range":#range* *(* var ... *)*
+* "Resource":class_resource *"load":#load* *(* "String":class_string path *)*
+* "Dictionary":class_dictionary *"inst2dict":#inst2dict* *(* "Object":class_object inst *)*
+* "Object":class_object *"dict2inst":#dict2inst* *(* "Dictionary":class_dictionary dict *)*
+* "int":class_int *"hash":#hash* *(* var var:var *)*
+* "Nil":class_nil *"print&#95;stack":#print_stack* *(* *)*
+* "Object":class_object *"instance&#95;from&#95;id":#instance_from_id* *(* "int":class_int instance&#95;id *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *PI* = *3.141593* &#45; Constant that represents how many times the diameter of a circumference fits around it's perimeter.
+
+h3(#description). Description
+
+This contains the list of built&#45;in gdscript functions. Mostly math functions and other utilities. Everything else is expanded by objects.
+
+h3(#member-function-description). Member Function Description
+
+h4(#sin). <a name="sin">sin</a>
+
+* "float":class_float *sin* *(* "float":class_float s *)*
+
+Standard sine function.
+
+h4(#cos). <a name="cos">cos</a>
+
+* "float":class_float *cos* *(* "float":class_float s *)*
+
+Standard cosine function.
+
+h4(#tan). <a name="tan">tan</a>
+
+* "float":class_float *tan* *(* "float":class_float s *)*
+
+Standard tangent function.
+
+h4(#sinh). <a name="sinh">sinh</a>
+
+* "float":class_float *sinh* *(* "float":class_float s *)*
+
+Hyperbolic sine.
+
+h4(#cosh). <a name="cosh">cosh</a>
+
+* "float":class_float *cosh* *(* "float":class_float s *)*
+
+Hyperbolic cosine.
+
+h4(#tanh). <a name="tanh">tanh</a>
+
+* "float":class_float *tanh* *(* "float":class_float s *)*
+
+Hyperbolic tangent.
+
+h4(#asin). <a name="asin">asin</a>
+
+* "float":class_float *asin* *(* "float":class_float s *)*
+
+Arc&#45;sine.
+
+h4(#acos). <a name="acos">acos</a>
+
+* "float":class_float *acos* *(* "float":class_float s *)*
+
+Arc&#45;cosine.
+
+h4(#atan). <a name="atan">atan</a>
+
+* "float":class_float *atan* *(* "float":class_float s *)*
+
+Arc&#45;tangent.
+
+h4(#atan2). <a name="atan2">atan2</a>
+
+* "float":class_float *atan2* *(* "float":class_float x, "float":class_float y *)*
+
+Arc&#45;tangent that takes a 2D vector as argument, retuns the full &#45;pi to &#43;pi range.
+
+h4(#sqrt). <a name="sqrt">sqrt</a>
+
+* "float":class_float *sqrt* *(* "float":class_float s *)*
+
+Square root.
+
+h4(#fmod). <a name="fmod">fmod</a>
+
+* "float":class_float *fmod* *(* "float":class_float x, "float":class_float y *)*
+
+Module (remainder of x/y).
+
+h4(#fposmod). <a name="fposmod">fposmod</a>
+
+* "float":class_float *fposmod* *(* "float":class_float x, "float":class_float y *)*
+
+Module (remainder of x/y) that wraps equally in positive and negative.
+
+h4(#floor). <a name="floor">floor</a>
+
+* "float":class_float *floor* *(* "float":class_float s *)*
+
+Floor (rounds down to nearest integer).
+
+h4(#ceil). <a name="ceil">ceil</a>
+
+* "float":class_float *ceil* *(* "float":class_float s *)*
+
+Ceiling (rounds up to nearest integer).
+
+h4(#round). <a name="round">round</a>
+
+* "float":class_float *round* *(* "float":class_float s *)*
+
+Round to nearest integer.
+
+h4(#abs). <a name="abs">abs</a>
+
+* "float":class_float *abs* *(* "float":class_float s *)*
+
+Remove sign (works for integer and float).
+
+h4(#sign). <a name="sign">sign</a>
+
+* "float":class_float *sign* *(* "float":class_float s *)*
+
+Return sign (&#45;1 or &#43;1).
+
+h4(#pow). <a name="pow">pow</a>
+
+* "float":class_float *pow* *(* "float":class_float x, "float":class_float y *)*
+
+Power function, x elevate to y.
+
+h4(#log). <a name="log">log</a>
+
+* "float":class_float *log* *(* "float":class_float s *)*
+
+Natural logarithm.
+
+h4(#exp). <a name="exp">exp</a>
+
+* "float":class_float *exp* *(* "float":class_float s *)*
+
+Exponential logarithm.
+
+h4(#isnan). <a name="isnan">isnan</a>
+
+* "float":class_float *isnan* *(* "float":class_float s *)*
+
+Return true if the float is not a number.
+
+h4(#isinf). <a name="isinf">isinf</a>
+
+* "float":class_float *isinf* *(* "float":class_float s *)*
+
+Return true if the float is infinite.
+
+h4(#ease). <a name="ease">ease</a>
+
+* "float":class_float *ease* *(* "float":class_float s, "float":class_float curve *)*
+
+Easing function, based on exponent. 0 is constant, 1 is linear, 0 to 1 is ease&#45;in, 1&#43; is ease out. Negative values are in&#45;out/out in.
+
+h4(#decimals). <a name="decimals">decimals</a>
+
+* "float":class_float *decimals* *(* "float":class_float step *)*
+
+Return the amount of decimals in the floating point value.
+
+h4(#stepify). <a name="stepify">stepify</a>
+
+* "float":class_float *stepify* *(* "float":class_float s, "float":class_float step *)*
+
+Snap float value to a given step.
+
+h4(#lerp). <a name="lerp">lerp</a>
+
+* "float":class_float *lerp* *(* "float":class_float from, "float":class_float to, "float":class_float weight *)*
+
+Linear interpolates between two values by a normalized value.
+
+h4(#dectime). <a name="dectime">dectime</a>
+
+* "float":class_float *dectime* *(* "float":class_float value, "float":class_float amount, "float":class_float step *)*
+
+Decreases time by a specified amount.
+
+h4(#randomize). <a name="randomize">randomize</a>
+
+* "Nil":class_nil *randomize* *(* *)*
+
+Reset the seed of the random number generator with a new, different one.
+
+h4(#randi). <a name="randi">randi</a>
+
+* "int":class_int *randi* *(* *)*
+
+Random 32 bits value (integer). To obtain a value from 0 to N, you can use remainder, like (for random from 0 to 19): randi() % 20.
+
+h4(#randf). <a name="randf">randf</a>
+
+* "float":class_float *randf* *(* *)*
+
+Random value (0 to 1 float).
+
+h4(#rand_range). <a name="rand_range">rand&#95;range</a>
+
+* "float":class_float *rand&#95;range* *(* "float":class_float from, "float":class_float to *)*
+
+Random range, any floating point value between 'from' and 'to'
+
+h4(#rand_seed). <a name="rand_seed">rand&#95;seed</a>
+
+* "Array":class_array *rand&#95;seed* *(* "float":class_float seed *)*
+
+Random from seed, pass a seed and an array with both number and new seed is returned.
+
+h4(#deg2rad). <a name="deg2rad">deg2rad</a>
+
+* "float":class_float *deg2rad* *(* "float":class_float deg *)*
+
+Convert from degrees to radians.
+
+h4(#rad2deg). <a name="rad2deg">rad2deg</a>
+
+* "float":class_float *rad2deg* *(* "float":class_float rad *)*
+
+Convert from radias to degrees.
+
+h4(#linear2db). <a name="linear2db">linear2db</a>
+
+* "float":class_float *linear2db* *(* "float":class_float nrg *)*
+
+Convert from linear energy to decibels (audio).
+
+h4(#db2linear). <a name="db2linear">db2linear</a>
+
+* "float":class_float *db2linear* *(* "float":class_float db *)*
+
+Convert from decibels to linear energy (audio).
+
+h4(#max). <a name="max">max</a>
+
+* "float":class_float *max* *(* "float":class_float a, "float":class_float b *)*
+
+Return the maximum of two values.
+
+h4(#min). <a name="min">min</a>
+
+* "float":class_float *min* *(* "float":class_float a, "float":class_float b *)*
+
+Return the minimum of two values.
+
+h4(#clamp). <a name="clamp">clamp</a>
+
+* "float":class_float *clamp* *(* "float":class_float val, "float":class_float min, "float":class_float max *)*
+
+Clamp both values to a range.
+
+h4(#nearest_po2). <a name="nearest_po2">nearest&#95;po2</a>
+
+* "int":class_int *nearest&#95;po2* *(* "int":class_int val *)*
+
+Return the nearest larger power of 2 for an integer.
+
+h4(#weakref). <a name="weakref">weakref</a>
+
+* "WeakRef":class_weakref *weakref* *(* "Object":class_object obj *)*
+
+Return a weak reference to an object.
+
+h4(#funcref). <a name="funcref">funcref</a>
+
+* "FuncRef":class_funcref *funcref* *(* "Object":class_object instance, "String":class_string funcname *)*
+
+Returns a reference to the specified function
+
+h4(#convert). <a name="convert">convert</a>
+
+* "Object":class_object *convert* *(* var what, "int":class_int type *)*
+
+Convert from a type to another in the best way possible. The &quot;type&quot; parameter uses the enum TYPE&#95;&#42; in Global Scope.
+
+h4(#str). <a name="str">str</a>
+
+* "String":class_string *str* *(* var what, var ... *)*
+
+Convert one or more arguments to strings in the best way possible.
+
+h4(#str-1). <a name="str">str</a>
+
+* "String":class_string *str* *(* var what, var ... *)*
+
+Convert one or more arguments to strings in the best way possible.
+
+h4(#print). <a name="print">print</a>
+
+* "Nil":class_nil *print* *(* var what, var ... *)*
+
+Print one or more arguments to strings in the best way possible to a console line.
+
+h4(#printt). <a name="printt">printt</a>
+
+* "Nil":class_nil *printt* *(* var what, var ... *)*
+
+Print one or more arguments to the console with a tab between each argument.
+
+h4(#printerr). <a name="printerr">printerr</a>
+
+* "Nil":class_nil *printerr* *(* var what, var ... *)*
+
+Print one or more arguments to strings in the best way possible to standard error line.
+
+h4(#printraw). <a name="printraw">printraw</a>
+
+* "Nil":class_nil *printraw* *(* var what, var ... *)*
+
+Print one or more arguments to strings in the best way possible to console. No newline is added at the end.
+
+h4(#var2str). <a name="var2str">var2str</a>
+
+* "String":class_string *var2str* *(* var var *)*
+
+Converts the value of a variable to a String.
+
+h4(#str2varvar). <a name="str2var:var">str2var:var</a>
+
+* "Nil":class_nil *str2var:var* *(* "String":class_string string *)*
+
+Converts the value of a String to a variable.
+
+h4(#range). <a name="range">range</a>
+
+* "Array":class_array *range* *(* var ... *)*
+
+Return an array with the given range. Range can be 1 argument N (0 to N&#45;1), two arguments (initial, final&#45;1) or three arguments (initial,final&#45;1,increment).
+
+h4(#load). <a name="load">load</a>
+
+* "Resource":class_resource *load* *(* "String":class_string path *)*
+
+Load a resource from the filesystem, pass a valid path as argument.
+
+h4(#inst2dict). <a name="inst2dict">inst2dict</a>
+
+* "Dictionary":class_dictionary *inst2dict* *(* "Object":class_object inst *)*
+
+Convert a script class instance to a dictionary (useful for serializing).
+
+h4(#dict2inst). <a name="dict2inst">dict2inst</a>
+
+* "Object":class_object *dict2inst* *(* "Dictionary":class_dictionary dict *)*
+
+Convert a previously converted instances to dictionary back into an instance. Useful for deserializing.
+
+h4(#hash). <a name="hash">hash</a>
+
+* "int":class_int *hash* *(* var var:var *)*
+
+Hashes the variable passed and returns an integer.
+
+h4(#print_stack). <a name="print_stack">print&#95;stack</a>
+
+* "Nil":class_nil *print&#95;stack* *(* *)*
+
+Print a stack track at code location, only works when running with debugger turned on.

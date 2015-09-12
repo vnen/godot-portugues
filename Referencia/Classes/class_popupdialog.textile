@@ -1,0 +1,9 @@
+h1(#popupdialog). PopupDialog
+
+h4(#inherits-popup). *Inherits:* "Popup":class_popup
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Base class for Popup Dialogs

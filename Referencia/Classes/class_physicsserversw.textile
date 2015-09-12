@@ -1,0 +1,7 @@
+h1(#physicsserversw). PhysicsServerSW
+
+h4(#inherits-physicsserver). *Inherits:* "PhysicsServer":class_physicsserver
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description

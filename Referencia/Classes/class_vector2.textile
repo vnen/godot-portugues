@@ -1,0 +1,75 @@
+h1(#vector2). Vector2
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Vector used for 2D Math.
+
+h3(#member-functions). Member Functions
+
+* "float":class_float *"angle&#95;to":#angle_to* *(* "Vector2":class_vector2 to *)*
+* "float":class_float *"angle&#95;to&#95;point":#angle_to_point* *(* "Vector2":class_vector2 to *)*
+* "float":class_float *"atan2":#atan2* *(* *)*
+* "Vector2":class_vector2 *"cubic&#95;interpolate":#cubic_interpolate* *(* "Vector2":class_vector2 b, "Vector2":class_vector2 pre&#95;a, "Vector2":class_vector2 post&#95;b, "float":class_float t *)*
+* "float":class_float *"distance&#95;squared&#95;to":#distance_squared_to* *(* "Vector2":class_vector2 to *)*
+* "float":class_float *"distance&#95;to":#distance_to* *(* "Vector2":class_vector2 to *)*
+* "float":class_float *"dot":#dot* *(* "Vector2":class_vector2 with *)*
+* "Vector2":class_vector2 *"floor":#floor* *(* *)*
+* "Vector2":class_vector2 *"floorf":#floorf* *(* *)*
+* "float":class_float *"get&#95;aspect":#get_aspect* *(* *)*
+* "float":class_float *"length":#length* *(* *)*
+* "float":class_float *"length&#95;squared":#length_squared* *(* *)*
+* "Vector2":class_vector2 *"linear&#95;interpolate":#linear_interpolate* *(* "Vector2":class_vector2 b, "float":class_float t *)*
+* "Vector2":class_vector2 *"normalized":#normalized* *(* *)*
+* "Vector2":class_vector2 *"reflect":#reflect* *(* "Vector2":class_vector2 vec *)*
+* "Vector2":class_vector2 *"rotated":#rotated* *(* "float":class_float phi *)*
+* "Vector2":class_vector2 *"slide":#slide* *(* "Vector2":class_vector2 vec *)*
+* "Vector2":class_vector2 *"snapped":#snapped* *(* "Vector2":class_vector2 by *)*
+* "Vector2":class_vector2 *"tangent":#tangent* *(* *)*
+* "Vector2":class_vector2 *"Vector2":#Vector2* *(* "float":class_float x, "float":class_float y *)*
+
+h3(#member-variables). Member Variables
+
+* "float":class_float *x*
+* "float":class_float *y*
+* "float":class_float *width*
+* "float":class_float *height*
+
+h3(#member-function-description). Member Function Description
+
+h4(#distance_to). <a name="distance_to">distance&#95;to</a>
+
+* "float":class_float *distance&#95;to* *(* "Vector2":class_vector2 to *)*
+
+Returns the distance to vector &quot;b&quot;.
+
+h4(#dot). <a name="dot">dot</a>
+
+* "float":class_float *dot* *(* "Vector2":class_vector2 with *)*
+
+Returns the dot product with vector &quot;b&quot;.
+
+h4(#floor). <a name="floor">floor</a>
+
+* "Vector2":class_vector2 *floor* *(* *)*
+
+Remove the fractional part of x and y.
+
+h4(#length). <a name="length">length</a>
+
+* "float":class_float *length* *(* *)*
+
+Returns the length of the vector.
+
+h4(#linear_interpolate). <a name="linear_interpolate">linear&#95;interpolate</a>
+
+* "Vector2":class_vector2 *linear&#95;interpolate* *(* "Vector2":class_vector2 b, "float":class_float t *)*
+
+Returns the result of the linear interpolation between this vector and &quot;b&quot;, by amount &quot;i&quot;.
+
+h4(#normalized). <a name="normalized">normalized</a>
+
+* "Vector2":class_vector2 *normalized* *(* *)*
+
+Returns a normalized vector to unit length.

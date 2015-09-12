@@ -1,0 +1,162 @@
+h1(#supported-locales). Supported Locales
+
+This is the list of supported locales and variants in the engine. It's based on the Unix standard locale strings:
+
+|_. Locale|_. Language and Variant|
+|ar|Arabic|
+|ar&#95;AE|Arabic (United Arab Emirates)|
+|ar&#95;BH|Arabic (Bahrain)|
+|ar&#95;DZ|Arabic (Algeria)|
+|ar&#95;EG|Arabic (Egypt)|
+|ar&#95;IQ|Arabic (Iraq)|
+|ar&#95;JO|Arabic (Jordan)|
+|ar&#95;KW|Arabic (Kuwait)|
+|ar&#95;LB|Arabic (Lebanon)|
+|ar&#95;LY|Arabic (Libya)|
+|ar&#95;MA|Arabic (Morocco)|
+|ar&#95;OM|Arabic (Oman)|
+|ar&#95;QA|Arabic (Qatar)|
+|ar&#95;SA|Arabic (Saudi Arabia)|
+|ar&#95;SD|Arabic (Sudan)|
+|ar&#95;SY|Arabic (Syria)|
+|ar&#95;TN|Arabic (Tunisia)|
+|ar&#95;YE|Arabic (Yemen)|
+|be|Belarusian|
+|be&#95;BY|Belarusian (Belarus)|
+|bg|Bulgarian|
+|bg&#95;BG|Bulgarian (Bulgaria)|
+|ca|Catalan|
+|ca&#95;ES|Catalan (Spain)|
+|cs|Czech|
+|cs&#95;CZ|Czech (Czech Republic)|
+|da|Danish|
+|da&#95;DK|Danish (Denmark)|
+|de|German|
+|de&#95;AT|German (Austria)|
+|de&#95;CH|German (Switzerland)|
+|de&#95;DE|German (Germany)|
+|de&#95;LU|German (Luxembourg)|
+|el|Greek|
+|el&#95;CY|Greek (Cyprus)|
+|el&#95;GR|Greek (Greece)|
+|en|English|
+|en&#95;AU|English (Australia)|
+|en&#95;CA|English (Canada)|
+|en&#95;GB|English (United Kingdom)|
+|en&#95;IE|English (Ireland)|
+|en&#95;IN|English (India)|
+|en&#95;MT|English (Malta)|
+|en&#95;NZ|English (New Zealand)|
+|en&#95;PH|English (Philippines)|
+|en&#95;SG|English (Singapore)|
+|en&#95;US|English (United States)|
+|en&#95;ZA|English (South Africa)|
+|es|Spanish|
+|es&#95;AR|Spanish (Argentina)|
+|es&#95;BO|Spanish (Bolivia)|
+|es&#95;CL|Spanish (Chile)|
+|es&#95;CO|Spanish (Colombia)|
+|es&#95;CR|Spanish (Costa Rica)|
+|es&#95;DO|Spanish (Dominican Republic)|
+|es&#95;EC|Spanish (Ecuador)|
+|es&#95;ES|Spanish (Spain)|
+|es&#95;GT|Spanish (Guatemala)|
+|es&#95;HN|Spanish (Honduras)|
+|es&#95;MX|Spanish (Mexico)|
+|es&#95;NI|Spanish (Nicaragua)|
+|es&#95;PA|Spanish (Panama)|
+|es&#95;PE|Spanish (Peru)|
+|es&#95;PR|Spanish (Puerto Rico)|
+|es&#95;PY|Spanish (Paraguay)|
+|es&#95;SV|Spanish (El Salvador)|
+|es&#95;US|Spanish (United States)|
+|es&#95;UY|Spanish (Uruguay)|
+|es&#95;VE|Spanish (Venezuela)|
+|et|Estonian|
+|et&#95;EE|Estonian (Estonia)|
+|fi|Finnish|
+|fi&#95;FI|Finnish (Finland)|
+|fr|French|
+|fr&#95;BE|French (Belgium)|
+|fr&#95;CA|French (Canada)|
+|fr&#95;CH|French (Switzerland)|
+|fr&#95;FR|French (France)|
+|fr&#95;LU|French (Luxembourg)|
+|ga|Irish|
+|ga&#95;IE|Irish (Ireland)|
+|hi|Hindi (India)|
+|hi&#95;IN|Hindi (India)|
+|hr|Croatian|
+|hr&#95;HR|Croatian (Croatia)|
+|hu|Hungarian|
+|hu&#95;HU|Hungarian (Hungary)|
+|in|Indonesian|
+|in&#95;ID|Indonesian (Indonesia)|
+|is|Icelandic|
+|is&#95;IS|Icelandic (Iceland)|
+|it|Italian|
+|it&#95;CH|Italian (Switzerland)|
+|it&#95;IT|Italian (Italy)|
+|iw|Hebrew|
+|iw&#95;IL|Hebrew (Israel)|
+|ja|Japanese|
+|ja&#95;JP|Japanese (Japan)|
+|ja&#95;JP&#95;JP|Japanese (Japan,JP)|
+|ko|Korean|
+|ko&#95;KR|Korean (South Korea)|
+|lt|Lithuanian|
+|lt&#95;LT|Lithuanian (Lithuania)|
+|lv|Latvian|
+|lv&#95;LV|Latvian (Latvia)|
+|mk|Macedonian|
+|mk&#95;MK|Macedonian (Macedonia)|
+|ms|Malay|
+|ms&#95;MY|Malay (Malaysia)|
+|mt|Maltese|
+|mt&#95;MT|Maltese (Malta)|
+|nl|Dutch|
+|nl&#95;BE|Dutch (Belgium)|
+|nl&#95;NL|Dutch (Netherlands)|
+|no|Norwegian|
+|no&#95;NO|Norwegian (Norway)|
+|no&#95;NO&#95;NY|Norwegian (Norway,Nynorsk)|
+|pl|Polish|
+|pl&#95;PL|Polish (Poland)|
+|pt|Portuguese|
+|pt&#95;BR|Portuguese (Brazil)|
+|pt&#95;PT|Portuguese (Portugal)|
+|ro|Romanian|
+|ro&#95;RO|Romanian (Romania)|
+|ru|Russian|
+|ru&#95;RU|Russian (Russia)|
+|sk|Slovak|
+|sk&#95;SK|Slovak (Slovakia)|
+|sl|Slovenian|
+|sl&#95;SI|Slovenian (Slovenia)|
+|sq|Albanian|
+|sq&#95;AL|Albanian (Albania)|
+|sr|Serbian|
+|sr&#95;BA|Serbian (Bosnia and Herzegovina)|
+|sr&#95;CS|Serbian (Serbia and Montenegro)|
+|sr&#95;ME|Serbian (Montenegro)|
+|sr&#95;RS|Serbian (Serbia)|
+|sv|Swedish|
+|sv&#95;SE|Swedish (Sweden)|
+|th|Thai|
+|th&#95;TH|Thai (Thailand)|
+|th&#95;TH&#95;TH|Thai (Thailand,TH)|
+|tr|Turkish|
+|tr&#95;TR|Turkish (Turkey)|
+|uk|Ukrainian|
+|uk&#95;UA|Ukrainian (Ukraine)|
+|vi|Vietnamese|
+|vi&#95;VN|Vietnamese (Vietnam)|
+|zh|Chinese|
+|zh&#95;CN|Chinese (China)|
+|zh&#95;HK|Chinese (Hong Kong)|
+|zh&#95;SG|Chinese (Singapore)|
+|zh&#95;TW|Chinese (Taiwan)|
+
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+</ol>

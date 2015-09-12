@@ -1,0 +1,133 @@
+h1(#animationtreeplayer). AnimationTreePlayer
+
+h4(#inherits-node). *Inherits:* "Node":class_node
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Animation Player that uses a node graph for the blending.
+
+h3(#member-functions). Member Functions
+
+* void *"add&#95;node":#add_node* *(* "int":class_int type, "String":class_string id *)*
+* "bool":class_bool *"node&#95;exists":#node_exists* *(* "String":class_string node *)* const
+* "int":class_int *"node&#95;rename":#node_rename* *(* "String":class_string node, "String":class_string new&#95;name *)*
+* "int":class_int *"node&#95;get&#95;type":#node_get_type* *(* "String":class_string id *)* const
+* "int":class_int *"node&#95;get&#95;input&#95;count":#node_get_input_count* *(* "String":class_string id *)* const
+* "String":class_string *"node&#95;get&#95;input&#95;source":#node_get_input_source* *(* "String":class_string id, "int":class_int idx *)* const
+* void *"animation&#95;node&#95;set&#95;animation":#animation_node_set_animation* *(* "String":class_string id, "Animation":class_animation animation *)*
+* "Animation":class_animation *"animation&#95;node&#95;get&#95;animation":#animation_node_get_animation* *(* "String":class_string id *)* const
+* void *"animation&#95;node&#95;set&#95;master&#95;animation":#animation_node_set_master_animation* *(* "String":class_string id, "String":class_string source *)*
+* "String":class_string *"animation&#95;node&#95;get&#95;master&#95;animation":#animation_node_get_master_animation* *(* "String":class_string id *)* const
+* void *"oneshot&#95;node&#95;set&#95;fadein&#95;time":#oneshot_node_set_fadein_time* *(* "String":class_string id, "float":class_float time&#95;sec *)*
+* "float":class_float *"oneshot&#95;node&#95;get&#95;fadein&#95;time":#oneshot_node_get_fadein_time* *(* "String":class_string id *)* const
+* void *"oneshot&#95;node&#95;set&#95;fadeout&#95;time":#oneshot_node_set_fadeout_time* *(* "String":class_string id, "float":class_float time&#95;sec *)*
+* "float":class_float *"oneshot&#95;node&#95;get&#95;fadeout&#95;time":#oneshot_node_get_fadeout_time* *(* "String":class_string id *)* const
+* void *"oneshot&#95;node&#95;set&#95;autorestart":#oneshot_node_set_autorestart* *(* "String":class_string id, "bool":class_bool enable *)*
+* void *"oneshot&#95;node&#95;set&#95;autorestart&#95;delay":#oneshot_node_set_autorestart_delay* *(* "String":class_string id, "float":class_float delay&#95;sec *)*
+* void *"oneshot&#95;node&#95;set&#95;autorestart&#95;random&#95;delay":#oneshot_node_set_autorestart_random_delay* *(* "String":class_string id, "float":class_float rand&#95;sec *)*
+* "bool":class_bool *"oneshot&#95;node&#95;has&#95;autorestart":#oneshot_node_has_autorestart* *(* "String":class_string id *)* const
+* "float":class_float *"oneshot&#95;node&#95;get&#95;autorestart&#95;delay":#oneshot_node_get_autorestart_delay* *(* "String":class_string id *)* const
+* "float":class_float *"oneshot&#95;node&#95;get&#95;autorestart&#95;random&#95;delay":#oneshot_node_get_autorestart_random_delay* *(* "String":class_string id *)* const
+* void *"oneshot&#95;node&#95;start":#oneshot_node_start* *(* "String":class_string id *)*
+* void *"oneshot&#95;node&#95;stop":#oneshot_node_stop* *(* "String":class_string id *)*
+* "bool":class_bool *"oneshot&#95;node&#95;is&#95;active":#oneshot_node_is_active* *(* "String":class_string id *)* const
+* void *"oneshot&#95;node&#95;set&#95;filter&#95;path":#oneshot_node_set_filter_path* *(* "String":class_string id, "NodePath":class_nodepath path, "bool":class_bool enable *)*
+* void *"mix&#95;node&#95;set&#95;amount":#mix_node_set_amount* *(* "String":class_string id, "float":class_float ratio *)*
+* "float":class_float *"mix&#95;node&#95;get&#95;amount":#mix_node_get_amount* *(* "String":class_string id *)* const
+* void *"blend2&#95;node&#95;set&#95;amount":#blend2_node_set_amount* *(* "String":class_string id, "float":class_float blend *)*
+* "float":class_float *"blend2&#95;node&#95;get&#95;amount":#blend2_node_get_amount* *(* "String":class_string id *)* const
+* void *"blend2&#95;node&#95;set&#95;filter&#95;path":#blend2_node_set_filter_path* *(* "String":class_string id, "NodePath":class_nodepath path, "bool":class_bool enable *)*
+* void *"blend3&#95;node&#95;set&#95;amount":#blend3_node_set_amount* *(* "String":class_string id, "float":class_float blend *)*
+* "float":class_float *"blend3&#95;node&#95;get&#95;amount":#blend3_node_get_amount* *(* "String":class_string id *)* const
+* void *"blend4&#95;node&#95;set&#95;amount":#blend4_node_set_amount* *(* "String":class_string id, "Vector2":class_vector2 blend *)*
+* "Vector2":class_vector2 *"blend4&#95;node&#95;get&#95;amount":#blend4_node_get_amount* *(* "String":class_string id *)* const
+* void *"timescale&#95;node&#95;set&#95;scale":#timescale_node_set_scale* *(* "String":class_string id, "float":class_float scale *)*
+* "float":class_float *"timescale&#95;node&#95;get&#95;scale":#timescale_node_get_scale* *(* "String":class_string id *)* const
+* void *"timeseek&#95;node&#95;seek":#timeseek_node_seek* *(* "String":class_string id, "float":class_float pos&#95;sec *)*
+* void *"transition&#95;node&#95;set&#95;input&#95;count":#transition_node_set_input_count* *(* "String":class_string id, "int":class_int count *)*
+* "int":class_int *"transition&#95;node&#95;get&#95;input&#95;count":#transition_node_get_input_count* *(* "String":class_string id *)* const
+* void *"transition&#95;node&#95;delete&#95;input":#transition_node_delete_input* *(* "String":class_string id, "int":class_int input&#95;idx *)*
+* void *"transition&#95;node&#95;set&#95;input&#95;auto&#95;advance":#transition_node_set_input_auto_advance* *(* "String":class_string id, "int":class_int input&#95;idx, "bool":class_bool enable *)*
+* "bool":class_bool *"transition&#95;node&#95;has&#95;input&#95;auto&#95;advance":#transition_node_has_input_auto_advance* *(* "String":class_string id, "int":class_int input&#95;idx *)* const
+* void *"transition&#95;node&#95;set&#95;xfade&#95;time":#transition_node_set_xfade_time* *(* "String":class_string id, "float":class_float time&#95;sec *)*
+* "float":class_float *"transition&#95;node&#95;get&#95;xfade&#95;time":#transition_node_get_xfade_time* *(* "String":class_string id *)* const
+* void *"transition&#95;node&#95;set&#95;current":#transition_node_set_current* *(* "String":class_string id, "int":class_int input&#95;idx *)*
+* "int":class_int *"transition&#95;node&#95;get&#95;current":#transition_node_get_current* *(* "String":class_string id *)* const
+* void *"node&#95;set&#95;pos":#node_set_pos* *(* "String":class_string id, "Vector2":class_vector2 screen&#95;pos *)*
+* "Vector2":class_vector2 *"node&#95;get&#95;pos":#node_get_pos* *(* "String":class_string id *)* const
+* void *"remove&#95;node":#remove_node* *(* "String":class_string id *)*
+* "int":class_int *"connect":#connect* *(* "String":class_string id, "String":class_string dst&#95;id, "int":class_int dst&#95;input&#95;idx *)*
+* "bool":class_bool *"is&#95;connected":#is_connected* *(* "String":class_string id, "String":class_string dst&#95;id, "int":class_int dst&#95;input&#95;idx *)* const
+* void *"disconnect":#disconnect* *(* "String":class_string id, "int":class_int dst&#95;input&#95;idx *)*
+* void *"set&#95;active":#set_active* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;active":#is_active* *(* *)* const
+* void *"set&#95;base&#95;path":#set_base_path* *(* "NodePath":class_nodepath path *)*
+* "NodePath":class_nodepath *"get&#95;base&#95;path":#get_base_path* *(* *)* const
+* void *"set&#95;master&#95;player":#set_master_player* *(* "NodePath":class_nodepath nodepath *)*
+* "NodePath":class_nodepath *"get&#95;master&#95;player":#get_master_player* *(* *)* const
+* "StringArray":class_stringarray *"get&#95;node&#95;list":#get_node_list* *(* *)*
+* void *"reset":#reset* *(* *)*
+* void *"recompute&#95;caches":#recompute_caches* *(* *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *NODE&#95;OUTPUT* = *0*
+* *NODE&#95;ANIMATION* = *1*
+* *NODE&#95;ONESHOT* = *2*
+* *NODE&#95;MIX* = *3*
+* *NODE&#95;BLEND2* = *4*
+* *NODE&#95;BLEND3* = *5*
+* *NODE&#95;BLEND4* = *6*
+* *NODE&#95;TIMESCALE* = *7*
+* *NODE&#95;TIMESEEK* = *8*
+* *NODE&#95;TRANSITION* = *9*
+
+h3(#description). Description
+
+Animation Player that uses a node graph for the blending. This kind of player is very useful when animating character or other skeleton based rigs, because it can combine several animations to form a desired pose.
+
+h3(#member-function-description). Member Function Description
+
+h4(#add_node). <a name="add_node">add&#95;node</a>
+
+* void *add&#95;node* *(* "int":class_int type, "String":class_string id *)*
+
+Add a node of a given type in the graph with given id.
+
+h4(#node_exists). <a name="node_exists">node&#95;exists</a>
+
+* "bool":class_bool *node&#95;exists* *(* "String":class_string node *)* const
+
+Check if a node exists (by name).
+
+h4(#node_rename). <a name="node_rename">node&#95;rename</a>
+
+* "int":class_int *node&#95;rename* *(* "String":class_string node, "String":class_string new&#95;name *)*
+
+Rename a node in the graph.
+
+h4(#node_get_type). <a name="node_get_type">node&#95;get&#95;type</a>
+
+* "int":class_int *node&#95;get&#95;type* *(* "String":class_string id *)* const
+
+Get the node type, will return from NODE&#95;&#42; enum.
+
+h4(#node_get_input_count). <a name="node_get_input_count">node&#95;get&#95;input&#95;count</a>
+
+* "int":class_int *node&#95;get&#95;input&#95;count* *(* "String":class_string id *)* const
+
+Return the input count for a given node. Different types of nodes have different amount of inputs.
+
+h4(#node_get_input_source). <a name="node_get_input_source">node&#95;get&#95;input&#95;source</a>
+
+* "String":class_string *node&#95;get&#95;input&#95;source* *(* "String":class_string id, "int":class_int idx *)* const
+
+Return the input source for a given node input.
+
+h4(#animation_node_set_animation). <a name="animation_node_set_animation">animation&#95;node&#95;set&#95;animation</a>
+
+* void *animation&#95;node&#95;set&#95;animation* *(* "String":class_string id, "Animation":class_animation animation *)*
+
+Set the animation for an animation node.

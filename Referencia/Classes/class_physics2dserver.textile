@@ -1,0 +1,155 @@
+h1(#physics2dserver). Physics2DServer
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Physics 2D Server.
+
+h3(#member-functions). Member Functions
+
+* "RID":class_rid *"shape&#95;create":#shape_create* *(* "int":class_int type *)*
+* void *"shape&#95;set&#95;data":#shape_set_data* *(* "RID":class_rid shape, var data *)*
+* "int":class_int *"shape&#95;get&#95;type":#shape_get_type* *(* "RID":class_rid shape *)* const
+* void *"shape&#95;get&#95;data":#shape_get_data* *(* "RID":class_rid shape *)* const
+* "RID":class_rid *"space&#95;create":#space_create* *(* *)*
+* void *"space&#95;set&#95;active":#space_set_active* *(* "RID":class_rid space, "bool":class_bool active *)*
+* "bool":class_bool *"space&#95;is&#95;active":#space_is_active* *(* "RID":class_rid space *)* const
+* void *"space&#95;set&#95;param":#space_set_param* *(* "RID":class_rid space, "int":class_int param, "float":class_float value *)*
+* "float":class_float *"space&#95;get&#95;param":#space_get_param* *(* "RID":class_rid space, "int":class_int param *)* const
+* "Physics2DDirectSpaceState":class_physics2ddirectspacestate *"space&#95;get&#95;direct&#95;state":#space_get_direct_state* *(* "RID":class_rid space *)*
+* "RID":class_rid *"area&#95;create":#area_create* *(* *)*
+* void *"area&#95;set&#95;space":#area_set_space* *(* "RID":class_rid area, "RID":class_rid space *)*
+* "RID":class_rid *"area&#95;get&#95;space":#area_get_space* *(* "RID":class_rid area *)* const
+* void *"area&#95;set&#95;space&#95;override&#95;mode":#area_set_space_override_mode* *(* "RID":class_rid area, "int":class_int mode *)*
+* "int":class_int *"area&#95;get&#95;space&#95;override&#95;mode":#area_get_space_override_mode* *(* "RID":class_rid area *)* const
+* void *"area&#95;add&#95;shape":#area_add_shape* *(* "RID":class_rid area, "RID":class_rid shape, "Matrix32":class_matrix32 transform=1,0, 0,1, 0,0 *)*
+* void *"area&#95;set&#95;shape":#area_set_shape* *(* "RID":class_rid area, "int":class_int shape&#95;idx, "RID":class_rid shape *)*
+* void *"area&#95;set&#95;shape&#95;transform":#area_set_shape_transform* *(* "RID":class_rid area, "int":class_int shape&#95;idx, "Matrix32":class_matrix32 transform *)*
+* "int":class_int *"area&#95;get&#95;shape&#95;count":#area_get_shape_count* *(* "RID":class_rid area *)* const
+* "RID":class_rid *"area&#95;get&#95;shape":#area_get_shape* *(* "RID":class_rid area, "int":class_int shape&#95;idx *)* const
+* "Matrix32":class_matrix32 *"area&#95;get&#95;shape&#95;transform":#area_get_shape_transform* *(* "RID":class_rid area, "int":class_int shape&#95;idx *)* const
+* void *"area&#95;remove&#95;shape":#area_remove_shape* *(* "RID":class_rid area, "int":class_int shape&#95;idx *)*
+* void *"area&#95;clear&#95;shapes":#area_clear_shapes* *(* "RID":class_rid area *)*
+* void *"area&#95;set&#95;layer&#95;mask":#area_set_layer_mask* *(* "RID":class_rid area, "int":class_int mask *)*
+* void *"area&#95;set&#95;collision&#95;mask":#area_set_collision_mask* *(* "RID":class_rid area, "int":class_int mask *)*
+* void *"area&#95;set&#95;param":#area_set_param* *(* "RID":class_rid area, "int":class_int param, var value *)*
+* void *"area&#95;set&#95;transform":#area_set_transform* *(* "RID":class_rid area, "Matrix32":class_matrix32 transform *)*
+* void *"area&#95;get&#95;param":#area_get_param* *(* "RID":class_rid area, "int":class_int param *)* const
+* "Matrix32":class_matrix32 *"area&#95;get&#95;transform":#area_get_transform* *(* "RID":class_rid area *)* const
+* void *"area&#95;attach&#95;object&#95;instance&#95;ID":#area_attach_object_instance_ID* *(* "RID":class_rid area, "int":class_int id *)*
+* "int":class_int *"area&#95;get&#95;object&#95;instance&#95;ID":#area_get_object_instance_ID* *(* "RID":class_rid area *)* const
+* void *"area&#95;set&#95;monitor&#95;callback":#area_set_monitor_callback* *(* "RID":class_rid receiver, "Object":class_object method, "String":class_string arg2 *)*
+* "RID":class_rid *"body&#95;create":#body_create* *(* "int":class_int mode=2, "bool":class_bool init&#95;sleeping=false *)*
+* void *"body&#95;set&#95;space":#body_set_space* *(* "RID":class_rid body, "RID":class_rid space *)*
+* "RID":class_rid *"body&#95;get&#95;space":#body_get_space* *(* "RID":class_rid body *)* const
+* void *"body&#95;set&#95;mode":#body_set_mode* *(* "RID":class_rid body, "int":class_int mode *)*
+* "int":class_int *"body&#95;get&#95;mode":#body_get_mode* *(* "RID":class_rid body *)* const
+* void *"body&#95;add&#95;shape":#body_add_shape* *(* "RID":class_rid body, "RID":class_rid shape, "Matrix32":class_matrix32 transform=1,0, 0,1, 0,0 *)*
+* void *"body&#95;set&#95;shape":#body_set_shape* *(* "RID":class_rid body, "int":class_int shape&#95;idx, "RID":class_rid shape *)*
+* void *"body&#95;set&#95;shape&#95;transform":#body_set_shape_transform* *(* "RID":class_rid body, "int":class_int shape&#95;idx, "Matrix32":class_matrix32 transform *)*
+* void *"body&#95;set&#95;shape&#95;metadata":#body_set_shape_metadata* *(* "RID":class_rid body, "int":class_int shape&#95;idx, var metadata *)*
+* "int":class_int *"body&#95;get&#95;shape&#95;count":#body_get_shape_count* *(* "RID":class_rid body *)* const
+* "RID":class_rid *"body&#95;get&#95;shape":#body_get_shape* *(* "RID":class_rid body, "int":class_int shape&#95;idx *)* const
+* "Matrix32":class_matrix32 *"body&#95;get&#95;shape&#95;transform":#body_get_shape_transform* *(* "RID":class_rid body, "int":class_int shape&#95;idx *)* const
+* void *"body&#95;get&#95;shape&#95;metadata":#body_get_shape_metadata* *(* "RID":class_rid body, "int":class_int shape&#95;idx *)* const
+* void *"body&#95;remove&#95;shape":#body_remove_shape* *(* "RID":class_rid body, "int":class_int shape&#95;idx *)*
+* void *"body&#95;clear&#95;shapes":#body_clear_shapes* *(* "RID":class_rid body *)*
+* void *"body&#95;set&#95;shape&#95;as&#95;trigger":#body_set_shape_as_trigger* *(* "RID":class_rid body, "int":class_int shape&#95;idx, "bool":class_bool enable *)*
+* "bool":class_bool *"body&#95;is&#95;shape&#95;set&#95;as&#95;trigger":#body_is_shape_set_as_trigger* *(* "RID":class_rid body, "int":class_int shape&#95;idx *)* const
+* void *"body&#95;attach&#95;object&#95;instance&#95;ID":#body_attach_object_instance_ID* *(* "RID":class_rid body, "int":class_int id *)*
+* "int":class_int *"body&#95;get&#95;object&#95;instance&#95;ID":#body_get_object_instance_ID* *(* "RID":class_rid body *)* const
+* void *"body&#95;set&#95;continuous&#95;collision&#95;detection&#95;mode":#body_set_continuous_collision_detection_mode* *(* "RID":class_rid body, "int":class_int mode *)*
+* "int":class_int *"body&#95;get&#95;continuous&#95;collision&#95;detection&#95;mode":#body_get_continuous_collision_detection_mode* *(* "RID":class_rid body *)* const
+* void *"body&#95;set&#95;layer&#95;mask":#body_set_layer_mask* *(* "RID":class_rid body, "int":class_int mask *)*
+* "int":class_int *"body&#95;get&#95;layer&#95;mask":#body_get_layer_mask* *(* "RID":class_rid body, "int":class_int arg1 *)* const
+* void *"body&#95;set&#95;collision&#95;mask":#body_set_collision_mask* *(* "RID":class_rid body, "int":class_int mask *)*
+* "int":class_int *"body&#95;get&#95;collision&#95;mask":#body_get_collision_mask* *(* "RID":class_rid body, "int":class_int arg1 *)* const
+* void *"body&#95;set&#95;param":#body_set_param* *(* "RID":class_rid body, "int":class_int param, "float":class_float value *)*
+* "float":class_float *"body&#95;get&#95;param":#body_get_param* *(* "RID":class_rid body, "int":class_int param *)* const
+* void *"body&#95;set&#95;state":#body_set_state* *(* "RID":class_rid body, "int":class_int state, var value *)*
+* void *"body&#95;get&#95;state":#body_get_state* *(* "RID":class_rid body, "int":class_int state *)* const
+* void *"body&#95;apply&#95;impulse":#body_apply_impulse* *(* "RID":class_rid body, "Vector2":class_vector2 pos, "Vector2":class_vector2 impulse *)*
+* void *"body&#95;set&#95;axis&#95;velocity":#body_set_axis_velocity* *(* "RID":class_rid body, "Vector2":class_vector2 axis&#95;velocity *)*
+* void *"body&#95;add&#95;collision&#95;exception":#body_add_collision_exception* *(* "RID":class_rid body, "RID":class_rid excepted&#95;body *)*
+* void *"body&#95;remove&#95;collision&#95;exception":#body_remove_collision_exception* *(* "RID":class_rid body, "RID":class_rid excepted&#95;body *)*
+* void *"body&#95;set&#95;max&#95;contacts&#95;reported":#body_set_max_contacts_reported* *(* "RID":class_rid body, "int":class_int amount *)*
+* "int":class_int *"body&#95;get&#95;max&#95;contacts&#95;reported":#body_get_max_contacts_reported* *(* "RID":class_rid body *)* const
+* void *"body&#95;set&#95;one&#95;way&#95;collision&#95;direction":#body_set_one_way_collision_direction* *(* "RID":class_rid normal, "Vector2":class_vector2 arg1 *)*
+* "Vector2":class_vector2 *"body&#95;get&#95;one&#95;way&#95;collision&#95;direction":#body_get_one_way_collision_direction* *(* "RID":class_rid arg0 *)* const
+* void *"body&#95;set&#95;one&#95;way&#95;collision&#95;max&#95;depth":#body_set_one_way_collision_max_depth* *(* "RID":class_rid normal, "float":class_float arg1 *)*
+* "float":class_float *"body&#95;get&#95;one&#95;way&#95;collision&#95;max&#95;depth":#body_get_one_way_collision_max_depth* *(* "RID":class_rid arg0 *)* const
+* void *"body&#95;set&#95;omit&#95;force&#95;integration":#body_set_omit_force_integration* *(* "RID":class_rid body, "bool":class_bool enable *)*
+* "bool":class_bool *"body&#95;is&#95;omitting&#95;force&#95;integration":#body_is_omitting_force_integration* *(* "RID":class_rid body *)* const
+* void *"body&#95;set&#95;force&#95;integration&#95;callback":#body_set_force_integration_callback* *(* "RID":class_rid body, "Object":class_object receiver, "String":class_string method, var arg3 *)*
+* "bool":class_bool *"body&#95;test&#95;motion":#body_test_motion* *(* "RID":class_rid body, "Vector2":class_vector2 motion, "float":class_float margin=0.08, "Physics2DTestMotionResult":class_physics2dtestmotionresult result=NULL *)*
+* void *"joint&#95;set&#95;param":#joint_set_param* *(* "RID":class_rid joint, "int":class_int param, "float":class_float value *)*
+* "float":class_float *"joint&#95;get&#95;param":#joint_get_param* *(* "RID":class_rid joint, "int":class_int param *)* const
+* "RID":class_rid *"pin&#95;joint&#95;create":#pin_joint_create* *(* "Vector2":class_vector2 anchor, "RID":class_rid body&#95;a, "RID":class_rid body&#95;b=RID() *)*
+* "RID":class_rid *"groove&#95;joint&#95;create":#groove_joint_create* *(* "Vector2":class_vector2 groove1&#95;a, "Vector2":class_vector2 groove2&#95;a, "Vector2":class_vector2 anchor&#95;b, "RID":class_rid body&#95;a=RID(), "RID":class_rid body&#95;b=RID() *)*
+* "RID":class_rid *"damped&#95;spring&#95;joint&#95;create":#damped_spring_joint_create* *(* "Vector2":class_vector2 anchor&#95;a, "Vector2":class_vector2 anchor&#95;b, "RID":class_rid body&#95;a, "RID":class_rid body&#95;b=RID() *)*
+* void *"damped&#95;string&#95;joint&#95;set&#95;param":#damped_string_joint_set_param* *(* "RID":class_rid joint, "int":class_int param, "float":class_float value=RID() *)*
+* "float":class_float *"damped&#95;string&#95;joint&#95;get&#95;param":#damped_string_joint_get_param* *(* "RID":class_rid joint, "int":class_int param *)* const
+* "int":class_int *"joint&#95;get&#95;type":#joint_get_type* *(* "RID":class_rid joint *)* const
+* void *"free&#95;rid":#free_rid* *(* "RID":class_rid rid *)*
+* void *"set&#95;active":#set_active* *(* "bool":class_bool active *)*
+* "int":class_int *"get&#95;process&#95;info":#get_process_info* *(* "int":class_int arg0 *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *SHAPE&#95;LINE* = *0*
+* *SHAPE&#95;SEGMENT* = *2*
+* *SHAPE&#95;CIRCLE* = *3*
+* *SHAPE&#95;RECTANGLE* = *4*
+* *SHAPE&#95;CAPSULE* = *5*
+* *SHAPE&#95;CONVEX&#95;POLYGON* = *6*
+* *SHAPE&#95;CONCAVE&#95;POLYGON* = *7*
+* *SHAPE&#95;CUSTOM* = *8*
+* *AREA&#95;PARAM&#95;GRAVITY* = *0*
+* *AREA&#95;PARAM&#95;GRAVITY&#95;VECTOR* = *1*
+* *AREA&#95;PARAM&#95;GRAVITY&#95;IS&#95;POINT* = *2*
+* *AREA&#95;PARAM&#95;GRAVITY&#95;POINT&#95;ATTENUATION* = *3*
+* *AREA&#95;PARAM&#95;LINEAR&#95;DAMP* = *4*
+* *AREA&#95;PARAM&#95;ANGULAR&#95;DAMP* = *5*
+* *AREA&#95;PARAM&#95;PRIORITY* = *6*
+* *AREA&#95;SPACE&#95;OVERRIDE&#95;COMBINE* = *1*
+* *AREA&#95;SPACE&#95;OVERRIDE&#95;DISABLED* = *0*
+* *AREA&#95;SPACE&#95;OVERRIDE&#95;REPLACE* = *2*
+* *BODY&#95;MODE&#95;STATIC* = *0*
+* *BODY&#95;MODE&#95;KINEMATIC* = *1*
+* *BODY&#95;MODE&#95;RIGID* = *2*
+* *BODY&#95;MODE&#95;CHARACTER* = *3*
+* *BODY&#95;PARAM&#95;BOUNCE* = *0*
+* *BODY&#95;PARAM&#95;FRICTION* = *1*
+* *BODY&#95;PARAM&#95;MASS* = *2*
+* *BODY&#95;PARAM&#95;GRAVITY&#95;SCALE* = *3*
+* *BODY&#95;PARAM&#95;LINEAR&#95;DAMP* = *4*
+* *BODY&#95;PARAM&#95;ANGULAR&#95;DAMP* = *5*
+* *BODY&#95;PARAM&#95;MAX* = *6*
+* *BODY&#95;STATE&#95;TRANSFORM* = *0*
+* *BODY&#95;STATE&#95;LINEAR&#95;VELOCITY* = *1*
+* *BODY&#95;STATE&#95;ANGULAR&#95;VELOCITY* = *2*
+* *BODY&#95;STATE&#95;SLEEPING* = *3*
+* *BODY&#95;STATE&#95;CAN&#95;SLEEP* = *4*
+* *JOINT&#95;PIN* = *0*
+* *JOINT&#95;GROOVE* = *1*
+* *JOINT&#95;DAMPED&#95;SPRING* = *2*
+* *DAMPED&#95;STRING&#95;REST&#95;LENGTH* = *0*
+* *DAMPED&#95;STRING&#95;STIFFNESS* = *1*
+* *DAMPED&#95;STRING&#95;DAMPING* = *2*
+* *CCD&#95;MODE&#95;DISABLED* = *0*
+* *CCD&#95;MODE&#95;CAST&#95;RAY* = *1*
+* *CCD&#95;MODE&#95;CAST&#95;SHAPE* = *2*
+* *AREA&#95;BODY&#95;ADDED* = *0*
+* *AREA&#95;BODY&#95;REMOVED* = *1*
+* *INFO&#95;ACTIVE&#95;OBJECTS* = *0*
+* *INFO&#95;COLLISION&#95;PAIRS* = *1*
+* *INFO&#95;ISLAND&#95;COUNT* = *2*
+
+h3(#description). Description
+
+Physics 2D Server is the server responsible for all 2D physics.
+
+h3(#member-function-description). Member Function Description

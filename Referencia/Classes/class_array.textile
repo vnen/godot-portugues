@@ -1,0 +1,128 @@
+h1(#array). Array
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Generic array datatype.
+
+h3(#member-functions). Member Functions
+
+* void *"append":#append* *(* var value *)*
+* void *"clear":#clear* *(* *)*
+* "bool":class_bool *"empty":#empty* *(* *)*
+* void *"erase":#erase* *(* var value *)*
+* "int":class_int *"find":#find* *(* var value *)*
+* "int":class_int *"hash":#hash* *(* *)*
+* void *"insert":#insert* *(* "int":class_int pos, var value *)*
+* void *"invert":#invert* *(* *)*
+* "bool":class_bool *"is&#95;shared":#is_shared* *(* *)*
+* void *"push&#95;back":#push_back* *(* var value *)*
+* void *"remove":#remove* *(* "int":class_int pos *)*
+* void *"resize":#resize* *(* "int":class_int pos *)*
+* "int":class_int *"size":#size* *(* *)*
+* void *"sort":#sort* *(* *)*
+* void *"sort&#95;custom":#sort_custom* *(* "Object":class_object obj, "String":class_string func *)*
+* "Array":class_array *"Array":#Array* *(* "RawArray":class_rawarray from *)*
+* "Array":class_array *"Array":#Array* *(* "IntArray":class_intarray from *)*
+* "Array":class_array *"Array":#Array* *(* "RealArray":class_realarray from *)*
+* "Array":class_array *"Array":#Array* *(* "StringArray":class_stringarray from *)*
+* "Array":class_array *"Array":#Array* *(* "Vector2Array":class_vector2array from *)*
+* "Array":class_array *"Array":#Array* *(* "Vector3Array":class_vector3array from *)*
+* "Array":class_array *"Array":#Array* *(* "ColorArray":class_colorarray from *)*
+
+h3(#description). Description
+
+Generic array, contains several elements of any type, accessible by numerical index starting at 0. Arrays are always passed by reference.
+
+h3(#member-function-description). Member Function Description
+
+h4(#clear). <a name="clear">clear</a>
+
+* void *clear* *(* *)*
+
+Clear the array (resize to 0).
+
+h4(#empty). <a name="empty">empty</a>
+
+* "bool":class_bool *empty* *(* *)*
+
+Return true if the array is empty (size==0).
+
+h4(#hash). <a name="hash">hash</a>
+
+* "int":class_int *hash* *(* *)*
+
+Return a hashed integer value representing the array contents.
+
+h4(#insert). <a name="insert">insert</a>
+
+* void *insert* *(* "int":class_int pos, var value *)*
+
+Insert a new element at a given position in the array. The position must be valid, or at the end of the array (pos==size()).
+
+h4(#push_back). <a name="push_back">push&#95;back</a>
+
+* void *push&#95;back* *(* var value *)*
+
+Append an element at the end of the array.
+
+h4(#remove). <a name="remove">remove</a>
+
+* void *remove* *(* "int":class_int pos *)*
+
+Remove an element from the array by index.
+
+h4(#resize). <a name="resize">resize</a>
+
+* void *resize* *(* "int":class_int pos *)*
+
+Resize the array to contain a different number of elements. If the array size is smaller, elements are cleared, if bigger, new elements are Null.
+
+h4(#size). <a name="size">size</a>
+
+* "int":class_int *size* *(* *)*
+
+Return the amount of elements in the array.
+
+h4(#array-1). <a name="Array">Array</a>
+
+* "Array":class_array *Array* *(* "RawArray":class_rawarray from *)*
+
+Construct an array from a "RawArray":class_rawarray.
+
+h4(#array-2). <a name="Array">Array</a>
+
+* "Array":class_array *Array* *(* "IntArray":class_intarray from *)*
+
+Construct an array from a "RawArray":class_rawarray.
+
+h4(#array-3). <a name="Array">Array</a>
+
+* "Array":class_array *Array* *(* "RealArray":class_realarray from *)*
+
+Construct an array from a "RawArray":class_rawarray.
+
+h4(#array-4). <a name="Array">Array</a>
+
+* "Array":class_array *Array* *(* "StringArray":class_stringarray from *)*
+
+Construct an array from a "RawArray":class_rawarray.
+
+h4(#array-5). <a name="Array">Array</a>
+
+* "Array":class_array *Array* *(* "Vector2Array":class_vector2array from *)*
+
+Construct an array from a "RawArray":class_rawarray.
+
+h4(#array-6). <a name="Array">Array</a>
+
+* "Array":class_array *Array* *(* "Vector3Array":class_vector3array from *)*
+
+Construct an array from a "RawArray":class_rawarray.
+
+h4(#array-7). <a name="Array">Array</a>
+
+* "Array":class_array *Array* *(* "ColorArray":class_colorarray from *)*
+
+Construct an array from a "RawArray":class_rawarray.
