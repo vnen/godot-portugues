@@ -1,0 +1,14 @@
+h1(#path). Path
+
+h4(#inherits-spatial). *Inherits:* "Spatial":class_spatial
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;curve":#set_curve* *(* "Curve3D":class_curve3d curve *)*
+* "Curve3D":class_curve3d *"get&#95;curve":#get_curve* *(* *)* const
+
+h3(#member-function-description). Member Function Description

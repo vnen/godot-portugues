@@ -1,0 +1,52 @@
+h1(#popup). Popup
+
+h4(#inherits-control). *Inherits:* "Control":class_control
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Base container control for popups and dialogs.
+
+h3(#member-functions). Member Functions
+
+* void *"popup&#95;centered":#popup_centered* *(* "Vector2":class_vector2 size=Vector2(0,0) *)*
+* void *"popup&#95;centered&#95;ratio":#popup_centered_ratio* *(* "float":class_float ratio=0.75 *)*
+* void *"popup&#95;centered&#95;minsize":#popup_centered_minsize* *(* "Vector2":class_vector2 minsize=Vector2(0,0) *)*
+* void *"popup":#popup* *(* *)*
+* void *"set&#95;exclusive":#set_exclusive* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;exclusive":#is_exclusive* *(* *)* const
+
+h3(#signals). Signals
+
+* *popup&#95;hide* *(* *)*
+* *about&#95;to&#95;show* *(* *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *NOTIFICATION&#95;POST&#95;POPUP* = *80*
+* *NOTIFICATION&#95;POPUP&#95;HIDE* = *81*
+
+h3(#description). Description
+
+PopUp is a base "Control":class_control used to show dialogs and popups. It's a subwindow and modal by default (see "Control":class_control) and has helpers for custom popup behavior.
+
+h3(#member-function-description). Member Function Description
+
+h4(#popup_centered). <a name="popup_centered">popup&#95;centered</a>
+
+* void *popup&#95;centered* *(* "Vector2":class_vector2 size=Vector2(0,0) *)*
+
+Popup (show the control in modal form) in the center of the screen, at the curent size, or at a size determined by &quot;size&quot;.
+
+h4(#popup_centered_ratio). <a name="popup_centered_ratio">popup&#95;centered&#95;ratio</a>
+
+* void *popup&#95;centered&#95;ratio* *(* "float":class_float ratio=0.75 *)*
+
+Popup (show the control in modal form) in the center of the screen, scalled at a ratio of size of the screen.
+
+h4(#popup-1). <a name="popup">popup</a>
+
+* void *popup* *(* *)*
+
+Popup (show the control in modal form).

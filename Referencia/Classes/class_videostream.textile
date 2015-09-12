@@ -1,0 +1,16 @@
+h1(#videostream). VideoStream
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "int":class_int *"get&#95;pending&#95;frame&#95;count":#get_pending_frame_count* *(* *)* const
+* void *"pop&#95;frame":#pop_frame* *(* "Object":class_object arg0 *)*
+* "Image":class_image *"peek&#95;frame":#peek_frame* *(* *)* const
+* void *"set&#95;audio&#95;track":#set_audio_track* *(* "int":class_int idx *)*
+
+h3(#member-function-description). Member Function Description

@@ -1,0 +1,48 @@
+h1(#joint2d). Joint2D
+
+h4(#inherits-node2d). *Inherits:* "Node2D":class_node2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Base node for all joint constraints in 2D phyisics.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;node&#95;a":#set_node_a* *(* "NodePath":class_nodepath node *)*
+* "NodePath":class_nodepath *"get&#95;node&#95;a":#get_node_a* *(* *)* const
+* void *"set&#95;node&#95;b":#set_node_b* *(* "NodePath":class_nodepath node *)*
+* "NodePath":class_nodepath *"get&#95;node&#95;b":#get_node_b* *(* *)* const
+* void *"set&#95;bias":#set_bias* *(* "float":class_float bias *)*
+* "float":class_float *"get&#95;bias":#get_bias* *(* *)* const
+
+h3(#description). Description
+
+Base node for all joint constraints in 2D phyisics. Joints take 2 bodies and apply a custom constraint.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_node_a). <a name="set_node_a">set&#95;node&#95;a</a>
+
+* void *set&#95;node&#95;a* *(* "NodePath":class_nodepath node *)*
+
+Set the path to the A node for the joint. Must be of type PhysicsBody2D.
+
+h4(#get_node_a). <a name="get_node_a">get&#95;node&#95;a</a>
+
+* "NodePath":class_nodepath *get&#95;node&#95;a* *(* *)* const
+
+Return the path to the A node for the joint.
+
+h4(#set_node_b). <a name="set_node_b">set&#95;node&#95;b</a>
+
+* void *set&#95;node&#95;b* *(* "NodePath":class_nodepath node *)*
+
+Set the path to the B node for the joint. Must be of type PhysicsBody2D.
+
+h4(#get_node_b). <a name="get_node_b">get&#95;node&#95;b</a>
+
+* "NodePath":class_nodepath *get&#95;node&#95;b* *(* *)* const
+
+Return the path to the B node for the joint.

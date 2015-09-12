@@ -1,0 +1,13 @@
+h1(#panel). Panel
+
+h4(#inherits-control). *Inherits:* "Control":class_control
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Provides an opaque background for "Control":class_control children.
+
+h3(#description). Description
+
+Panel is a "Control":class_control that displays an opaque background. It's commoly used as a parent and container for other types of "Control":class_control nodes.&quot;#10;&quot;#9;[img]images/panel&#95;example.png[/img]

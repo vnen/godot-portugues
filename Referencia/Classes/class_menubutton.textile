@@ -1,0 +1,29 @@
+h1(#menubutton). MenuButton
+
+h4(#inherits-button). *Inherits:* "Button":class_button
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Special button that brings up a "PopupMenu":class_popupmenu when clicked.
+
+h3(#member-functions). Member Functions
+
+* "Object":class_object *"get&#95;popup":#get_popup* *(* *)*
+
+h3(#signals). Signals
+
+* *about&#95;to&#95;show* *(* *)*
+
+h3(#description). Description
+
+Special button that brings up a "PopupMenu":class_popupmenu when clicked. That's pretty much all it does, as it's just a helper class when bulding GUIs.
+
+h3(#member-function-description). Member Function Description
+
+h4(#get_popup). <a name="get_popup">get&#95;popup</a>
+
+* "Object":class_object *get&#95;popup* *(* *)*
+
+Return the "PopupMenu":class_popupmenu contained in this button.

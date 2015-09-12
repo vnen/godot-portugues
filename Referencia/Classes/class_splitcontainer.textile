@@ -1,0 +1,48 @@
+h1(#splitcontainer). SplitContainer
+
+h4(#inherits-container). *Inherits:* "Container":class_container
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Container for splitting and adjusting.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;split&#95;offset":#set_split_offset* *(* "int":class_int offset *)*
+* "int":class_int *"get&#95;split&#95;offset":#get_split_offset* *(* *)* const
+* void *"set&#95;collapsed":#set_collapsed* *(* "bool":class_bool collapsed *)*
+* "bool":class_bool *"is&#95;collapsed":#is_collapsed* *(* *)* const
+* void *"set&#95;dragger&#95;visible":#set_dragger_visible* *(* "bool":class_bool visible *)*
+* "bool":class_bool *"is&#95;dragger&#95;visible":#is_dragger_visible* *(* *)* const
+
+h3(#description). Description
+
+Container for splitting two controls vertically or horizontally, with a grabber that allows adjusting the split offset or ratio.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_split_offset). <a name="set_split_offset">set&#95;split&#95;offset</a>
+
+* void *set&#95;split&#95;offset* *(* "int":class_int offset *)*
+
+Set the split offset.
+
+h4(#get_split_offset). <a name="get_split_offset">get&#95;split&#95;offset</a>
+
+* "int":class_int *get&#95;split&#95;offset* *(* *)* const
+
+Return the spluit offset;
+
+h4(#set_collapsed). <a name="set_collapsed">set&#95;collapsed</a>
+
+* void *set&#95;collapsed* *(* "bool":class_bool collapsed *)*
+
+Set if the split must be collapsed.
+
+h4(#is_collapsed). <a name="is_collapsed">is&#95;collapsed</a>
+
+* "bool":class_bool *is&#95;collapsed* *(* *)* const
+
+Return if the split is collapsed;

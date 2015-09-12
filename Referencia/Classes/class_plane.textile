@@ -1,0 +1,115 @@
+h1(#plane). Plane
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Plane in hessian form.
+
+h3(#member-functions). Member Functions
+
+* "Vector3":class_vector3 *"center":#center* *(* *)*
+* "float":class_float *"distance&#95;to":#distance_to* *(* "Vector3":class_vector3 point *)*
+* "Vector3":class_vector3 *"get&#95;any&#95;point":#get_any_point* *(* *)*
+* "bool":class_bool *"has&#95;point":#has_point* *(* "Vector3":class_vector3 point, "float":class_float epsilon=0.00001 *)*
+* "Vector3":class_vector3 *"intersect&#95;3":#intersect_3* *(* "Plane":class_plane b, "Plane":class_plane c *)*
+* "Vector3":class_vector3 *"intersects&#95;ray":#intersects_ray* *(* "Vector3":class_vector3 from, "Vector3":class_vector3 dir *)*
+* "Vector3":class_vector3 *"intersects&#95;segment":#intersects_segment* *(* "Vector3":class_vector3 begin, "Vector3":class_vector3 end *)*
+* "bool":class_bool *"is&#95;point&#95;over":#is_point_over* *(* "Vector3":class_vector3 point *)*
+* "Plane":class_plane *"normalized":#normalized* *(* *)*
+* "Vector3":class_vector3 *"project":#project* *(* "Vector3":class_vector3 point *)*
+* "Plane":class_plane *"Plane":#Plane* *(* "float":class_float a, "float":class_float b, "float":class_float c, "float":class_float d *)*
+* "Plane":class_plane *"Plane":#Plane* *(* "Vector3":class_vector3 v1, "Vector3":class_vector3 v2, "Vector3":class_vector3 v3 *)*
+* "Plane":class_plane *"Plane":#Plane* *(* "Vector3":class_vector3 normal, "float":class_float d *)*
+
+h3(#member-variables). Member Variables
+
+* "Vector3":class_vector3 *normal*
+* "float":class_float *x*
+* "float":class_float *y*
+* "float":class_float *z*
+* "float":class_float *d*
+
+h3(#description). Description
+
+Plane represents a normalized plane equation. Basically, &quot;normal&quot; is the normal of the plane (a,b,c normalized), and &quot;d&quot; is the distance from the origin to the plane (in the direction of &quot;normal&quot;). &quot;Over&quot; or &quot;Above&quot; the plane is considered the side of the plane towards where the normal is pointing.
+
+h3(#member-function-description). Member Function Description
+
+h4(#center). <a name="center">center</a>
+
+* "Vector3":class_vector3 *center* *(* *)*
+
+Returns the center of the plane.
+
+h4(#distance_to). <a name="distance_to">distance&#95;to</a>
+
+* "float":class_float *distance&#95;to* *(* "Vector3":class_vector3 point *)*
+
+Returns the shortest distance from the plane to the position &quot;point&quot;.
+
+h4(#get_any_point). <a name="get_any_point">get&#95;any&#95;point</a>
+
+* "Vector3":class_vector3 *get&#95;any&#95;point* *(* *)*
+
+Returns a point on the plane.
+
+h4(#has_point). <a name="has_point">has&#95;point</a>
+
+* "bool":class_bool *has&#95;point* *(* "Vector3":class_vector3 point, "float":class_float epsilon=0.00001 *)*
+
+Returns true if &quot;point&quot; is inside the plane (by a very minimum treshold).
+
+h4(#intersect_3). <a name="intersect_3">intersect&#95;3</a>
+
+* "Vector3":class_vector3 *intersect&#95;3* *(* "Plane":class_plane b, "Plane":class_plane c *)*
+
+Returns the intersection point of the three planes &quot;b&quot;, &quot;c&quot; and this plane. If no intersection is found null is returned.
+
+h4(#intersects_ray). <a name="intersects_ray">intersects&#95;ray</a>
+
+* "Vector3":class_vector3 *intersects&#95;ray* *(* "Vector3":class_vector3 from, "Vector3":class_vector3 dir *)*
+
+Returns the intersection point of a ray consisting of the position &quot;from&quot; and the direction normal &quot;dir&quot; with this plane. If no intersection is found null is returned.
+
+h4(#intersects_segment). <a name="intersects_segment">intersects&#95;segment</a>
+
+* "Vector3":class_vector3 *intersects&#95;segment* *(* "Vector3":class_vector3 begin, "Vector3":class_vector3 end *)*
+
+Returns the intersection point of a segment from position &quot;begin&quot; to position &quot;end&quot; with this plane. If no intersection is found null is returned.
+
+h4(#is_point_over). <a name="is_point_over">is&#95;point&#95;over</a>
+
+* "bool":class_bool *is&#95;point&#95;over* *(* "Vector3":class_vector3 point *)*
+
+Returns true if &quot;point&quot; is located above the plane.
+
+h4(#normalized). <a name="normalized">normalized</a>
+
+* "Plane":class_plane *normalized* *(* *)*
+
+Returns a copy of the plane, normalized.
+
+h4(#project). <a name="project">project</a>
+
+* "Vector3":class_vector3 *project* *(* "Vector3":class_vector3 point *)*
+
+Returns the orthogonal projection of point &quot;p&quot; into a point in the plane.
+
+h4(#plane-1). <a name="Plane">Plane</a>
+
+* "Plane":class_plane *Plane* *(* "float":class_float a, "float":class_float b, "float":class_float c, "float":class_float d *)*
+
+Creates a plane from the three parameters &quot;a&quot;, &quot;b&quot;, &quot;c&quot; and &quot;d&quot;.
+
+h4(#plane-2). <a name="Plane">Plane</a>
+
+* "Plane":class_plane *Plane* *(* "Vector3":class_vector3 v1, "Vector3":class_vector3 v2, "Vector3":class_vector3 v3 *)*
+
+Creates a plane from three points.
+
+h4(#plane-3). <a name="Plane">Plane</a>
+
+* "Plane":class_plane *Plane* *(* "Vector3":class_vector3 normal, "float":class_float d *)*
+
+Creates a plane from the normal and the plane's distance to the origin.

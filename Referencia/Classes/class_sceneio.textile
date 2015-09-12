@@ -1,0 +1,19 @@
+h1(#sceneio). SceneIO
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "Node":class_node *"load":#load* *(* "String":class_string path *)*
+* "int":class_int *"save":#save* *(* "String":class_string path, "Node":class_node scene, "int":class_int flags=0, OptimizedSaver optimizer=Object() *)*
+* "SceneInteractiveLoader":class_sceneinteractiveloader *"load&#95;interactive":#load_interactive* *(* "String":class_string path *)*
+
+h3(#member-function-description). Member Function Description
+
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+</ol>

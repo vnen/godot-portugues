@@ -1,0 +1,44 @@
+h1(#performance). Performance
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "float":class_float *"get&#95;monitor":#get_monitor* *(* "int":class_int monitor *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *TIME&#95;FPS* = *0*
+* *TIME&#95;PROCESS* = *1*
+* *TIME&#95;FIXED&#95;PROCESS* = *2*
+* *MEMORY&#95;STATIC* = *3*
+* *MEMORY&#95;DYNAMIC* = *4*
+* *MEMORY&#95;STATIC&#95;MAX* = *5*
+* *MEMORY&#95;DYNAMIC&#95;MAX* = *6*
+* *MEMORY&#95;MESSAGE&#95;BUFFER&#95;MAX* = *7*
+* *OBJECT&#95;COUNT* = *8*
+* *OBJECT&#95;RESOURCE&#95;COUNT* = *9*
+* *OBJECT&#95;NODE&#95;COUNT* = *10*
+* *RENDER&#95;OBJECTS&#95;IN&#95;FRAME* = *11*
+* *RENDER&#95;VERTICES&#95;IN&#95;FRAME* = *12*
+* *RENDER&#95;MATERIAL&#95;CHANGES&#95;IN&#95;FRAME* = *13*
+* *RENDER&#95;SHADER&#95;CHANGES&#95;IN&#95;FRAME* = *14*
+* *RENDER&#95;SURFACE&#95;CHANGES&#95;IN&#95;FRAME* = *15*
+* *RENDER&#95;DRAW&#95;CALLS&#95;IN&#95;FRAME* = *16*
+* *RENDER&#95;USAGE&#95;VIDEO&#95;MEM&#95;TOTAL* = *20*
+* *RENDER&#95;VIDEO&#95;MEM&#95;USED* = *17*
+* *RENDER&#95;TEXTURE&#95;MEM&#95;USED* = *18*
+* *RENDER&#95;VERTEX&#95;MEM&#95;USED* = *19*
+* *PHYSICS&#95;2D&#95;ACTIVE&#95;OBJECTS* = *21*
+* *PHYSICS&#95;2D&#95;COLLISION&#95;PAIRS* = *22*
+* *PHYSICS&#95;2D&#95;ISLAND&#95;COUNT* = *23*
+* *PHYSICS&#95;3D&#95;ACTIVE&#95;OBJECTS* = *24*
+* *PHYSICS&#95;3D&#95;COLLISION&#95;PAIRS* = *25*
+* *PHYSICS&#95;3D&#95;ISLAND&#95;COUNT* = *26*
+* *MONITOR&#95;MAX* = *27*
+
+h3(#member-function-description). Member Function Description

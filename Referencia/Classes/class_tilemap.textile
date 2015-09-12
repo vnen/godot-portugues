@@ -1,0 +1,156 @@
+h1(#tilemap). TileMap
+
+h4(#inherits-node2d). *Inherits:* "Node2D":class_node2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Node for 2D Tile&#45;Based games.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;tileset":#set_tileset* *(* "TileSet":class_tileset tileset *)*
+* "TileSet":class_tileset *"get&#95;tileset":#get_tileset* *(* *)* const
+* void *"set&#95;mode":#set_mode* *(* "int":class_int mode *)*
+* "int":class_int *"get&#95;mode":#get_mode* *(* *)* const
+* void *"set&#95;half&#95;offset":#set_half_offset* *(* "int":class_int half&#95;offset *)*
+* "int":class_int *"get&#95;half&#95;offset":#get_half_offset* *(* *)* const
+* void *"set&#95;custom&#95;transform":#set_custom_transform* *(* "Matrix32":class_matrix32 custom&#95;transform *)*
+* "Matrix32":class_matrix32 *"get&#95;custom&#95;transform":#get_custom_transform* *(* *)* const
+* void *"set&#95;cell&#95;size":#set_cell_size* *(* "Vector2":class_vector2 size *)*
+* "Vector2":class_vector2 *"get&#95;cell&#95;size":#get_cell_size* *(* *)* const
+* void *"set&#95;quadrant&#95;size":#set_quadrant_size* *(* "int":class_int size *)*
+* "int":class_int *"get&#95;quadrant&#95;size":#get_quadrant_size* *(* *)* const
+* void *"set&#95;tile&#95;origin":#set_tile_origin* *(* "int":class_int origin *)*
+* "int":class_int *"get&#95;tile&#95;origin":#get_tile_origin* *(* *)* const
+* void *"set&#95;center&#95;x":#set_center_x* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"get&#95;center&#95;x":#get_center_x* *(* *)* const
+* void *"set&#95;center&#95;y":#set_center_y* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"get&#95;center&#95;y":#get_center_y* *(* *)* const
+* void *"set&#95;y&#95;sort&#95;mode":#set_y_sort_mode* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;y&#95;sort&#95;mode&#95;enabled":#is_y_sort_mode_enabled* *(* *)* const
+* void *"set&#95;collision&#95;use&#95;kinematic":#set_collision_use_kinematic* *(* "bool":class_bool use&#95;kinematic *)*
+* "bool":class_bool *"get&#95;collision&#95;use&#95;kinematic":#get_collision_use_kinematic* *(* *)* const
+* void *"set&#95;collision&#95;layer":#set_collision_layer* *(* "int":class_int mask *)*
+* "int":class_int *"get&#95;collision&#95;layer":#get_collision_layer* *(* *)* const
+* void *"set&#95;collision&#95;mask":#set_collision_mask* *(* "int":class_int mask *)*
+* "int":class_int *"get&#95;collision&#95;mask":#get_collision_mask* *(* *)* const
+* void *"set&#95;collision&#95;friction":#set_collision_friction* *(* "float":class_float value *)*
+* "float":class_float *"get&#95;collision&#95;friction":#get_collision_friction* *(* *)* const
+* void *"set&#95;collision&#95;bounce":#set_collision_bounce* *(* "float":class_float value *)*
+* "float":class_float *"get&#95;collision&#95;bounce":#get_collision_bounce* *(* *)* const
+* void *"set&#95;cell":#set_cell* *(* "int":class_int x, "int":class_int y, "int":class_int tile, "bool":class_bool flip&#95;x=false, "bool":class_bool flip&#95;y=false, "bool":class_bool transpose=false *)*
+* "int":class_int *"get&#95;cell":#get_cell* *(* "int":class_int x, "int":class_int y *)* const
+* "bool":class_bool *"is&#95;cell&#95;x&#95;flipped":#is_cell_x_flipped* *(* "int":class_int x, "int":class_int y *)* const
+* "bool":class_bool *"is&#95;cell&#95;y&#95;flipped":#is_cell_y_flipped* *(* "int":class_int x, "int":class_int y *)* const
+* void *"clear":#clear* *(* *)*
+* "Array":class_array *"get&#95;used&#95;cells":#get_used_cells* *(* *)* const
+* "Vector2":class_vector2 *"map&#95;to&#95;world":#map_to_world* *(* "Vector2":class_vector2 mappos, "bool":class_bool ignore&#95;half&#95;ofs=false *)* const
+* "Vector2":class_vector2 *"world&#95;to&#95;map":#world_to_map* *(* "Vector2":class_vector2 worldpos *)* const
+
+h3(#signals). Signals
+
+* *settings&#95;changed* *(* *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *INVALID&#95;CELL* = *&#45;1* &#45; Returned when a cell doesn't exist.
+* *MODE&#95;SQUARE* = *0*
+* *MODE&#95;ISOMETRIC* = *1*
+* *MODE&#95;CUSTOM* = *2*
+* *HALF&#95;OFFSET&#95;X* = *0*
+* *HALF&#95;OFFSET&#95;Y* = *1*
+* *HALF&#95;OFFSET&#95;DISABLED* = *2*
+* *TILE&#95;ORIGIN&#95;TOP&#95;LEFT* = *0*
+* *TILE&#95;ORIGIN&#95;CENTER* = *1*
+
+h3(#description). Description
+
+Node for 2D Tile&#45;Based games. Tilemaps use a TileSet which contain a list of tiles (textures, their rect and a collision) and are used to create complex grid&#45;based maps. To optimize drawing and culling (sort of like "GridMap":class_gridmap), you can specify a quadrant size, so chunks of the map will be batched together the time of drawing.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_tileset). <a name="set_tileset">set&#95;tileset</a>
+
+* void *set&#95;tileset* *(* "TileSet":class_tileset tileset *)*
+
+Set the current tileset.
+
+h4(#get_tileset). <a name="get_tileset">get&#95;tileset</a>
+
+* "TileSet":class_tileset *get&#95;tileset* *(* *)* const
+
+Return the current tileset.
+
+h4(#set_cell_size). <a name="set_cell_size">set&#95;cell&#95;size</a>
+
+* void *set&#95;cell&#95;size* *(* "Vector2":class_vector2 size *)*
+
+Set the cell size.
+
+h4(#get_cell_size). <a name="get_cell_size">get&#95;cell&#95;size</a>
+
+* "Vector2":class_vector2 *get&#95;cell&#95;size* *(* *)* const
+
+Return the cell size.
+
+h4(#set_quadrant_size). <a name="set_quadrant_size">set&#95;quadrant&#95;size</a>
+
+* void *set&#95;quadrant&#95;size* *(* "int":class_int size *)*
+
+Set the quadrant size, this optimizes drawing by batching chunks of map at draw/cull time.
+
+h4(#get_quadrant_size). <a name="get_quadrant_size">get&#95;quadrant&#95;size</a>
+
+* "int":class_int *get&#95;quadrant&#95;size* *(* *)* const
+
+Return the quadrant size, this optimizes drawing by batching chunks of map at draw/cull time.
+
+h4(#set_center_x). <a name="set_center_x">set&#95;center&#95;x</a>
+
+* void *set&#95;center&#95;x* *(* "bool":class_bool enable *)*
+
+Set tiles to be centered in x coordinate. (by default this is false and they are drawn from upper left cell corner).
+
+h4(#get_center_x). <a name="get_center_x">get&#95;center&#95;x</a>
+
+* "bool":class_bool *get&#95;center&#95;x* *(* *)* const
+
+Return true if tiles are to be centered in x coordinate (by default this is false and they are drawn from upper left cell corner).
+
+h4(#set_center_y). <a name="set_center_y">set&#95;center&#95;y</a>
+
+* void *set&#95;center&#95;y* *(* "bool":class_bool enable *)*
+
+Set tiles to be centered in y coordinate. (by default this is false and they are drawn from upper left cell corner).
+
+h4(#get_center_y). <a name="get_center_y">get&#95;center&#95;y</a>
+
+* "bool":class_bool *get&#95;center&#95;y* *(* *)* const
+
+Return true if tiles are to be centered in y coordinate (by default this is false and they are drawn from upper left cell corner).
+
+h4(#get_cell). <a name="get_cell">get&#95;cell</a>
+
+* "int":class_int *get&#95;cell* *(* "int":class_int x, "int":class_int y *)* const
+
+Return the contents of a cell.
+
+h4(#is_cell_x_flipped). <a name="is_cell_x_flipped">is&#95;cell&#95;x&#95;flipped</a>
+
+* "bool":class_bool *is&#95;cell&#95;x&#95;flipped* *(* "int":class_int x, "int":class_int y *)* const
+
+Return if a given cell is flipped in x axis.
+
+h4(#is_cell_y_flipped). <a name="is_cell_y_flipped">is&#95;cell&#95;y&#95;flipped</a>
+
+* "bool":class_bool *is&#95;cell&#95;y&#95;flipped* *(* "int":class_int x, "int":class_int y *)* const
+
+Return if a given cell is flipped in y axis.
+
+h4(#clear). <a name="clear">clear</a>
+
+* void *clear* *(* *)*
+
+Clear all cells.

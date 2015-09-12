@@ -1,0 +1,125 @@
+h1(#sample). Sample
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Audio Sample (sound) class.
+
+h3(#member-functions). Member Functions
+
+* void *"create":#create* *(* "int":class_int format, "bool":class_bool stereo, "int":class_int length *)*
+* "int":class_int *"get&#95;format":#get_format* *(* *)* const
+* "bool":class_bool *"is&#95;stereo":#is_stereo* *(* *)* const
+* "int":class_int *"get&#95;length":#get_length* *(* *)* const
+* void *"set&#95;data":#set_data* *(* "RawArray":class_rawarray data *)*
+* "RawArray":class_rawarray *"get&#95;data":#get_data* *(* *)* const
+* void *"set&#95;mix&#95;rate":#set_mix_rate* *(* "int":class_int hz *)*
+* "int":class_int *"get&#95;mix&#95;rate":#get_mix_rate* *(* *)* const
+* void *"set&#95;loop&#95;format":#set_loop_format* *(* "int":class_int format *)*
+* "int":class_int *"get&#95;loop&#95;format":#get_loop_format* *(* *)* const
+* void *"set&#95;loop&#95;begin":#set_loop_begin* *(* "int":class_int pos *)*
+* "int":class_int *"get&#95;loop&#95;begin":#get_loop_begin* *(* *)* const
+* void *"set&#95;loop&#95;end":#set_loop_end* *(* "int":class_int pos *)*
+* "int":class_int *"get&#95;loop&#95;end":#get_loop_end* *(* *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *FORMAT&#95;PCM8* = *0* &#45; 8&#45;Bits signed little endian PCM audio.
+* *FORMAT&#95;PCM16* = *1* &#45; 16&#45;Bits signed little endian PCM audio.
+* *FORMAT&#95;IMA&#95;ADPCM* = *2* &#45; Ima&#45;ADPCM Audio.
+* *LOOP&#95;NONE* = *0* &#45; No loop enabled.
+* *LOOP&#95;FORWARD* = *1* &#45; Forward looping (when playback reaches loop end, goes back to loop begin)
+* *LOOP&#95;PING&#95;PONG* = *2* &#45; Ping&#45;Pong looping (when playback reaches loop end, plays backward untilloop begin). Not available in all platforms.
+
+h3(#description). Description
+
+Sample provides an audio sample class, containing audio data, together with some information for playback, such as format, mix rate and loop. It is used by sound playback routines.
+
+h3(#member-function-description). Member Function Description
+
+h4(#create). <a name="create">create</a>
+
+* void *create* *(* "int":class_int format, "bool":class_bool stereo, "int":class_int length *)*
+
+Create new data for the sample, with format &quot;format&quot; (see FORMAT&#95;&#42; enum), stereo hint, and length in frames (not samples or bytes!) &quot;frame&quot;. Calling create overrides previous existing data if it exists. Stereo samples are interleaved pairs of left and right (in that order) points
+
+h4(#get_format). <a name="get_format">get&#95;format</a>
+
+* "int":class_int *get&#95;format* *(* *)* const
+
+Return the sample format (see FORMAT&#95;&#42; enum).
+
+h4(#is_stereo). <a name="is_stereo">is&#95;stereo</a>
+
+* "bool":class_bool *is&#95;stereo* *(* *)* const
+
+Return true if the sample was created stereo.
+
+h4(#get_length). <a name="get_length">get&#95;length</a>
+
+* "int":class_int *get&#95;length* *(* *)* const
+
+Return the sample length in frames.
+
+h4(#set_data). <a name="set_data">set&#95;data</a>
+
+* void *set&#95;data* *(* "RawArray":class_rawarray data *)*
+
+Set sample data. Data must be little endian, no matter the host platform, and exactly as long to fit all frames. Example, if data is Stereo, 16 bits, 256 frames, it will be 1024 bytes long.
+
+h4(#get_data). <a name="get_data">get&#95;data</a>
+
+* "RawArray":class_rawarray *get&#95;data* *(* *)* const
+
+Return sample data. Data will be endian, no matter with the host platform, and exactly as long to fit all frames. Example, if data is Stereo, 16 bits, 256 frames, it will be 1024 bytes long.
+
+h4(#set_mix_rate). <a name="set_mix_rate">set&#95;mix&#95;rate</a>
+
+* void *set&#95;mix&#95;rate* *(* "int":class_int hz *)*
+
+Set the mix rate for the sample (expected playback frequency).
+
+h4(#get_mix_rate). <a name="get_mix_rate">get&#95;mix&#95;rate</a>
+
+* "int":class_int *get&#95;mix&#95;rate* *(* *)* const
+
+Return the mix rate for the sample (expected playback frequency).
+
+h4(#set_loop_format). <a name="set_loop_format">set&#95;loop&#95;format</a>
+
+* void *set&#95;loop&#95;format* *(* "int":class_int format *)*
+
+Set the loop format, see LOOP&#95;&#42; enum
+
+h4(#get_loop_format). <a name="get_loop_format">get&#95;loop&#95;format</a>
+
+* "int":class_int *get&#95;loop&#95;format* *(* *)* const
+
+Return the loop format, see LOOP&#95;&#42; enum.
+
+h4(#set_loop_begin). <a name="set_loop_begin">set&#95;loop&#95;begin</a>
+
+* void *set&#95;loop&#95;begin* *(* "int":class_int pos *)*
+
+Set the loop begin position, it must be a valid frame and less than the loop end position.
+
+h4(#get_loop_begin). <a name="get_loop_begin">get&#95;loop&#95;begin</a>
+
+* "int":class_int *get&#95;loop&#95;begin* *(* *)* const
+
+Return the loop begin position.
+
+h4(#set_loop_end). <a name="set_loop_end">set&#95;loop&#95;end</a>
+
+* void *set&#95;loop&#95;end* *(* "int":class_int pos *)*
+
+Set the loop end position, it must be a valid frame and greater than the loop begin position.
+
+h4(#get_loop_end). <a name="get_loop_end">get&#95;loop&#95;end</a>
+
+* "int":class_int *get&#95;loop&#95;end* *(* *)* const
+
+Return the loop begin position.

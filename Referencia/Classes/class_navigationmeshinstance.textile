@@ -1,0 +1,16 @@
+h1(#navigationmeshinstance). NavigationMeshInstance
+
+h4(#inherits-spatial). *Inherits:* "Spatial":class_spatial
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;navigation&#95;mesh":#set_navigation_mesh* *(* "Object":class_object navmesh *)*
+* "Object":class_object *"get&#95;navigation&#95;mesh":#get_navigation_mesh* *(* *)* const
+* void *"set&#95;enabled":#set_enabled* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;enabled":#is_enabled* *(* *)* const
+
+h3(#member-function-description). Member Function Description

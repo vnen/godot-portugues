@@ -1,0 +1,24 @@
+h1(#occluderpolygon2d). OccluderPolygon2D
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;closed":#set_closed* *(* "bool":class_bool closed *)*
+* "bool":class_bool *"is&#95;closed":#is_closed* *(* *)* const
+* void *"set&#95;cull&#95;mode":#set_cull_mode* *(* "int":class_int cull&#95;mode *)*
+* "int":class_int *"get&#95;cull&#95;mode":#get_cull_mode* *(* *)* const
+* void *"set&#95;polygon":#set_polygon* *(* "Vector2Array":class_vector2array polygon *)*
+* "Vector2Array":class_vector2array *"get&#95;polygon":#get_polygon* *(* *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *CULL&#95;DISABLED* = *0*
+* *CULL&#95;CLOCKWISE* = *1*
+* *CULL&#95;COUNTER&#95;CLOCKWISE* = *2*
+
+h3(#member-function-description). Member Function Description

@@ -1,0 +1,20 @@
+h1(#largetexture). LargeTexture
+
+h4(#inherits-texture). *Inherits:* "Texture":class_texture
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "int":class_int *"add&#95;piece":#add_piece* *(* "Vector2":class_vector2 ofs, "Texture":class_texture texture *)*
+* void *"set&#95;piece&#95;offset":#set_piece_offset* *(* "int":class_int idx, "Vector2":class_vector2 ofs *)*
+* void *"set&#95;piece&#95;texture":#set_piece_texture* *(* "int":class_int idx, "Texture":class_texture texture *)*
+* void *"set&#95;size":#set_size* *(* "Vector2":class_vector2 size *)*
+* void *"clear":#clear* *(* *)*
+* "int":class_int *"get&#95;piece&#95;count":#get_piece_count* *(* *)* const
+* "Vector2":class_vector2 *"get&#95;piece&#95;offset":#get_piece_offset* *(* "int":class_int idx *)* const
+* "Texture":class_texture *"get&#95;piece&#95;texture":#get_piece_texture* *(* "int":class_int idx *)* const
+
+h3(#member-function-description). Member Function Description

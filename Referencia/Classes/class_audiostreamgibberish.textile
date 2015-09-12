@@ -1,0 +1,74 @@
+h1(#audiostreamgibberish). AudioStreamGibberish
+
+h4(#inherits-audiostream). *Inherits:* "AudioStream":class_audiostream
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Simple gibberish speech stream playback.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;phonemes":#set_phonemes* *(* "Object":class_object phonemes *)*
+* "Object":class_object *"get&#95;phonemes":#get_phonemes* *(* *)* const
+* void *"set&#95;pitch&#95;scale":#set_pitch_scale* *(* "float":class_float pitch&#95;scale *)*
+* "float":class_float *"get&#95;pitch&#95;scale":#get_pitch_scale* *(* *)* const
+* void *"set&#95;pitch&#95;random&#95;scale":#set_pitch_random_scale* *(* "float":class_float pitch&#95;random&#95;scale *)*
+* "float":class_float *"get&#95;pitch&#95;random&#95;scale":#get_pitch_random_scale* *(* *)* const
+* void *"set&#95;xfade&#95;time":#set_xfade_time* *(* "float":class_float sec *)*
+* "float":class_float *"get&#95;xfade&#95;time":#get_xfade_time* *(* *)* const
+
+h3(#description). Description
+
+AudioStream used for gibberish playback. It plays randomized phonemes, which can be used to accompany text dialogs.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_phonemes). <a name="set_phonemes">set&#95;phonemes</a>
+
+* void *set&#95;phonemes* *(* "Object":class_object phonemes *)*
+
+Set the phoneme library.
+
+h4(#get_phonemes). <a name="get_phonemes">get&#95;phonemes</a>
+
+* "Object":class_object *get&#95;phonemes* *(* *)* const
+
+Return the phoneme library.
+
+h4(#set_pitch_scale). <a name="set_pitch_scale">set&#95;pitch&#95;scale</a>
+
+* void *set&#95;pitch&#95;scale* *(* "float":class_float pitch&#95;scale *)*
+
+Set pitch scale for the speech. Animating this value holds amusing results.
+
+h4(#get_pitch_scale). <a name="get_pitch_scale">get&#95;pitch&#95;scale</a>
+
+* "float":class_float *get&#95;pitch&#95;scale* *(* *)* const
+
+Return the pitch scale.
+
+h4(#set_pitch_random_scale). <a name="set_pitch_random_scale">set&#95;pitch&#95;random&#95;scale</a>
+
+* void *set&#95;pitch&#95;random&#95;scale* *(* "float":class_float pitch&#95;random&#95;scale *)*
+
+Set the random scaling for the pitch.
+
+h4(#get_pitch_random_scale). <a name="get_pitch_random_scale">get&#95;pitch&#95;random&#95;scale</a>
+
+* "float":class_float *get&#95;pitch&#95;random&#95;scale* *(* *)* const
+
+Return the pitch random scaling.
+
+h4(#set_xfade_time). <a name="set_xfade_time">set&#95;xfade&#95;time</a>
+
+* void *set&#95;xfade&#95;time* *(* "float":class_float sec *)*
+
+Set the cross&#45;fade time between random phonemes.
+
+h4(#get_xfade_time). <a name="get_xfade_time">get&#95;xfade&#95;time</a>
+
+* "float":class_float *get&#95;xfade&#95;time* *(* *)* const
+
+Return the cross&#45;fade time between random phonemes.

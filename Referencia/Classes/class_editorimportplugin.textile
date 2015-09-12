@@ -1,0 +1,17 @@
+h1(#editorimportplugin). EditorImportPlugin
+
+h4(#inherits-reference). *Inherits:* "Reference":class_reference
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "RawArray":class_rawarray *"custom&#95;export":#custom_export* *(* "String":class_string path *)* virtual
+* "String":class_string *"get&#95;name":#get_name* *(* *)* virtual
+* "String":class_string *"get&#95;visible&#95;name":#get_visible_name* *(* *)* virtual
+* "int":class_int *"import":#import* *(* "String":class_string path, ResourceImportMetaData from *)* virtual
+* void *"import&#95;dialog":#import_dialog* *(* "String":class_string from *)* virtual
+
+h3(#member-function-description). Member Function Description

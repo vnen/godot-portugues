@@ -1,0 +1,13 @@
+h1(#panelcontainer). PanelContainer
+
+h4(#inherits-container). *Inherits:* "Container":class_container
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Panel container type.
+
+h3(#description). Description
+
+Panel container type. This container fits controls inside of the delimited area of a stylebox. It's useful for giving controls an outline.

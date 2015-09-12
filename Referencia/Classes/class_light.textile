@@ -1,0 +1,50 @@
+h1(#light). Light
+
+h4(#inherits-visualinstance). *Inherits:* "VisualInstance":class_visualinstance
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Provides a base class for different kinds of light nodes.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;parameter":#set_parameter* *(* "int":class_int variable, "float":class_float value *)*
+* "float":class_float *"get&#95;parameter":#get_parameter* *(* "int":class_int arg0 *)* const
+* void *"set&#95;color":#set_color* *(* "int":class_int color, "Color":class_color value *)*
+* "Color":class_color *"get&#95;color":#get_color* *(* "int":class_int arg0 *)* const
+* void *"set&#95;project&#95;shadows":#set_project_shadows* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"has&#95;project&#95;shadows":#has_project_shadows* *(* *)* const
+* void *"set&#95;projector":#set_projector* *(* "Texture":class_texture projector *)*
+* "Texture":class_texture *"get&#95;projector":#get_projector* *(* *)* const
+* void *"set&#95;operator":#set_operator* *(* "int":class_int operator *)*
+* "int":class_int *"get&#95;operator":#get_operator* *(* *)* const
+* void *"set&#95;bake&#95;mode":#set_bake_mode* *(* "int":class_int bake&#95;mode *)*
+* "int":class_int *"get&#95;bake&#95;mode":#get_bake_mode* *(* *)* const
+* void *"set&#95;enabled":#set_enabled* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;enabled":#is_enabled* *(* *)* const
+* void *"set&#95;editor&#95;only":#set_editor_only* *(* "bool":class_bool editor&#95;only *)*
+* "bool":class_bool *"is&#95;editor&#95;only":#is_editor_only* *(* *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *PARAM&#95;RADIUS* = *2*
+* *PARAM&#95;ENERGY* = *3*
+* *PARAM&#95;ATTENUATION* = *4*
+* *PARAM&#95;SPOT&#95;ANGLE* = *1*
+* *PARAM&#95;SPOT&#95;ATTENUATION* = *0*
+* *PARAM&#95;SHADOW&#95;DARKENING* = *5*
+* *PARAM&#95;SHADOW&#95;Z&#95;OFFSET* = *6*
+* *COLOR&#95;DIFFUSE* = *0*
+* *COLOR&#95;SPECULAR* = *1*
+* *BAKE&#95;MODE&#95;DISABLED* = *0*
+* *BAKE&#95;MODE&#95;INDIRECT* = *1*
+* *BAKE&#95;MODE&#95;INDIRECT&#95;AND&#95;SHADOWS* = *2*
+* *BAKE&#95;MODE&#95;FULL* = *3*
+
+h3(#description). Description
+
+Light is the abstract base class for light nodes, so it shouldn't be used directly (It can't be instanced). Other types of light nodes inherit from it. Light contains the common variables and parameters used for lighting.
+
+h3(#member-function-description). Member Function Description

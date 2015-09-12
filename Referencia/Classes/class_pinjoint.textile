@@ -1,0 +1,20 @@
+h1(#pinjoint). PinJoint
+
+h4(#inherits-joint). *Inherits:* "Joint":class_joint
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;param":#set_param* *(* "int":class_int param, "float":class_float value *)*
+* "float":class_float *"get&#95;param":#get_param* *(* "int":class_int param *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *PARAM&#95;BIAS* = *0*
+* *PARAM&#95;DAMPING* = *1*
+* *PARAM&#95;IMPULSE&#95;CLAMP* = *2*
+
+h3(#member-function-description). Member Function Description

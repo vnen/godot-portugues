@@ -1,0 +1,14 @@
+h1(#canvasmodulate). CanvasModulate
+
+h4(#inherits-node2d). *Inherits:* "Node2D":class_node2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;color":#set_color* *(* "Color":class_color color *)*
+* "Color":class_color *"get&#95;color":#get_color* *(* *)* const
+
+h3(#member-function-description). Member Function Description

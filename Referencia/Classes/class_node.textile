@@ -1,0 +1,377 @@
+h1(#node). Node
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Base class for all the &quot;Scene&quot; elements.
+
+h3(#member-functions). Member Functions
+
+* void *"&#95;enter&#95;tree":#_enter_tree* *(* *)* virtual
+* void *"&#95;exit&#95;tree":#_exit_tree* *(* *)* virtual
+* void *"&#95;fixed&#95;process":#_fixed_process* *(* "float":class_float delta *)* virtual
+* void *"&#95;input":#_input* *(* "InputEvent":class_inputevent event *)* virtual
+* void *"&#95;process":#_process* *(* "float":class_float delta *)* virtual
+* void *"&#95;ready":#_ready* *(* *)* virtual
+* void *"&#95;unhandled&#95;input":#_unhandled_input* *(* "InputEvent":class_inputevent event *)* virtual
+* void *"&#95;unhandled&#95;key&#95;input":#_unhandled_key_input* *(* "InputEvent":class_inputevent key&#95;event *)* virtual
+* void *"set&#95;name":#set_name* *(* "String":class_string name *)*
+* "String":class_string *"get&#95;name":#get_name* *(* *)* const
+* void *"add&#95;child":#add_child* *(* "Node":class_node node *)*
+* void *"remove&#95;child":#remove_child* *(* "Node":class_node node *)*
+* "int":class_int *"get&#95;child&#95;count":#get_child_count* *(* *)* const
+* "Array":class_array *"get&#95;children":#get_children* *(* *)* const
+* "Node":class_node *"get&#95;child":#get_child* *(* "int":class_int idx *)* const
+* "bool":class_bool *"has&#95;node":#has_node* *(* "NodePath":class_nodepath path *)* const
+* "Node":class_node *"get&#95;node":#get_node* *(* "NodePath":class_nodepath path *)* const
+* Parent *"get&#95;parent":#get_parent* *(* *)* const
+* "bool":class_bool *"has&#95;node&#95;and&#95;resource":#has_node_and_resource* *(* "NodePath":class_nodepath path *)* const
+* "Array":class_array *"get&#95;node&#95;and&#95;resource":#get_node_and_resource* *(* "NodePath":class_nodepath path *)*
+* "bool":class_bool *"is&#95;inside&#95;tree":#is_inside_tree* *(* *)* const
+* "bool":class_bool *"is&#95;a&#95;parent&#95;of":#is_a_parent_of* *(* "Node":class_node node *)* const
+* "bool":class_bool *"is&#95;greater&#95;than":#is_greater_than* *(* "Node":class_node node *)* const
+* "NodePath":class_nodepath *"get&#95;path":#get_path* *(* *)* const
+* "NodePath":class_nodepath *"get&#95;path&#95;to":#get_path_to* *(* "Node":class_node node *)* const
+* void *"add&#95;to&#95;group":#add_to_group* *(* "String":class_string group, "bool":class_bool arg1=false *)*
+* void *"remove&#95;from&#95;group":#remove_from_group* *(* "String":class_string group *)*
+* "bool":class_bool *"is&#95;in&#95;group":#is_in_group* *(* "String":class_string group *)* const
+* void *"move&#95;child":#move_child* *(* "Node":class_node child&#95;node, "int":class_int to&#95;pos *)*
+* "Array":class_array *"get&#95;groups":#get_groups* *(* *)* const
+* void *"raise":#raise* *(* *)*
+* void *"set&#95;owner":#set_owner* *(* "Node":class_node owner *)*
+* "Node":class_node *"get&#95;owner":#get_owner* *(* *)* const
+* void *"remove&#95;and&#95;skip":#remove_and_skip* *(* *)*
+* "int":class_int *"get&#95;index":#get_index* *(* *)* const
+* void *"print&#95;tree":#print_tree* *(* *)*
+* void *"set&#95;filename":#set_filename* *(* "String":class_string filename *)*
+* "String":class_string *"get&#95;filename":#get_filename* *(* *)* const
+* void *"propagate&#95;notification":#propagate_notification* *(* "int":class_int what *)*
+* void *"set&#95;fixed&#95;process":#set_fixed_process* *(* "bool":class_bool enable *)*
+* "float":class_float *"get&#95;fixed&#95;process&#95;delta&#95;time":#get_fixed_process_delta_time* *(* *)* const
+* "bool":class_bool *"is&#95;fixed&#95;processing":#is_fixed_processing* *(* *)* const
+* void *"set&#95;process":#set_process* *(* "bool":class_bool enable *)*
+* "float":class_float *"get&#95;process&#95;delta&#95;time":#get_process_delta_time* *(* *)* const
+* "bool":class_bool *"is&#95;processing":#is_processing* *(* *)* const
+* void *"set&#95;process&#95;input":#set_process_input* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;processing&#95;input":#is_processing_input* *(* *)* const
+* void *"set&#95;process&#95;unhandled&#95;input":#set_process_unhandled_input* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;processing&#95;unhandled&#95;input":#is_processing_unhandled_input* *(* *)* const
+* void *"set&#95;process&#95;unhandled&#95;key&#95;input":#set_process_unhandled_key_input* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;processing&#95;unhandled&#95;key&#95;input":#is_processing_unhandled_key_input* *(* *)* const
+* void *"set&#95;pause&#95;mode":#set_pause_mode* *(* "int":class_int mode *)*
+* "int":class_int *"get&#95;pause&#95;mode":#get_pause_mode* *(* *)* const
+* "bool":class_bool *"can&#95;process":#can_process* *(* *)* const
+* void *"print&#95;stray&#95;nodes":#print_stray_nodes* *(* *)*
+* "int":class_int *"get&#95;position&#95;in&#95;parent":#get_position_in_parent* *(* *)* const
+* "SceneTree":class_scenetree *"get&#95;tree":#get_tree* *(* *)* const
+* "Node":class_node *"duplicate":#duplicate* *(* *)* const
+* void *"replace&#95;by":#replace_by* *(* "Node":class_node node, "bool":class_bool keep&#95;data=false *)*
+* "Object":class_object *"get&#95;viewport":#get_viewport* *(* *)* const
+* void *"queue&#95;free":#queue_free* *(* *)*
+
+h3(#signals). Signals
+
+* *renamed* *(* *)*
+* *enter&#95;tree* *(* *)*
+* *exit&#95;tree* *(* *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *NOTIFICATION&#95;ENTER&#95;TREE* = *10*
+* *NOTIFICATION&#95;EXIT&#95;TREE* = *11*
+* *NOTIFICATION&#95;MOVED&#95;IN&#95;PARENT* = *12*
+* *NOTIFICATION&#95;READY* = *13*
+* *NOTIFICATION&#95;FIXED&#95;PROCESS* = *16*
+* *NOTIFICATION&#95;PROCESS* = *17* &#45; Notification received every frame when the process flag is set (see [method set&#95;process]).
+* *NOTIFICATION&#95;PARENTED* = *18* &#45; Notification received when a node is set as a child of another node. Note that this doesn't mean that a node entered the Scene Tree.
+* *NOTIFICATION&#95;UNPARENTED* = *19* &#45; Notification received when a node is unparented (parent removed it from the list of children).
+* *NOTIFICATION&#95;PAUSED* = *14*
+* *NOTIFICATION&#95;UNPAUSED* = *15*
+* *PAUSE&#95;MODE&#95;INHERIT* = *0*
+* *PAUSE&#95;MODE&#95;STOP* = *1*
+* *PAUSE&#95;MODE&#95;PROCESS* = *2*
+
+h3(#description). Description
+
+Nodes can be set as children of other nodes, resulting in a tree arrangement. Any tree of nodes is called a &quot;Scene&quot;. Scenes can be saved to disk, and then instanced into other scenes. This allows for very high flexibility in the architecture and data model of the projects. [SceneMainLoop] contains the &quot;active&quot; tree of nodes, and a node becomes active (receinving NOTIFICATION&#95;ENTER&#95;SCENE) when added to that tree. A node can contain any number of nodes as a children (but there is only one tree root) with the requirement that no two childrens with the same name can exist. Nodes can, optionally, be added to groups. This makes it easy to reach a number of nodes from the code (for example an &quot;enemies&quot; group). Nodes can be set to &quot;process&quot; state, so they constantly receive a callback requesting them to process (do anything). Normal processing ("&#95;process":#_process) happens as fast as possible and is dependent on the frame rate, so the processing time delta is variable. Fixed processing ("&#95;fixed&#95;process":#_fixed_process) happens a fixed amount of times per second (by default 60) and is useful to link itself to the physics. Nodes can also process input events. When set, the "&#95;input":#_input function will be called with every input that the program receives. Since this is usually too overkill (unless used for simple projects), an "&#95;unhandled&#95;input":#_unhandled_input function is called when the input was not handled by anyone else (usually, GUI "Control":class_control nodes). To keep track of the scene hieararchy (specially when instancing scenes into scenes) an &quot;owner&quot; can be set to a node. This keeps track of who instanced what. This is mostly useful when writing editors and tools, though. Finally, when a node is freed, it will free all its children nodes too.
+
+h3(#member-function-description). Member Function Description
+
+h4(#fixed_process-void-_fixed_process-float-delta-virtual). <a name="_fixed_process">&#95;fixed&#95;process</a> &#42; void *&#95;fixed&#95;process* *(* "float":class_float delta *)* virtual
+
+Called for fixed processing (synced to the physics).
+
+h4(#input-void-_input-inputevent-event-virtual). <a name="_input">&#95;input</a> &#42; void *&#95;input* *(* "InputEvent":class_inputevent event *)* virtual
+
+Called when any input happens (also must enable with "set&#95;process&#95;input":#set_process_input or the property).
+
+h4(#process-void-_process-float-delta-virtual). <a name="_process">&#95;process</a> &#42; void *&#95;process* *(* "float":class_float delta *)* virtual
+
+Called for processing. This is called every frame, with the delta time from the previous frame.
+
+h4(#ready-void-_ready-virtual). <a name="_ready">&#95;ready</a> &#42; void *&#95;ready* *(* *)* virtual
+
+Called when ready (entered scene and children entered too).
+
+h4(#unhandled_input-void-_unhandled_input-inputevent-event-virtual). <a name="_unhandled_input">&#95;unhandled&#95;input</a> &#42; void *&#95;unhandled&#95;input* *(* "InputEvent":class_inputevent event *)* virtual
+
+Called when any input happens that was not handled by something else (also must enable with "set&#95;process&#95;unhandled&#95;input":#set_process_unhandled_input or the property).
+
+h4(#unhandled_key_input-void-_unhandled_key_input-inputevent-key_event-virtual). <a name="_unhandled_key_input">&#95;unhandled&#95;key&#95;input</a> &#42; void *&#95;unhandled&#95;key&#95;input* *(* "InputEvent":class_inputevent key&#95;event *)* virtual
+
+Called when any key input happens that was not handled by something else.
+
+h4(#set_name). <a name="set_name">set&#95;name</a>
+
+* void *set&#95;name* *(* "String":class_string name *)*
+
+Set the name of the "Node":class_node. Name must be unique within parent, and setting an already existing name will cause for the node to be automatically renamed.
+
+h4(#get_name). <a name="get_name">get&#95;name</a>
+
+* "String":class_string *get&#95;name* *(* *)* const
+
+Return the name of the "Node":class_node. Name is be unique within parent.
+
+h4(#add_child). <a name="add_child">add&#95;child</a>
+
+* void *add&#95;child* *(* "Node":class_node node *)*
+
+Add a child "Node":class_node. Nodes can have as many children as they want, but every child must have a unique name. Children nodes are automatically deleted when the parent node is deleted, so deleting a whole scene is performed by deleting its topmost node.
+
+h4(#remove_child). <a name="remove_child">remove&#95;child</a>
+
+* void *remove&#95;child* *(* "Node":class_node node *)*
+
+Remove a child "Node":class_node. Node is NOT deleted and will have to be deleted manually.
+
+h4(#get_child_count). <a name="get_child_count">get&#95;child&#95;count</a>
+
+* "int":class_int *get&#95;child&#95;count* *(* *)* const
+
+Return the amount of children nodes.
+
+h4(#get_child). <a name="get_child">get&#95;child</a>
+
+* "Node":class_node *get&#95;child* *(* "int":class_int idx *)* const
+
+Return a children node by it&quot;apos;s index (see "get&#95;child&#95;count":#get_child_count). This method is often used for iterating all children of a node.
+
+h4(#get_node). <a name="get_node">get&#95;node</a>
+
+* "Node":class_node *get&#95;node* *(* "NodePath":class_nodepath path *)* const
+
+Fetch a node. NodePath must be valid (or else error will occur) and can be either the path to child node, a relative path (from the current node to another node), or an absolute path to a node. Note: fetching absolute paths only works when the node is inside the scene tree (see "is&#95;inside&#95;scene":#is_inside_scene). Examples. Assume your current node is Character and following tree:
+
+<pre>
+root/
+
+root/Character
+
+root/Character/Sword
+
+root/Character/Backpack/Dagger
+
+root/MyGame
+
+root/Swamp/Alligator
+
+root/Swamp/Mosquito
+
+root/Swamp/Goblin
+
+
+
+Possible paths are:
+
+- get_node(&quot;Sword&quot;)
+
+- get_node(&quot;Backpack/Dagger&quot;)
+
+- get_node(&quot;../Swamp/Alligator&quot;)
+
+- get_node(&quot;/root/MyGame&quot;)
+</pre>
+
+h4(#get_parent). <a name="get_parent">get&#95;parent</a>
+
+* Parent *get&#95;parent* *(* *)* const
+
+Return the parent "Node":class_node of the current "Node":class_node, or an empty Object if the node lacks a parent.
+
+h4(#is_a_parent_of). <a name="is_a_parent_of">is&#95;a&#95;parent&#95;of</a>
+
+* "bool":class_bool *is&#95;a&#95;parent&#95;of* *(* "Node":class_node node *)* const
+
+Return _true_ if the &quot;node&quot; argument is a direct or indirect child of the current node, otherwise return _false_.
+
+h4(#is_greater_than). <a name="is_greater_than">is&#95;greater&#95;than</a>
+
+* "bool":class_bool *is&#95;greater&#95;than* *(* "Node":class_node node *)* const
+
+Return _true_ if &quot;node&quot; occurs later in the scene hierarchy than the current node, otherwise return _false_.
+
+h4(#get_path). <a name="get_path">get&#95;path</a>
+
+* "NodePath":class_nodepath *get&#95;path* *(* *)* const
+
+Return the absolute path of the current node. This only works if the curent node is inside the scene tree (see "is&#95;inside&#95;scene":#is_inside_scene).
+
+h4(#get_path_to). <a name="get_path_to">get&#95;path&#95;to</a>
+
+* "NodePath":class_nodepath *get&#95;path&#95;to* *(* "Node":class_node node *)* const
+
+Return the relative path from the current node to the specified node in &quot;node&quot; argument. Both nodes must be in the same scene, or else the function will fail.
+
+h4(#add_to_group). <a name="add_to_group">add&#95;to&#95;group</a>
+
+* void *add&#95;to&#95;group* *(* "String":class_string group, "bool":class_bool arg1=false *)*
+
+Add a node to a group. Groups are helpers to name and organize group of nodes, like for example: &quot;Enemies&quot; &quot;Collectables&quot;, etc. A "Node":class_node can be in any number of groups. Nodes can be assigned a group at any time, but will not be added to it until they are inside the scene tree (see "is&#95;inside&#95;scene":#is_inside_scene).
+
+h4(#remove_from_group). <a name="remove_from_group">remove&#95;from&#95;group</a>
+
+* void *remove&#95;from&#95;group* *(* "String":class_string group *)*
+
+Remove a node from a group.
+
+h4(#move_child). <a name="move_child">move&#95;child</a>
+
+* void *move&#95;child* *(* "Node":class_node child&#95;node, "int":class_int to&#95;pos *)*
+
+Move a child node to a different position (order) amongst the other children. Since calls, signals, etc are performed by tree order, changing the order of chilren nodes may be useful.
+
+h4(#raise). <a name="raise">raise</a>
+
+* void *raise* *(* *)*
+
+Move this node to the top of the array of nodes of the parent node. This is often useful on GUIs ("Control":class_control), because their order of drawing fully depends on their order in the tree.
+
+h4(#set_owner). <a name="set_owner">set&#95;owner</a>
+
+* void *set&#95;owner* *(* "Node":class_node owner *)*
+
+Set the node owner. A node can have any other node as owner (as long as a valid parent, grandparent, etc ascending in the tree). When saving a node (using SceneSaver) all the nodes it owns will be saved with it. This allows to create complex SceneTrees, with instancing and subinstancing.
+
+h4(#get_owner). <a name="get_owner">get&#95;owner</a>
+
+* "Node":class_node *get&#95;owner* *(* *)* const
+
+Get the node owner (see "set&#95;node&#95;owner":#set_node_owner).
+
+h4(#remove_and_skip). <a name="remove_and_skip">remove&#95;and&#95;skip</a>
+
+* void *remove&#95;and&#95;skip* *(* *)*
+
+Remove a node and set all its children as childrens of the parent node (if exists). All even subscriptions that pass by the removed node will be unsubscribed.
+
+h4(#get_index). <a name="get_index">get&#95;index</a>
+
+* "int":class_int *get&#95;index* *(* *)* const
+
+Get the node index in the parent (assuming it has a parent).
+
+h4(#print_tree). <a name="print_tree">print&#95;tree</a>
+
+* void *print&#95;tree* *(* *)*
+
+Print the screne to stdout. Used mainly for debugging purposes.
+
+h4(#set_filename). <a name="set_filename">set&#95;filename</a>
+
+* void *set&#95;filename* *(* "String":class_string filename *)*
+
+A node can contain a filename. This filename should not be changed by the user, unless writing editors and tools. When a scene is instanced from a file, it topmost node contains the filename from where it was loaded.
+
+h4(#get_filename). <a name="get_filename">get&#95;filename</a>
+
+* "String":class_string *get&#95;filename* *(* *)* const
+
+Return a filename that may be containedA node can contained by the node. When a scene is instanced from a file, it topmost node contains the filename from where it was loaded (see "set&#95;filename":#set_filename).
+
+h4(#propagate_notification). <a name="propagate_notification">propagate&#95;notification</a>
+
+* void *propagate&#95;notification* *(* "int":class_int what *)*
+
+Notify the current node and all its chldren recursively by calling notification() in all of them.
+
+h4(#set_fixed_process). <a name="set_fixed_process">set&#95;fixed&#95;process</a>
+
+* void *set&#95;fixed&#95;process* *(* "bool":class_bool enable *)*
+
+Enables or disables node fixed framerate processing. When a node is being processed, it will receive a NOTIFICATION&#95;PROCESS at a fixed (usually 60fps, check "OS":class_os to change that) interval (and the "&#95;fixed&#95;process":#_fixed_process callback will be called if exists). It is common to check how much time was elapsed since the previous frame by calling "get&#95;fixed&#95;process&#95;time":#get_fixed_process_time.
+
+h4(#get_fixed_process_delta_time). <a name="get_fixed_process_delta_time">get&#95;fixed&#95;process&#95;delta&#95;time</a>
+
+* "float":class_float *get&#95;fixed&#95;process&#95;delta&#95;time* *(* *)* const
+
+Return the time elapsed since the last fixed frame. This is always the same in fixed proecssing unless the frames per second is changed in "OS":class_os.
+
+h4(#is_fixed_processing). <a name="is_fixed_processing">is&#95;fixed&#95;processing</a>
+
+* "bool":class_bool *is&#95;fixed&#95;processing* *(* *)* const
+
+Return true if fixed processing is enabled (see "set&#95;fixed&#95;process":#set_fixed_process).
+
+h4(#set_process). <a name="set_process">set&#95;process</a>
+
+* void *set&#95;process* *(* "bool":class_bool enable *)*
+
+Enables or disables node processing. When a node is being processed, it will receive a NOTIFICATION&#95;PROCESS on every drawn frame (and the "&#95;process":#_process callback will be called if exists). It is common to check how much time was elapsed since the previous frame by calling "get&#95;process&#95;time":#get_process_time.
+
+h4(#get_process_delta_time). <a name="get_process_delta_time">get&#95;process&#95;delta&#95;time</a>
+
+* "float":class_float *get&#95;process&#95;delta&#95;time* *(* *)* const
+
+Return the time elapsed (in seconds) since the last process callback. This is almost always different each time.
+
+h4(#is_processing). <a name="is_processing">is&#95;processing</a>
+
+* "bool":class_bool *is&#95;processing* *(* *)* const
+
+Return wether processing is enabled in the current node (see "set&#95;process":#set_process).
+
+h4(#set_process_input). <a name="set_process_input">set&#95;process&#95;input</a>
+
+* void *set&#95;process&#95;input* *(* "bool":class_bool enable *)*
+
+Enable input processing for node. This is not requiered for GUI controls! It hooks up the node to receive all input (see "&#95;input":#_input).
+
+h4(#is_processing_input). <a name="is_processing_input">is&#95;processing&#95;input</a>
+
+* "bool":class_bool *is&#95;processing&#95;input* *(* *)* const
+
+Return true if the node is processing input (see "set&#95;process&#95;input":#set_process_input).
+
+h4(#set_process_unhandled_input). <a name="set_process_unhandled_input">set&#95;process&#95;unhandled&#95;input</a>
+
+* void *set&#95;process&#95;unhandled&#95;input* *(* "bool":class_bool enable *)*
+
+Enable unhandled input processing for node. This is not requiered for GUI controls! It hooks up the node to receive all input that was not previously handled before (usually by a "Control":class_control). (see "&#95;unhandled&#95;input":#_unhandled_input).
+
+h4(#is_processing_unhandled_input). <a name="is_processing_unhandled_input">is&#95;processing&#95;unhandled&#95;input</a>
+
+* "bool":class_bool *is&#95;processing&#95;unhandled&#95;input* *(* *)* const
+
+Return true if the node is processing unhandled input (see "set&#95;process&#95;unhandled&#95;input":#set_process_unhandled_input).
+
+h4(#can_process). <a name="can_process">can&#95;process</a>
+
+* "bool":class_bool *can&#95;process* *(* *)* const
+
+Return true if the node can process.
+
+h4(#duplicate). <a name="duplicate">duplicate</a>
+
+* "Node":class_node *duplicate* *(* *)* const
+
+Return a duplicate of the scene, with all nodes and parameters copied. Subscriptions will not be duplicated.
+
+h4(#replace_by). <a name="replace_by">replace&#95;by</a>
+
+* void *replace&#95;by* *(* "Node":class_node node, "bool":class_bool keep&#95;data=false *)*
+
+Replace a node in a scene by a given one. Subscriptions that pass through this node will be lost.

@@ -1,0 +1,46 @@
+h1(#generic6dofjoint). Generic6DOFJoint
+
+h4(#inherits-joint). *Inherits:* "Joint":class_joint
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;param&#95;x":#set_param_x* *(* "int":class_int param, "float":class_float value *)*
+* "float":class_float *"get&#95;param&#95;x":#get_param_x* *(* "int":class_int param *)* const
+* void *"set&#95;param&#95;y":#set_param_y* *(* "int":class_int param, "float":class_float value *)*
+* "float":class_float *"get&#95;param&#95;y":#get_param_y* *(* "int":class_int param *)* const
+* void *"set&#95;param&#95;z":#set_param_z* *(* "int":class_int param, "float":class_float value *)*
+* "float":class_float *"get&#95;param&#95;z":#get_param_z* *(* "int":class_int param *)* const
+* void *"set&#95;flag&#95;x":#set_flag_x* *(* "int":class_int flag, "bool":class_bool value *)*
+* "bool":class_bool *"get&#95;flag&#95;x":#get_flag_x* *(* "int":class_int flag *)* const
+* void *"set&#95;flag&#95;y":#set_flag_y* *(* "int":class_int flag, "bool":class_bool value *)*
+* "bool":class_bool *"get&#95;flag&#95;y":#get_flag_y* *(* "int":class_int flag *)* const
+* void *"set&#95;flag&#95;z":#set_flag_z* *(* "int":class_int flag, "bool":class_bool value *)*
+* "bool":class_bool *"get&#95;flag&#95;z":#get_flag_z* *(* "int":class_int flag *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *PARAM&#95;LINEAR&#95;LOWER&#95;LIMIT* = *0*
+* *PARAM&#95;LINEAR&#95;UPPER&#95;LIMIT* = *1*
+* *PARAM&#95;LINEAR&#95;LIMIT&#95;SOFTNESS* = *2*
+* *PARAM&#95;LINEAR&#95;RESTITUTION* = *3*
+* *PARAM&#95;LINEAR&#95;DAMPING* = *4*
+* *PARAM&#95;ANGULAR&#95;LOWER&#95;LIMIT* = *5*
+* *PARAM&#95;ANGULAR&#95;UPPER&#95;LIMIT* = *6*
+* *PARAM&#95;ANGULAR&#95;LIMIT&#95;SOFTNESS* = *7*
+* *PARAM&#95;ANGULAR&#95;DAMPING* = *8*
+* *PARAM&#95;ANGULAR&#95;RESTITUTION* = *9*
+* *PARAM&#95;ANGULAR&#95;FORCE&#95;LIMIT* = *10*
+* *PARAM&#95;ANGULAR&#95;ERP* = *11*
+* *PARAM&#95;ANGULAR&#95;MOTOR&#95;TARGET&#95;VELOCITY* = *12*
+* *PARAM&#95;ANGULAR&#95;MOTOR&#95;FORCE&#95;LIMIT* = *13*
+* *PARAM&#95;MAX* = *14*
+* *FLAG&#95;ENABLE&#95;LINEAR&#95;LIMIT* = *0*
+* *FLAG&#95;ENABLE&#95;ANGULAR&#95;LIMIT* = *1*
+* *FLAG&#95;ENABLE&#95;MOTOR* = *2*
+* *FLAG&#95;MAX* = *3*
+
+h3(#member-function-description). Member Function Description

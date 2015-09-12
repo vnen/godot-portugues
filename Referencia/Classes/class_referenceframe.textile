@@ -1,0 +1,13 @@
+h1(#referenceframe). ReferenceFrame
+
+h4(#inherits-control). *Inherits:* "Control":class_control
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Reference frame for GUI.
+
+h3(#description). Description
+
+Reference frame for GUI. It's just like an empty control, except a red box is displayed while editing around it's size at all times.

@@ -1,0 +1,63 @@
+h1(#ip). IP
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+IP Protocol support functions.
+
+h3(#member-functions). Member Functions
+
+* "String":class_string *"resolve&#95;hostname":#resolve_hostname* *(* "String":class_string host *)*
+* "int":class_int *"resolve&#95;hostname&#95;queue&#95;item":#resolve_hostname_queue_item* *(* "String":class_string host *)*
+* "int":class_int *"get&#95;resolve&#95;item&#95;status":#get_resolve_item_status* *(* "int":class_int id *)* const
+* "String":class_string *"get&#95;resolve&#95;item&#95;address":#get_resolve_item_address* *(* "int":class_int id *)* const
+* void *"erase&#95;resolve&#95;item":#erase_resolve_item* *(* "int":class_int id *)*
+* "Array":class_array *"get&#95;local&#95;addresses":#get_local_addresses* *(* *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *RESOLVER&#95;STATUS&#95;NONE* = *0*
+* *RESOLVER&#95;STATUS&#95;WAITING* = *1*
+* *RESOLVER&#95;STATUS&#95;DONE* = *2*
+* *RESOLVER&#95;STATUS&#95;ERROR* = *3*
+* *RESOLVER&#95;MAX&#95;QUERIES* = *32*
+* *RESOLVER&#95;INVALID&#95;ID* = *&#45;1*
+
+h3(#description). Description
+
+IP contains some support functions for the IPv4 protocol. TCP/IP support is in different classes (see [TCP&#95;Client], "TCP&#95;Server":class_tcp_server). IP provides hostname resolution support, both blocking and threaded.
+
+h3(#member-function-description). Member Function Description
+
+h4(#resolve_hostname). <a name="resolve_hostname">resolve&#95;hostname</a>
+
+* "String":class_string *resolve&#95;hostname* *(* "String":class_string host *)*
+
+Resolve a given hostname, blocking. Resolved hostname is returned as an IP.
+
+h4(#resolve_hostname_queue_item). <a name="resolve_hostname_queue_item">resolve&#95;hostname&#95;queue&#95;item</a>
+
+* "int":class_int *resolve&#95;hostname&#95;queue&#95;item* *(* "String":class_string host *)*
+
+Create a queue item for resolving a given hostname. The queue ID is returned, or RESOLVER&#95;INVALID&#95;ID on error.
+
+h4(#get_resolve_item_status). <a name="get_resolve_item_status">get&#95;resolve&#95;item&#95;status</a>
+
+* "int":class_int *get&#95;resolve&#95;item&#95;status* *(* "int":class_int id *)* const
+
+Return the status of hostname queued for resolving, given it&quot;apos;s queue ID. Returned status can be any of the RESOLVER&#95;STATUS&#95;&#42; enumeration.
+
+h4(#get_resolve_item_address). <a name="get_resolve_item_address">get&#95;resolve&#95;item&#95;address</a>
+
+* "String":class_string *get&#95;resolve&#95;item&#95;address* *(* "int":class_int id *)* const
+
+Return a resolved item address, or an empty string if an error happened or resolution didn&quot;apos;t happen yet (see "get&#95;resolve&#95;item&#95;status":#get_resolve_item_status).
+
+h4(#erase_resolve_item). <a name="erase_resolve_item">erase&#95;resolve&#95;item</a>
+
+* void *erase&#95;resolve&#95;item* *(* "int":class_int id *)*
+
+Erase a queue ID, removing it from the queue if needed. This should be used after a queue is completed to free it and enable more queries to happen.

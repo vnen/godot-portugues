@@ -1,0 +1,95 @@
+h1(#sampleplayer2d). SamplePlayer2D
+
+h4(#inherits-soundplayer2d). *Inherits:* "SoundPlayer2D":class_soundplayer2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Sample player for Positional 2D Sound.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;sample&#95;library":#set_sample_library* *(* "SampleLibrary":class_samplelibrary library *)*
+* "SampleLibrary":class_samplelibrary *"get&#95;sample&#95;library":#get_sample_library* *(* *)* const
+* void *"set&#95;polyphony":#set_polyphony* *(* "int":class_int voices *)*
+* "int":class_int *"get&#95;polyphony":#get_polyphony* *(* *)* const
+* "int":class_int *"play":#play* *(* "String":class_string sample, "int":class_int voice=&#45;2 *)*
+* void *"voice&#95;set&#95;pitch&#95;scale":#voice_set_pitch_scale* *(* "int":class_int voice, "float":class_float ratio *)*
+* void *"voice&#95;set&#95;volume&#95;scale&#95;db":#voice_set_volume_scale_db* *(* "int":class_int voice, "float":class_float db *)*
+* "bool":class_bool *"is&#95;voice&#95;active":#is_voice_active* *(* "int":class_int voice *)* const
+* void *"stop&#95;voice":#stop_voice* *(* "int":class_int voice *)*
+* void *"stop&#95;all":#stop_all* *(* *)*
+* void *"set&#95;random&#95;pitch&#95;scale":#set_random_pitch_scale* *(* "float":class_float val *)*
+* "float":class_float *"get&#95;random&#95;pitch&#95;scale":#get_random_pitch_scale* *(* *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *INVALID&#95;VOICE* = *&#45;1* &#45; If the voice is invalid, this is returned.
+* *NEXT&#95;VOICE* = *&#45;2*
+
+h3(#description). Description
+
+Sample player for Positional 2D Sound. Plays sound samples positionally, left and right depending on the distance/place on the screen.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_sample_library). <a name="set_sample_library">set&#95;sample&#95;library</a>
+
+* void *set&#95;sample&#95;library* *(* "SampleLibrary":class_samplelibrary library *)*
+
+Set the sample library for the player.
+
+h4(#get_sample_library). <a name="get_sample_library">get&#95;sample&#95;library</a>
+
+* "SampleLibrary":class_samplelibrary *get&#95;sample&#95;library* *(* *)* const
+
+Return the sample library used for the player.
+
+h4(#set_polyphony). <a name="set_polyphony">set&#95;polyphony</a>
+
+* void *set&#95;polyphony* *(* "int":class_int voices *)*
+
+Set the polyphony of the player (maximum amount of simultaneous voices).
+
+h4(#get_polyphony). <a name="get_polyphony">get&#95;polyphony</a>
+
+* "int":class_int *get&#95;polyphony* *(* *)* const
+
+Return the polyphony of the player (maximum amount of simultaneous voices).
+
+h4(#play). <a name="play">play</a>
+
+* "int":class_int *play* *(* "String":class_string sample, "int":class_int voice=&#45;2 *)*
+
+Play a sample, an internal polyphony id can be passed, or else it's assigned automatically. Returns a voice id which can be used to modify the voice parameters.
+
+h4(#voice_set_pitch_scale). <a name="voice_set_pitch_scale">voice&#95;set&#95;pitch&#95;scale</a>
+
+* void *voice&#95;set&#95;pitch&#95;scale* *(* "int":class_int voice, "float":class_float ratio *)*
+
+Change the pitch scale of a currently playing voice.
+
+h4(#voice_set_volume_scale_db). <a name="voice_set_volume_scale_db">voice&#95;set&#95;volume&#95;scale&#95;db</a>
+
+* void *voice&#95;set&#95;volume&#95;scale&#95;db* *(* "int":class_int voice, "float":class_float db *)*
+
+Change the volume scale of a currently playing voice (using dB).
+
+h4(#is_voice_active). <a name="is_voice_active">is&#95;voice&#95;active</a>
+
+* "bool":class_bool *is&#95;voice&#95;active* *(* "int":class_int voice *)* const
+
+Return true if a voice is still active (false if it stopped playing).
+
+h4(#stop_voice). <a name="stop_voice">stop&#95;voice</a>
+
+* void *stop&#95;voice* *(* "int":class_int voice *)*
+
+Stop a given voice.
+
+h4(#stop_all). <a name="stop_all">stop&#95;all</a>
+
+* void *stop&#95;all* *(* *)*
+
+Stop all playing voices.

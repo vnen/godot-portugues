@@ -1,0 +1,14 @@
+h1(#rayshape). RayShape
+
+h4(#inherits-shape). *Inherits:* "Shape":class_shape
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;length":#set_length* *(* "float":class_float length *)*
+* "float":class_float *"get&#95;length":#get_length* *(* *)* const
+
+h3(#member-function-description). Member Function Description

@@ -1,0 +1,32 @@
+h1(#shader). Shader
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+To be changed, ignore.
+
+h3(#member-functions). Member Functions
+
+* "int":class_int *"get&#95;mode":#get_mode* *(* *)* const
+* void *"set&#95;code":#set_code* *(* "String":class_string vcode, "String":class_string fcode, "String":class_string lcode, "int":class_int fofs=0, "int":class_int lofs=0 *)*
+* "String":class_string *"get&#95;vertex&#95;code":#get_vertex_code* *(* *)* const
+* "String":class_string *"get&#95;fragment&#95;code":#get_fragment_code* *(* *)* const
+* "String":class_string *"get&#95;light&#95;code":#get_light_code* *(* *)* const
+* void *"set&#95;default&#95;texture&#95;param":#set_default_texture_param* *(* "String":class_string param, "Texture":class_texture texture *)*
+* "Texture":class_texture *"get&#95;default&#95;texture&#95;param":#get_default_texture_param* *(* "String":class_string param *)* const
+* "bool":class_bool *"has&#95;param":#has_param* *(* "String":class_string name *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *MODE&#95;MATERIAL* = *0*
+* *MODE&#95;CANVAS&#95;ITEM* = *1*
+* *MODE&#95;POST&#95;PROCESS* = *2*
+
+h3(#description). Description
+
+To be changed, ignore.
+
+h3(#member-function-description). Member Function Description

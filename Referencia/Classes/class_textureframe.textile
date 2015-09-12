@@ -1,0 +1,24 @@
+h1(#textureframe). TextureFrame
+
+h4(#inherits-control). *Inherits:* "Control":class_control
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Control Frame that draws a texture.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;texture":#set_texture* *(* "Object":class_object texture *)*
+* "Object":class_object *"get&#95;texture":#get_texture* *(* *)* const
+* void *"set&#95;modulate":#set_modulate* *(* "Color":class_color modulate *)*
+* "Color":class_color *"get&#95;modulate":#get_modulate* *(* *)* const
+* void *"set&#95;expand":#set_expand* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"has&#95;expand":#has_expand* *(* *)* const
+
+h3(#description). Description
+
+Control frame that simply draws an assigned texture. It can stretch or not. It's a simple way to just show an image in a UI.
+
+h3(#member-function-description). Member Function Description

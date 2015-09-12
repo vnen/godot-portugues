@@ -1,0 +1,82 @@
+h1(#material). Material
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Abstract base "Resource":class_resource for coloring and shading geometry.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;flag":#set_flag* *(* "int":class_int flag, "bool":class_bool enable *)*
+* "bool":class_bool *"get&#95;flag":#get_flag* *(* "int":class_int flag *)* const
+* void *"set&#95;blend&#95;mode":#set_blend_mode* *(* "int":class_int mode *)*
+* "int":class_int *"get&#95;blend&#95;mode":#get_blend_mode* *(* *)* const
+* void *"set&#95;line&#95;width":#set_line_width* *(* "float":class_float width *)*
+* "float":class_float *"get&#95;line&#95;width":#get_line_width* *(* *)* const
+* void *"set&#95;depth&#95;draw&#95;mode":#set_depth_draw_mode* *(* "int":class_int mode *)*
+* "int":class_int *"get&#95;depth&#95;draw&#95;mode":#get_depth_draw_mode* *(* *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *FLAG&#95;VISIBLE* = *0* &#45; Geometry is visible when this flag is enabled (default).
+* *FLAG&#95;DOUBLE&#95;SIDED* = *1* &#45; Both front facing and back facing triangles are rendered when this flag is enabled.
+* *FLAG&#95;INVERT&#95;FACES* = *2* &#45; Front facing and back facing order is swapped when this flag is enabled.
+* *FLAG&#95;UNSHADED* = *3* &#45; Shading (lighting) is disabled when this flag is enabled.
+* *FLAG&#95;ONTOP* = *4*
+* *FLAG&#95;LIGHTMAP&#95;ON&#95;UV2* = *5*
+* *FLAG&#95;COLOR&#95;ARRAY&#95;SRGB* = *6*
+* *FLAG&#95;MAX* = *7* &#45; Maximum amount of flags
+* *DEPTH&#95;DRAW&#95;ALWAYS* = *0*
+* *DEPTH&#95;DRAW&#95;OPAQUE&#95;ONLY* = *1*
+* *DEPTH&#95;DRAW&#95;OPAQUE&#95;PRE&#95;PASS&#95;ALPHA* = *2*
+* *DEPTH&#95;DRAW&#95;NEVER* = *3*
+* *BLEND&#95;MODE&#95;MIX* = *0* &#45; Use the regular alpha blending equation (source and dest colors are faded) (default).
+* *BLEND&#95;MODE&#95;ADD* = *1* &#45; Use additive blending equation, often used for particle effects such as fire or light decals.
+* *BLEND&#95;MODE&#95;SUB* = *2* &#45; Use substractive blending equation, often used for some smoke effects or types of glass.
+* *BLEND&#95;MODE&#95;MUL* = *3*
+* *BLEND&#95;MODE&#95;PREMULT&#95;ALPHA* = *4*
+
+h3(#description). Description
+
+Material is a base "Resource":class_resource used for coloring and shading geometry. All materials inherit from it and almost all "VisualInstance":class_visualinstance derived nodes carry a Material. A few flags and parameters are shared between all material types and are configured here.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_flag). <a name="set_flag">set&#95;flag</a>
+
+* void *set&#95;flag* *(* "int":class_int flag, "bool":class_bool enable *)*
+
+Set a "Material":class_material flag, which toggles on or off a behavior when rendering. See enumeration FLAG&#95;&#42; for a list.
+
+h4(#get_flag). <a name="get_flag">get&#95;flag</a>
+
+* "bool":class_bool *get&#95;flag* *(* "int":class_int flag *)* const
+
+Return a "Material":class_material flag, which toggles on or off a behavior when rendering. See enumeration FLAG&#95;&#42; for a list.
+
+h4(#set_blend_mode). <a name="set_blend_mode">set&#95;blend&#95;mode</a>
+
+* void *set&#95;blend&#95;mode* *(* "int":class_int mode *)*
+
+Set blend mode for the material, which can be one of BLEND&#95;MODE&#95;MIX (default), BLEND&#95;MODE&#95;ADD, BLEND&#95;MODE&#95;SUB. Keep in mind that only BLEND&#95;MODE&#95;MIX ensures that the material _may_ be opaque, any other blend mode will render with alpha blending enabled in raster&#45;based "VisualServer":class_visualserver implementations.
+
+h4(#get_blend_mode). <a name="get_blend_mode">get&#95;blend&#95;mode</a>
+
+* "int":class_int *get&#95;blend&#95;mode* *(* *)* const
+
+Return blend mode for the material, which can be one of BLEND&#95;MODE&#95;MIX (default), BLEND&#95;MODE&#95;ADD, BLEND&#95;MODE&#95;SUB. Keep in mind that only BLEND&#95;MODE&#95;MIX ensures that the material _may_ be opaque, any other blend mode will render with alpha blending enabled in raster&#45;based "VisualServer":class_visualserver implementations.
+
+h4(#set_line_width). <a name="set_line_width">set&#95;line&#95;width</a>
+
+* void *set&#95;line&#95;width* *(* "float":class_float width *)*
+
+Set the line width for geometry drawn with FLAG&#95;WIREFRAME enabled, or LINE primitives. Note that not all hardware or VisualServer backends support this (like DirectX).
+
+h4(#get_line_width). <a name="get_line_width">get&#95;line&#95;width</a>
+
+* "float":class_float *get&#95;line&#95;width* *(* *)* const
+
+Return the line width for geometry drawn with FLAG&#95;WIREFRAME enabled, or LINE primitives. Note that not all hardware or VisualServer backends support this (like DirectX).

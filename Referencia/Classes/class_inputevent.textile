@@ -1,0 +1,56 @@
+h1(#inputevent). InputEvent
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Built&#45;in input event data.
+
+h3(#member-functions). Member Functions
+
+* "bool":class_bool *"is&#95;action":#is_action* *(* "String":class_string action *)*
+* "bool":class_bool *"is&#95;echo":#is_echo* *(* *)*
+* "bool":class_bool *"is&#95;pressed":#is_pressed* *(* *)*
+* void *"set&#95;as&#95;action":#set_as_action* *(* "String":class_string action, "bool":class_bool pressed *)*
+
+h3(#member-variables). Member Variables
+
+* "int":class_int *type*
+* "int":class_int *device*
+* "int":class_int *ID*
+
+h3(#numeric-constants). Numeric Constants
+
+* *NONE* = *0* &#45; Empty input event.
+* *KEY* = *1* &#45; Key event.
+* *MOUSE&#95;MOTION* = *2* &#45; Mouse motion event.
+* *MOUSE&#95;BUTTON* = *3* &#45; Mouse button event.
+* *JOYSTICK&#95;MOTION* = *4* &#45; Jostick motion event.
+* *JOYSTICK&#95;BUTTON* = *5* &#45; Joystick button event.
+* *SCREEN&#95;TOUCH* = *6*
+* *SCREEN&#95;DRAG* = *7*
+* *ACTION* = *8*
+
+h3(#description). Description
+
+Built&#45;in input event data. InputEvent is a built&#45;in engine datatype, given that it's passed around and used so much . Depending on it's type, the members contained can be different, so read the documentation well!. Input events can also represent actions (editable from the project settings).
+
+h3(#member-function-description). Member Function Description
+
+h4(#is_action). <a name="is_action">is&#95;action</a>
+
+* "bool":class_bool *is&#95;action* *(* "String":class_string action *)*
+
+Return if this input event matches a pre&#45;defined action, no matter the type.
+
+h4(#is_echo). <a name="is_echo">is&#95;echo</a>
+
+* "bool":class_bool *is&#95;echo* *(* *)*
+
+Return if this input event is an echo event (usually for key events).
+
+h4(#is_pressed). <a name="is_pressed">is&#95;pressed</a>
+
+* "bool":class_bool *is&#95;pressed* *(* *)*
+
+Return if this input event is pressed (for key, mouse, joy button or screen press events).

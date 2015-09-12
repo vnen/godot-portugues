@@ -1,0 +1,26 @@
+h1(#styleboxtexture). StyleBoxTexture
+
+h4(#inherits-stylebox). *Inherits:* "StyleBox":class_stylebox
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Texture Based 3x3 scale style.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;texture":#set_texture* *(* "Texture":class_texture texture *)*
+* "Texture":class_texture *"get&#95;texture":#get_texture* *(* *)* const
+* void *"set&#95;margin&#95;size":#set_margin_size* *(* "int":class_int margin, "float":class_float size *)*
+* "float":class_float *"get&#95;margin&#95;size":#get_margin_size* *(* "int":class_int arg0 *)* const
+* void *"set&#95;expand&#95;margin&#95;size":#set_expand_margin_size* *(* "int":class_int margin, "float":class_float size *)*
+* "float":class_float *"get&#95;expand&#95;margin&#95;size":#get_expand_margin_size* *(* "int":class_int arg0 *)* const
+* void *"set&#95;draw&#95;center":#set_draw_center* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"get&#95;draw&#95;center":#get_draw_center* *(* *)* const
+
+h3(#description). Description
+
+Texture Based 3x3 scale style. This stylebox performs a 3x3 scaling of a texture, where only the center cell is fully stretched. This allows for the easy creation of bordered styles.
+
+h3(#member-function-description). Member Function Description

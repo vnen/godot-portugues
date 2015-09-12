@@ -1,0 +1,74 @@
+h1(#texture). Texture
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Texture for 2D and 3D.
+
+h3(#member-functions). Member Functions
+
+* "int":class_int *"get&#95;width":#get_width* *(* *)* const
+* "int":class_int *"get&#95;height":#get_height* *(* *)* const
+* "Vector2":class_vector2 *"get&#95;size":#get_size* *(* *)* const
+* "RID":class_rid *"get&#95;rid":#get_rid* *(* *)* const
+* "bool":class_bool *"has&#95;alpha":#has_alpha* *(* *)* const
+* void *"set&#95;flags":#set_flags* *(* "int":class_int flags *)*
+* "int":class_int *"get&#95;flags":#get_flags* *(* *)* const
+* void *"draw":#draw* *(* "RID":class_rid canvas&#95;item, "Vector2":class_vector2 pos, "Color":class_color modulate=Color(1,1,1,1), "bool":class_bool arg3=false *)* const
+* void *"draw&#95;rect":#draw_rect* *(* "RID":class_rid canvas&#95;item, "Rect2":class_rect2 rect, "bool":class_bool tile, "Color":class_color modulate=Color(1,1,1,1), "bool":class_bool arg4=false *)* const
+* void *"draw&#95;rect&#95;region":#draw_rect_region* *(* "RID":class_rid canvas&#95;item, "Rect2":class_rect2 rect, "Rect2":class_rect2 src&#95;rect, "Color":class_color modulate=Color(1,1,1,1), "bool":class_bool arg4=false *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *FLAG&#95;MIPMAPS* = *1* &#45; Generate mipmaps.
+* *FLAG&#95;REPEAT* = *2* &#45; Repeat (instead of clamp to edge).
+* *FLAG&#95;FILTER* = *4* &#45; Turn on magnifying filter.
+* *FLAG&#95;VIDEO&#95;SURFACE* = *4096* &#45; Texture is a video surface
+* *FLAGS&#95;DEFAULT* = *7* &#45; Default flags
+* *FLAG&#95;ANISOTROPIC&#95;FILTER* = *8*
+* *FLAG&#95;CONVERT&#95;TO&#95;LINEAR* = *16*
+
+h3(#description). Description
+
+A texture works by registering an image in the video hardware, which then can be used in 3D models or 2D "Sprite":class_sprite or GUI "Control":class_controls.
+
+h3(#member-function-description). Member Function Description
+
+h4(#get_width). <a name="get_width">get&#95;width</a>
+
+* "int":class_int *get&#95;width* *(* *)* const
+
+Return the texture width.
+
+h4(#get_height). <a name="get_height">get&#95;height</a>
+
+* "int":class_int *get&#95;height* *(* *)* const
+
+Return the texture height.
+
+h4(#get_size). <a name="get_size">get&#95;size</a>
+
+* "Vector2":class_vector2 *get&#95;size* *(* *)* const
+
+Return the texture size.
+
+h4(#get_rid). <a name="get_rid">get&#95;rid</a>
+
+* "RID":class_rid *get&#95;rid* *(* *)* const
+
+Return the texture RID as used in the "VisualServer":class_visualserver.
+
+h4(#set_flags). <a name="set_flags">set&#95;flags</a>
+
+* void *set&#95;flags* *(* "int":class_int flags *)*
+
+Change the texture flags.
+
+h4(#get_flags). <a name="get_flags">get&#95;flags</a>
+
+* "int":class_int *get&#95;flags* *(* *)* const
+
+Return the current texture flags.

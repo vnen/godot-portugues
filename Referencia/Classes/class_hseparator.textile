@@ -1,0 +1,13 @@
+h1(#hseparator). HSeparator
+
+h4(#inherits-separator). *Inherits:* "Separator":class_separator
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Horizontal separator.
+
+h3(#description). Description
+
+Horizontal separator. See "Separator":class_separator. It is used to separate objects vertiacally, though (but it looks horizontal!).

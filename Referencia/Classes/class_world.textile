@@ -1,0 +1,24 @@
+h1(#world). World
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Class that has everything pertaining to a world.
+
+h3(#member-functions). Member Functions
+
+* "RID":class_rid *"get&#95;space":#get_space* *(* *)* const
+* "RID":class_rid *"get&#95;scenario":#get_scenario* *(* *)* const
+* "RID":class_rid *"get&#95;sound&#95;space":#get_sound_space* *(* *)* const
+* void *"set&#95;environment":#set_environment* *(* "Environment":class_environment env *)*
+* "Environment":class_environment *"get&#95;environment":#get_environment* *(* *)* const
+* "PhysicsDirectSpaceState":class_physicsdirectspacestate *"get&#95;direct&#95;space&#95;state":#get_direct_space_state* *(* *)*
+
+h3(#description). Description
+
+Class that has everything pertaining to a world. A physics space, a visual scenario and a sound space. Spatial nodes register their resources into the current world.
+
+h3(#member-function-description). Member Function Description

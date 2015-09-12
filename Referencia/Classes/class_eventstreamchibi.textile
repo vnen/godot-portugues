@@ -1,0 +1,7 @@
+h1(#eventstreamchibi). EventStreamChibi
+
+h4(#inherits-eventstream). *Inherits:* "EventStream":class_eventstream
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description

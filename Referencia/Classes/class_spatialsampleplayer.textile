@@ -1,0 +1,27 @@
+h1(#spatialsampleplayer). SpatialSamplePlayer
+
+h4(#inherits-spatialplayer). *Inherits:* "SpatialPlayer":class_spatialplayer
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;sample&#95;library":#set_sample_library* *(* "SampleLibrary":class_samplelibrary library *)*
+* "SampleLibrary":class_samplelibrary *"get&#95;sample&#95;library":#get_sample_library* *(* *)* const
+* void *"set&#95;polyphony":#set_polyphony* *(* "int":class_int voices *)*
+* "int":class_int *"get&#95;polyphony":#get_polyphony* *(* *)* const
+* "int":class_int *"play":#play* *(* "String":class_string sample, "int":class_int voice=&#45;2 *)*
+* void *"voice&#95;set&#95;pitch&#95;scale":#voice_set_pitch_scale* *(* "int":class_int voice, "float":class_float ratio *)*
+* void *"voice&#95;set&#95;volume&#95;scale&#95;db":#voice_set_volume_scale_db* *(* "int":class_int voice, "float":class_float db *)*
+* "bool":class_bool *"is&#95;voice&#95;active":#is_voice_active* *(* "int":class_int voice *)* const
+* void *"stop&#95;voice":#stop_voice* *(* "int":class_int voice *)*
+* void *"stop&#95;all":#stop_all* *(* *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *INVALID&#95;VOICE* = *&#45;1*
+* *NEXT&#95;VOICE* = *&#45;2*
+
+h3(#member-function-description). Member Function Description

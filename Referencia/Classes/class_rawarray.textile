@@ -1,0 +1,24 @@
+h1(#rawarray). RawArray
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Raw byte array.
+
+h3(#member-functions). Member Functions
+
+* "int":class_int *"get":#get* *(* "int":class_int idx *)*
+* "String":class_string *"get&#95;string&#95;from&#95;ascii":#get_string_from_ascii* *(* *)*
+* "String":class_string *"get&#95;string&#95;from&#95;utf8":#get_string_from_utf8* *(* *)*
+* void *"push&#95;back":#push_back* *(* "int":class_int byte *)*
+* void *"resize":#resize* *(* "int":class_int idx *)*
+* void *"set":#set* *(* "int":class_int idx, "int":class_int byte *)*
+* "int":class_int *"size":#size* *(* *)*
+* "RawArray":class_rawarray *"RawArray":#RawArray* *(* "Array":class_array from *)*
+
+h3(#description). Description
+
+Raw byte array. Contains bytes. Optimized for memory usage, cant fragment the memory.
+
+h3(#member-function-description). Member Function Description

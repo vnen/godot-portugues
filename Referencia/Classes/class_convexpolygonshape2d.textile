@@ -1,0 +1,39 @@
+h1(#convexpolygonshape2d). ConvexPolygonShape2D
+
+h4(#inherits-shape2d). *Inherits:* "Shape2D":class_shape2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Convex Polygon Shape for 2D physics
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;point&#95;cloud":#set_point_cloud* *(* "Vector2Array":class_vector2array point&#95;cloud *)*
+* void *"set&#95;points":#set_points* *(* "Vector2Array":class_vector2array points *)*
+* "Vector2Array":class_vector2array *"get&#95;points":#get_points* *(* *)* const
+
+h3(#description). Description
+
+Convex Polygon Shape for 2D physics.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_point_cloud). <a name="set_point_cloud">set&#95;point&#95;cloud</a>
+
+* void *set&#95;point&#95;cloud* *(* "Vector2Array":class_vector2array point&#95;cloud *)*
+
+Create the point set from a point cloud. The resulting convex hull will be set as the shape.
+
+h4(#set_points). <a name="set_points">set&#95;points</a>
+
+* void *set&#95;points* *(* "Vector2Array":class_vector2array points *)*
+
+Set a list of points in either clockwise or counter clockwise order, forming a convex polygon.
+
+h4(#get_points). <a name="get_points">get&#95;points</a>
+
+* "Vector2Array":class_vector2array *get&#95;points* *(* *)* const
+
+Return a list of points in either clockwise or counter clockwise order, forming a convex polygon.

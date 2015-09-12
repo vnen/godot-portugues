@@ -1,0 +1,22 @@
+h1(#unshadedmaterial). UnshadedMaterial
+
+h4(#inherits-material). *Inherits:* "Material":class_material
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;texture":#set_texture* *(* "Object":class_object texture *)*
+* "Texture":class_texture *"get&#95;texture":#get_texture* *(* *)* const
+* void *"set&#95;use&#95;alpha":#set_use_alpha* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;using&#95;alpha":#is_using_alpha* *(* *)* const
+* void *"set&#95;use&#95;color&#95;array":#set_use_color_array* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;using&#95;color&#95;array":#is_using_color_array* *(* *)* const
+
+h3(#member-function-description). Member Function Description
+
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+</ol>

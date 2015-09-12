@@ -1,0 +1,18 @@
+h1(#joint). Joint
+
+h4(#inherits-spatial). *Inherits:* "Spatial":class_spatial
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;node&#95;a":#set_node_a* *(* "NodePath":class_nodepath node *)*
+* "NodePath":class_nodepath *"get&#95;node&#95;a":#get_node_a* *(* *)* const
+* void *"set&#95;node&#95;b":#set_node_b* *(* "NodePath":class_nodepath node *)*
+* "NodePath":class_nodepath *"get&#95;node&#95;b":#get_node_b* *(* *)* const
+* void *"set&#95;solver&#95;priority":#set_solver_priority* *(* "int":class_int priority *)*
+* "int":class_int *"get&#95;solver&#95;priority":#get_solver_priority* *(* *)* const
+
+h3(#member-function-description). Member Function Description

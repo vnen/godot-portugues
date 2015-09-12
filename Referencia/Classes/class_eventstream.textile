@@ -1,0 +1,7 @@
+h1(#eventstream). EventStream
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description

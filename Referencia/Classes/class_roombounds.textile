@@ -1,0 +1,18 @@
+h1(#roombounds). RoomBounds
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;bounds":#set_bounds* *(* "Dictionary":class_dictionary bsp&#95;tree *)*
+* "Dictionary":class_dictionary *"get&#95;bounds":#get_bounds* *(* *)* const
+* void *"set&#95;geometry&#95;hint":#set_geometry_hint* *(* "Vector3Array":class_vector3array triangles *)*
+* "Vector3Array":class_vector3array *"get&#95;geometry&#95;hint":#get_geometry_hint* *(* *)* const
+* void *"regenerate&#95;bsp":#regenerate_bsp* *(* *)*
+* void *"regenerate&#95;bsp&#95;cubic":#regenerate_bsp_cubic* *(* *)*
+
+h3(#member-function-description). Member Function Description

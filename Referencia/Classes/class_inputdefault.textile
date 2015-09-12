@@ -1,0 +1,7 @@
+h1(#inputdefault). InputDefault
+
+h4(#inherits-input). *Inherits:* "Input":class_input
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
