@@ -1,71 +1,71 @@
-h1. IluminaÁ„o _Lighting_
+h1. Ilumina√ß√£o _Lighting_
 
-h2. IntroduÁ„o
+h2. Introdu√ß√£o
 
-L‚mpadas emitem luz que se misturam com o material e produzem cores visiveis. A luz pode vim de diferentes fontes na cena:
+L√¢mpadas emitem luz que se misturam com o material e produzem cores visiveis. A luz pode vim de diferentes fontes na cena:
 
-* De um material, na entrada de _emission color_ (Isso n„o afeta outros objetos, ao menos que vocÍ faÁa um bake da cena).
-* NÛs de l‚mpadas: Direcional, ponto e ·rea (respectivamente _Directional_, _Omni_ e _Spot_).
-* Luz do ambiente que pode ser configurado no nÛ _Environment_.
-* _Baked Light_ (Luz n„o dinamica, prÈ-computada para reduzir o custo de processamento, leia Light Baking).
+* De um material, na entrada de _emission color_ (Isso n√£o afeta outros objetos, ao menos que voc√™ fa√ßa um bake da cena).
+* N√≥s de l√¢mpadas: Direcional, ponto e √°rea (respectivamente _Directional_, _Omni_ e _Spot_).
+* Luz do ambiente que pode ser configurado no n√≥ _Environment_.
+* _Baked Light_ (Luz n√£o dinamica, pr√©-computada para reduzir o custo de processamento, leia Light Baking).
 
-A cor de emiss„o È uma propriedade do material (_emission color_), j· visto em tutoriais anteriores sobre materiais (leia ele antes se vocÍ ainda n„o entendeu bem).
+A cor de emiss√£o √© uma propriedade do material (_emission color_), j√° visto em tutoriais anteriores sobre materiais (leia ele antes se voc√™ ainda n√£o entendeu bem).
 
-h2. NÛs das l‚mpadas
+h2. N√≥s das l√¢mpadas
 
-Como falamos antes, h· trÍs tipos de nÛs de l‚mpadas: Direcional, ponto e ·rea. Cada uma serve para algo diferente que ser· detalhada abaixo, mas primeiro vamos ver os parametros mais comuns para as l‚mpadas
+Como falamos antes, h√° tr√™s tipos de n√≥s de l√¢mpadas: Direcional, ponto e √°rea. Cada uma serve para algo diferente que ser√° detalhada abaixo, mas primeiro vamos ver os parametros mais comuns para as l√¢mpadas
 
 p=. !http://www.godotengine.org/attachments/199/download!
 
-Cada coisa tem uma funÁ„o especifica
+Cada coisa tem uma fun√ß√£o especifica
 
-**Enable*: As l‚mpadas podem ser desabilitadas a qualquer momento.
-**Bake Mode*: Quando vocÍ usa luzes prÈ-calculadas, vocÍ pode configurar essa l‚mpada a partir dessa propriedade. As l‚mpadas podem ser calculadas mesmo que estejam desabilitadas na opÁ„o _Enable_, isso permite que vocÍ configure l‚mpadas que sÛ aparecer„o no bake e outras que n„o aparecer„o no bake.
-**Energy*: Esse valor È o multiplicador da intensidade da luz, isso È especialmente ˙til para l‚mpadas ·rea, ponto e cenas HDR, por que isso pode criar lugares muito brilhantes perto dos emissores de luz
-**Diffuse and Specular*: Esses valores s„o multiplicados pelas cores difusas do material, ent„o um valor branco n„o significa que a luz ser· branca, significa que a cor original do objeto vai permanecer.
-**Operator*: Isso permite que algumas l‚mpadas tenham valor negativo, para escurecer, ao invÈs de clarear.
-**Projector*: L‚mpadas podem projetar uma textura como cor difusa (Por enquanto È suportado apenas nas l‚mpadas do tipo ·rea).
+**Enable*: As l√¢mpadas podem ser desabilitadas a qualquer momento.
+**Bake Mode*: Quando voc√™ usa luzes pr√©-calculadas, voc√™ pode configurar essa l√¢mpada a partir dessa propriedade. As l√¢mpadas podem ser calculadas mesmo que estejam desabilitadas na op√ß√£o _Enable_, isso permite que voc√™ configure l√¢mpadas que s√≥ aparecer√£o no bake e outras que n√£o aparecer√£o no bake.
+**Energy*: Esse valor √© o multiplicador da intensidade da luz, isso √© especialmente √∫til para l√¢mpadas √°rea, ponto e cenas HDR, por que isso pode criar lugares muito brilhantes perto dos emissores de luz
+**Diffuse and Specular*: Esses valores s√£o multiplicados pelas cores difusas do material, ent√£o um valor branco n√£o significa que a luz ser√° branca, significa que a cor original do objeto vai permanecer.
+**Operator*: Isso permite que algumas l√¢mpadas tenham valor negativo, para escurecer, ao inv√©s de clarear.
+**Projector*: L√¢mpadas podem projetar uma textura como cor difusa (Por enquanto √© suportado apenas nas l√¢mpadas do tipo √°rea).
 
 h3. Luz Direcional (Directional Light)
 
-Essa È a luz mais comum para representar o sol. Essa tambÈm È a forma mais barata para o computador processar e deve ser usada sempre que possÌvel (Contudo, essa n„o È a sombra mais barata para o computador, falaremos disso em outro tutorial). As luzes direcionais s„o representadas por uma grande seta, que representa a direÁ„o da luz, entretanto a posiÁ„o da l‚mpada n„o afeta a luz de nenhuma forma, ela pode ser colocada em qualquer lugar.
+Essa √© a luz mais comum para representar o sol. Essa tamb√©m √© a forma mais barata para o computador processar e deve ser usada sempre que poss√≠vel (Contudo, essa n√£o √© a sombra mais barata para o computador, falaremos disso em outro tutorial). As luzes direcionais s√£o representadas por uma grande seta, que representa a dire√ß√£o da luz, entretanto a posi√ß√£o da l√¢mpada n√£o afeta a luz de nenhuma forma, ela pode ser colocada em qualquer lugar.
 
 p=. !http://www.godotengine.org/attachments/197/download!
 
-Basicamente as faces viradas para a luz s„o claras, as que n„o s„o viradas, s„o escuras. Cada luz tem seus parametros especificos, mas as luzes direcionais s„o lindas e simples em sua forma natural.
+Basicamente as faces viradas para a luz s√£o claras, as que n√£o s√£o viradas, s√£o escuras. Cada luz tem seus parametros especificos, mas as luzes direcionais s√£o lindas e simples em sua forma natural.
 
 h3. Ponto de Luz (Omni Light)
 
-O ponto de luz espalha luz a uma certa dist‚ncia, um valor dado pelo _radius_ controlado pelo usu·rio. A atenuaÁ„o diminui a intensidade da insidÍncia da luz atÈ alcanÁar o valor 0.0 na linha divisÛria. Essa fonte de luz representa l‚mpadas ou qualquer tipo de fonte de luz que venha de um ponto.
+O ponto de luz espalha luz a uma certa dist√¢ncia, um valor dado pelo _radius_ controlado pelo usu√°rio. A atenua√ß√£o diminui a intensidade da insid√™ncia da luz at√© alcan√ßar o valor 0.0 na linha divis√≥ria. Essa fonte de luz representa l√¢mpadas ou qualquer tipo de fonte de luz que venha de um ponto.
 
 p=. !http://www.godotengine.org/attachments/198/download!
 
-No mundo real a atenuaÁ„o desse tipo de luz È expresso pelo quadrado inverso, uma funÁ„o que nunca chega ao zero e possui valores infinitos prÛximos a zero.
+No mundo real a atenua√ß√£o desse tipo de luz √© expresso pelo quadrado inverso, uma fun√ß√£o que nunca chega ao zero e possui valores infinitos pr√≥ximos a zero.
 
-Isso faz esse tipo de luz inconveniente para os artistas, mas a Godot simula eles por um valor exponÍncial controlado pelo artista.
+Isso faz esse tipo de luz inconveniente para os artistas, mas a Godot simula eles por um valor expon√™ncial controlado pelo artista.
 
 p=. !http://www.godotengine.org/attachments/196/download!
 
-h3. Luz de ·rea (Spot Light)
+h3. Luz de √°rea (Spot Light)
 
-A luz de ·rea È parecida com a luz pontual, exceto porque ela opera em um ‚nulo limitado (ou _cutoff_). Ela È muito ˙til para simular lanternas, luz do carro, etc. Esse tipo de luz È atenuada para a direÁ„o desse ponto vermelho na imagem.
+A luz de √°rea √© parecida com a luz pontual, exceto porque ela opera em um √¢nulo limitado (ou _cutoff_). Ela √© muito √∫til para simular lanternas, luz do carro, etc. Esse tipo de luz √© atenuada para a dire√ß√£o desse ponto vermelho na imagem.
 
 p=. !http://www.godotengine.org/attachments/200/download!
 
 h2. Luz Ambiente (Ambient Light)
 
-A luz ambiente pode ser encontrado entre as propriedades do _WorldEnvironment_ (Se lembre que pode haver apenas um _WorldEnvironment_ por cena). A luz ambiente consiste em uma luz uniforme. Essa luz È aplicada da mesma forma para cada pixels exibido da cena, com exceÁ„o de objetos que usam luzes pre-computadas (_Baked Light_).
+A luz ambiente pode ser encontrado entre as propriedades do _WorldEnvironment_ (Se lembre que pode haver apenas um _WorldEnvironment_ por cena). A luz ambiente consiste em uma luz uniforme. Essa luz √© aplicada da mesma forma para cada pixels exibido da cena, com exce√ß√£o de objetos que usam luzes pre-computadas (_Baked Light_).
 
-H2. Luz prÈ-computada (Baked Light)
+H2. Luz pr√©-computada (Baked Light)
 
-Luzes desse tipo servem muito bem como luzes do ambiente. Ela serve tambÈm para outros propositos, como computar luzes de emissores que n„o estar„o no jogo final e para calcular a luz indireta refletida pelo cen·rio, para dar mais realismo a cena (Veja o tutorial de _Baked Light_)
+Luzes desse tipo servem muito bem como luzes do ambiente. Ela serve tamb√©m para outros propositos, como computar luzes de emissores que n√£o estar√£o no jogo final e para calcular a luz indireta refletida pelo cen√°rio, para dar mais realismo a cena (Veja o tutorial de _Baked Light_)
 
 
 Juan Linietsky, Ariel Manzur, Distributed under the terms of the CC By license.
 
-Traduzido por CairÈ
+Traduzido por Cair√©
 
-TraduÁ„o revisada por
+Tradu√ß√£o revisada por
 
 Texto revisado por
 
