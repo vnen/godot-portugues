@@ -1,0 +1,7 @@
+h1(#rendertargettexture). RenderTargetTexture
+
+h4(#inherits-texture). *Inherits:* "Texture":class_texture
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description

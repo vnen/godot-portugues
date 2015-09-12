@@ -1,0 +1,66 @@
+h1(#tween). Tween
+
+h4(#inherits-node). *Inherits:* "Node":class_node
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "bool":class_bool *"is&#95;active":#is_active* *(* *)* const
+* void *"set&#95;active":#set_active* *(* "bool":class_bool active *)*
+* "bool":class_bool *"is&#95;repeat":#is_repeat* *(* *)* const
+* void *"set&#95;repeat":#set_repeat* *(* "bool":class_bool repeat *)*
+* void *"set&#95;speed":#set_speed* *(* "float":class_float speed *)*
+* "float":class_float *"get&#95;speed":#get_speed* *(* *)* const
+* void *"set&#95;tween&#95;process&#95;mode":#set_tween_process_mode* *(* "int":class_int mode *)*
+* "int":class_int *"get&#95;tween&#95;process&#95;mode":#get_tween_process_mode* *(* *)* const
+* "bool":class_bool *"start":#start* *(* *)*
+* "bool":class_bool *"reset":#reset* *(* "Object":class_object object, "String":class_string key *)*
+* "bool":class_bool *"reset&#95;all":#reset_all* *(* *)*
+* "bool":class_bool *"stop":#stop* *(* "Object":class_object object, "String":class_string key *)*
+* "bool":class_bool *"stop&#95;all":#stop_all* *(* *)*
+* "bool":class_bool *"resume":#resume* *(* "Object":class_object object, "String":class_string key *)*
+* "bool":class_bool *"resume&#95;all":#resume_all* *(* *)*
+* "bool":class_bool *"remove":#remove* *(* "Object":class_object object, "String":class_string key *)*
+* "bool":class_bool *"remove&#95;all":#remove_all* *(* *)*
+* "bool":class_bool *"seek":#seek* *(* "float":class_float time *)*
+* "float":class_float *"tell":#tell* *(* *)* const
+* "float":class_float *"get&#95;runtime":#get_runtime* *(* *)* const
+* "bool":class_bool *"interpolate&#95;property":#interpolate_property* *(* "Object":class_object object, "String":class_string property, var initial&#95;val, var final&#95;val, "float":class_float times&#95;in&#95;sec, "int":class_int trans&#95;type, "int":class_int ease&#95;type, "float":class_float delay=0 *)*
+* "bool":class_bool *"interpolate&#95;method":#interpolate_method* *(* "Object":class_object object, "String":class_string method, var initial&#95;val, var final&#95;val, "float":class_float times&#95;in&#95;sec, "int":class_int trans&#95;type, "int":class_int ease&#95;type, "float":class_float delay=0 *)*
+* "bool":class_bool *"interpolate&#95;callback":#interpolate_callback* *(* "Object":class_object object, "float":class_float times&#95;in&#95;sec, "String":class_string callback, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL, var arg5=NULL *)*
+* "bool":class_bool *"interpolate&#95;deferred&#95;callback":#interpolate_deferred_callback* *(* "Object":class_object object, "float":class_float times&#95;in&#95;sec, "String":class_string callback, var arg1=NULL, var arg2=NULL, var arg3=NULL, var arg4=NULL, var arg5=NULL *)*
+* "bool":class_bool *"follow&#95;property":#follow_property* *(* "Object":class_object object, "String":class_string property, var initial&#95;val, "Object":class_object target, "String":class_string target&#95;property, "float":class_float times&#95;in&#95;sec, "int":class_int trans&#95;type, "int":class_int ease&#95;type, "float":class_float delay=0 *)*
+* "bool":class_bool *"follow&#95;method":#follow_method* *(* "Object":class_object object, "String":class_string method, var initial&#95;val, "Object":class_object target, "String":class_string target&#95;method, "float":class_float times&#95;in&#95;sec, "int":class_int trans&#95;type, "int":class_int ease&#95;type, "float":class_float delay=0 *)*
+* "bool":class_bool *"targeting&#95;property":#targeting_property* *(* "Object":class_object object, "String":class_string property, "Object":class_object initial, "String":class_string initial&#95;val, var final&#95;val, "float":class_float times&#95;in&#95;sec, "int":class_int trans&#95;type, "int":class_int ease&#95;type, "float":class_float delay=0 *)*
+* "bool":class_bool *"targeting&#95;method":#targeting_method* *(* "Object":class_object object, "String":class_string method, "Object":class_object initial, "String":class_string initial&#95;method, var final&#95;val, "float":class_float times&#95;in&#95;sec, "int":class_int trans&#95;type, "int":class_int ease&#95;type, "float":class_float delay=0 *)*
+
+h3(#signals). Signals
+
+* *tween&#95;complete* *(* "Object":class_object object, "String":class_string key *)*
+* *tween&#95;step* *(* "Object":class_object object, "String":class_string key, "float":class_float elapsed, "Object":class_object value *)*
+* *tween&#95;start* *(* "Object":class_object object, "String":class_string key *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *TWEEN&#95;PROCESS&#95;FIXED* = *0*
+* *TWEEN&#95;PROCESS&#95;IDLE* = *1*
+* *TRANS&#95;LINEAR* = *0*
+* *TRANS&#95;SINE* = *1*
+* *TRANS&#95;QUINT* = *2*
+* *TRANS&#95;QUART* = *3*
+* *TRANS&#95;QUAD* = *4*
+* *TRANS&#95;EXPO* = *5*
+* *TRANS&#95;ELASTIC* = *6*
+* *TRANS&#95;CUBIC* = *7*
+* *TRANS&#95;CIRC* = *8*
+* *TRANS&#95;BOUNCE* = *9*
+* *TRANS&#95;BACK* = *10*
+* *EASE&#95;IN* = *0*
+* *EASE&#95;OUT* = *1*
+* *EASE&#95;IN&#95;OUT* = *2*
+* *EASE&#95;OUT&#95;IN* = *3*
+
+h3(#member-function-description). Member Function Description

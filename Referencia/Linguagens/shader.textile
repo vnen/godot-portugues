@@ -1,0 +1,315 @@
+h1(#shading-language). Shading Language
+
+h3(#introduction). Introduction
+
+Godot uses a simplified shader language (almost a subset of GLSL). Shaders can be used for:
+
+* Materials
+* Post&#45;Process
+* 2D
+
+and are divided in _Vertex_ and _Fragment_ sections.
+
+h3(#language). Language
+
+h4(#typing). Typing
+
+The language is statically type and only supports a few operations. Arrays, classes, structures, etc are not supported. Several built&#45;in datatypes are provided:
+
+h4(#data-types). Data Types
+
+|_. DataType|_. Description|
+|void|Void|
+|bool|boolean (true or false)|
+|float|floating point|
+|vec2|2&#45;component vector, float subindices (x,y or r,g )|
+|vec3|3&#45;component vector, float subindices (x,y,z or r,g,b )|
+|vec4,color|4&#45;component vector, float subindices (x,y,z,w or r,g,b,a )|
+|mat3|3x3 matrix, vec3 subindices (x,y,z)|
+|mat4|4x4 matrix, vec4 subindices (x,y,z,w)|
+|texture|texture sampler, can only be used as uniform|
+|cubemap|cubemap sampler, can only be used as uniform|
+
+h4(#syntax). Syntax
+
+The syntax is similar to C, with statements ending in ; , and comments as // and /&#42; &#42;/. Example:
+
+bc(c). float a = 3;
+vec3 b;
+b.x = a;
+
+
+h4(#swizzling). Swizzling
+
+It is possible to use swizzling to reasigning subindices or groups of subindices, in order:
+
+bc(c). vec3 a = vec3(1,2,3);
+vec3 b = a.zyx; // b will contain vec3(3,2,1)
+vec2 c = a.xy; // c will contain vec2(1,2)
+vec4 d = a.xyzz; // d will contain vec4(1,2,3,3)
+
+
+h4(#constructors). Constructors
+
+Constructors take the regular amount of elements, but can also accept less if the element has more subindices, for example:
+
+bc(c). vec3 a = vec3( 1, vec2(2,3) );
+vec3 b = vec3( a );
+vec3 c = vec3( vec2(2,3), 1 );
+vec4 d = vec4( a, 5 );
+mat3 m = mat3( a,b,c );
+
+
+h3(#conditionals). Conditionals
+
+For now, only the &quot;if&quot; conditional is supported. Example:
+
+bc(c). if (a < b) {
+   c = b;
+}
+
+
+h3(#uniforms). Uniforms
+
+A variable can be declared as uniform. In this case, it's value will come from outside the shader (it will be the responsibility of the material or whatever using the shader to provide it).
+
+<pre class="c">
+uniform vec3 direction;
+uniform color tint;
+
+vec3 result = tint.rgb * direction;
+</pre>
+
+h3(#functions). Functions
+
+Simple support for functions is provided. Functions can't access uniforms or other shader variables.
+
+<pre class="c">
+
+vec3 addtwo( vec3 a, vec3 b) {
+
+    return a+b;
+}
+
+vec3 c = addtwo(vec3(1,1,1)+vec3(2,2,2));
+
+</pre>
+
+h3(#built-in-functions). Built&#45;In Functions
+
+Several Built&#45;in functions are provided for convenience, listed as follows:
+
+|_. Function|_. Description|
+|float *sin*( float )|Sine|
+|float *cos*( float )|Cosine|
+|float *tan*( float )|Tangent|
+|float *asin*( float )|arc&#45;Sine|
+|float *acos*( float )|arc&#45;Cosine|
+|float *atan*( float )|arc&#45;Tangent|
+|vec&#95;type *pow*( vec&#95;type, float )|Power|
+|vec&#95;type *pow*( vec&#95;type, vec&#95;type )|Power (Vec. Exponent)|
+|vec&#95;type *exp*( vec&#95;type )|Base&#45;e Exponential|
+|vec&#95;type *log*( vec&#95;type )|Natural Logarithm|
+|vec&#95;type *sqrt*( vec&#95;type )|Square Root|
+|vec&#95;type *abs*( vec&#95;type )|Absolute|
+|vec&#95;type *sign*( vec&#95;type )|Sign|
+|vec&#95;type *floor*( vec&#95;type )|Floor|
+|vec&#95;type *trunc*( vec&#95;type )|Trunc|
+|vec&#95;type *ceil*( vec&#95;type )|Ceiling|
+|vec&#95;type *fract*( vec&#95;type )|Fractional|
+|vec&#95;type *mod*( vec&#95;type,vec&#95;type )|Remainder|
+|vec&#95;type *min*( vec&#95;type,vec&#95;type )|Minimum|
+|vec&#95;type *min*( vec&#95;type,vec&#95;type )|Maximum|
+|vec&#95;type *clamp*( vec&#95;type value,vec&#95;type min, vec&#95;type max )|Clamp to Min&#45;Max|
+|vec&#95;type *mix*( vec&#95;type a,vec&#95;type b, float c )|Linear Interpolate|
+|vec&#95;type *mix*( vec&#95;type a,vec&#95;type b, vec&#95;type c )|Linear Interpolate (Vector Coef.)|
+|vec&#95;type *step*( vec&#95;type a,vec&#95;type b)|@a[i] < b[i] ? 0.0 : 1.0@|
+|vec&#95;type *smoothstep*( vec&#95;type a,vec&#95;type b,vec&#95;type c)||
+|float *length*( vec&#95;type )|Vector Length|
+|float *distance*( vec&#95;type, vec&#95;type )|Distance between vector.|
+|float *dot*( vec&#95;type, vec&#95;type )|Dot Product|
+|vec3 *dot*( vec3, vec3 )|Cross Product|
+|vec&#95;type *normalize*( vec&#95;type )|Normalize to unit length|
+|vec3 *reflect*( vec3, vec3 )|Reflect|
+|color *tex*( texture, vec2 )|Read from a texture in noormalized coords|
+|color *texcube*( texture, vec3 )|Read from a cubemap|
+|color *texscreen*( vec2 )|Read from screen (generates a copy)|
+
+h3(#built-in-variables). Built&#45;In Variables
+
+Depending on the shader type, several built&#45;in variables are available, listed as follows:
+
+h5(#material---vertexshader). Material &#45; VertexShader
+
+|_. Variable|_. Description|
+|const vec3 *SRC&#95;VERTEX*|Model&#45;Space Vertex|
+|const vec3 *SRC&#95;NORMAL*|Model&#45;Space Normal|
+|const vec3 *SRC&#95;TANGENT*|Model&#45;Space Tangent|
+|const float *SRC&#95;BINORMALF*|Direction to Compute Binormal|
+|vec3 *VERTEX*|View&#45;Space Vertex|
+|vec3 *NORMAL*|View&#45;Space Normal|
+|vec3 *TANGENT*|View&#45;Space Tangent|
+|vec3 *BINORMAL*|View&#45;Space Binormal|
+|vec2 *UV*|UV|
+|vec2 *UV2*|UV2|
+|color *COLOR*|Vertex Color|
+|out vec4 *VAR1*|Varying 1 Output|
+|out vec4 *VAR2*|Varying 2 Output|
+|out float *SPEC&#95;EXP*|Specular Exponent (for Vertex Lighting)|
+|out float *POINT&#95;SIZE*|Point Size (for points)|
+|const mat4 *WORLD&#95;MATRIX*|Object World Matrix|
+|const mat4 *INV&#95;CAMERA&#95;MATRIX*|Inverse Camera Matrix|
+|const mat4 *PROJECTION&#95;MATRIX*|Projection Matrix|
+|const mat4 *MODELVIEW&#95;MATRIX*|(InvCamera &#42; Projection)|
+|const float *INSTANCE&#95;ID*|Instance ID (for multimesh)|
+|const float *TIME*|Time (in seconds)|
+
+h5(#material---fragmentshader). Material &#45; FragmentShader
+
+|_. Variable|_. Description|
+|const vec3 *VERTEX*|View&#45;Space vertex|
+|const vec4 *POSITION*|View&#45;Space Position|
+|const vec3 *NORMAL*|View&#45;Space Normal|
+|const vec3 *TANGENT*|View&#45;Space Tangent|
+|const vec3 *BINORMAL*|View&#45;Space Binormal|
+|const vec3 *NORMALMAP*|Alternative to NORMAL, use for normal texture output.|
+|const vec3 *NORMALMAP&#95;DEPTH*|Complementary to the above, allows changing depth of normalmap.|
+|const vec2 *UV*|UV|
+|const vec2 *UV2*|UV2|
+|const color *COLOR*|Vertex Color|
+|const vec4 *VAR1*|Varying 1|
+|const vec4 *VAR2*|Varying 2|
+|const vec2 *SCREEN&#95;UV*|Screen Texture Coordinate (for using with texscreen)|
+|const float *TIME*|Time (in seconds)|
+|const vec2 *POINT&#95;COORD*|UV for point, when drawing point sprites.|
+|out vec3 *DIFFUSE*|Diffuse Color|
+|out vec4 *DIFFUSE&#95;ALPHA*|Diffuse Color with Alpha (using this sends geometry to alpha pipeline)|
+|out vec3 *SPECULAR*|Specular Color|
+|out vec3 *EMISSION*|Emission Color|
+|out float *SPEC&#95;EXP*|Specular Exponent (Fragment Version)|
+|out float *GLOW*|Glow|
+|out mat4 *INV&#95;CAMERA&#95;MATRIX*|Inverse camera matrix, can be used to obtain world coords (see example below).|
+
+h5(#material---lightshader). Material &#45; LightShader
+
+|_. Variable|_. Description|
+|const vec3 *NORMAL*|View&#45;Space normal|
+|const vec3 *LIGHT&#95;DIR*|View&#45;Space Light Direction|
+|const vec3 *EYE&#95;VEC*|View&#45;Space Eye&#45;Point Vector|
+|const vec3 *DIFFUSE*|Material Diffuse Color|
+|const vec3 *LIGHT&#95;DIFFUSE*|Light Diffuse Color|
+|const vec3 *SPECULAR*|Material Specular Color|
+|const vec3 *LIGHT&#95;SPECULAR*|Light Specular Color|
+|const float *SPECULAR&#95;EXP*|Specular Exponent|
+|const vec1 *SHADE&#95;PARAM*|Generic Shade Parameter|
+|const vec2 *POINT&#95;COORD*|Current UV for Point Sprite|
+|out vec2 *LIGHT*|Resulting Light|
+|const float *TIME*|Time (in seconds)|
+
+h5(#canvasitem-2d---vertexshader). CanvasItem (2D) &#45; VertexShader
+
+|_. Variable|_. Description|
+|const vec2 *SRC&#95;VERTEX*|CanvasItem space vertex.|
+|vec2 *UV*|UV|
+|out vec2 *VERTEX*|Output LocalSpace vertex.|
+|out vec2 *WORLD&#95;VERTEX*|Output WorldSpace vertex. (use this or the one above)|
+|color *COLOR*|Vertex Color|
+|out vec4 *VAR1*|Varying 1 Output|
+|out vec4 *VAR2*|Varying 2 Output|
+|out float *POINT&#95;SIZE*|Point Size (for points)|
+|const mat4 *WORLD&#95;MATRIX*|Object World Matrix|
+|const mat4 *EXTRA&#95;MATRIX*|Extra (user supplied) matrix via "CanvasItem.draw&#95;set&#95;transform()":class_canvasitem#draw_set_transform. Identity by default.|
+|const mat4 *PROJECTION&#95;MATRIX*|Projection Matrix (model coords to screen).|
+|const float *TIME*|Time (in seconds)|
+
+h5(#canvasitem-2d---fragmentshader). CanvasItem (2D) &#45; FragmentShader
+
+|_. Variable|_. Description|
+|const vec4 *SRC&#95;COLOR*|Vertex color|
+|const vec4 *POSITION*|Screen Position|
+|vec2 *UV*|UV|
+|out color *COLOR*|Output Color|
+|out vec3 *NORMAL*|Optional Normal (used for 2D Lighting)|
+|out vec3 *NORMALMAP*|Optional Normal in standard normalmap format (flipped y and Z from 0 to 1)|
+|out float *NORMALMAP&#95;DEPTH*|Depth option for above normalmap output, default value is 1.0|
+|const texture *TEXTURE*|Current texture in use for CanvasItem|
+|const vec2 *TEXTURE&#95;PIXEL&#95;SIZE*|Pixel size for current 2D texture|
+|in vec4 *VAR1*|Varying 1 Output|
+|in vec4 *VAR2*|Varying 2 Output|
+|const vec2 *SCREEN&#95;UV*|Screen Texture Coordinate (for using with texscreen)|
+|const vec2 *POINT&#95;COORD*|Current UV for Point Sprite|
+|const float *TIME*|Time (in seconds)|
+
+h5(#canvasitem-2d---lightshader). CanvasItem (2D) &#45; LightShader
+
+|_. Variable|_. Description|
+|const vec4 *POSITION*|Screen Position|
+|in vec3 *NORMAL*|Input Normal|
+|in vec2 *UV*|UV|
+|in color *COLOR*|Input Color|
+|const texture *TEXTURE*|Current texture in use for CanvasItem|
+|const vec2 *TEXTURE&#95;PIXEL&#95;SIZE*|Pixel size for current 2D texture|
+|in vec4 *VAR1*|Varying 1 Output|
+|in vec4 *VAR2*|Varying 2 Output|
+|const vec2 *SCREEN&#95;UV*|Screen Texture Coordinate (for using with texscreen)|
+|const vec2 *POINT&#95;COORD*|Current UV for Point Sprite|
+|const float *TIME*|Time (in seconds)|
+|vec2 *LIGHT&#95;VEC*|Vector from light to fragment, can be modified to alter shadow computation.|
+|const float *LIGHT&#95;HEIGHT*|Height of Light|
+|const color *LIGHT&#95;COLOR*|Color of Light|
+|out vec4 *LIGHT*|Light Ouput (shader is ignored if this is not used)|
+
+h3(#examples). Examples
+
+Material that reads a texture, a color and multiples them, fragment program:
+
+<pre class="c">
+
+uniform color modulate;
+uniform texture source;
+
+DIFFUSE = modulate.rgb * tex(source,UV).rgb;
+
+</pre>
+
+Material that glows from red to white:
+
+<pre class="c">
+
+DIFFUSE = vec3(1,0,0) + vec(1,1,1)*mod(TIME,1.0);
+
+</pre>
+
+Standard Blinn Lighting Shader
+
+bc(c). float NdotL = max(0.0,dot( NORMAL, LIGHT_DIR ));
+vec3 half_vec = normalize(LIGHT_DIR + EYE_VEC);
+float eye_light = max(dot(NORMAL, half_vec),0.0);
+LIGHT = LIGHT_DIFFUSE * DIFFUSE * NdotL;
+if (NdotL > 0.0) {
+    LIGHT+=LIGHT_SPECULAR * SPECULAR * pow( eye_light, SPECULAR_EXP );
+};
+
+
+
+Obtaining world&#45;space normal and position in material fragment program:
+
+<pre class="glsl">
+//use reverse multiply because INV_CAMERA_MATRIX is world2cam
+
+vec3 world_normal = NORMAL * mat3(INV_CAMERA_MATRIX);
+vec3 world_pos = (VERTEX-INV_CAMERA_MATRIX.w.xyz) * mat3(INV_CAMERA_MATRIX);
+</pre>
+
+h3(#notes). Notes
+
+* *Do not* use DIFFUSE&#95;ALPHA unless you really intend to use transparency. Transparent materials must be sorted by depth and slow down the rendering pipeline. For opaque materials, just use DIFFUSE.
+* *Do not* use DISCARD unless you really need it. Discard makes rendering slower, specially on mobile devices.
+* TIME may reset after a while (may last an hour or so), it's meant for effects that vary over time.
+* In general, every built&#45;in variable not used results in less shader code generated, so writing a single giant shader with a lot of code and optional scenarios is often not a good idea.
+
+&#45;&#45;&#45; //[[reduzio&#64;gmail.com&#124;Juan Linietsky]] 2013/11/10 18:10//
+
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+</ol>

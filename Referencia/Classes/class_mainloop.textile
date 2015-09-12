@@ -1,0 +1,27 @@
+h1(#mainloop). MainLoop
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Main loop is the abstract main loop base class.
+
+h3(#member-functions). Member Functions
+
+* void *"input&#95;event":#input_event* *(* "InputEvent":class_inputevent arg0 *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *NOTIFICATION&#95;WM&#95;FOCUS&#95;IN* = *5*
+* *NOTIFICATION&#95;WM&#95;FOCUS&#95;OUT* = *6*
+* *NOTIFICATION&#95;WM&#95;QUIT&#95;REQUEST* = *7*
+* *NOTIFICATION&#95;WM&#95;UNFOCUS&#95;REQUEST* = *8*
+* *NOTIFICATION&#95;OS&#95;MEMORY&#95;WARNING* = *9*
+
+h3(#description). Description
+
+Main loop is the abstract main loop base class. All other main loop classes are derived from it. Upon application start, a "MainLoop":class_mainloop has to be provided to OS, else the application will exit. This happens automatically (and a [SceneMainLoop] is created), unless a main "Script":class_script is supplied, which may or not create and return a "MainLoop":class_mainloop.
+
+h3(#member-function-description). Member Function Description

@@ -1,0 +1,256 @@
+h1(#canvasitem). CanvasItem
+
+h4(#inherits-node). *Inherits:* "Node":class_node
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Base class of anything 2D.
+
+h3(#member-functions). Member Functions
+
+* void *"&#95;draw":#_draw* *(* *)* virtual
+* void *"edit&#95;set&#95;state":#edit_set_state* *(* var state *)*
+* void *"edit&#95;get":#edit_get* *(* *)* const
+* void *"edit&#95;set&#95;rect":#edit_set_rect* *(* "Rect2":class_rect2 rect *)*
+* void *"edit&#95;rotate":#edit_rotate* *(* "float":class_float degrees *)*
+* "Rect2":class_rect2 *"get&#95;item&#95;rect":#get_item_rect* *(* *)* const
+* "RID":class_rid *"get&#95;canvas&#95;item":#get_canvas_item* *(* *)* const
+* "bool":class_bool *"is&#95;visible":#is_visible* *(* *)* const
+* "bool":class_bool *"is&#95;hidden":#is_hidden* *(* *)* const
+* void *"show":#show* *(* *)*
+* void *"hide":#hide* *(* *)*
+* void *"update":#update* *(* *)*
+* void *"set&#95;as&#95;toplevel":#set_as_toplevel* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;set&#95;as&#95;toplevel":#is_set_as_toplevel* *(* *)* const
+* void *"set&#95;blend&#95;mode":#set_blend_mode* *(* "int":class_int blend&#95;mode *)*
+* "int":class_int *"get&#95;blend&#95;mode":#get_blend_mode* *(* *)* const
+* void *"set&#95;light&#95;mask":#set_light_mask* *(* "int":class_int light&#95;mask *)*
+* "int":class_int *"get&#95;light&#95;mask":#get_light_mask* *(* *)* const
+* void *"set&#95;opacity":#set_opacity* *(* "float":class_float opacity *)*
+* "float":class_float *"get&#95;opacity":#get_opacity* *(* *)* const
+* void *"set&#95;self&#95;opacity":#set_self_opacity* *(* "float":class_float self&#95;opacity *)*
+* "float":class_float *"get&#95;self&#95;opacity":#get_self_opacity* *(* *)* const
+* void *"set&#95;draw&#95;behind&#95;parent":#set_draw_behind_parent* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;draw&#95;behind&#95;parent&#95;enabled":#is_draw_behind_parent_enabled* *(* *)* const
+* void *"draw&#95;line":#draw_line* *(* "Vector2":class_vector2 from, "Vector2":class_vector2 to, "Color":class_color color, "float":class_float width=1 *)*
+* void *"draw&#95;rect":#draw_rect* *(* "Rect2":class_rect2 rect, "Color":class_color color *)*
+* void *"draw&#95;circle":#draw_circle* *(* "Vector2":class_vector2 pos, "float":class_float radius, "Color":class_color color *)*
+* void *"draw&#95;texture":#draw_texture* *(* "Texture":class_texture texture, "Vector2":class_vector2 pos *)*
+* void *"draw&#95;texture&#95;rect":#draw_texture_rect* *(* "Texture":class_texture texture, "Rect2":class_rect2 rect, "bool":class_bool tile, "Color":class_color modulate=false, "bool":class_bool arg4=Color(1,1,1,1) *)*
+* void *"draw&#95;texture&#95;rect&#95;region":#draw_texture_rect_region* *(* "Texture":class_texture texture, "Rect2":class_rect2 rect, "Rect2":class_rect2 src&#95;rect, "Color":class_color modulate, "bool":class_bool arg4=Color(1,1,1,1) *)*
+* void *"draw&#95;style&#95;box":#draw_style_box* *(* "StyleBox":class_stylebox style&#95;box, "Rect2":class_rect2 rect *)*
+* void *"draw&#95;primitive":#draw_primitive* *(* "Vector2Array":class_vector2array points, "ColorArray":class_colorarray colors, "Vector2Array":class_vector2array uvs=Array(), "Texture":class_texture texture=Object(), "float":class_float width=1 *)*
+* void *"draw&#95;polygon":#draw_polygon* *(* "Vector2Array":class_vector2array points, "ColorArray":class_colorarray colors, "Vector2Array":class_vector2array uvs=Array(), "Texture":class_texture texture=Object() *)*
+* void *"draw&#95;colored&#95;polygon":#draw_colored_polygon* *(* "Vector2Array":class_vector2array points, "Color":class_color color, "Vector2Array":class_vector2array uvs=Array(), "Texture":class_texture texture=Object() *)*
+* void *"draw&#95;string":#draw_string* *(* "Font":class_font font, "Vector2":class_vector2 pos, "String":class_string text, "Color":class_color modulate=Color(1,1,1,1), "int":class_int clip&#95;w=&#45;1 *)*
+* "float":class_float *"draw&#95;char":#draw_char* *(* "Font":class_font font, "Vector2":class_vector2 pos, "String":class_string char, "String":class_string next, "Color":class_color modulate=Color(1,1,1,1) *)*
+* void *"draw&#95;set&#95;transform":#draw_set_transform* *(* "Vector2":class_vector2 pos, "float":class_float rot, "Vector2":class_vector2 scale *)*
+* "Matrix32":class_matrix32 *"get&#95;transform":#get_transform* *(* *)* const
+* "Matrix32":class_matrix32 *"get&#95;global&#95;transform":#get_global_transform* *(* *)* const
+* "Matrix32":class_matrix32 *"get&#95;global&#95;transform&#95;with&#95;canvas":#get_global_transform_with_canvas* *(* *)* const
+* "Matrix32":class_matrix32 *"get&#95;viewport&#95;transform":#get_viewport_transform* *(* *)* const
+* "Rect2":class_rect2 *"get&#95;viewport&#95;rect":#get_viewport_rect* *(* *)* const
+* "Matrix32":class_matrix32 *"get&#95;canvas&#95;transform":#get_canvas_transform* *(* *)* const
+* "Vector2":class_vector2 *"get&#95;local&#95;mouse&#95;pos":#get_local_mouse_pos* *(* *)* const
+* "Vector2":class_vector2 *"get&#95;global&#95;mouse&#95;pos":#get_global_mouse_pos* *(* *)* const
+* "RID":class_rid *"get&#95;canvas":#get_canvas* *(* *)* const
+* "Object":class_object *"get&#95;world&#95;2d":#get_world_2d* *(* *)* const
+* void *"set&#95;material":#set_material* *(* "CanvasItemMaterial":class_canvasitemmaterial material *)*
+* "CanvasItemMaterial":class_canvasitemmaterial *"get&#95;material":#get_material* *(* *)* const
+* void *"set&#95;use&#95;parent&#95;material":#set_use_parent_material* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"get&#95;use&#95;parent&#95;material":#get_use_parent_material* *(* *)* const
+* "InputEvent":class_inputevent *"make&#95;input&#95;local":#make_input_local* *(* "InputEvent":class_inputevent event *)* const
+
+h3(#signals). Signals
+
+* *item&#95;rect&#95;changed* *(* *)*
+* *draw* *(* *)*
+* *visibility&#95;changed* *(* *)*
+* *hide* *(* *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *BLEND&#95;MODE&#95;MIX* = *0* &#45; Mix blending mode.
+* *BLEND&#95;MODE&#95;ADD* = *1* &#45; Additive blending mode.
+* *BLEND&#95;MODE&#95;SUB* = *2* &#45; Substractive blending mode.
+* *BLEND&#95;MODE&#95;MUL* = *3* &#45; Multiplicative blending mode.
+* *BLEND&#95;MODE&#95;PREMULT&#95;ALPHA* = *4*
+* *NOTIFICATION&#95;DRAW* = *30* &#45; CanvasItem is requested to draw.
+* *NOTIFICATION&#95;VISIBILITY&#95;CHANGED* = *31* &#45; Canvas item visibility has changed.
+* *NOTIFICATION&#95;ENTER&#95;CANVAS* = *32* &#45; Canvas item has entered the canvas.
+* *NOTIFICATION&#95;EXIT&#95;CANVAS* = *33* &#45; Canvas item has exited the canvas.
+* *NOTIFICATION&#95;TRANSFORM&#95;CHANGED* = *29* &#45; Canvas item transform has changed. Only received if requested.
+
+h3(#description). Description
+
+Base class of anything 2D. Canvas items are laid out in a tree and children inherit and extend the transform of their parent. CanvasItem is extended by "Control":class_control, for anything GUI related, and by "Node2D":class_node2d for anything 2D engine related. Any CanvasItem can draw. For this, the &quot;update&quot; function must be called, then NOTIFICATION&#95;DRAW will be received on idle time to request redraw. Because of this, canvas items don't need to be redraw on every frame, improving the performance significantly. Several functions for drawing on the CanvasItem are provided (see draw&#95;&#42; functions). They can only be used inside the notification, signal or &#95;draw() overrided function, though. Canvas items are draw in tree order. By default, children are on top of their parents so a root CanvasItem will be drawn behind everything (this can be changed per item though). Canvas items can also be hidden (hiding also their subtree). They provide many means for changing standard parameters such as opacity (for it and the subtree) and self opacity, blend mode. Ultimately, a transform notification can be requested, which will notify the node that its global position changed in case the parent tree changed.
+
+h3(#member-function-description). Member Function Description
+
+h4(#draw-void-_draw-virtual). <a name="_draw">&#95;draw</a> &#42; void *&#95;draw* *(* *)* virtual
+
+Called (if exists) to draw the canvas item.
+
+h4(#edit_set_state). <a name="edit_set_state">edit&#95;set&#95;state</a>
+
+* void *edit&#95;set&#95;state* *(* var state *)*
+
+Used for editing, returns an opaque value represeting the transform state.
+
+h4(#edit_rotate). <a name="edit_rotate">edit&#95;rotate</a>
+
+* void *edit&#95;rotate* *(* "float":class_float degrees *)*
+
+Used for editing, handle rotation.
+
+h4(#get_item_rect). <a name="get_item_rect">get&#95;item&#95;rect</a>
+
+* "Rect2":class_rect2 *get&#95;item&#95;rect* *(* *)* const
+
+Return a rect containing the editable contents of the item.
+
+h4(#get_canvas_item). <a name="get_canvas_item">get&#95;canvas&#95;item</a>
+
+* "RID":class_rid *get&#95;canvas&#95;item* *(* *)* const
+
+Return the canvas item RID used by "VisualServer":class_visualserver for this item.
+
+h4(#is_visible). <a name="is_visible">is&#95;visible</a>
+
+* "bool":class_bool *is&#95;visible* *(* *)* const
+
+Return true if this CanvasItem is visible. It may be invisible because itself or a parent canvas item is hidden.
+
+h4(#is_hidden). <a name="is_hidden">is&#95;hidden</a>
+
+* "bool":class_bool *is&#95;hidden* *(* *)* const
+
+Return true if this CanvasItem is hidden. Note that the CanvasItem may not be visible, but as long as it's not hidden ("hide":#hide called) the function will return false.
+
+h4(#show). <a name="show">show</a>
+
+* void *show* *(* *)*
+
+Show the CanvasItem currently hidden.
+
+h4(#hide). <a name="hide">hide</a>
+
+* void *hide* *(* *)*
+
+Hide the CanvasItem currently visible.
+
+h4(#update). <a name="update">update</a>
+
+* void *update* *(* *)*
+
+Queue the CanvasItem for update. NOTIFICATION&#95;DRAW will be called on idle time to request redraw.
+
+h4(#set_as_toplevel). <a name="set_as_toplevel">set&#95;as&#95;toplevel</a>
+
+* void *set&#95;as&#95;toplevel* *(* "bool":class_bool enable *)*
+
+Set as toplevel. This means that it will not inherit transform from parent canvas items.
+
+h4(#is_set_as_toplevel). <a name="is_set_as_toplevel">is&#95;set&#95;as&#95;toplevel</a>
+
+* "bool":class_bool *is&#95;set&#95;as&#95;toplevel* *(* *)* const
+
+Return if set as toplevel. See "set&#95;as&#95;toplevel":#set_as_toplevel/
+
+h4(#set_blend_mode). <a name="set_blend_mode">set&#95;blend&#95;mode</a>
+
+* void *set&#95;blend&#95;mode* *(* "int":class_int blend&#95;mode *)*
+
+Set the blending mode from enum BLEND&#95;MODE&#95;&#42;.
+
+h4(#get_blend_mode). <a name="get_blend_mode">get&#95;blend&#95;mode</a>
+
+* "int":class_int *get&#95;blend&#95;mode* *(* *)* const
+
+Return the current blending mode from enum BLEND&#95;MODE&#95;&#42;.
+
+h4(#set_opacity). <a name="set_opacity">set&#95;opacity</a>
+
+* void *set&#95;opacity* *(* "float":class_float opacity *)*
+
+Set canvas item opacity. This will affect the canvas item and all the children.
+
+h4(#get_opacity). <a name="get_opacity">get&#95;opacity</a>
+
+* "float":class_float *get&#95;opacity* *(* *)* const
+
+Return the canvas item opacity. This affects the canvas item and all the children.
+
+h4(#get_self_opacity). <a name="get_self_opacity">get&#95;self&#95;opacity</a>
+
+* "float":class_float *get&#95;self&#95;opacity* *(* *)* const
+
+Set canvas item self&#45;opacity. This does not affect the opacity of children items.
+
+h4(#draw_line). <a name="draw_line">draw&#95;line</a>
+
+* void *draw&#95;line* *(* "Vector2":class_vector2 from, "Vector2":class_vector2 to, "Color":class_color color, "float":class_float width=1 *)*
+
+Draw a line from a 2D point to another, with a given color and width.
+
+h4(#draw_rect). <a name="draw_rect">draw&#95;rect</a>
+
+* void *draw&#95;rect* *(* "Rect2":class_rect2 rect, "Color":class_color color *)*
+
+Draw a colored rectangle.
+
+h4(#draw_circle). <a name="draw_circle">draw&#95;circle</a>
+
+* void *draw&#95;circle* *(* "Vector2":class_vector2 pos, "float":class_float radius, "Color":class_color color *)*
+
+Draw a colored circle.
+
+h4(#draw_texture). <a name="draw_texture">draw&#95;texture</a>
+
+* void *draw&#95;texture* *(* "Texture":class_texture texture, "Vector2":class_vector2 pos *)*
+
+Draw a texture at a given position.
+
+h4(#draw_style_box). <a name="draw_style_box">draw&#95;style&#95;box</a>
+
+* void *draw&#95;style&#95;box* *(* "StyleBox":class_stylebox style&#95;box, "Rect2":class_rect2 rect *)*
+
+Draw a styled rectangle.
+
+h4(#draw_primitive). <a name="draw_primitive">draw&#95;primitive</a>
+
+* void *draw&#95;primitive* *(* "Vector2Array":class_vector2array points, "ColorArray":class_colorarray colors, "Vector2Array":class_vector2array uvs=Array(), "Texture":class_texture texture=Object(), "float":class_float width=1 *)*
+
+Draw a custom primitive, 1 point for a point, 2 points for a line, 3 points for a triangle and 4 points for a quad.
+
+h4(#draw_polygon). <a name="draw_polygon">draw&#95;polygon</a>
+
+* void *draw&#95;polygon* *(* "Vector2Array":class_vector2array points, "ColorArray":class_colorarray colors, "Vector2Array":class_vector2array uvs=Array(), "Texture":class_texture texture=Object() *)*
+
+Draw a polygon of any amount of points, convex or concave.
+
+h4(#draw_colored_polygon). <a name="draw_colored_polygon">draw&#95;colored&#95;polygon</a>
+
+* void *draw&#95;colored&#95;polygon* *(* "Vector2Array":class_vector2array points, "Color":class_color color, "Vector2Array":class_vector2array uvs=Array(), "Texture":class_texture texture=Object() *)*
+
+Draw a colored polygon of any amount of points, convex or concave.
+
+h4(#draw_string). <a name="draw_string">draw&#95;string</a>
+
+* void *draw&#95;string* *(* "Font":class_font font, "Vector2":class_vector2 pos, "String":class_string text, "Color":class_color modulate=Color(1,1,1,1), "int":class_int clip&#95;w=&#45;1 *)*
+
+Draw a string using a custom font.
+
+h4(#draw_char). <a name="draw_char">draw&#95;char</a>
+
+* "float":class_float *draw&#95;char* *(* "Font":class_font font, "Vector2":class_vector2 pos, "String":class_string char, "String":class_string next, "Color":class_color modulate=Color(1,1,1,1) *)*
+
+Draw a string character using a custom font. Returns the advance, depending on the char width and kerning with an optional next char.
+
+h4(#draw_set_transform). <a name="draw_set_transform">draw&#95;set&#95;transform</a>
+
+* void *draw&#95;set&#95;transform* *(* "Vector2":class_vector2 pos, "float":class_float rot, "Vector2":class_vector2 scale *)*
+
+Set a custom transform for drawing. Anything drawn afterwards will be transformed by this.

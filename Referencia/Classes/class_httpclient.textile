@@ -1,0 +1,101 @@
+h1(#httpclient). HTTPClient
+
+h4(#inherits-reference). *Inherits:* "Reference":class_reference
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* Error *"connect":#connect* *(* "String":class_string host, "int":class_int port, "bool":class_bool use&#95;ssl=false, "bool":class_bool arg3=true *)*
+* void *"set&#95;connection":#set_connection* *(* "StreamPeer":class_streampeer connection *)*
+* "int":class_int *"request":#request* *(* "int":class_int method, "String":class_string url, "StringArray":class_stringarray headers, "String":class_string body=&quot;&quot; *)*
+* "int":class_int *"send&#95;body&#95;text":#send_body_text* *(* "String":class_string body *)*
+* "int":class_int *"send&#95;body&#95;data":#send_body_data* *(* "RawArray":class_rawarray body *)*
+* void *"close":#close* *(* *)*
+* "bool":class_bool *"has&#95;response":#has_response* *(* *)* const
+* "bool":class_bool *"is&#95;response&#95;chunked":#is_response_chunked* *(* *)* const
+* "int":class_int *"get&#95;response&#95;code":#get_response_code* *(* *)* const
+* "StringArray":class_stringarray *"get&#95;response&#95;headers":#get_response_headers* *(* *)*
+* "Dictionary":class_dictionary *"get&#95;response&#95;headers&#95;as&#95;dictionary":#get_response_headers_as_dictionary* *(* *)*
+* "int":class_int *"get&#95;response&#95;body&#95;length":#get_response_body_length* *(* *)* const
+* "RawArray":class_rawarray *"read&#95;response&#95;body&#95;chunk":#read_response_body_chunk* *(* *)*
+* void *"set&#95;read&#95;chunk&#95;size":#set_read_chunk_size* *(* "int":class_int bytes *)*
+* void *"set&#95;blocking&#95;mode":#set_blocking_mode* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;blocking&#95;mode&#95;enabled":#is_blocking_mode_enabled* *(* *)* const
+* "int":class_int *"get&#95;status":#get_status* *(* *)* const
+* Error *"poll":#poll* *(* *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *METHOD&#95;GET* = *0*
+* *METHOD&#95;HEAD* = *1*
+* *METHOD&#95;POST* = *2*
+* *METHOD&#95;PUT* = *3*
+* *METHOD&#95;DELETE* = *4*
+* *METHOD&#95;OPTIONS* = *5*
+* *METHOD&#95;TRACE* = *6*
+* *METHOD&#95;CONNECT* = *7*
+* *METHOD&#95;MAX* = *8*
+* *STATUS&#95;DISCONNECTED* = *0*
+* *STATUS&#95;RESOLVING* = *1*
+* *STATUS&#95;CANT&#95;RESOLVE* = *2*
+* *STATUS&#95;CONNECTING* = *3*
+* *STATUS&#95;CANT&#95;CONNECT* = *4*
+* *STATUS&#95;CONNECTED* = *5*
+* *STATUS&#95;REQUESTING* = *6*
+* *STATUS&#95;BODY* = *7*
+* *STATUS&#95;CONNECTION&#95;ERROR* = *8*
+* *STATUS&#95;SSL&#95;HANDSHAKE&#95;ERROR* = *9*
+* *RESPONSE&#95;CONTINUE* = *100*
+* *RESPONSE&#95;SWITCHING&#95;PROTOCOLS* = *101*
+* *RESPONSE&#95;PROCESSING* = *102*
+* *RESPONSE&#95;OK* = *200*
+* *RESPONSE&#95;CREATED* = *201*
+* *RESPONSE&#95;ACCEPTED* = *202*
+* *RESPONSE&#95;NON&#95;AUTHORITATIVE&#95;INFORMATION* = *203*
+* *RESPONSE&#95;NO&#95;CONTENT* = *204*
+* *RESPONSE&#95;RESET&#95;CONTENT* = *205*
+* *RESPONSE&#95;PARTIAL&#95;CONTENT* = *206*
+* *RESPONSE&#95;MULTI&#95;STATUS* = *207*
+* *RESPONSE&#95;IM&#95;USED* = *226*
+* *RESPONSE&#95;MULTIPLE&#95;CHOICES* = *300*
+* *RESPONSE&#95;MOVED&#95;PERMANENTLY* = *301*
+* *RESPONSE&#95;FOUND* = *302*
+* *RESPONSE&#95;SEE&#95;OTHER* = *303*
+* *RESPONSE&#95;NOT&#95;MODIFIED* = *304*
+* *RESPONSE&#95;USE&#95;PROXY* = *305*
+* *RESPONSE&#95;TEMPORARY&#95;REDIRECT* = *307*
+* *RESPONSE&#95;BAD&#95;REQUEST* = *400*
+* *RESPONSE&#95;UNAUTHORIZED* = *401*
+* *RESPONSE&#95;PAYMENT&#95;REQUIRED* = *402*
+* *RESPONSE&#95;FORBIDDEN* = *403*
+* *RESPONSE&#95;NOT&#95;FOUND* = *404*
+* *RESPONSE&#95;METHOD&#95;NOT&#95;ALLOWED* = *405*
+* *RESPONSE&#95;NOT&#95;ACCEPTABLE* = *406*
+* *RESPONSE&#95;PROXY&#95;AUTHENTICATION&#95;REQUIRED* = *407*
+* *RESPONSE&#95;REQUEST&#95;TIMEOUT* = *408*
+* *RESPONSE&#95;CONFLICT* = *409*
+* *RESPONSE&#95;GONE* = *410*
+* *RESPONSE&#95;LENGTH&#95;REQUIRED* = *411*
+* *RESPONSE&#95;PRECONDITION&#95;FAILED* = *412*
+* *RESPONSE&#95;REQUEST&#95;ENTITY&#95;TOO&#95;LARGE* = *413*
+* *RESPONSE&#95;REQUEST&#95;URI&#95;TOO&#95;LONG* = *414*
+* *RESPONSE&#95;UNSUPPORTED&#95;MEDIA&#95;TYPE* = *415*
+* *RESPONSE&#95;REQUESTED&#95;RANGE&#95;NOT&#95;SATISFIABLE* = *416*
+* *RESPONSE&#95;EXPECTATION&#95;FAILED* = *417*
+* *RESPONSE&#95;UNPROCESSABLE&#95;ENTITY* = *422*
+* *RESPONSE&#95;LOCKED* = *423*
+* *RESPONSE&#95;FAILED&#95;DEPENDENCY* = *424*
+* *RESPONSE&#95;UPGRADE&#95;REQUIRED* = *426*
+* *RESPONSE&#95;INTERNAL&#95;SERVER&#95;ERROR* = *500*
+* *RESPONSE&#95;NOT&#95;IMPLEMENTED* = *501*
+* *RESPONSE&#95;BAD&#95;GATEWAY* = *502*
+* *RESPONSE&#95;SERVICE&#95;UNAVAILABLE* = *503*
+* *RESPONSE&#95;GATEWAY&#95;TIMEOUT* = *504*
+* *RESPONSE&#95;HTTP&#95;VERSION&#95;NOT&#95;SUPPORTED* = *505*
+* *RESPONSE&#95;INSUFFICIENT&#95;STORAGE* = *507*
+* *RESPONSE&#95;NOT&#95;EXTENDED* = *510*
+
+h3(#member-function-description). Member Function Description

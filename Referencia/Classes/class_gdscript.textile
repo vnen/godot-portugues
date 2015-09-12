@@ -1,0 +1,13 @@
+h1(#gdscript). GDScript
+
+h4(#inherits-script). *Inherits:* "Script":class_script
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"new":#new* *(* *)*
+
+h3(#member-function-description). Member Function Description

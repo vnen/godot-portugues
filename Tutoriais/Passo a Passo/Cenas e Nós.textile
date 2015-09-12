@@ -1,0 +1,143 @@
+h1(#cenas-e-nos). Cenas e Nós
+
+h3(#introducao). Introdução
+
+p=. !http://www.godotengine.org/attachments/2/download!
+
+p=. _Meus jogos são rebuscados._
+
+Imagine por um momento que você não é mais um desenvolvedor de jogos. Em vez disso, você é um chef de cozinha! Troque sua roupa hipster por um _toque_ e um dólmã. Agora, em vez de fazer jogos, você prepara novas e deliciosas receitas a seus convidados.
+
+Então, como um chef cria uma receita? Elas são dividas em duas seções, a primeira com os ingredientes e a segunda com as instruções de como prepará-la. Desta maneira, qualquer um pode seguir a receita e saborear sua criação magnnifíca.
+
+Fazer jogos na Godot parece a mesma coisa. Usar a engine é como estar numa cozinha. Nesta cozinha, +nós+ são como uma geladeira cheia de ingredientes frescos prontos para serem usados.
+
+Há muitos tipos de nós, alguns mostram imagens, outros reproduzem sons, outros exibem modelos 3D, etc. Há dúzias deles.
+
+h3(#nos). Nós
+
+Mas vamos ao básico. Um nó é um elemento básico para criar um jogo. Eles possuem as seguintes características:
+
+* Tem um nome.
+* Tem propriedades editáveis.
+* Pode receber uma chamada para processar a cada quadro.
+* Pode ser estendido (para possuir mais funções).
+* Pode ser adicionado a outros nós como filhos.
+
+p=. !http://www.godotengine.org/attachments/15/download!
+
+p=. Esta última é muito importante. Nós podem ter outros nós como filhos. Quando organizados desta maneira, os nós se tornam uma *árvore*.
+
+Na Godot, a habilidade de organizar os nós desta forma cria uma ferramenta poderosa para organizar os projetos. Como diferente nós possuem funções diferentes, combiná-los permite criar funções mais complexas.
+
+Provavelmente isso ainda não está claro e faz pouco sentido, mas tudo irá se encaixar daqui há algumas seções. O fato mais importante de recordar por enquanto é que os nós existem e podem ser organizados assim.
+
+h3(#cenas). Cenas
+
+p=. !http://www.godotengine.org/attachments/14/download!
+
+p=. _Apenas um nó raiz._
+
+Agora que a existência dos nós foi definida, o próximo passo lógico é explicar o que é uma Cena. Uma cena é composta de um grupo de nós organizados hierarquicamente (como uma árvore). Esta possui as seguintes características:
+
+* Uma cena sempre possui apenas um nó raiz.
+* Cenas podem ser salvas no disco e recarregadas.
+* Cenas podem ser +instanciadas+ (mais sobre isso no próximo tutorial).
+* Rodar o jogo significa rodar uma cena.
+* Podem haver diversas cenas num projeto, mas para este iniciar, uma delas deve ser escolhida para carregar primeiro.
+
+Basicamente, o editor da Godot é um *editor de cenas*. Possui várias ferramentas para editar cenas 2D e 3D, assim como interfaces de usuário, mas todo o editor gira em volta do conceito de editar uma cena e os nós que a compõem.
+
+h3(#criando-novo-projeto). Criando um novo Projeto
+
+Teoria é chata, então vamos mudar de assunto e ir à prática. Seguindo a antiga tradição em tutoriais, o primeiro projeto será um Hello World. Para isso, o editor será usado.
+
+Quando o exeutável da Godot é iniciado fora de um projeto, o Gerenciador de Projetos aparece. Isso ajuda aos desenvolvedores gerenciarem seus projetos.
+
+p=. !http://www.godotengine.org/attachments/16/download!
+
+p=. _Criar novo projeto._ 
+
+Para criar um novo projeto, a opção "New Project" (_Novo Projeto_) deve ser usada. Escolha e crie um caminho e especifique um nome para o projeto:
+
+p=. !http://www.godotengine.org/attachments/10/download! 
+
+h3(#editor). Editor
+
+Assim que o Novo Projeto for criado, o próximo passo é abri-lo. Isto irá abrir o editor da Godot. Veja como o editor se parece quando acabou de abrir:
+
+p=. !http://www.godotengine.org/attachments/4/download!
+
+Como foi mencionado, fazer jogos na Godot é como estar numa cozinha, então vamos abrir a geladeira e adicionar alguns nós frescos ao projeto. Começaremos com um Hello World! Para fazer isso, o botão "New Node" (_Novo Nó_) deve ser pressionado:
+
+p=. !http://www.godotengine.org/attachments/9/download!
+
+p=. _Novo Nó._
+
+Isto irá abrir a caixa de diálogo "Create Node" (_Criar Nó_), mostrando a longa lista de nós que podem ser criados:
+
+p=. !http://www.godotengine.org/attachments/3/download!
+
+A partir daí, selecione primeiro o nó "Label" (_Rótulo_). Pesquisar por ele provavelmente é a forma mais rápida:
+
+p=. !http://www.godotengine.org/attachments/11/download!
+
+E, finalmente, crie o Rótulo! Um monte de coisa acontece quando "Create" (_Criar_) é pressionado:
+
+p=. !http://www.godotengine.org/attachments/1/download!
+
+Primeiro de tudo, a cena é movida para o editor 2D (porque "Label" é um tipo de nó 2D), e o Rótulo aparece, selecionad, no canto superior esquerdo da tela. O nó aparece no editor da árvore da cena (caixa no canto superior direito), e as propriedades do rótulo aparecem no "Inspector" (_Inspetor_, a caixa no canto inferior direito).
+
+O próximo será mudar a propriedade "Text" (_Texto_) do Rótulo, alterando para "Hello World":
+
+p=. !http://www.godotengine.org/attachments/6/download!
+
+Certo, tudo está pronto para rodar a cena. Aperte o botão "Play Scene" (_Rodar Cena_) na barra superior (ou pressione F6):
+
+p=. !http://www.godotengine.org/attachments/12/download! 
+
+Eeee... Opa.
+
+Aaaand.. Oops.
+
+p=. !http://www.godotengine.org/attachments/8/download!
+
+As cenas precisam ser salvas antes de rodar, então salve a cena para algo como "hello.scn" em "Scene -> Save" (_Cena -> Salvar_):
+
+p=. !http://www.godotengine.org/attachments/13/download!
+
+p=. Salve apenas na pasta dos recursos.
+
+E aqui algo engraçado acontece. O diálogo de arquivos é um especial e apenas permite salvar dentro do projeto. A raiz do projeto fica em "res://" o que significa "pasta de recursos". Isto quer dizer que arquivos só poldem ser salvos dentro do projeto. No futuro, quando fizer operações de arquivo na Godot, lembre-se de que "res://" é a pasta de recursos e, não importa a plataforma ou local de instalação, é a maneira de encontrar os arquivos dentro do jogo.
+
+Após salvar a cena e apertar outra vez o botão para rodá-la, a demonstração do "Hello World" deve executar finalmente:
+
+p=. !http://www.godotengine.org/attachments/5/download!
+
+Sucesso!
+
+h3(#configurando-o-projeto). Configurando o Projeto         
+
+Certo, agora é hora de fazer algumas configurações o projeto. Neste momento, a única maneira de rodar algo é executar a cena atual. Projetos, no entanto, possuem diversas cenas, então uma delas deve ser definida como a cena principal. Esta será a cena carregada quando o projeto é executado.
+
+Estas configurações são todas armazenadas no arquivo +engine.cfg+, que é um arquivo de texto puro no formato +win.ini+, para fácil edição. Há dúzias de configurações que podem ser definidas neste arquivo para alterar como um projeto executa. Para tornar as coisas mais simples, existe o diálogo "Project Settings" (_Configurações do Projeto_), que é como uma interface para editar o +engine.cfg+.
+
+Para acessar tal diálogo, basta ir até "Scene -> Project Settings".
+
+Assim que a janela abrir, a tarefa será selecionar uma cena principal. Isso pode ser feito facilmente alterando a propriedade _application/main_scene_ e escolhendo a cena "hello.scn".
+
+p=. !http://www.godotengine.org/attachments/7/download!
+
+Com esta mudança, apertando o botão Play normal (ou F5) irá rodar o projeto, não importa qual cena esteja sendo editada.
+
+Voltando ao diálogo Project Settings. Este diálog provê muitas opções que podem ser adicionadas ao engine.cfg e mostra o padrão dos valores. Se o valor padrão estiver certo, então não há necessidade de mudá-lo. Quando um valor é alterado, a caixa ao lado é marcar. Isso significa que a propriedade será salva no arquivo engine.cfg e lembrada.
+
+Como uma nota à parte, para referência futura e um pouco fora de contexto (afinal, este é primeiro tutorial!), também é possível adicionar opções de configuração personalizadas e lê-las durante a execução usando o singleton "Globals":https://github.com/okamstudio/godot/wiki/class_globals.
+
+h3(#continua). Continua...
+
+Este tutorial trata de "Cenas" e "Nós", mas até agora só existe +uma+ cena e +um+ nó! Não se preocupe, o [[Instanciando|próximo tutorial]] cuidará disso...
+
+_Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license._
+
+_Traduzido por George Marques._

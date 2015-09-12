@@ -1,0 +1,7 @@
+h1(#collisionshape). CollisionShape
+
+h4(#inherits-spatial). *Inherits:* "Spatial":class_spatial
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description

@@ -1,0 +1,27 @@
+h1(#handling-quit-request). Handling Quit Request
+
+h2(#quitting). Quitting
+
+Most platforms have the option to request the application to quit. On desktops, this is usually done with the &quot;x&quot; icon on the window titlebar. On Android, the back button is used to quit when on the main screen (and to go back otherwise).
+
+h2(#handling-the-notification). Handling the Notification
+
+The "MainLoop":class_mainloop has a special notification that is sent to all nodes when quit is requested: MainLoop.NOTIFICATION&#95;WM&#95;QUIT.
+
+Handling it is done as follows (on any node):
+
+bc(python). func _notification(what):
+    if (what==MainLoop.NOTIFICATION_WM_QUIT_REQUEST):
+        get_tree().quit() #default behavior
+
+
+When developing mobile apps, quitting is not desired unless the user is on the main screen, so the behavior can be changed.
+
+It is important to note that by default, Godot apps have the built&#45;in behavior to quit when quit is requested, this can be changed:
+
+bc(python). get_tree().set_auto_accept_quit(false)
+
+
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+</ol>

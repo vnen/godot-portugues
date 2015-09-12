@@ -1,0 +1,46 @@
+h1(#capsuleshape2d). CapsuleShape2D
+
+h4(#inherits-shape2d). *Inherits:* "Shape2D":class_shape2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Capsule 2D shape resource for physics.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;radius":#set_radius* *(* "float":class_float radius *)*
+* "float":class_float *"get&#95;radius":#get_radius* *(* *)* const
+* void *"set&#95;height":#set_height* *(* "float":class_float height *)*
+* "float":class_float *"get&#95;height":#get_height* *(* *)* const
+
+h3(#description). Description
+
+Capsule 2D shape resource for physics. A capsule (or sometimes called &quot;pill&quot;) is like a line grown in all directions. It has a radius and a height, and is often useful for modelling biped characters.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_radius). <a name="set_radius">set&#95;radius</a>
+
+* void *set&#95;radius* *(* "float":class_float radius *)*
+
+Radius of the "CapsuleShape2D":class_capsuleshape2d.
+
+h4(#get_radius). <a name="get_radius">get&#95;radius</a>
+
+* "float":class_float *get&#95;radius* *(* *)* const
+
+Return the radius of the "CapsuleShape2D":class_capsuleshape2d.
+
+h4(#set_height). <a name="set_height">set&#95;height</a>
+
+* void *set&#95;height* *(* "float":class_float height *)*
+
+Height of the "CapsuleShape2D":class_capsuleshape2d.
+
+h4(#get_height). <a name="get_height">get&#95;height</a>
+
+* "float":class_float *get&#95;height* *(* *)* const
+
+Return the height of the "CapsuleShape2D":class_capsuleshape2d.

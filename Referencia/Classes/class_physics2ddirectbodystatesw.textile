@@ -1,0 +1,7 @@
+h1(#physics2ddirectbodystatesw). Physics2DDirectBodyStateSW
+
+h4(#inherits-physics2ddirectbodystate). *Inherits:* "Physics2DDirectBodyState":class_physics2ddirectbodystate
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description

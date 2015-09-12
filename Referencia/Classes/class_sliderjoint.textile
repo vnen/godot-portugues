@@ -1,0 +1,40 @@
+h1(#sliderjoint). SliderJoint
+
+h4(#inherits-joint). *Inherits:* "Joint":class_joint
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;param":#set_param* *(* "int":class_int param, "float":class_float value *)*
+* "float":class_float *"get&#95;param":#get_param* *(* "int":class_int param *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *PARAM&#95;LINEAR&#95;LIMIT&#95;UPPER* = *0*
+* *PARAM&#95;LINEAR&#95;LIMIT&#95;LOWER* = *1*
+* *PARAM&#95;LINEAR&#95;LIMIT&#95;SOFTNESS* = *2*
+* *PARAM&#95;LINEAR&#95;LIMIT&#95;RESTITUTION* = *3*
+* *PARAM&#95;LINEAR&#95;LIMIT&#95;DAMPING* = *4*
+* *PARAM&#95;LINEAR&#95;MOTION&#95;SOFTNESS* = *5*
+* *PARAM&#95;LINEAR&#95;MOTION&#95;RESTITUTION* = *6*
+* *PARAM&#95;LINEAR&#95;MOTION&#95;DAMPING* = *7*
+* *PARAM&#95;LINEAR&#95;ORTHOGONAL&#95;SOFTNESS* = *8*
+* *PARAM&#95;LINEAR&#95;ORTHOGONAL&#95;RESTITUTION* = *9*
+* *PARAM&#95;LINEAR&#95;ORTHOGONAL&#95;DAMPING* = *10*
+* *PARAM&#95;ANGULAR&#95;LIMIT&#95;UPPER* = *11*
+* *PARAM&#95;ANGULAR&#95;LIMIT&#95;LOWER* = *12*
+* *PARAM&#95;ANGULAR&#95;LIMIT&#95;SOFTNESS* = *13*
+* *PARAM&#95;ANGULAR&#95;LIMIT&#95;RESTITUTION* = *14*
+* *PARAM&#95;ANGULAR&#95;LIMIT&#95;DAMPING* = *15*
+* *PARAM&#95;ANGULAR&#95;MOTION&#95;SOFTNESS* = *16*
+* *PARAM&#95;ANGULAR&#95;MOTION&#95;RESTITUTION* = *17*
+* *PARAM&#95;ANGULAR&#95;MOTION&#95;DAMPING* = *18*
+* *PARAM&#95;ANGULAR&#95;ORTHOGONAL&#95;SOFTNESS* = *19*
+* *PARAM&#95;ANGULAR&#95;ORTHOGONAL&#95;RESTITUTION* = *20*
+* *PARAM&#95;ANGULAR&#95;ORTHOGONAL&#95;DAMPING* = *21*
+* *PARAM&#95;MAX* = *22*
+
+h3(#member-function-description). Member Function Description

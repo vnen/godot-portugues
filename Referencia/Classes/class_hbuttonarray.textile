@@ -1,0 +1,13 @@
+h1(#hbuttonarray). HButtonArray
+
+h4(#inherits-buttonarray). *Inherits:* "ButtonArray":class_buttonarray
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Horizontal button array.
+
+h3(#description). Description
+
+Horizontal button array. See "ButtonArray":class_buttonarray.

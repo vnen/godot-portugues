@@ -1,0 +1,63 @@
+h1(#viewport-canvas-transforms). Viewport &amp; Canvas Transforms
+
+h3(#introduction). Introduction
+
+This tutorial is created after a topic that is a little dark for most users, and explains all the 2D transforms going on for nodes from the moment they draw their content locally to the time they are drawn into the screen.
+
+h3(#canvas-transform). Canvas Transform
+
+As mentioned in the "previous tutorial":tutorial_canvas_layers, every CanvasItem node (remember that Node2D and Control based nodes use CanvasItem as their common root) will reside in a _Canvas Layer_. Every canvas layer has a transform (translation, rotation, scale, etc) that can be accessed as a "Matrix32":class_matrix32.
+
+By default, nodes are drawn in Layer 0, in the built&#45;in canvas. To put nodes in a different layer, a "CanvasLayer":class_canvaslayer node can be used. This was covered in the previous tutorial anyway, just refreshing.
+
+h3(#global-canvas-transform). Global Canvas Transform
+
+Viewports also have a Global Canvas transform (also a "Matrix32":class_matrix32 ). This is the master transform and affects all individual _Canvas Layer_ transforms. Generally this transform is not of much use, but is used in the CanvasItem Editor in Godot's editor.
+
+h3(#stretch-transform). Stretch Transform
+
+Finally, viewports have a _Stretch Transform_, which is used when resizing or stretching the screen. This transform is used internally by the "stretch modes":tutorial_multires, but can also be requested to the viewport.
+
+Input events received in the "Node.&#95;input&#95;event(ev)":class_node#_input_event callback are multiplied by this transform, but lack the ones above. To convert InputEvent coordinates to local CanvasItem coordinates, the "CanvasItem.make&#95;input&#95;local(ev)":class_canvasitem#make_input_local function was added for convenience.
+
+h3(#transform-order). Transform Order
+
+For a coordinate in CanvasItem local properties to become an actual screen coordinate, the following chain of transforms must be applied:
+
+<p align="center">
+<img src="images/viewport_transforms2.png">
+</p>
+h3(#transform-functions). Transform Functions
+
+Obtaining each transform can be achieved with the following functions:
+
+|_. Type:|_. Transform|
+|CanvasItem|"CanvasItem.get&#95;global&#95;transform()":class_canvasitem#get_global_transform|
+|CanvasLayer|"CanvasItem.get&#95;canvas&#95;transform()":class_canvasitem#get_canvas_transform|
+|CanvasLayer&#43;GlobalCanvas&#43;Stretch|"CanvasItem.get&#95;viewport&#95;transform()":class_canvasitem#get_viewport_transform|
+
+Finally then, to convert a CanvasItem local coordinates to screen coordinates, just multiply in the following order:
+
+bc(python). var screen_coord = get_viewport_transform() * ( get_global_transform() * local_pos )
+
+
+Keep in mind, however, that it is generally not desired to work with screen coordinates. The recommended approach is to simply work in Canvas coordinates (CanvasItem.get&#95;global&#95;transform()), to allow automatic screen resolution resizing to work properly.
+
+h3(#feeding-custom-input-events). Feeding Custom Input Events
+
+It is often desired to feed custom input events to the scene tree. With the above knowledge, to correctly do this, it must be done the following way:
+
+<pre class="python">
+
+var local_pos = Vector2(10,20) # local to Control/Node2D
+var ie = InputEvent()
+ie.type=InputEvent.MOUSE_BUTTON
+ie.button_index=1 # left click
+ie.pos = get_viewport_transform() * ( get_global_transform() * local_pos )
+get_tree().input_event(ie)
+
+</pre>
+
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+</ol>

@@ -1,0 +1,129 @@
+h1(#matrix3). Matrix3
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+3x3 matrix datatype.
+
+h3(#member-functions). Member Functions
+
+* "float":class_float *"determinant":#determinant* *(* *)*
+* "Vector3":class_vector3 *"get&#95;euler":#get_euler* *(* *)*
+* "int":class_int *"get&#95;orthogonal&#95;index":#get_orthogonal_index* *(* *)*
+* "Vector3":class_vector3 *"get&#95;scale":#get_scale* *(* *)*
+* "Matrix3":class_matrix3 *"inverse":#inverse* *(* *)*
+* "Matrix3":class_matrix3 *"orthonormalized":#orthonormalized* *(* *)*
+* "Matrix3":class_matrix3 *"rotated":#rotated* *(* "Vector3":class_vector3 axis, "float":class_float phi *)*
+* "Matrix3":class_matrix3 *"scaled":#scaled* *(* "Vector3":class_vector3 scale *)*
+* "float":class_float *"tdotx":#tdotx* *(* "Vector3":class_vector3 with *)*
+* "float":class_float *"tdoty":#tdoty* *(* "Vector3":class_vector3 with *)*
+* "float":class_float *"tdotz":#tdotz* *(* "Vector3":class_vector3 with *)*
+* "Matrix3":class_matrix3 *"transposed":#transposed* *(* *)*
+* "Vector3":class_vector3 *"xform":#xform* *(* "Vector3":class_vector3 v *)*
+* "Vector3":class_vector3 *"xform&#95;inv":#xform_inv* *(* "Vector3":class_vector3 v *)*
+* "Matrix3":class_matrix3 *"Matrix3":#Matrix3* *(* "Vector3":class_vector3 x&#95;axis, "Vector3":class_vector3 y&#95;axis, "Vector3":class_vector3 z&#95;axis *)*
+* "Matrix3":class_matrix3 *"Matrix3":#Matrix3* *(* "Vector3":class_vector3 axis, "float":class_float phi *)*
+* "Matrix3":class_matrix3 *"Matrix3":#Matrix3* *(* "Quat":class_quat from *)*
+
+h3(#member-variables). Member Variables
+
+* "Vector3":class_vector3 *x*
+* "Vector3":class_vector3 *y*
+* "Vector3":class_vector3 *z*
+
+h3(#description). Description
+
+3x3 matrix used for 3D rotation and scale. Contains 3 vector fields x,y and z. Can also be accessed as array of 3D vectors. Almost always used as orthogonal basis for a "Transform":class_transform.
+
+h3(#member-function-description). Member Function Description
+
+h4(#determinant). <a name="determinant">determinant</a>
+
+* "float":class_float *determinant* *(* *)*
+
+Return the determinant of the matrix.
+
+h4(#get_euler). <a name="get_euler">get&#95;euler</a>
+
+* "Vector3":class_vector3 *get&#95;euler* *(* *)*
+
+Return euler angles from the matrix.
+
+h4(#inverse). <a name="inverse">inverse</a>
+
+* "Matrix3":class_matrix3 *inverse* *(* *)*
+
+Return the affine inverse of the matrix.
+
+h4(#orthonormalized). <a name="orthonormalized">orthonormalized</a>
+
+* "Matrix3":class_matrix3 *orthonormalized* *(* *)*
+
+Return the orthonormalized version of the matrix (useful to call from time to time to avoid rounding error).
+
+h4(#rotated). <a name="rotated">rotated</a>
+
+* "Matrix3":class_matrix3 *rotated* *(* "Vector3":class_vector3 axis, "float":class_float phi *)*
+
+Return the rotated version of the matrix, by a given axis and angle.
+
+h4(#scaled). <a name="scaled">scaled</a>
+
+* "Matrix3":class_matrix3 *scaled* *(* "Vector3":class_vector3 scale *)*
+
+Return the scaled version of the matrix, by a 3D scale.
+
+h4(#tdotx). <a name="tdotx">tdotx</a>
+
+* "float":class_float *tdotx* *(* "Vector3":class_vector3 with *)*
+
+Transposed dot product with the x axis of the matrix.
+
+h4(#tdoty). <a name="tdoty">tdoty</a>
+
+* "float":class_float *tdoty* *(* "Vector3":class_vector3 with *)*
+
+Transposed dot product with the y axis of the matrix.
+
+h4(#tdotz). <a name="tdotz">tdotz</a>
+
+* "float":class_float *tdotz* *(* "Vector3":class_vector3 with *)*
+
+Transposed dot product with the z axis of the matrix.
+
+h4(#transposed). <a name="transposed">transposed</a>
+
+* "Matrix3":class_matrix3 *transposed* *(* *)*
+
+Return the transposed version of the matrix.
+
+h4(#xform). <a name="xform">xform</a>
+
+* "Vector3":class_vector3 *xform* *(* "Vector3":class_vector3 v *)*
+
+Return a vector transformed by the matrix and return it.
+
+h4(#xform_inv). <a name="xform_inv">xform&#95;inv</a>
+
+* "Vector3":class_vector3 *xform&#95;inv* *(* "Vector3":class_vector3 v *)*
+
+Return a vector transformed by the transposed matrix and return it.
+
+h4(#matrix3-1). <a name="Matrix3">Matrix3</a>
+
+* "Matrix3":class_matrix3 *Matrix3* *(* "Vector3":class_vector3 x&#95;axis, "Vector3":class_vector3 y&#95;axis, "Vector3":class_vector3 z&#95;axis *)*
+
+Create a matrix from 3 axis vectors.
+
+h4(#matrix3-2). <a name="Matrix3">Matrix3</a>
+
+* "Matrix3":class_matrix3 *Matrix3* *(* "Vector3":class_vector3 axis, "float":class_float phi *)*
+
+Create a matrix from an axis vector and an angle.
+
+h4(#matrix3-3). <a name="Matrix3">Matrix3</a>
+
+* "Matrix3":class_matrix3 *Matrix3* *(* "Quat":class_quat from *)*
+
+Create a matrix from a quaternion.

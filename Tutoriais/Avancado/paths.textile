@@ -1,0 +1,17 @@
+h1(#path-separators). Path Separators
+
+For the sake of supporting as many platforms as possible, Godot only accepts unix style path separators (/). These work everywhere, including Windows. A path like: &quot;C:&quot; will become &quot;c:/Projects&quot;.
+
+h1(#resource-path). Resource Path
+
+As mentioned before. Godot considers that a project exists at any given folder that contains an &quot;engine.cfg&quot; text file, even if such file is empty. Accessing project files can be done by opening any path with &quot;res://&quot; as a base. For example, a texture located in the root of the project folder may be opened from the following path: &quot;res://sometexture.png&quot;.
+
+h1(#userdata-path-persistent-data). Userdata Path (Persistent Data)
+
+While the project is running, it is a very common scenario that the resource path will be read&#45;only, due to it being inside a package, self contained executable, or system wide install location. Storing persistent files in such scenarios should be done by using the &quot;user://&quot; prefix, for example: &quot;user://gamesave.txt&quot;.
+
+In some devices (for example, mobile ad consoles) this path is unique for the app. Under desktop operating systems, the engine uses the typical ~/.Name (check the project name under the settings) in OSX and Linux, and APPDATA/Name for Windows.
+
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+</ol>

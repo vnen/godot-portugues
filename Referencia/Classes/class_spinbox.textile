@@ -1,0 +1,55 @@
+h1(#spinbox). SpinBox
+
+h4(#inherits-range). *Inherits:* "Range":class_range
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Numerical input text field.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;suffix":#set_suffix* *(* "String":class_string suffix *)*
+* "String":class_string *"get&#95;suffix":#get_suffix* *(* *)* const
+* void *"set&#95;prefix":#set_prefix* *(* "String":class_string prefix *)*
+* "String":class_string *"get&#95;prefix":#get_prefix* *(* *)* const
+* void *"set&#95;editable":#set_editable* *(* "bool":class_bool editable *)*
+* "bool":class_bool *"is&#95;editable":#is_editable* *(* *)* const
+* "Object":class_object *"get&#95;line&#95;edit":#get_line_edit* *(* *)*
+
+h3(#description). Description
+
+SpinBox is a numerical input text field. It allows entering integers and floats.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_suffix). <a name="set_suffix">set&#95;suffix</a>
+
+* void *set&#95;suffix* *(* "String":class_string suffix *)*
+
+Set a specific suffix.
+
+h4(#get_suffix). <a name="get_suffix">get&#95;suffix</a>
+
+* "String":class_string *get&#95;suffix* *(* *)* const
+
+Return the specific suffix.
+
+h4(#set_prefix). <a name="set_prefix">set&#95;prefix</a>
+
+* void *set&#95;prefix* *(* "String":class_string prefix *)*
+
+Set a prefix.
+
+h4(#set_editable). <a name="set_editable">set&#95;editable</a>
+
+* void *set&#95;editable* *(* "bool":class_bool editable *)*
+
+Set whether the spinbox is editable.
+
+h4(#is_editable). <a name="is_editable">is&#95;editable</a>
+
+* "bool":class_bool *is&#95;editable* *(* *)* const
+
+Return if the spinbox is editable.

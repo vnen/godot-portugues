@@ -1,0 +1,85 @@
+h1(#timer). Timer
+
+h4(#inherits-node). *Inherits:* "Node":class_node
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;wait&#95;time":#set_wait_time* *(* "float":class_float time&#95;sec *)*
+* "float":class_float *"get&#95;wait&#95;time":#get_wait_time* *(* *)* const
+* void *"set&#95;one&#95;shot":#set_one_shot* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;one&#95;shot":#is_one_shot* *(* *)* const
+* void *"set&#95;autostart":#set_autostart* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"has&#95;autostart":#has_autostart* *(* *)* const
+* void *"start":#start* *(* *)*
+* void *"stop":#stop* *(* *)*
+* "float":class_float *"get&#95;time&#95;left":#get_time_left* *(* *)* const
+* void *"set&#95;timer&#95;process&#95;mode":#set_timer_process_mode* *(* "int":class_int mode *)*
+* "int":class_int *"get&#95;timer&#95;process&#95;mode":#get_timer_process_mode* *(* *)* const
+
+h3(#signals). Signals
+
+* *timeout* *(* *)*
+
+h3(#description). Description
+
+Timer node. This is a simple node that will emit a timeout callback when the timer runs out. It can optinally be set to loop.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_wait_time). <a name="set_wait_time">set&#95;wait&#95;time</a>
+
+* void *set&#95;wait&#95;time* *(* "float":class_float time&#95;sec *)*
+
+Set wait time. When the time is over, it will emit timeout signal.
+
+h4(#get_wait_time). <a name="get_wait_time">get&#95;wait&#95;time</a>
+
+* "float":class_float *get&#95;wait&#95;time* *(* *)* const
+
+Return the wait time. When the time is over, it will emit timeout signal.
+
+h4(#set_one_shot). <a name="set_one_shot">set&#95;one&#95;shot</a>
+
+* void *set&#95;one&#95;shot* *(* "bool":class_bool enable *)*
+
+Set as one&#45;shot. If true, timer will stop after timeout, otherwise it will automatically restart.
+
+h4(#is_one_shot). <a name="is_one_shot">is&#95;one&#95;shot</a>
+
+* "bool":class_bool *is&#95;one&#95;shot* *(* *)* const
+
+Return true if is set as one&#45;shot. If true, timer will stop after timeout, otherwise it will automatically restart.
+
+h4(#set_autostart). <a name="set_autostart">set&#95;autostart</a>
+
+* void *set&#95;autostart* *(* "bool":class_bool enable *)*
+
+Set to automatically start when entering the scene.
+
+h4(#has_autostart). <a name="has_autostart">has&#95;autostart</a>
+
+* "bool":class_bool *has&#95;autostart* *(* *)* const
+
+Return true if set to automatically start when entering the scene.
+
+h4(#start). <a name="start">start</a>
+
+* void *start* *(* *)*
+
+Start the timer.
+
+h4(#stop). <a name="stop">stop</a>
+
+* void *stop* *(* *)*
+
+Stop (cancel) the timer.
+
+h4(#get_time_left). <a name="get_time_left">get&#95;time&#95;left</a>
+
+* "float":class_float *get&#95;time&#95;left* *(* *)* const
+
+Return the time left for timeout if the timer is active.

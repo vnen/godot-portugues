@@ -1,0 +1,13 @@
+h1(#editorscenepostimport). EditorScenePostImport
+
+h4(#inherits-reference). *Inherits:* "Reference":class_reference
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"post&#95;import":#post_import* *(* "Object":class_object scene *)* virtual
+
+h3(#member-function-description). Member Function Description

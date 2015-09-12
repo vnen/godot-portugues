@@ -1,0 +1,19 @@
+h1(#int). int
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Integer built&#45;in type.
+
+h3(#member-functions). Member Functions
+
+* "int":class_int *"int":#int* *(* "bool":class_bool from *)*
+* "int":class_int *"int":#int* *(* "float":class_float from *)*
+* "int":class_int *"int":#int* *(* "String":class_string from *)*
+
+h3(#description). Description
+
+Integer built&#45;in type.
+
+h3(#member-function-description). Member Function Description

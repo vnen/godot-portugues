@@ -1,0 +1,20 @@
+h1(#animatedsprite3d). AnimatedSprite3D
+
+h4(#inherits-spritebase3d). *Inherits:* "SpriteBase3D":class_spritebase3d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;sprite&#95;frames":#set_sprite_frames* *(* "SpriteFrames":class_spriteframes sprite&#95;frames *)*
+* "Texture":class_texture *"get&#95;sprite&#95;frames":#get_sprite_frames* *(* *)* const
+* void *"set&#95;frame":#set_frame* *(* "int":class_int frame *)*
+* "int":class_int *"get&#95;frame":#get_frame* *(* *)* const
+
+h3(#signals). Signals
+
+* *frame&#95;changed* *(* *)*
+
+h3(#member-function-description). Member Function Description

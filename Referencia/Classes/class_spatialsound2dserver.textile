@@ -1,0 +1,13 @@
+h1(#spatialsound2dserver). SpatialSound2DServer
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Server for Spatial 2D Sound.
+
+h3(#description). Description
+
+Server for Spatial 2D Sound.

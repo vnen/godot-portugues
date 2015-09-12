@@ -1,0 +1,33 @@
+h1(#pathfollow). PathFollow
+
+h4(#inherits-spatial). *Inherits:* "Spatial":class_spatial
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;offset":#set_offset* *(* "float":class_float offset *)*
+* "float":class_float *"get&#95;offset":#get_offset* *(* *)* const
+* void *"set&#95;h&#95;offset":#set_h_offset* *(* "float":class_float h&#95;offset *)*
+* "float":class_float *"get&#95;h&#95;offset":#get_h_offset* *(* *)* const
+* void *"set&#95;v&#95;offset":#set_v_offset* *(* "float":class_float v&#95;offset *)*
+* "float":class_float *"get&#95;v&#95;offset":#get_v_offset* *(* *)* const
+* void *"set&#95;unit&#95;offset":#set_unit_offset* *(* "float":class_float unit&#95;offset *)*
+* "float":class_float *"get&#95;unit&#95;offset":#get_unit_offset* *(* *)* const
+* void *"set&#95;rotation&#95;mode":#set_rotation_mode* *(* "int":class_int rotation&#95;mode *)*
+* "int":class_int *"get&#95;rotation&#95;mode":#get_rotation_mode* *(* *)* const
+* void *"set&#95;cubic&#95;interpolation":#set_cubic_interpolation* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"get&#95;cubic&#95;interpolation":#get_cubic_interpolation* *(* *)* const
+* void *"set&#95;loop":#set_loop* *(* "bool":class_bool loop *)*
+* "bool":class_bool *"has&#95;loop":#has_loop* *(* *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *ROTATION&#95;NONE* = *0*
+* *ROTATION&#95;Y* = *1*
+* *ROTATION&#95;XY* = *2*
+* *ROTATION&#95;XYZ* = *3*
+
+h3(#member-function-description). Member Function Description

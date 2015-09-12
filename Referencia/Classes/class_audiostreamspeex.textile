@@ -1,0 +1,32 @@
+h1(#audiostreamspeex). AudioStreamSpeex
+
+h4(#inherits-audiostreamresampled). *Inherits:* "AudioStreamResampled":class_audiostreamresampled
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Speex audio stream driver.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;file":#set_file* *(* "String":class_string file *)*
+* "String":class_string *"get&#95;file":#get_file* *(* *)* const
+
+h3(#description). Description
+
+Speex audio stream driver. Speex is very useful for compressed speech. It allows loading a very large amount of speech in memory at little IO/latency cost.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_file). <a name="set_file">set&#95;file</a>
+
+* void *set&#95;file* *(* "String":class_string file *)*
+
+Set the speech file (which is loaded to memory).
+
+h4(#get_file). <a name="get_file">get&#95;file</a>
+
+* "String":class_string *get&#95;file* *(* *)* const
+
+Return the speech file.

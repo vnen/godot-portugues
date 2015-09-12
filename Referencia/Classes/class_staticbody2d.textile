@@ -1,0 +1,54 @@
+h1(#staticbody2d). StaticBody2D
+
+h4(#inherits-physicsbody2d). *Inherits:* "PhysicsBody2D":class_physicsbody2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Static body for 2D Physics.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;constant&#95;linear&#95;velocity":#set_constant_linear_velocity* *(* "Vector2":class_vector2 vel *)*
+* void *"set&#95;constant&#95;angular&#95;velocity":#set_constant_angular_velocity* *(* "float":class_float vel *)*
+* "Vector2":class_vector2 *"get&#95;constant&#95;linear&#95;velocity":#get_constant_linear_velocity* *(* *)* const
+* "float":class_float *"get&#95;constant&#95;angular&#95;velocity":#get_constant_angular_velocity* *(* *)* const
+* void *"set&#95;friction":#set_friction* *(* "float":class_float friction *)*
+* "float":class_float *"get&#95;friction":#get_friction* *(* *)* const
+* void *"set&#95;bounce":#set_bounce* *(* "float":class_float bounce *)*
+* "float":class_float *"get&#95;bounce":#get_bounce* *(* *)* const
+
+h3(#description). Description
+
+Static body for 2D Physics. A static body is a simple body that is not intended to move. They don't consume any CPU resources in contrast to a "RigidBody2D":class_rigidbody2d so they are great for scenaro collision.
+
+bc. A static body also can be animated by using simulated motion mode, this is useful for implementing functionalities such as moving platforms, when this mode is active the body can be animated and automatically compute linear and angular velocity to apply in that frame and to influence other bodies.
+Alternatively, a constant linear or angular velocity can be set for the static body, so even if it doesn't move, it affects other bodies as if it was moving (this is useful for simulating conveyor belts or conveyor wheels).
+
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_constant_linear_velocity). <a name="set_constant_linear_velocity">set&#95;constant&#95;linear&#95;velocity</a>
+
+* void *set&#95;constant&#95;linear&#95;velocity* *(* "Vector2":class_vector2 vel *)*
+
+Set a constant linear velocity for the body.
+
+h4(#set_constant_angular_velocity). <a name="set_constant_angular_velocity">set&#95;constant&#95;angular&#95;velocity</a>
+
+* void *set&#95;constant&#95;angular&#95;velocity* *(* "float":class_float vel *)*
+
+Set a constant angular velocity for the body.
+
+h4(#get_constant_linear_velocity). <a name="get_constant_linear_velocity">get&#95;constant&#95;linear&#95;velocity</a>
+
+* "Vector2":class_vector2 *get&#95;constant&#95;linear&#95;velocity* *(* *)* const
+
+Return the constant linear velocity for the body.
+
+h4(#get_constant_angular_velocity). <a name="get_constant_angular_velocity">get&#95;constant&#95;angular&#95;velocity</a>
+
+* "float":class_float *get&#95;constant&#95;angular&#95;velocity* *(* *)* const
+
+Return the constant angular velocity for the body.

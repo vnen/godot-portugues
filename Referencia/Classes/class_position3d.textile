@@ -1,0 +1,13 @@
+h1(#position3d). Position3D
+
+h4(#inherits-spatial). *Inherits:* "Spatial":class_spatial
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Generic 3D Position hint for editing
+
+h3(#description). Description
+
+Generic 3D Position hint for editing. It's just like a plain "Spatial":class_spatial but displays as a cross in the 3D&#45;Editor at all times.

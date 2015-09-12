@@ -1,0 +1,120 @@
+h1(#animatedsprite). AnimatedSprite
+
+h4(#inherits-node2d). *Inherits:* "Node2D":class_node2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Sprite node that can use multiple textures for animation.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;sprite&#95;frames":#set_sprite_frames* *(* "SpriteFrames":class_spriteframes sprite&#95;frames *)*
+* "SpriteFrames":class_spriteframes *"get&#95;sprite&#95;frames":#get_sprite_frames* *(* *)* const
+* void *"set&#95;centered":#set_centered* *(* "bool":class_bool centered *)*
+* "bool":class_bool *"is&#95;centered":#is_centered* *(* *)* const
+* void *"set&#95;offset":#set_offset* *(* "Vector2":class_vector2 offset *)*
+* "Vector2":class_vector2 *"get&#95;offset":#get_offset* *(* *)* const
+* void *"set&#95;flip&#95;h":#set_flip_h* *(* "bool":class_bool flip&#95;h *)*
+* "bool":class_bool *"is&#95;flipped&#95;h":#is_flipped_h* *(* *)* const
+* void *"set&#95;flip&#95;v":#set_flip_v* *(* "bool":class_bool flip&#95;v *)*
+* "bool":class_bool *"is&#95;flipped&#95;v":#is_flipped_v* *(* *)* const
+* void *"set&#95;frame":#set_frame* *(* "int":class_int frame *)*
+* "int":class_int *"get&#95;frame":#get_frame* *(* *)* const
+* void *"set&#95;modulate":#set_modulate* *(* "Color":class_color modulate *)*
+* "Color":class_color *"get&#95;modulate":#get_modulate* *(* *)* const
+
+h3(#signals). Signals
+
+* *frame&#95;changed* *(* *)*
+
+h3(#description). Description
+
+Sprite node that can use multiple textures for animation.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_sprite_frames). <a name="set_sprite_frames">set&#95;sprite&#95;frames</a>
+
+* void *set&#95;sprite&#95;frames* *(* "SpriteFrames":class_spriteframes sprite&#95;frames *)*
+
+Set the "SpriteFrames":class_spriteframes resource, which contains all frames.
+
+h4(#get_sprite_frames). <a name="get_sprite_frames">get&#95;sprite&#95;frames</a>
+
+* "SpriteFrames":class_spriteframes *get&#95;sprite&#95;frames* *(* *)* const
+
+Get the "SpriteFrames":class_spriteframes resource, which contains all frames.
+
+h4(#set_centered). <a name="set_centered">set&#95;centered</a>
+
+* void *set&#95;centered* *(* "bool":class_bool centered *)*
+
+When turned on, offset at (0,0) is the center of the sprite, when off, the top&#45;left corner is.
+
+h4(#is_centered). <a name="is_centered">is&#95;centered</a>
+
+* "bool":class_bool *is&#95;centered* *(* *)* const
+
+Return true when centered. See [set&#95;centered].
+
+h4(#set_offset). <a name="set_offset">set&#95;offset</a>
+
+* void *set&#95;offset* *(* "Vector2":class_vector2 offset *)*
+
+Set the offset of the sprite in the node origin. Position varies depending on whether it is centered or not.
+
+h4(#get_offset). <a name="get_offset">get&#95;offset</a>
+
+* "Vector2":class_vector2 *get&#95;offset* *(* *)* const
+
+Return the offset of the sprite in the node origin.
+
+h4(#set_flip_h). <a name="set_flip_h">set&#95;flip&#95;h</a>
+
+* void *set&#95;flip&#95;h* *(* "bool":class_bool flip&#95;h *)*
+
+If true, sprite is flipped horizontally.
+
+h4(#is_flipped_h). <a name="is_flipped_h">is&#95;flipped&#95;h</a>
+
+* "bool":class_bool *is&#95;flipped&#95;h* *(* *)* const
+
+Return true if sprite is flipped horizontally.
+
+h4(#set_flip_v). <a name="set_flip_v">set&#95;flip&#95;v</a>
+
+* void *set&#95;flip&#95;v* *(* "bool":class_bool flip&#95;v *)*
+
+If true, sprite is flipped vertically.
+
+h4(#is_flipped_v). <a name="is_flipped_v">is&#95;flipped&#95;v</a>
+
+* "bool":class_bool *is&#95;flipped&#95;v* *(* *)* const
+
+Return true if sprite is flipped vertically.
+
+h4(#set_frame). <a name="set_frame">set&#95;frame</a>
+
+* void *set&#95;frame* *(* "int":class_int frame *)*
+
+Set the visible sprite frame index (from the list of frames inside the "SpriteFrames":class_spriteframes resource).
+
+h4(#get_frame). <a name="get_frame">get&#95;frame</a>
+
+* "int":class_int *get&#95;frame* *(* *)* const
+
+Return the visible frame index.
+
+h4(#set_modulate). <a name="set_modulate">set&#95;modulate</a>
+
+* void *set&#95;modulate* *(* "Color":class_color modulate *)*
+
+Change the color modulation (multiplication) for this sprite.
+
+h4(#get_modulate). <a name="get_modulate">get&#95;modulate</a>
+
+* "Color":class_color *get&#95;modulate* *(* *)* const
+
+Return the color modulation for this sprite.

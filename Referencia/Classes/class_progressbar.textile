@@ -1,0 +1,20 @@
+h1(#progressbar). ProgressBar
+
+h4(#inherits-range). *Inherits:* "Range":class_range
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+General purpose progres bar.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;percent&#95;visible":#set_percent_visible* *(* "bool":class_bool visible *)*
+* "bool":class_bool *"is&#95;percent&#95;visible":#is_percent_visible* *(* *)* const
+
+h3(#description). Description
+
+General purpose progres bar. Shows fill percentage from right to left.
+
+h3(#member-function-description). Member Function Description

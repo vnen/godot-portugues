@@ -1,0 +1,32 @@
+h1(#circleshape2d). CircleShape2D
+
+h4(#inherits-shape2d). *Inherits:* "Shape2D":class_shape2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Circular Shape for 2D Physics.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;radius":#set_radius* *(* "float":class_float radius *)*
+* "float":class_float *"get&#95;radius":#get_radius* *(* *)* const
+
+h3(#description). Description
+
+Circular Shape for 2D Physics. This shape is useful for modelling balls or small characters and it's collision detection with everything else is very fast.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_radius). <a name="set_radius">set&#95;radius</a>
+
+* void *set&#95;radius* *(* "float":class_float radius *)*
+
+Set the radius of the circle shape;
+
+h4(#get_radius). <a name="get_radius">get&#95;radius</a>
+
+* "float":class_float *get&#95;radius* *(* *)* const
+
+Return the radius of the circle shape.

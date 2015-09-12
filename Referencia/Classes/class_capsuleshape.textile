@@ -1,0 +1,46 @@
+h1(#capsuleshape). CapsuleShape
+
+h4(#inherits-shape). *Inherits:* "Shape":class_shape
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Capsule shape resource.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;radius":#set_radius* *(* "float":class_float radius *)*
+* "float":class_float *"get&#95;radius":#get_radius* *(* *)* const
+* void *"set&#95;height":#set_height* *(* "float":class_float height *)*
+* "float":class_float *"get&#95;height":#get_height* *(* *)* const
+
+h3(#description). Description
+
+Capsule shape resource, which can be set into a "PhysicsBody":class_physicsbody or area.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_radius). <a name="set_radius">set&#95;radius</a>
+
+* void *set&#95;radius* *(* "float":class_float radius *)*
+
+Set the capsule radius.
+
+h4(#get_radius). <a name="get_radius">get&#95;radius</a>
+
+* "float":class_float *get&#95;radius* *(* *)* const
+
+Return the capsule radius.
+
+h4(#set_height). <a name="set_height">set&#95;height</a>
+
+* void *set&#95;height* *(* "float":class_float height *)*
+
+Set the capsule height.
+
+h4(#get_height). <a name="get_height">get&#95;height</a>
+
+* "float":class_float *get&#95;height* *(* *)* const
+
+Return the capsule height.

@@ -1,0 +1,53 @@
+h1(#buttongroup). ButtonGroup
+
+h4(#inherits-control). *Inherits:* "Control":class_control
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Group of Buttons.
+
+h3(#member-functions). Member Functions
+
+* "BaseButton":class_basebutton *"get&#95;pressed&#95;button":#get_pressed_button* *(* *)* const
+* "int":class_int *"get&#95;pressed&#95;button&#95;index":#get_pressed_button_index* *(* *)* const
+* "BaseButton":class_basebutton *"get&#95;focused&#95;button":#get_focused_button* *(* *)* const
+* "Array":class_array *"get&#95;button&#95;list":#get_button_list* *(* *)* const
+* void *"set&#95;pressed&#95;button":#set_pressed_button* *(* "BaseButton":class_basebutton button *)*
+
+h3(#description). Description
+
+Group of "Button":class_buttons. All direct and indirect children buttons become radios. Only one allows being pressed.
+
+h3(#member-function-description). Member Function Description
+
+h4(#get_pressed_button). <a name="get_pressed_button">get&#95;pressed&#95;button</a>
+
+* "BaseButton":class_basebutton *get&#95;pressed&#95;button* *(* *)* const
+
+Return the pressed button.
+
+h4(#get_pressed_button_index). <a name="get_pressed_button_index">get&#95;pressed&#95;button&#95;index</a>
+
+* "int":class_int *get&#95;pressed&#95;button&#95;index* *(* *)* const
+
+Return the index of the pressed button (by tree order).
+
+h4(#get_focused_button). <a name="get_focused_button">get&#95;focused&#95;button</a>
+
+* "BaseButton":class_basebutton *get&#95;focused&#95;button* *(* *)* const
+
+Return the focused button.
+
+h4(#get_button_list). <a name="get_button_list">get&#95;button&#95;list</a>
+
+* "Array":class_array *get&#95;button&#95;list* *(* *)* const
+
+Return the list of all the buttons in the group.
+
+h4(#set_pressed_button). <a name="set_pressed_button">set&#95;pressed&#95;button</a>
+
+* void *set&#95;pressed&#95;button* *(* "BaseButton":class_basebutton button *)*
+
+Set the button to be pressed.

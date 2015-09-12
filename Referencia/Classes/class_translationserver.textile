@@ -1,0 +1,20 @@
+h1(#translationserver). TranslationServer
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Server that manages all translations. Translations can be set to it and removed from it.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;locale":#set_locale* *(* "String":class_string locale *)*
+* "String":class_string *"get&#95;locale":#get_locale* *(* *)* const
+* "String":class_string *"translate":#translate* *(* "String":class_string arg0 *)* const
+* void *"add&#95;translation":#add_translation* *(* "Object":class_object arg0 *)*
+* void *"remove&#95;translation":#remove_translation* *(* "Object":class_object arg0 *)*
+* void *"clear":#clear* *(* *)*
+
+h3(#member-function-description). Member Function Description

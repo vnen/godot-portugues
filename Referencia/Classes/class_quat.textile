@@ -1,0 +1,70 @@
+h1(#quat). Quat
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Quaternion.
+
+h3(#member-functions). Member Functions
+
+* "Quat":class_quat *"cubic&#95;slerp":#cubic_slerp* *(* "Quat":class_quat b, "Quat":class_quat pre&#95;a, "Quat":class_quat post&#95;b, "float":class_float t *)*
+* "float":class_float *"dot":#dot* *(* "Quat":class_quat b *)*
+* "Quat":class_quat *"inverse":#inverse* *(* *)*
+* "float":class_float *"length":#length* *(* *)*
+* "float":class_float *"length&#95;squared":#length_squared* *(* *)*
+* "Quat":class_quat *"normalized":#normalized* *(* *)*
+* "Quat":class_quat *"slerp":#slerp* *(* "Quat":class_quat b, "float":class_float t *)*
+* "Quat":class_quat *"slerpni":#slerpni* *(* "Quat":class_quat b, "float":class_float t *)*
+* "Quat":class_quat *"Quat":#Quat* *(* "float":class_float x, "float":class_float y, "float":class_float z, "float":class_float w *)*
+* "Quat":class_quat *"Quat":#Quat* *(* "Vector3":class_vector3 axis, "float":class_float angle *)*
+* "Quat":class_quat *"Quat":#Quat* *(* "Matrix3":class_matrix3 from *)*
+
+h3(#member-variables). Member Variables
+
+* "float":class_float *x*
+* "float":class_float *y*
+* "float":class_float *z*
+* "float":class_float *w*
+
+h3(#description). Description
+
+Quaternion is a 4 dimensional vector that is used to represet a rotation. It mainly exists to perform SLERP (spherical&#45;linear interpolation) between to rotations obtained by a Matrix3 cheaply. Adding quaternions also cheaply adds the rotations, however quaternions need to be often normalized, or else they suffer from precision issues.
+
+h3(#member-function-description). Member Function Description
+
+h4(#dot). <a name="dot">dot</a>
+
+* "float":class_float *dot* *(* "Quat":class_quat b *)*
+
+Returns the dot product between two quaternions.
+
+h4(#inverse). <a name="inverse">inverse</a>
+
+* "Quat":class_quat *inverse* *(* *)*
+
+Returns the inverse of the quaternion (applies to the inverse rotatio too).
+
+h4(#length). <a name="length">length</a>
+
+* "float":class_float *length* *(* *)*
+
+Returns the length of the quaternion.
+
+h4(#length_squared). <a name="length_squared">length&#95;squared</a>
+
+* "float":class_float *length&#95;squared* *(* *)*
+
+Returns the length of the quaternion, minus the square root.
+
+h4(#normalized). <a name="normalized">normalized</a>
+
+* "Quat":class_quat *normalized* *(* *)*
+
+Returns a copy of the quaternion, normalized to unit length.
+
+h4(#slerp). <a name="slerp">slerp</a>
+
+* "Quat":class_quat *slerp* *(* "Quat":class_quat b, "float":class_float t *)*
+
+Perform a spherical&#45;linear interpolation with another quaternion.

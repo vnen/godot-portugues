@@ -1,0 +1,20 @@
+h1(#scenepreloader). ScenePreloader
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "int":class_int *"load&#95;scene":#load_scene* *(* "String":class_string path *)*
+* "String":class_string *"get&#95;scene&#95;path":#get_scene_path* *(* *)* const
+* "Node":class_node *"instance":#instance* *(* *)* const
+* "bool":class_bool *"can&#95;instance":#can_instance* *(* *)* const
+
+h3(#member-function-description). Member Function Description
+
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+</ol>

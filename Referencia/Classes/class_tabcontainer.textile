@@ -1,0 +1,96 @@
+h1(#tabcontainer). TabContainer
+
+h4(#inherits-control). *Inherits:* "Control":class_control
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Tabbed Container.
+
+h3(#member-functions). Member Functions
+
+* "int":class_int *"get&#95;tab&#95;count":#get_tab_count* *(* *)* const
+* void *"set&#95;current&#95;tab":#set_current_tab* *(* "int":class_int tab&#95;idx *)*
+* "int":class_int *"get&#95;current&#95;tab":#get_current_tab* *(* *)* const
+* void *"set&#95;tab&#95;align":#set_tab_align* *(* "int":class_int align *)*
+* "int":class_int *"get&#95;tab&#95;align":#get_tab_align* *(* *)* const
+* void *"set&#95;tabs&#95;visible":#set_tabs_visible* *(* "bool":class_bool visible *)*
+* "bool":class_bool *"are&#95;tabs&#95;visible":#are_tabs_visible* *(* *)* const
+* void *"set&#95;tab&#95;title":#set_tab_title* *(* "int":class_int tab&#95;idx, "String":class_string title *)*
+* "String":class_string *"get&#95;tab&#95;title":#get_tab_title* *(* "int":class_int tab&#95;idx *)* const
+* void *"set&#95;tab&#95;icon":#set_tab_icon* *(* "int":class_int tab&#95;idx, "Texture":class_texture icon *)*
+* "Texture":class_texture *"get&#95;tab&#95;icon":#get_tab_icon* *(* "int":class_int tab&#95;idx *)* const
+
+h3(#signals). Signals
+
+* *tab&#95;changed* *(* "int":class_int tab *)*
+
+h3(#description). Description
+
+Tabbed Container. Contains several children controls, but shows only one at the same time. Clicking ont he top tabs allows to change the current visible one.
+
+bc. Children controls of this one automatically.
+
+
+h3(#member-function-description). Member Function Description
+
+h4(#get_tab_count). <a name="get_tab_count">get&#95;tab&#95;count</a>
+
+* "int":class_int *get&#95;tab&#95;count* *(* *)* const
+
+Return the amount of tabs.
+
+h4(#set_current_tab). <a name="set_current_tab">set&#95;current&#95;tab</a>
+
+* void *set&#95;current&#95;tab* *(* "int":class_int tab&#95;idx *)*
+
+Bring a tab (and the Control it represents) to the front, and hide the rest.
+
+h4(#get_current_tab). <a name="get_current_tab">get&#95;current&#95;tab</a>
+
+* "int":class_int *get&#95;current&#95;tab* *(* *)* const
+
+Return the current tab that is being showed.
+
+h4(#set_tab_align). <a name="set_tab_align">set&#95;tab&#95;align</a>
+
+* void *set&#95;tab&#95;align* *(* "int":class_int align *)*
+
+Set tab alignment, from the ALIGN&#95;&#42; enum. Moves tabs to the left, right or center.
+
+h4(#get_tab_align). <a name="get_tab_align">get&#95;tab&#95;align</a>
+
+* "int":class_int *get&#95;tab&#95;align* *(* *)* const
+
+Return tab alignment, from the ALIGN&#95;&#42; enum
+
+h4(#set_tabs_visible). <a name="set_tabs_visible">set&#95;tabs&#95;visible</a>
+
+* void *set&#95;tabs&#95;visible* *(* "bool":class_bool visible *)*
+
+Set whether the tabs should be visible or hidden.
+
+h4(#are_tabs_visible). <a name="are_tabs_visible">are&#95;tabs&#95;visible</a>
+
+* "bool":class_bool *are&#95;tabs&#95;visible* *(* *)* const
+
+Return whether the tabs should be visible or hidden.
+
+h4(#set_tab_title). <a name="set_tab_title">set&#95;tab&#95;title</a>
+
+* void *set&#95;tab&#95;title* *(* "int":class_int tab&#95;idx, "String":class_string title *)*
+
+Set a title for the tab. Tab titles are by default the children node name, but this can be overriden.
+
+h4(#get_tab_title). <a name="get_tab_title">get&#95;tab&#95;title</a>
+
+* "String":class_string *get&#95;tab&#95;title* *(* "int":class_int tab&#95;idx *)* const
+
+Return the title for the tab. Tab titles are by default the children node name, but this can be overriden.
+
+h4(#set_tab_icon). <a name="set_tab_icon">set&#95;tab&#95;icon</a>
+
+* void *set&#95;tab&#95;icon* *(* "int":class_int tab&#95;idx, "Texture":class_texture icon *)*
+
+Set an icon for a tab.

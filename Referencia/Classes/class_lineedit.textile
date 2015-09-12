@@ -1,0 +1,115 @@
+h1(#lineedit). LineEdit
+
+h4(#inherits-control). *Inherits:* "Control":class_control
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Control that provides single line string editing.
+
+h3(#member-functions). Member Functions
+
+* void *"clear":#clear* *(* *)*
+* void *"select&#95;all":#select_all* *(* *)*
+* void *"set&#95;text":#set_text* *(* "String":class_string text *)*
+* "String":class_string *"get&#95;text":#get_text* *(* *)* const
+* void *"set&#95;cursor&#95;pos":#set_cursor_pos* *(* "int":class_int pos *)*
+* "int":class_int *"get&#95;cursor&#95;pos":#get_cursor_pos* *(* *)* const
+* void *"set&#95;max&#95;length":#set_max_length* *(* "int":class_int chars *)*
+* "int":class_int *"get&#95;max&#95;length":#get_max_length* *(* *)* const
+* void *"append&#95;at&#95;cursor":#append_at_cursor* *(* "String":class_string text *)*
+* void *"set&#95;editable":#set_editable* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;editable":#is_editable* *(* *)* const
+* void *"set&#95;secret":#set_secret* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;secret":#is_secret* *(* *)* const
+* void *"select":#select* *(* "int":class_int from=0, "int":class_int to=&#45;1 *)*
+
+h3(#signals). Signals
+
+* *text&#95;entered* *(* "String":class_string text *)*
+* *text&#95;changed* *(* "String":class_string text *)*
+
+h3(#description). Description
+
+LineEdit provides a single line string editor, used for text fields.
+
+h3(#member-function-description). Member Function Description
+
+h4(#clear). <a name="clear">clear</a>
+
+* void *clear* *(* *)*
+
+Clear the "LineEdit":class_lineedit text.
+
+h4(#select_all). <a name="select_all">select&#95;all</a>
+
+* void *select&#95;all* *(* *)*
+
+Select the whole string.
+
+h4(#set_text). <a name="set_text">set&#95;text</a>
+
+* void *set&#95;text* *(* "String":class_string text *)*
+
+Set the text in the "LineEdit":class_lineedit, clearing the existing one and the selection.
+
+h4(#get_text). <a name="get_text">get&#95;text</a>
+
+* "String":class_string *get&#95;text* *(* *)* const
+
+Return the text in the "LineEdit":class_lineedit.
+
+h4(#set_cursor_pos). <a name="set_cursor_pos">set&#95;cursor&#95;pos</a>
+
+* void *set&#95;cursor&#95;pos* *(* "int":class_int pos *)*
+
+Set the cursor position inside the "LineEdit":class_lineedit, causing it to scroll if needed.
+
+h4(#get_cursor_pos). <a name="get_cursor_pos">get&#95;cursor&#95;pos</a>
+
+* "int":class_int *get&#95;cursor&#95;pos* *(* *)* const
+
+Return the cursor position inside the "LineEdit":class_lineedit.
+
+h4(#set_max_length). <a name="set_max_length">set&#95;max&#95;length</a>
+
+* void *set&#95;max&#95;length* *(* "int":class_int chars *)*
+
+Set the maximum amount of characters the "LineEdit":class_lineedit can edit, and cropping existing text in case it exceeds that limit. Setting 0 removes the limit.
+
+h4(#get_max_length). <a name="get_max_length">get&#95;max&#95;length</a>
+
+* "int":class_int *get&#95;max&#95;length* *(* *)* const
+
+Return the maximum amount of characters the "LineEdit":class_lineedit can edit. If 0 is returned, no limit exists.
+
+h4(#append_at_cursor). <a name="append_at_cursor">append&#95;at&#95;cursor</a>
+
+* void *append&#95;at&#95;cursor* *(* "String":class_string text *)*
+
+Append text at cursor, scrolling the "LineEdit":class_lineedit when needed.
+
+h4(#set_editable). <a name="set_editable">set&#95;editable</a>
+
+* void *set&#95;editable* *(* "bool":class_bool enabled *)*
+
+Set the _editable_ status of the "LineEdit":class_lineedit. When disabled, existing text can&quot;apos;t be modified and new text can&quot;apos;t be added.
+
+h4(#is_editable). <a name="is_editable">is&#95;editable</a>
+
+* "bool":class_bool *is&#95;editable* *(* *)* const
+
+Return the _editable_ status of the "LineEdit":class_lineedit (see "set&#95;editable":#set_editable).
+
+h4(#set_secret). <a name="set_secret">set&#95;secret</a>
+
+* void *set&#95;secret* *(* "bool":class_bool enabled *)*
+
+Set the _secret_ status of the "LineEdit":class_lineedit. When enabled, every character is displayed as &quot;&#42;&quot;.
+
+h4(#is_secret). <a name="is_secret">is&#95;secret</a>
+
+* "bool":class_bool *is&#95;secret* *(* *)* const
+
+Return the _secret_ status of the "LineEdit":class_lineedit (see "set&#95;secret":#set_secret).

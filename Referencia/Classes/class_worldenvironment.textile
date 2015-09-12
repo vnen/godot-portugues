@@ -1,0 +1,14 @@
+h1(#worldenvironment). WorldEnvironment
+
+h4(#inherits-spatial). *Inherits:* "Spatial":class_spatial
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;environment":#set_environment* *(* "Environment":class_environment env *)*
+* "Environment":class_environment *"get&#95;environment":#get_environment* *(* *)* const
+
+h3(#member-function-description). Member Function Description
