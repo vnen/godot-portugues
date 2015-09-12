@@ -1,0 +1,32 @@
+h1(#rectangleshape2d). RectangleShape2D
+
+h4(#inherits-shape2d). *Inherits:* "Shape2D":class_shape2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Rectangle Shape for 2D Physics.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;extents":#set_extents* *(* "Vector2":class_vector2 extents *)*
+* "Vector2":class_vector2 *"get&#95;extents":#get_extents* *(* *)* const
+
+h3(#description). Description
+
+Rectangle Shape for 2D Physics. This shape is useful for modelling box&#45;like 2D objects.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_extents). <a name="set_extents">set&#95;extents</a>
+
+* void *set&#95;extents* *(* "Vector2":class_vector2 extents *)*
+
+Set the half extents, the actual width and height of this shape is twice the half extents.
+
+h4(#get_extents). <a name="get_extents">get&#95;extents</a>
+
+* "Vector2":class_vector2 *get&#95;extents* *(* *)* const
+
+Return the half extents, the actual width and height of this shape is twice the half extents.

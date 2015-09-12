@@ -1,0 +1,32 @@
+h1(#directionallight). DirectionalLight
+
+h4(#inherits-light). *Inherits:* "Light":class_light
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Directional Light, such as the Sun or the Moon.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;shadow&#95;mode":#set_shadow_mode* *(* "int":class_int mode *)*
+* "int":class_int *"get&#95;shadow&#95;mode":#get_shadow_mode* *(* *)* const
+* void *"set&#95;shadow&#95;param":#set_shadow_param* *(* "int":class_int param, "float":class_float value *)*
+* "float":class_float *"get&#95;shadow&#95;param":#get_shadow_param* *(* "int":class_int param *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *SHADOW&#95;ORTHOGONAL* = *0*
+* *SHADOW&#95;PERSPECTIVE* = *1*
+* *SHADOW&#95;PARALLEL&#95;2&#95;SPLITS* = *2*
+* *SHADOW&#95;PARALLEL&#95;4&#95;SPLITS* = *3*
+* *SHADOW&#95;PARAM&#95;MAX&#95;DISTANCE* = *0*
+* *SHADOW&#95;PARAM&#95;PSSM&#95;SPLIT&#95;WEIGHT* = *1*
+* *SHADOW&#95;PARAM&#95;PSSM&#95;ZOFFSET&#95;SCALE* = *2*
+
+h3(#description). Description
+
+A DirectionalLight is a type of "Light":class_light node that emits light constantly in one direction (the negative z axis of the node). It is used lights with strong intensity that are located far away from the scene to model sunlight or moonlight. The worldpace location of the DirectionalLight transform (origin) is ignored, only the basis is used do determine light direction.
+
+h3(#member-function-description). Member Function Description

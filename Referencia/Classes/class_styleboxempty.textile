@@ -1,0 +1,13 @@
+h1(#styleboxempty). StyleBoxEmpty
+
+h4(#inherits-stylebox). *Inherits:* "StyleBox":class_stylebox
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Empty stylebox (does not display anything).
+
+h3(#description). Description
+
+Empty stylebox (really does not display anything).

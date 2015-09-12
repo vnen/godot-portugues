@@ -1,0 +1,81 @@
+h1(#environment). Environment
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;background":#set_background* *(* "int":class_int bgmode *)*
+* "int":class_int *"get&#95;background":#get_background* *(* *)* const
+* void *"set&#95;background&#95;param":#set_background_param* *(* "int":class_int param, var value *)*
+* void *"get&#95;background&#95;param":#get_background_param* *(* "int":class_int param *)* const
+* void *"set&#95;enable&#95;fx":#set_enable_fx* *(* "int":class_int effect, "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;fx&#95;enabled":#is_fx_enabled* *(* "int":class_int effect *)* const
+* void *"fx&#95;set&#95;param":#fx_set_param* *(* "int":class_int param, var value *)*
+* void *"fx&#95;get&#95;param":#fx_get_param* *(* "int":class_int param *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *BG&#95;KEEP* = *0*
+* *BG&#95;DEFAULT&#95;COLOR* = *1*
+* *BG&#95;COLOR* = *2*
+* *BG&#95;TEXTURE* = *3*
+* *BG&#95;CUBEMAP* = *4*
+* *BG&#95;CANVAS* = *5*
+* *BG&#95;MAX* = *6*
+* *BG&#95;PARAM&#95;CANVAS&#95;MAX&#95;LAYER* = *0*
+* *BG&#95;PARAM&#95;COLOR* = *1*
+* *BG&#95;PARAM&#95;TEXTURE* = *2*
+* *BG&#95;PARAM&#95;CUBEMAP* = *3*
+* *BG&#95;PARAM&#95;ENERGY* = *4*
+* *BG&#95;PARAM&#95;GLOW* = *6*
+* *BG&#95;PARAM&#95;MAX* = *7*
+* *FX&#95;AMBIENT&#95;LIGHT* = *0*
+* *FX&#95;FXAA* = *1*
+* *FX&#95;GLOW* = *2*
+* *FX&#95;DOF&#95;BLUR* = *3*
+* *FX&#95;HDR* = *4*
+* *FX&#95;FOG* = *5*
+* *FX&#95;BCS* = *6*
+* *FX&#95;SRGB* = *7*
+* *FX&#95;MAX* = *8*
+* *FX&#95;BLUR&#95;BLEND&#95;MODE&#95;ADDITIVE* = *0*
+* *FX&#95;BLUR&#95;BLEND&#95;MODE&#95;SCREEN* = *1*
+* *FX&#95;BLUR&#95;BLEND&#95;MODE&#95;SOFTLIGHT* = *2*
+* *FX&#95;HDR&#95;TONE&#95;MAPPER&#95;LINEAR* = *0*
+* *FX&#95;HDR&#95;TONE&#95;MAPPER&#95;LOG* = *1*
+* *FX&#95;HDR&#95;TONE&#95;MAPPER&#95;REINHARDT* = *2*
+* *FX&#95;HDR&#95;TONE&#95;MAPPER&#95;REINHARDT&#95;AUTOWHITE* = *3*
+* *FX&#95;PARAM&#95;AMBIENT&#95;LIGHT&#95;COLOR* = *0*
+* *FX&#95;PARAM&#95;AMBIENT&#95;LIGHT&#95;ENERGY* = *1*
+* *FX&#95;PARAM&#95;GLOW&#95;BLUR&#95;PASSES* = *2*
+* *FX&#95;PARAM&#95;GLOW&#95;BLUR&#95;SCALE* = *3*
+* *FX&#95;PARAM&#95;GLOW&#95;BLUR&#95;STRENGTH* = *4*
+* *FX&#95;PARAM&#95;GLOW&#95;BLUR&#95;BLEND&#95;MODE* = *5*
+* *FX&#95;PARAM&#95;GLOW&#95;BLOOM* = *6*
+* *FX&#95;PARAM&#95;GLOW&#95;BLOOM&#95;TRESHOLD* = *7*
+* *FX&#95;PARAM&#95;DOF&#95;BLUR&#95;PASSES* = *8*
+* *FX&#95;PARAM&#95;DOF&#95;BLUR&#95;BEGIN* = *9*
+* *FX&#95;PARAM&#95;DOF&#95;BLUR&#95;RANGE* = *10*
+* *FX&#95;PARAM&#95;HDR&#95;TONEMAPPER* = *11*
+* *FX&#95;PARAM&#95;HDR&#95;EXPOSURE* = *12*
+* *FX&#95;PARAM&#95;HDR&#95;WHITE* = *13*
+* *FX&#95;PARAM&#95;HDR&#95;GLOW&#95;TRESHOLD* = *14*
+* *FX&#95;PARAM&#95;HDR&#95;GLOW&#95;SCALE* = *15*
+* *FX&#95;PARAM&#95;HDR&#95;MIN&#95;LUMINANCE* = *16*
+* *FX&#95;PARAM&#95;HDR&#95;MAX&#95;LUMINANCE* = *17*
+* *FX&#95;PARAM&#95;HDR&#95;EXPOSURE&#95;ADJUST&#95;SPEED* = *18*
+* *FX&#95;PARAM&#95;FOG&#95;BEGIN* = *19*
+* *FX&#95;PARAM&#95;FOG&#95;ATTENUATION* = *22*
+* *FX&#95;PARAM&#95;FOG&#95;BEGIN&#95;COLOR* = *20*
+* *FX&#95;PARAM&#95;FOG&#95;END&#95;COLOR* = *21*
+* *FX&#95;PARAM&#95;FOG&#95;BG* = *23*
+* *FX&#95;PARAM&#95;BCS&#95;BRIGHTNESS* = *24*
+* *FX&#95;PARAM&#95;BCS&#95;CONTRAST* = *25*
+* *FX&#95;PARAM&#95;BCS&#95;SATURATION* = *26*
+* *FX&#95;PARAM&#95;MAX* = *27*
+
+h3(#member-function-description). Member Function Description

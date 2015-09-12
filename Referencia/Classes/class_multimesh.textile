@@ -1,0 +1,95 @@
+h1(#multimesh). MultiMesh
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Provides high perfomance mesh instancing.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;mesh":#set_mesh* *(* "Mesh":class_mesh mesh *)*
+* "Mesh":class_mesh *"get&#95;mesh":#get_mesh* *(* *)* const
+* void *"set&#95;instance&#95;count":#set_instance_count* *(* "int":class_int arg0 *)*
+* "int":class_int *"get&#95;instance&#95;count":#get_instance_count* *(* *)* const
+* void *"set&#95;instance&#95;transform":#set_instance_transform* *(* "int":class_int arg0, "Transform":class_transform arg1 *)*
+* "Transform":class_transform *"get&#95;instance&#95;transform":#get_instance_transform* *(* "int":class_int arg0 *)* const
+* void *"set&#95;instance&#95;color":#set_instance_color* *(* "int":class_int arg0, "Color":class_color arg1 *)*
+* "Color":class_color *"get&#95;instance&#95;color":#get_instance_color* *(* "int":class_int arg0 *)* const
+* void *"set&#95;aabb":#set_aabb* *(* "AABB":class_aabb arg0 *)*
+* "AABB":class_aabb *"get&#95;aabb":#get_aabb* *(* *)* const
+* void *"generate&#95;aabb":#generate_aabb* *(* *)*
+
+h3(#description). Description
+
+MultiMesh provides low level mesh instancing. If the amount of "Mesh":class_mesh instances needed goes from hundreds to thousands (and most need to be visible at close proximity) creating such a large amount of "MeshInstance":class_meshinstance nodes may affect performance by using too much CPU or video memory. For this case a MultiMesh becomes very useful, as it can draw thousands of instances with little API overhead. As a drawback, if the instances are too far away of each other, performance may be reduced as every sigle instance will always rendered (they are spatially indexed as one, for the whole object). Since instances may have any behavior, the AABB used for visibility must be provided by the user, or generated with "generate&#95;aabb":#generate_aabb.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_mesh). <a name="set_mesh">set&#95;mesh</a>
+
+* void *set&#95;mesh* *(* "Mesh":class_mesh mesh *)*
+
+Set the "Mesh":class_mesh resource to be drawn in multiple instances.
+
+h4(#get_mesh). <a name="get_mesh">get&#95;mesh</a>
+
+* "Mesh":class_mesh *get&#95;mesh* *(* *)* const
+
+Return the "Mesh":class_mesh resource drawn as multiple instances.
+
+h4(#set_instance_count). <a name="set_instance_count">set&#95;instance&#95;count</a>
+
+* void *set&#95;instance&#95;count* *(* "int":class_int arg0 *)*
+
+Set the amount of instnces that is going to be drawn. Changing this number will erase all the existing instance transform and color data.
+
+h4(#get_instance_count). <a name="get_instance_count">get&#95;instance&#95;count</a>
+
+* "int":class_int *get&#95;instance&#95;count* *(* *)* const
+
+Return the amount of instnces that is going to be drawn.
+
+h4(#set_instance_transform). <a name="set_instance_transform">set&#95;instance&#95;transform</a>
+
+* void *set&#95;instance&#95;transform* *(* "int":class_int arg0, "Transform":class_transform arg1 *)*
+
+Set the transform for a specific instance.
+
+h4(#get_instance_transform). <a name="get_instance_transform">get&#95;instance&#95;transform</a>
+
+* "Transform":class_transform *get&#95;instance&#95;transform* *(* "int":class_int arg0 *)* const
+
+Return the transform of a specific instance.
+
+h4(#set_instance_color). <a name="set_instance_color">set&#95;instance&#95;color</a>
+
+* void *set&#95;instance&#95;color* *(* "int":class_int arg0, "Color":class_color arg1 *)*
+
+Set the color of a specific instance.
+
+h4(#get_instance_color). <a name="get_instance_color">get&#95;instance&#95;color</a>
+
+* "Color":class_color *get&#95;instance&#95;color* *(* "int":class_int arg0 *)* const
+
+Get the color of a specific instance.
+
+h4(#set_aabb). <a name="set_aabb">set&#95;aabb</a>
+
+* void *set&#95;aabb* *(* "AABB":class_aabb arg0 *)*
+
+Set the visibility AABB. If not provided, MultiMesh will not be visible.
+
+h4(#get_aabb). <a name="get_aabb">get&#95;aabb</a>
+
+* "AABB":class_aabb *get&#95;aabb* *(* *)* const
+
+Return the visibility AABB.
+
+h4(#generate_aabb). <a name="generate_aabb">generate&#95;aabb</a>
+
+* void *generate&#95;aabb* *(* *)*
+
+Generate a new visibility AABB, using mesh AABB and instance transforms. Since instance information is stored in the "VisualServer":class_visualserver, this function is VERY SLOW and must NOT be used often.

@@ -1,0 +1,24 @@
+h1(#bakedlightsampler). BakedLightSampler
+
+h4(#inherits-visualinstance). *Inherits:* "VisualInstance":class_visualinstance
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;param":#set_param* *(* "int":class_int param, "float":class_float value *)*
+* "float":class_float *"get&#95;param":#get_param* *(* "int":class_int param *)* const
+* void *"set&#95;resolution":#set_resolution* *(* "int":class_int resolution *)*
+* "int":class_int *"get&#95;resolution":#get_resolution* *(* *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *PARAM&#95;RADIUS* = *0*
+* *PARAM&#95;STRENGTH* = *1*
+* *PARAM&#95;ATTENUATION* = *2*
+* *PARAM&#95;DETAIL&#95;RATIO* = *3*
+* *PARAM&#95;MAX* = *4*
+
+h3(#member-function-description). Member Function Description

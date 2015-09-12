@@ -1,0 +1,67 @@
+h1(#dictionary). Dictionary
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Dictionary type.
+
+h3(#member-functions). Member Functions
+
+* void *"clear":#clear* *(* *)*
+* "bool":class_bool *"empty":#empty* *(* *)*
+* void *"erase":#erase* *(* var value *)*
+* "bool":class_bool *"has":#has* *(* var value *)*
+* "int":class_int *"hash":#hash* *(* *)*
+* "Array":class_array *"keys":#keys* *(* *)*
+* "int":class_int *"parse&#95;json":#parse_json* *(* "String":class_string json *)*
+* "int":class_int *"size":#size* *(* *)*
+* "String":class_string *"to&#95;json":#to_json* *(* *)*
+
+h3(#description). Description
+
+Dictionary type. Associative container which contains values referenced by unique keys. Dictionaries are always passed by reference.
+
+h3(#member-function-description). Member Function Description
+
+h4(#clear). <a name="clear">clear</a>
+
+* void *clear* *(* *)*
+
+Clear the dictionary, removing all key/value pairs.
+
+h4(#empty). <a name="empty">empty</a>
+
+* "bool":class_bool *empty* *(* *)*
+
+Return true if the dictionary is empty.
+
+h4(#erase). <a name="erase">erase</a>
+
+* void *erase* *(* var value *)*
+
+Erase a dictionary key/value pair by key.
+
+h4(#has). <a name="has">has</a>
+
+* "bool":class_bool *has* *(* var value *)*
+
+Return true if the dictionary has a given key.
+
+h4(#hash). <a name="hash">hash</a>
+
+* "int":class_int *hash* *(* *)*
+
+Return a hashed integer value representing the dictionary contents.
+
+h4(#keys). <a name="keys">keys</a>
+
+* "Array":class_array *keys* *(* *)*
+
+Return the list of keys in the dictionary.
+
+h4(#size). <a name="size">size</a>
+
+* "int":class_int *size* *(* *)*
+
+Return the size of the dictionary (in pairs).

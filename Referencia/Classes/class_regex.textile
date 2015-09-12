@@ -1,0 +1,15 @@
+h1(#regex). RegEx
+
+h4(#inherits-reference). *Inherits:* "Reference":class_reference
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "int":class_int *"compile":#compile* *(* "String":class_string pattern *)*
+* "int":class_int *"find":#find* *(* "String":class_string text, "int":class_int start=0, "int":class_int end=&#45;1 *)* const
+* "StringArray":class_stringarray *"get&#95;captures":#get_captures* *(* *)* const
+
+h3(#member-function-description). Member Function Description

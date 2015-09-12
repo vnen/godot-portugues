@@ -1,0 +1,13 @@
+h1(#checkbutton). CheckButton
+
+h4(#inherits-button). *Inherits:* "Button":class_button
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Checkable button.
+
+h3(#description). Description
+
+CheckButton is a toggle button displayed as a check field.

@@ -1,0 +1,12 @@
+h1(#rid). RID
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "int":class_int *"get&#95;id":#get_id* *(* *)*
+* "RID":class_rid *"RID":#RID* *(* "Object":class_object from *)*
+
+h3(#member-function-description). Member Function Description

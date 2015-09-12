@@ -1,0 +1,13 @@
+h1(#audiostreamoggvorbis). AudioStreamOGGVorbis
+
+h4(#inherits-audiostreamresampled). *Inherits:* "AudioStreamResampled":class_audiostreamresampled
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+OGG Vorbis audio stream driver.
+
+h3(#description). Description
+
+OGG Vorbis audio stream driver.

@@ -1,0 +1,60 @@
+h1(#resourcepreloader). ResourcePreloader
+
+h4(#inherits-node). *Inherits:* "Node":class_node
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Resource Preloader Node.
+
+h3(#member-functions). Member Functions
+
+* void *"add&#95;resource":#add_resource* *(* "String":class_string name, "Object":class_object resource *)*
+* void *"remove&#95;resource":#remove_resource* *(* "String":class_string name *)*
+* void *"rename&#95;resource":#rename_resource* *(* "String":class_string name, "String":class_string newname *)*
+* "bool":class_bool *"has&#95;resource":#has_resource* *(* "String":class_string name *)* const
+* "Object":class_object *"get&#95;resource":#get_resource* *(* "String":class_string name *)* const
+* "StringArray":class_stringarray *"get&#95;resource&#95;list":#get_resource_list* *(* *)* const
+
+h3(#description). Description
+
+Resource Preloader Node. This node is used to preload sub&#45;resources inside a scene, so when the scene is loaded all the resourcs are ready to use and be retrieved from here.
+
+h3(#member-function-description). Member Function Description
+
+h4(#add_resource). <a name="add_resource">add&#95;resource</a>
+
+* void *add&#95;resource* *(* "String":class_string name, "Object":class_object resource *)*
+
+Add a resource to the preloader. Set the text&#45;id that will be used to identify it (retrieve it/erase it/etc).
+
+h4(#remove_resource). <a name="remove_resource">remove&#95;resource</a>
+
+* void *remove&#95;resource* *(* "String":class_string name *)*
+
+Remove a resource from the preloader by text id.
+
+h4(#rename_resource). <a name="rename_resource">rename&#95;resource</a>
+
+* void *rename&#95;resource* *(* "String":class_string name, "String":class_string newname *)*
+
+Rename a resource inside the preloader, from a text&#45;id to a new text&#45;id.
+
+h4(#has_resource). <a name="has_resource">has&#95;resource</a>
+
+* "bool":class_bool *has&#95;resource* *(* "String":class_string name *)* const
+
+Return true if the preloader has a given resource.
+
+h4(#get_resource). <a name="get_resource">get&#95;resource</a>
+
+* "Object":class_object *get&#95;resource* *(* "String":class_string name *)* const
+
+Return the resource given a text&#45;id.
+
+h4(#get_resource_list). <a name="get_resource_list">get&#95;resource&#95;list</a>
+
+* "StringArray":class_stringarray *get&#95;resource&#95;list* *(* *)* const
+
+Return the list of resources inside the preloader.

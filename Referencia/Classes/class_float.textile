@@ -1,0 +1,13 @@
+h1(#float). float
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* "float":class_float *"float":#float* *(* "bool":class_bool from *)*
+* "float":class_float *"float":#float* *(* "int":class_int from *)*
+* "float":class_float *"float":#float* *(* "String":class_string from *)*
+
+h3(#member-function-description). Member Function Description

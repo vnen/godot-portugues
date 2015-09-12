@@ -1,0 +1,60 @@
+h1(#styleboximagemask). StyleBoxImageMask
+
+h4(#inherits-stylebox). *Inherits:* "StyleBox":class_stylebox
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Image mask based StyleBox, for mask test.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;image":#set_image* *(* "Image":class_image image *)*
+* "Image":class_image *"get&#95;image":#get_image* *(* *)* const
+* void *"set&#95;expand":#set_expand* *(* "bool":class_bool expand *)*
+* "bool":class_bool *"get&#95;expand":#get_expand* *(* *)* const
+* void *"set&#95;expand&#95;margin&#95;size":#set_expand_margin_size* *(* "int":class_int margin, "float":class_float size *)*
+* "float":class_float *"get&#95;expand&#95;margin&#95;size":#get_expand_margin_size* *(* "int":class_int arg0 *)* const
+
+h3(#description). Description
+
+This StyleBox is similar to "StyleBoxTexture":class_styleboxtexture, but only meant to be used for mask testing. It takes an image and applies stretch rules to determine if the poit clicked is masked or not.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_image). <a name="set_image">set&#95;image</a>
+
+* void *set&#95;image* *(* "Image":class_image image *)*
+
+Set the image used for mask testing. Pixels (converted to grey) that have a value, less than 0.5 will fail the test.
+
+h4(#get_image). <a name="get_image">get&#95;image</a>
+
+* "Image":class_image *get&#95;image* *(* *)* const
+
+Return the image used for mask testing. (see "set&#95;imag":#set_imag).
+
+h4(#set_expand). <a name="set_expand">set&#95;expand</a>
+
+* void *set&#95;expand* *(* "bool":class_bool expand *)*
+
+Set the expand property (default). When expanding, the image will use the same rules as "StyleBoxTexture":class_styleboxtexture for expand. If not expanding, the image will always be tested at its original size.
+
+h4(#get_expand). <a name="get_expand">get&#95;expand</a>
+
+* "bool":class_bool *get&#95;expand* *(* *)* const
+
+Return wether the expand property is set(default). When expanding, the image will use the same rules as "StyleBoxTexture":class_styleboxtexture for expand. If not expanding, the image will always be tested at its original size.
+
+h4(#set_expand_margin_size). <a name="set_expand_margin_size">set&#95;expand&#95;margin&#95;size</a>
+
+* void *set&#95;expand&#95;margin&#95;size* *(* "int":class_int margin, "float":class_float size *)*
+
+Set an expand margin size (from enum MARGIN&#95;&#42;). Parts of the image below the size of the margin (and in the direction of the margin) will not expand.
+
+h4(#get_expand_margin_size). <a name="get_expand_margin_size">get&#95;expand&#95;margin&#95;size</a>
+
+* "float":class_float *get&#95;expand&#95;margin&#95;size* *(* "int":class_int arg0 *)* const
+
+Return the expand margin size (from enum MARGIN&#95;&#42;). Parts of the image below the size of the margin (and in the direction of the margin) will not expand.

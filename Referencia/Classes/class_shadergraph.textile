@@ -1,0 +1,191 @@
+h1(#shadergraph). ShaderGraph
+
+h4(#inherits-shader). *Inherits:* "Shader":class_shader
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"node&#95;add":#node_add* *(* "int":class_int shader&#95;type, "int":class_int node&#95;type, "int":class_int id *)*
+* void *"node&#95;remove":#node_remove* *(* "int":class_int shader&#95;type, "int":class_int id *)*
+* void *"node&#95;set&#95;pos":#node_set_pos* *(* "int":class_int shader&#95;type, "int":class_int id, "Vector2":class_vector2 pos *)*
+* "Vector2":class_vector2 *"node&#95;get&#95;pos":#node_get_pos* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* "int":class_int *"node&#95;get&#95;type":#node_get_type* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* "Array":class_array *"get&#95;node&#95;list":#get_node_list* *(* "int":class_int shader&#95;type *)* const
+* void *"scalar&#95;const&#95;node&#95;set&#95;value":#scalar_const_node_set_value* *(* "int":class_int shader&#95;type, "int":class_int id, "float":class_float value *)*
+* void *"scalar&#95;const&#95;node&#95;get&#95;value":#scalar_const_node_get_value* *(* "int":class_int shader&#95;type, "int":class_int id, "float":class_float arg2 *)*
+* void *"vec&#95;const&#95;node&#95;set&#95;value":#vec_const_node_set_value* *(* "int":class_int shader&#95;type, "int":class_int id, "Vector3":class_vector3 value *)*
+* void *"vec&#95;const&#95;node&#95;get&#95;value":#vec_const_node_get_value* *(* "int":class_int shader&#95;type, "int":class_int id, "Vector3":class_vector3 arg2 *)*
+* void *"rgb&#95;const&#95;node&#95;set&#95;value":#rgb_const_node_set_value* *(* "int":class_int shader&#95;type, "int":class_int id, "Color":class_color value *)*
+* void *"rgb&#95;const&#95;node&#95;get&#95;value":#rgb_const_node_get_value* *(* "int":class_int shader&#95;type, "int":class_int id, "Color":class_color arg2 *)*
+* void *"xform&#95;const&#95;node&#95;set&#95;value":#xform_const_node_set_value* *(* "int":class_int shader&#95;type, "int":class_int id, "Transform":class_transform value *)*
+* void *"xform&#95;const&#95;node&#95;get&#95;value":#xform_const_node_get_value* *(* "int":class_int shader&#95;type, "int":class_int id, "Transform":class_transform arg2 *)*
+* void *"texture&#95;node&#95;set&#95;filter&#95;size":#texture_node_set_filter_size* *(* "int":class_int shader&#95;type, "int":class_int id, "int":class_int filter&#95;size *)*
+* void *"texture&#95;node&#95;get&#95;filter&#95;size":#texture_node_get_filter_size* *(* "int":class_int shader&#95;type, "int":class_int id, "int":class_int arg2 *)*
+* void *"texture&#95;node&#95;set&#95;filter&#95;strength":#texture_node_set_filter_strength* *(* "int":class_int shader&#95;type, "float":class_float id, "float":class_float filter&#95;strength *)*
+* void *"texture&#95;node&#95;get&#95;filter&#95;strength":#texture_node_get_filter_strength* *(* "int":class_int shader&#95;type, "float":class_float id, "float":class_float arg2 *)*
+* void *"scalar&#95;op&#95;node&#95;set&#95;op":#scalar_op_node_set_op* *(* "int":class_int shader&#95;type, "float":class_float id, "int":class_int op *)*
+* "int":class_int *"scalar&#95;op&#95;node&#95;get&#95;op":#scalar_op_node_get_op* *(* "int":class_int shader&#95;type, "float":class_float id *)* const
+* void *"vec&#95;op&#95;node&#95;set&#95;op":#vec_op_node_set_op* *(* "int":class_int shader&#95;type, "float":class_float id, "int":class_int op *)*
+* "int":class_int *"vec&#95;op&#95;node&#95;get&#95;op":#vec_op_node_get_op* *(* "int":class_int shader&#95;type, "float":class_float id *)* const
+* void *"vec&#95;scalar&#95;op&#95;node&#95;set&#95;op":#vec_scalar_op_node_set_op* *(* "int":class_int shader&#95;type, "float":class_float id, "int":class_int op *)*
+* "int":class_int *"vec&#95;scalar&#95;op&#95;node&#95;get&#95;op":#vec_scalar_op_node_get_op* *(* "int":class_int shader&#95;type, "float":class_float id *)* const
+* void *"rgb&#95;op&#95;node&#95;set&#95;op":#rgb_op_node_set_op* *(* "int":class_int shader&#95;type, "float":class_float id, "int":class_int op *)*
+* "int":class_int *"rgb&#95;op&#95;node&#95;get&#95;op":#rgb_op_node_get_op* *(* "int":class_int shader&#95;type, "float":class_float id *)* const
+* void *"xform&#95;vec&#95;mult&#95;node&#95;set&#95;no&#95;translation":#xform_vec_mult_node_set_no_translation* *(* "int":class_int shader&#95;type, "int":class_int id, "bool":class_bool disable *)*
+* "bool":class_bool *"xform&#95;vec&#95;mult&#95;node&#95;get&#95;no&#95;translation":#xform_vec_mult_node_get_no_translation* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* void *"scalar&#95;func&#95;node&#95;set&#95;function":#scalar_func_node_set_function* *(* "int":class_int shader&#95;type, "int":class_int id, "int":class_int func *)*
+* "int":class_int *"scalar&#95;func&#95;node&#95;get&#95;function":#scalar_func_node_get_function* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* void *"vec&#95;func&#95;node&#95;set&#95;function":#vec_func_node_set_function* *(* "int":class_int shader&#95;type, "int":class_int id, "int":class_int func *)*
+* "int":class_int *"vec&#95;func&#95;node&#95;get&#95;function":#vec_func_node_get_function* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* void *"input&#95;node&#95;set&#95;name":#input_node_set_name* *(* "int":class_int shader&#95;type, "int":class_int id, "String":class_string name *)*
+* "String":class_string *"input&#95;node&#95;get&#95;name":#input_node_get_name* *(* "int":class_int shader&#95;type, "int":class_int id *)*
+* void *"scalar&#95;input&#95;node&#95;set&#95;value":#scalar_input_node_set_value* *(* "int":class_int shader&#95;type, "int":class_int id, "float":class_float value *)*
+* "float":class_float *"scalar&#95;input&#95;node&#95;get&#95;value":#scalar_input_node_get_value* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* void *"vec&#95;input&#95;node&#95;set&#95;value":#vec_input_node_set_value* *(* "int":class_int shader&#95;type, "int":class_int id, "Vector3":class_vector3 value *)*
+* "Vector3":class_vector3 *"vec&#95;input&#95;node&#95;get&#95;value":#vec_input_node_get_value* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* void *"rgb&#95;input&#95;node&#95;set&#95;value":#rgb_input_node_set_value* *(* "int":class_int shader&#95;type, "int":class_int id, "Color":class_color value *)*
+* "Color":class_color *"rgb&#95;input&#95;node&#95;get&#95;value":#rgb_input_node_get_value* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* void *"xform&#95;input&#95;node&#95;set&#95;value":#xform_input_node_set_value* *(* "int":class_int shader&#95;type, "int":class_int id, "Transform":class_transform value *)*
+* "Transform":class_transform *"xform&#95;input&#95;node&#95;get&#95;value":#xform_input_node_get_value* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* void *"texture&#95;input&#95;node&#95;set&#95;value":#texture_input_node_set_value* *(* "int":class_int shader&#95;type, "int":class_int id, "Texture":class_texture value *)*
+* "Texture":class_texture *"texture&#95;input&#95;node&#95;get&#95;value":#texture_input_node_get_value* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* void *"cubemap&#95;input&#95;node&#95;set&#95;value":#cubemap_input_node_set_value* *(* "int":class_int shader&#95;type, "int":class_int id, "CubeMap":class_cubemap value *)*
+* "CubeMap":class_cubemap *"cubemap&#95;input&#95;node&#95;get&#95;value":#cubemap_input_node_get_value* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* void *"comment&#95;node&#95;set&#95;text":#comment_node_set_text* *(* "int":class_int shader&#95;type, "int":class_int id, "String":class_string text *)*
+* "String":class_string *"comment&#95;node&#95;get&#95;text":#comment_node_get_text* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* void *"color&#95;ramp&#95;node&#95;set&#95;ramp":#color_ramp_node_set_ramp* *(* "int":class_int shader&#95;type, "int":class_int id, "ColorArray":class_colorarray colors, "RealArray":class_realarray offsets *)*
+* "ColorArray":class_colorarray *"color&#95;ramp&#95;node&#95;get&#95;colors":#color_ramp_node_get_colors* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* "RealArray":class_realarray *"color&#95;ramp&#95;node&#95;get&#95;offsets":#color_ramp_node_get_offsets* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* void *"curve&#95;map&#95;node&#95;set&#95;points":#curve_map_node_set_points* *(* "int":class_int shader&#95;type, "int":class_int id, "Vector2Array":class_vector2array points *)*
+* "Vector2Array":class_vector2array *"curve&#95;map&#95;node&#95;get&#95;points":#curve_map_node_get_points* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+* Error *"connect&#95;node":#connect_node* *(* "int":class_int shader&#95;type, "int":class_int src&#95;id, "int":class_int src&#95;slot, "int":class_int dst&#95;id, "int":class_int dst&#95;slot *)*
+* "bool":class_bool *"is&#95;node&#95;connected":#is_node_connected* *(* "int":class_int shader&#95;type, "int":class_int src&#95;id, "int":class_int src&#95;slot, "int":class_int dst&#95;id, "int":class_int dst&#95;slot *)* const
+* void *"disconnect&#95;node":#disconnect_node* *(* "int":class_int shader&#95;type, "int":class_int src&#95;id, "int":class_int src&#95;slot, "int":class_int dst&#95;id, "int":class_int dst&#95;slot *)*
+* "Array":class_array *"get&#95;node&#95;connections":#get_node_connections* *(* "int":class_int shader&#95;type *)* const
+* void *"clear":#clear* *(* "int":class_int shader&#95;type *)*
+* void *"node&#95;set&#95;state":#node_set_state* *(* "int":class_int shader&#95;type, "int":class_int id, var state *)*
+* void *"node&#95;get&#95;state":#node_get_state* *(* "int":class_int shader&#95;type, "int":class_int id *)* const
+
+h3(#signals). Signals
+
+* *updated* *(* *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *NODE&#95;INPUT* = *0*
+* *NODE&#95;SCALAR&#95;CONST* = *1*
+* *NODE&#95;VEC&#95;CONST* = *2*
+* *NODE&#95;RGB&#95;CONST* = *3*
+* *NODE&#95;XFORM&#95;CONST* = *4*
+* *NODE&#95;TIME* = *5*
+* *NODE&#95;SCREEN&#95;TEX* = *6*
+* *NODE&#95;SCALAR&#95;OP* = *7*
+* *NODE&#95;VEC&#95;OP* = *8*
+* *NODE&#95;VEC&#95;SCALAR&#95;OP* = *9*
+* *NODE&#95;RGB&#95;OP* = *10*
+* *NODE&#95;XFORM&#95;MULT* = *11*
+* *NODE&#95;XFORM&#95;VEC&#95;MULT* = *12*
+* *NODE&#95;XFORM&#95;VEC&#95;INV&#95;MULT* = *13*
+* *NODE&#95;SCALAR&#95;FUNC* = *14*
+* *NODE&#95;VEC&#95;FUNC* = *15*
+* *NODE&#95;VEC&#95;LEN* = *16*
+* *NODE&#95;DOT&#95;PROD* = *17*
+* *NODE&#95;VEC&#95;TO&#95;SCALAR* = *18*
+* *NODE&#95;SCALAR&#95;TO&#95;VEC* = *19*
+* *NODE&#95;VEC&#95;TO&#95;XFORM* = *21*
+* *NODE&#95;XFORM&#95;TO&#95;VEC* = *20*
+* *NODE&#95;SCALAR&#95;INTERP* = *22*
+* *NODE&#95;VEC&#95;INTERP* = *23*
+* *NODE&#95;COLOR&#95;RAMP* = *24*
+* *NODE&#95;CURVE&#95;MAP* = *25*
+* *NODE&#95;SCALAR&#95;INPUT* = *26*
+* *NODE&#95;VEC&#95;INPUT* = *27*
+* *NODE&#95;RGB&#95;INPUT* = *28*
+* *NODE&#95;XFORM&#95;INPUT* = *29*
+* *NODE&#95;TEXTURE&#95;INPUT* = *30*
+* *NODE&#95;CUBEMAP&#95;INPUT* = *31*
+* *NODE&#95;DEFAULT&#95;TEXTURE* = *32*
+* *NODE&#95;OUTPUT* = *33*
+* *NODE&#95;COMMENT* = *34*
+* *NODE&#95;TYPE&#95;MAX* = *35*
+* *SLOT&#95;TYPE&#95;SCALAR* = *0*
+* *SLOT&#95;TYPE&#95;VEC* = *1*
+* *SLOT&#95;TYPE&#95;XFORM* = *2*
+* *SLOT&#95;TYPE&#95;TEXTURE* = *3*
+* *SLOT&#95;MAX* = *4*
+* *SHADER&#95;TYPE&#95;VERTEX* = *0*
+* *SHADER&#95;TYPE&#95;FRAGMENT* = *1*
+* *SHADER&#95;TYPE&#95;LIGHT* = *2*
+* *SHADER&#95;TYPE&#95;MAX* = *3*
+* *SLOT&#95;IN* = *0*
+* *SLOT&#95;OUT* = *1*
+* *GRAPH&#95;OK* = *0*
+* *GRAPH&#95;ERROR&#95;CYCLIC* = *1*
+* *GRAPH&#95;ERROR&#95;MISSING&#95;CONNECTIONS* = *2*
+* *SCALAR&#95;OP&#95;ADD* = *0*
+* *SCALAR&#95;OP&#95;SUB* = *1*
+* *SCALAR&#95;OP&#95;MUL* = *2*
+* *SCALAR&#95;OP&#95;DIV* = *3*
+* *SCALAR&#95;OP&#95;MOD* = *4*
+* *SCALAR&#95;OP&#95;POW* = *5*
+* *SCALAR&#95;OP&#95;MAX* = *6*
+* *SCALAR&#95;OP&#95;MIN* = *7*
+* *SCALAR&#95;OP&#95;ATAN2* = *8*
+* *SCALAR&#95;MAX&#95;OP* = *9*
+* *VEC&#95;OP&#95;ADD* = *0*
+* *VEC&#95;OP&#95;SUB* = *1*
+* *VEC&#95;OP&#95;MUL* = *2*
+* *VEC&#95;OP&#95;DIV* = *3*
+* *VEC&#95;OP&#95;MOD* = *4*
+* *VEC&#95;OP&#95;POW* = *5*
+* *VEC&#95;OP&#95;MAX* = *6*
+* *VEC&#95;OP&#95;MIN* = *7*
+* *VEC&#95;OP&#95;CROSS* = *8*
+* *VEC&#95;MAX&#95;OP* = *9*
+* *VEC&#95;SCALAR&#95;OP&#95;MUL* = *0*
+* *VEC&#95;SCALAR&#95;OP&#95;DIV* = *1*
+* *VEC&#95;SCALAR&#95;OP&#95;POW* = *2*
+* *VEC&#95;SCALAR&#95;MAX&#95;OP* = *3*
+* *RGB&#95;OP&#95;SCREEN* = *0*
+* *RGB&#95;OP&#95;DIFFERENCE* = *1*
+* *RGB&#95;OP&#95;DARKEN* = *2*
+* *RGB&#95;OP&#95;LIGHTEN* = *3*
+* *RGB&#95;OP&#95;OVERLAY* = *4*
+* *RGB&#95;OP&#95;DODGE* = *5*
+* *RGB&#95;OP&#95;BURN* = *6*
+* *RGB&#95;OP&#95;SOFT&#95;LIGHT* = *7*
+* *RGB&#95;OP&#95;HARD&#95;LIGHT* = *8*
+* *RGB&#95;MAX&#95;OP* = *9*
+* *SCALAR&#95;FUNC&#95;SIN* = *0*
+* *SCALAR&#95;FUNC&#95;COS* = *1*
+* *SCALAR&#95;FUNC&#95;TAN* = *2*
+* *SCALAR&#95;FUNC&#95;ASIN* = *3*
+* *SCALAR&#95;FUNC&#95;ACOS* = *4*
+* *SCALAR&#95;FUNC&#95;ATAN* = *5*
+* *SCALAR&#95;FUNC&#95;SINH* = *6*
+* *SCALAR&#95;FUNC&#95;COSH* = *7*
+* *SCALAR&#95;FUNC&#95;TANH* = *8*
+* *SCALAR&#95;FUNC&#95;LOG* = *9*
+* *SCALAR&#95;FUNC&#95;EXP* = *10*
+* *SCALAR&#95;FUNC&#95;SQRT* = *11*
+* *SCALAR&#95;FUNC&#95;ABS* = *12*
+* *SCALAR&#95;FUNC&#95;SIGN* = *13*
+* *SCALAR&#95;FUNC&#95;FLOOR* = *14*
+* *SCALAR&#95;FUNC&#95;ROUND* = *15*
+* *SCALAR&#95;FUNC&#95;CEIL* = *16*
+* *SCALAR&#95;FUNC&#95;FRAC* = *17*
+* *SCALAR&#95;FUNC&#95;SATURATE* = *18*
+* *SCALAR&#95;FUNC&#95;NEGATE* = *19*
+* *SCALAR&#95;MAX&#95;FUNC* = *20*
+* *VEC&#95;FUNC&#95;NORMALIZE* = *0*
+* *VEC&#95;FUNC&#95;SATURATE* = *1*
+* *VEC&#95;FUNC&#95;NEGATE* = *2*
+* *VEC&#95;FUNC&#95;RECIPROCAL* = *3*
+* *VEC&#95;FUNC&#95;RGB2HSV* = *4*
+* *VEC&#95;FUNC&#95;HSV2RGB* = *5*
+* *VEC&#95;MAX&#95;FUNC* = *6*
+
+h3(#member-function-description). Member Function Description

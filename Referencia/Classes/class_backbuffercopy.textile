@@ -1,0 +1,22 @@
+h1(#backbuffercopy). BackBufferCopy
+
+h4(#inherits-node2d). *Inherits:* "Node2D":class_node2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;rect":#set_rect* *(* "Rect2":class_rect2 rect *)*
+* "Rect2":class_rect2 *"get&#95;rect":#get_rect* *(* *)* const
+* void *"set&#95;copy&#95;mode":#set_copy_mode* *(* "int":class_int copy&#95;mode *)*
+* "int":class_int *"get&#95;copy&#95;mode":#get_copy_mode* *(* *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *COPY&#95;MODE&#95;DISALED* = *0*
+* *COPY&#95;MODE&#95;RECT* = *1*
+* *COPY&#95;MODE&#95;VIEWPORT* = *2*
+
+h3(#member-function-description). Member Function Description

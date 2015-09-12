@@ -1,0 +1,90 @@
+h1(#color). Color
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Color in RGBA format.
+
+h3(#member-functions). Member Functions
+
+* "Color":class_color *"blend":#blend* *(* "Color":class_color over *)*
+* "Color":class_color *"contrasted":#contrasted* *(* *)*
+* "float":class_float *"gray":#gray* *(* *)*
+* "Color":class_color *"inverted":#inverted* *(* *)*
+* "Color":class_color *"linear&#95;interpolate":#linear_interpolate* *(* "Color":class_color b, "float":class_float t *)*
+* "int":class_int *"to&#95;32":#to_32* *(* *)*
+* "int":class_int *"to&#95;ARGB32":#to_ARGB32* *(* *)*
+* "String":class_string *"to&#95;html":#to_html* *(* "bool":class_bool with&#95;alpha=True *)*
+* "Color":class_color *"Color":#Color* *(* "float":class_float r, "float":class_float g, "float":class_float b, "float":class_float a *)*
+* "Color":class_color *"Color":#Color* *(* "float":class_float r, "float":class_float g, "float":class_float b *)*
+
+h3(#member-variables). Member Variables
+
+* "float":class_float *r*
+* "float":class_float *g*
+* "float":class_float *b*
+* "float":class_float *a*
+* "float":class_float *h*
+* "float":class_float *s*
+* "float":class_float *v*
+
+h3(#description). Description
+
+A color is represented as red, green and blue (r,g,b) components. Additionally, &quot;a&quot; represents the alpha component, often used for transparency. Values are in floating point, ranging from 0 to 1.
+
+h3(#member-function-description). Member Function Description
+
+h4(#contrasted). <a name="contrasted">contrasted</a>
+
+* "Color":class_color *contrasted* *(* *)*
+
+Return the most contrasting color with this one.
+
+h4(#gray). <a name="gray">gray</a>
+
+* "float":class_float *gray* *(* *)*
+
+Convert the color to gray.
+
+h4(#inverted). <a name="inverted">inverted</a>
+
+* "Color":class_color *inverted* *(* *)*
+
+Return the inverted color (1&#45;r, 1&#45;g, 1&#45;b, 1&#45;a).
+
+h4(#linear_interpolate). <a name="linear_interpolate">linear&#95;interpolate</a>
+
+* "Color":class_color *linear&#95;interpolate* *(* "Color":class_color b, "float":class_float t *)*
+
+Return the linear interpolation with another color.
+
+h4(#to_32). <a name="to_32">to&#95;32</a>
+
+* "int":class_int *to&#95;32* *(* *)*
+
+Convert the color to a 32 its integer (each byte represets a RGBA).
+
+h4(#to_argb32). <a name="to_ARGB32">to&#95;ARGB32</a>
+
+* "int":class_int *to&#95;ARGB32* *(* *)*
+
+Convert color to ARGB32, more compatible with DirectX.
+
+h4(#to_html). <a name="to_html">to&#95;html</a>
+
+* "String":class_string *to&#95;html* *(* "bool":class_bool with&#95;alpha=True *)*
+
+Return the HTML hexadecimal color string.
+
+h4(#color-1). <a name="Color">Color</a>
+
+* "Color":class_color *Color* *(* "float":class_float r, "float":class_float g, "float":class_float b, "float":class_float a *)*
+
+Construct the color from an RGBA profile.
+
+h4(#color-2). <a name="Color">Color</a>
+
+* "Color":class_color *Color* *(* "float":class_float r, "float":class_float g, "float":class_float b *)*
+
+Construct the color from an RGBA profile.

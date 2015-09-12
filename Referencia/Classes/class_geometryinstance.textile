@@ -1,0 +1,53 @@
+h1(#geometryinstance). GeometryInstance
+
+h4(#inherits-visualinstance). *Inherits:* "VisualInstance":class_visualinstance
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Base node for geometry based visual instances.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;material&#95;override":#set_material_override* *(* "Object":class_object material *)*
+* "Object":class_object *"get&#95;material&#95;override":#get_material_override* *(* *)* const
+* void *"set&#95;flag":#set_flag* *(* "int":class_int flag, "bool":class_bool value *)*
+* "bool":class_bool *"get&#95;flag":#get_flag* *(* "int":class_int flag *)* const
+* void *"set&#95;draw&#95;range&#95;begin":#set_draw_range_begin* *(* "float":class_float mode *)*
+* "float":class_float *"get&#95;draw&#95;range&#95;begin":#get_draw_range_begin* *(* *)* const
+* void *"set&#95;draw&#95;range&#95;end":#set_draw_range_end* *(* "float":class_float mode *)*
+* "float":class_float *"get&#95;draw&#95;range&#95;end":#get_draw_range_end* *(* *)* const
+* void *"set&#95;baked&#95;light&#95;texture&#95;id":#set_baked_light_texture_id* *(* "int":class_int id *)*
+* "int":class_int *"get&#95;baked&#95;light&#95;texture&#95;id":#get_baked_light_texture_id* *(* *)* const
+* void *"set&#95;extra&#95;cull&#95;margin":#set_extra_cull_margin* *(* "float":class_float margin *)*
+* "float":class_float *"get&#95;extra&#95;cull&#95;margin":#get_extra_cull_margin* *(* *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *FLAG&#95;VISIBLE* = *0*
+* *FLAG&#95;CAST&#95;SHADOW* = *3*
+* *FLAG&#95;RECEIVE&#95;SHADOWS* = *4*
+* *FLAG&#95;BILLBOARD* = *1*
+* *FLAG&#95;BILLBOARD&#95;FIX&#95;Y* = *2*
+* *FLAG&#95;DEPH&#95;SCALE* = *5*
+* *FLAG&#95;VISIBLE&#95;IN&#95;ALL&#95;ROOMS* = *6*
+* *FLAG&#95;MAX* = *8*
+
+h3(#description). Description
+
+Base node for geometry based visual instances. Shares some common functionality like visibility and custom materials.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_material_override). <a name="set_material_override">set&#95;material&#95;override</a>
+
+* void *set&#95;material&#95;override* *(* "Object":class_object material *)*
+
+Set the material override for the whole geometry.
+
+h4(#get_material_override). <a name="get_material_override">get&#95;material&#95;override</a>
+
+* "Object":class_object *get&#95;material&#95;override* *(* *)* const
+
+Return the material override for the whole geometry.

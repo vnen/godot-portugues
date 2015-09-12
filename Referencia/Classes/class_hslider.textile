@@ -1,0 +1,13 @@
+h1(#hslider). HSlider
+
+h4(#inherits-slider). *Inherits:* "Slider":class_slider
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Horizontal slider.
+
+h3(#description). Description
+
+Horizontal slider. See "Slider":class_slider. This one goes from left (min) to right (max).

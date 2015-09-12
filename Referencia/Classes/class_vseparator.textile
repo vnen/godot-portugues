@@ -1,0 +1,13 @@
+h1(#vseparator). VSeparator
+
+h4(#inherits-separator). *Inherits:* "Separator":class_separator
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Vertical version of "Separator":class_separator.
+
+h3(#description). Description
+
+Vertical version of "Separator":class_separator. It is used to separate objects horizontally, though (but it looks vertical!).

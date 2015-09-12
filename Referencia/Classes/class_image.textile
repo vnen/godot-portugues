@@ -1,0 +1,64 @@
+h1(#image). Image
+
+h4(#category-built-in-types). *Category:* Built&#45;In Types
+
+h3(#brief-description). Brief Description
+
+Image datatype.
+
+h3(#member-functions). Member Functions
+
+* void *"blit&#95;rect":#blit_rect* *(* "Image":class_image src, "Rect2":class_rect2 src&#95;rect, "Vector2":class_vector2 dest=0 *)*
+* void *"brush&#95;transfer":#brush_transfer* *(* "Image":class_image src, "Image":class_image brush, "Vector2":class_vector2 pos=0 *)*
+* "Image":class_image *"brushed":#brushed* *(* "Image":class_image src, "Image":class_image brush, "Vector2":class_vector2 pos=0 *)*
+* "Image":class_image *"compressed":#compressed* *(* "int":class_int format=0 *)*
+* "Image":class_image *"converted":#converted* *(* "int":class_int format=0 *)*
+* "Image":class_image *"decompressed":#decompressed* *(* *)*
+* "bool":class_bool *"empty":#empty* *(* *)*
+* "RawArray":class_rawarray *"get&#95;data":#get_data* *(* *)*
+* "int":class_int *"get&#95;format":#get_format* *(* *)*
+* "int":class_int *"get&#95;height":#get_height* *(* *)*
+* "Color":class_color *"get&#95;pixel":#get_pixel* *(* "int":class_int x, "int":class_int y, "int":class_int mipmap&#95;level=0 *)*
+* "Image":class_image *"get&#95;rect":#get_rect* *(* "Rect2":class_rect2 area=0 *)*
+* "Rect2":class_rect2 *"get&#95;used&#95;rect":#get_used_rect* *(* *)*
+* "int":class_int *"get&#95;width":#get_width* *(* *)*
+* "int":class_int *"load":#load* *(* "String":class_string path=0 *)*
+* void *"put&#95;pixel":#put_pixel* *(* "int":class_int x, "int":class_int y, "Color":class_color color, "int":class_int mipmap&#95;level=0 *)*
+* "Image":class_image *"resized":#resized* *(* "int":class_int x, "int":class_int y, "int":class_int interpolation=1 *)*
+* "int":class_int *"save&#95;png":#save_png* *(* "String":class_string path=0 *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *COMPRESS&#95;BC* = *0*
+* *COMPRESS&#95;PVRTC2* = *1*
+* *COMPRESS&#95;PVRTC4* = *2*
+* *COMPRESS&#95;ETC* = *3*
+* *FORMAT&#95;GRAYSCALE* = *0*
+* *FORMAT&#95;INTENSITY* = *1*
+* *FORMAT&#95;GRAYSCALE&#95;ALPHA* = *2*
+* *FORMAT&#95;RGB* = *3*
+* *FORMAT&#95;RGBA* = *4*
+* *FORMAT&#95;INDEXED* = *5*
+* *FORMAT&#95;INDEXED&#95;ALPHA* = *6*
+* *FORMAT&#95;YUV&#95;422* = *7*
+* *FORMAT&#95;YUV&#95;444* = *8*
+* *FORMAT&#95;BC1* = *9*
+* *FORMAT&#95;BC2* = *10*
+* *FORMAT&#95;BC3* = *11*
+* *FORMAT&#95;BC4* = *12*
+* *FORMAT&#95;BC5* = *13*
+* *FORMAT&#95;PVRTC2* = *14*
+* *FORMAT&#95;PVRTC2&#95;ALPHA* = *15*
+* *FORMAT&#95;PVRTC4* = *16*
+* *FORMAT&#95;PVRTC4&#95;ALPHA* = *17*
+* *FORMAT&#95;ETC* = *18*
+* *FORMAT&#95;ATC* = *19*
+* *FORMAT&#95;ATC&#95;ALPHA&#95;EXPLICIT* = *20*
+* *FORMAT&#95;ATC&#95;ALPHA&#95;INTERPOLATED* = *21*
+* *FORMAT&#95;CUSTOM* = *22*
+
+h3(#description). Description
+
+Built in native image datatype. Contains image data, which can be converted to a texture, and several functions to interact with it.
+
+h3(#member-function-description). Member Function Description

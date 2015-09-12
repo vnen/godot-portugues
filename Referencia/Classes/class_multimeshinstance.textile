@@ -1,0 +1,32 @@
+h1(#multimeshinstance). MultiMeshInstance
+
+h4(#inherits-geometryinstance). *Inherits:* "GeometryInstance":class_geometryinstance
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Node that instances a "MultiMesh":class_multimesh.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;multimesh":#set_multimesh* *(* "Object":class_object multimesh *)*
+* "Object":class_object *"get&#95;multimesh":#get_multimesh* *(* *)* const
+
+h3(#description). Description
+
+MultiMeshInstance is a "Node":class_node that takes a "MultiMesh":class_multimesh resource and adds it to the current [Scenario] by creating an instance of it (yes, this is an instance of instances).
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_multimesh). <a name="set_multimesh">set&#95;multimesh</a>
+
+* void *set&#95;multimesh* *(* "Object":class_object multimesh *)*
+
+Set the "MultiMesh":class_multimesh to be instance.
+
+h4(#get_multimesh). <a name="get_multimesh">get&#95;multimesh</a>
+
+* "Object":class_object *get&#95;multimesh* *(* *)* const
+
+Return the "MultiMesh":class_multimesh that is used for instancing.

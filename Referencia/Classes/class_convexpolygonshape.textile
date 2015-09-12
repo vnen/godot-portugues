@@ -1,0 +1,20 @@
+h1(#convexpolygonshape). ConvexPolygonShape
+
+h4(#inherits-shape). *Inherits:* "Shape":class_shape
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Convex Polygon Shape
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;points":#set_points* *(* "Vector3Array":class_vector3array points *)*
+* "Vector3Array":class_vector3array *"get&#95;points":#get_points* *(* *)* const
+
+h3(#description). Description
+
+Convex polygon shape resource, which can be set into a "PhysicsBody":class_physicsbody or area.
+
+h3(#member-function-description). Member Function Description

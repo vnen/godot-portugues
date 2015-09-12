@@ -1,0 +1,13 @@
+h1(#boxcontainer). BoxContainer
+
+h4(#inherits-container). *Inherits:* "Container":class_container
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Base class for Box containers.
+
+h3(#description). Description
+
+Base class for Box containers. It arranges children controls vertically or horizontally, and rearranges them automatically when their minimum size changes.

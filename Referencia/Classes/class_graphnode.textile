@@ -1,0 +1,42 @@
+h1(#graphnode). GraphNode
+
+h4(#inherits-container). *Inherits:* "Container":class_container
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;title":#set_title* *(* "String":class_string title *)*
+* "String":class_string *"get&#95;title":#get_title* *(* *)* const
+* void *"set&#95;slot":#set_slot* *(* "int":class_int idx, "bool":class_bool enable&#95;left, "int":class_int type&#95;left, "Color":class_color color&#95;left, "bool":class_bool enable&#95;right, "int":class_int type&#95;right, "Color":class_color color&#95;right *)*
+* void *"clear&#95;slot":#clear_slot* *(* "int":class_int idx *)*
+* void *"clear&#95;all&#95;slots":#clear_all_slots* *(* *)*
+* "bool":class_bool *"is&#95;slot&#95;enabled&#95;left":#is_slot_enabled_left* *(* "int":class_int idx *)* const
+* "int":class_int *"get&#95;slot&#95;type&#95;left":#get_slot_type_left* *(* "int":class_int idx *)* const
+* "Color":class_color *"get&#95;slot&#95;color&#95;left":#get_slot_color_left* *(* "int":class_int idx *)* const
+* "bool":class_bool *"is&#95;slot&#95;enabled&#95;right":#is_slot_enabled_right* *(* "int":class_int idx *)* const
+* "int":class_int *"get&#95;slot&#95;type&#95;right":#get_slot_type_right* *(* "int":class_int idx *)* const
+* "Color":class_color *"get&#95;slot&#95;color&#95;right":#get_slot_color_right* *(* "int":class_int idx *)* const
+* void *"set&#95;offset":#set_offset* *(* "Vector2":class_vector2 offset *)*
+* "Vector2":class_vector2 *"get&#95;offset":#get_offset* *(* *)* const
+* "int":class_int *"get&#95;connection&#95;output&#95;count":#get_connection_output_count* *(* *)*
+* "int":class_int *"get&#95;connection&#95;input&#95;count":#get_connection_input_count* *(* *)*
+* "Vector2":class_vector2 *"get&#95;connection&#95;output&#95;pos":#get_connection_output_pos* *(* "int":class_int idx *)*
+* "int":class_int *"get&#95;connection&#95;output&#95;type":#get_connection_output_type* *(* "int":class_int idx *)*
+* "Color":class_color *"get&#95;connection&#95;output&#95;color":#get_connection_output_color* *(* "int":class_int idx *)*
+* "Vector2":class_vector2 *"get&#95;connection&#95;input&#95;pos":#get_connection_input_pos* *(* "int":class_int idx *)*
+* "int":class_int *"get&#95;connection&#95;input&#95;type":#get_connection_input_type* *(* "int":class_int idx *)*
+* "Color":class_color *"get&#95;connection&#95;input&#95;color":#get_connection_input_color* *(* "int":class_int idx *)*
+* void *"set&#95;show&#95;close&#95;button":#set_show_close_button* *(* "bool":class_bool show *)*
+* "bool":class_bool *"is&#95;close&#95;button&#95;visible":#is_close_button_visible* *(* *)* const
+
+h3(#signals). Signals
+
+* *raise&#95;request* *(* *)*
+* *close&#95;request* *(* *)*
+* *dragged* *(* "Vector2":class_vector2 from, "Vector2":class_vector2 to *)*
+* *offset&#95;changed* *(* *)*
+
+h3(#member-function-description). Member Function Description

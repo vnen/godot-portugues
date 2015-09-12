@@ -1,0 +1,53 @@
+h1(#pathremap). PathRemap
+
+h4(#inherits-object). *Inherits:* "Object":class_object
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Singleton containing the list of remapped resources.
+
+h3(#member-functions). Member Functions
+
+* void *"add&#95;remap":#add_remap* *(* "String":class_string from, "String":class_string to, "String":class_string locale=&quot;&quot; *)*
+* "bool":class_bool *"has&#95;remap":#has_remap* *(* "String":class_string path *)* const
+* "String":class_string *"get&#95;remap":#get_remap* *(* "String":class_string path *)* const
+* void *"erase&#95;remap":#erase_remap* *(* "String":class_string path *)*
+* void *"clear&#95;remaps":#clear_remaps* *(* *)*
+
+h3(#description). Description
+
+When exporting, the types of some resources may change internally so they are converted to more optimized versions. While it's not usually necesary to access to this directly (path remapping happens automatically when opeining a file), it's exported just for information.
+
+h3(#member-function-description). Member Function Description
+
+h4(#add_remap). <a name="add_remap">add&#95;remap</a>
+
+* void *add&#95;remap* *(* "String":class_string from, "String":class_string to, "String":class_string locale=&quot;&quot; *)*
+
+Add a remap from a file to another.
+
+h4(#has_remap). <a name="has_remap">has&#95;remap</a>
+
+* "bool":class_bool *has&#95;remap* *(* "String":class_string path *)* const
+
+Return true if a file is being remapped.
+
+h4(#get_remap). <a name="get_remap">get&#95;remap</a>
+
+* "String":class_string *get&#95;remap* *(* "String":class_string path *)* const
+
+Return the remapped new path of a file.
+
+h4(#erase_remap). <a name="erase_remap">erase&#95;remap</a>
+
+* void *erase&#95;remap* *(* "String":class_string path *)*
+
+Erase a remap.
+
+h4(#clear_remaps). <a name="clear_remaps">clear&#95;remaps</a>
+
+* void *clear&#95;remaps* *(* *)*
+
+Clear all remaps.

@@ -1,0 +1,26 @@
+h1(#navigationpolygon). NavigationPolygon
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;vertices":#set_vertices* *(* "Vector2Array":class_vector2array vertices *)*
+* "Vector2Array":class_vector2array *"get&#95;vertices":#get_vertices* *(* *)* const
+* void *"add&#95;polygon":#add_polygon* *(* "IntArray":class_intarray polygon *)*
+* "int":class_int *"get&#95;polygon&#95;count":#get_polygon_count* *(* *)* const
+* "IntArray":class_intarray *"get&#95;polygon":#get_polygon* *(* "int":class_int idx *)*
+* void *"clear&#95;polygons":#clear_polygons* *(* *)*
+* void *"add&#95;outline":#add_outline* *(* "Vector2Array":class_vector2array outline *)*
+* void *"add&#95;outline&#95;at&#95;index":#add_outline_at_index* *(* "Vector2Array":class_vector2array outline, "int":class_int index *)*
+* "int":class_int *"get&#95;outline&#95;count":#get_outline_count* *(* *)* const
+* void *"set&#95;outline":#set_outline* *(* "int":class_int idx, "Vector2Array":class_vector2array outline *)*
+* "Vector2Array":class_vector2array *"get&#95;outline":#get_outline* *(* "int":class_int idx *)* const
+* void *"remove&#95;outline":#remove_outline* *(* "int":class_int idx *)*
+* void *"clear&#95;outlines":#clear_outlines* *(* *)*
+* void *"make&#95;polygons&#95;from&#95;outlines":#make_polygons_from_outlines* *(* *)*
+
+h3(#member-function-description). Member Function Description

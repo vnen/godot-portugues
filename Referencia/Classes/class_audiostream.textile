@@ -1,0 +1,102 @@
+h1(#audiostream). AudioStream
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Base class for audio streams.
+
+h3(#member-functions). Member Functions
+
+* void *"play":#play* *(* *)*
+* void *"stop":#stop* *(* *)*
+* "bool":class_bool *"is&#95;playing":#is_playing* *(* *)* const
+* void *"set&#95;loop":#set_loop* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"has&#95;loop":#has_loop* *(* *)* const
+* "String":class_string *"get&#95;stream&#95;name":#get_stream_name* *(* *)* const
+* "int":class_int *"get&#95;loop&#95;count":#get_loop_count* *(* *)* const
+* void *"seek&#95;pos":#seek_pos* *(* "float":class_float pos *)*
+* "float":class_float *"get&#95;pos":#get_pos* *(* *)* const
+* "float":class_float *"get&#95;length":#get_length* *(* *)* const
+* "int":class_int *"get&#95;update&#95;mode":#get_update_mode* *(* *)* const
+* void *"update":#update* *(* *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *UPDATE&#95;NONE* = *0* &#45; Does not need update, or manual polling.
+* *UPDATE&#95;IDLE* = *1* &#45; Stream is updated on the main thread, when idle.
+* *UPDATE&#95;THREAD* = *2* &#45; Stream is updated on its own thread.
+
+h3(#description). Description
+
+Base class for audio streams. Audio streams are used for music&quot;#10;&quot;#9;playback, or other types of streamed sounds that don't fit or&quot;#10;&quot;#9;requiere more flexibility than a "Sample":class_sample.
+
+h3(#member-function-description). Member Function Description
+
+h4(#play). <a name="play">play</a>
+
+* void *play* *(* *)*
+
+Start playback of an audio stream.
+
+h4(#stop). <a name="stop">stop</a>
+
+* void *stop* *(* *)*
+
+Stop playback of an audio stream.
+
+h4(#is_playing). <a name="is_playing">is&#95;playing</a>
+
+* "bool":class_bool *is&#95;playing* *(* *)* const
+
+Return wether the audio stream is currently playing.
+
+h4(#set_loop). <a name="set_loop">set&#95;loop</a>
+
+* void *set&#95;loop* *(* "bool":class_bool enabled *)*
+
+Set the loop hint for the audio stream playback. if&quot;#10;&quot;#9;&quot;#9;&quot;#9;true, audio stream will attempt to loop (restart)&quot;#10;&quot;#9;&quot;#9;&quot;#9;when finished.
+
+h4(#has_loop). <a name="has_loop">has&#95;loop</a>
+
+* "bool":class_bool *has&#95;loop* *(* *)* const
+
+Return wether the audio stream loops. See "set&#95;loop":#set_loop
+
+h4(#get_stream_name). <a name="get_stream_name">get&#95;stream&#95;name</a>
+
+* "String":class_string *get&#95;stream&#95;name* *(* *)* const
+
+Return the name of the audio stream. Often the song&quot;#10;&quot;#9;&quot;#9;&quot;#9;title when the stream is music.
+
+h4(#get_loop_count). <a name="get_loop_count">get&#95;loop&#95;count</a>
+
+* "int":class_int *get&#95;loop&#95;count* *(* *)* const
+
+Return the amount of times that the stream has&quot;#10;&quot;#9;&quot;#9;&quot;#9;looped (if loop is supported).
+
+h4(#seek_pos). <a name="seek_pos">seek&#95;pos</a>
+
+* void *seek&#95;pos* *(* "float":class_float pos *)*
+
+Seek to a certain position (in seconds) in an audio&quot;#10;&quot;#9;&quot;#9;&quot;#9;stream.
+
+h4(#get_pos). <a name="get_pos">get&#95;pos</a>
+
+* "float":class_float *get&#95;pos* *(* *)* const
+
+Return the current playing position (in seconds) of the audio&quot;#10;&quot;#9;&quot;#9;&quot;#9;stream (if supported). Since this value is updated&quot;#10;&quot;#9;&quot;#9;&quot;#9;internally, it may not be exact or updated&quot;#10;&quot;#9;&quot;#9;&quot;#9;continuosly. Accuracy depends on the sample buffer&quot;#10;&quot;#9;&quot;#9;&quot;#9;size of the audio driver.
+
+h4(#get_update_mode). <a name="get_update_mode">get&#95;update&#95;mode</a>
+
+* "int":class_int *get&#95;update&#95;mode* *(* *)* const
+
+Return the type of update that the stream uses. Some&quot;#10;&quot;#9;&quot;#9;&quot;#9;types of stream may need manual polling.
+
+h4(#update). <a name="update">update</a>
+
+* void *update* *(* *)*
+
+Manually poll the audio stream (if it is requested&quot;#10;&quot;#9;&quot;#9;&quot;#9;to).

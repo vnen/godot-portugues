@@ -1,0 +1,78 @@
+h1(#particles2d). Particles2D
+
+h4(#inherits-node2d). *Inherits:* "Node2D":class_node2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;emitting":#set_emitting* *(* "bool":class_bool active *)*
+* "bool":class_bool *"is&#95;emitting":#is_emitting* *(* *)* const
+* void *"set&#95;amount":#set_amount* *(* "int":class_int amount *)*
+* "int":class_int *"get&#95;amount":#get_amount* *(* *)* const
+* void *"set&#95;lifetime":#set_lifetime* *(* "float":class_float lifetime *)*
+* "float":class_float *"get&#95;lifetime":#get_lifetime* *(* *)* const
+* void *"set&#95;time&#95;scale":#set_time_scale* *(* "float":class_float time&#95;scale *)*
+* "float":class_float *"get&#95;time&#95;scale":#get_time_scale* *(* *)* const
+* void *"set&#95;pre&#95;process&#95;time":#set_pre_process_time* *(* "float":class_float time *)*
+* "float":class_float *"get&#95;pre&#95;process&#95;time":#get_pre_process_time* *(* *)* const
+* void *"set&#95;emit&#95;timeout":#set_emit_timeout* *(* "float":class_float value *)*
+* "float":class_float *"get&#95;emit&#95;timeout":#get_emit_timeout* *(* *)* const
+* void *"set&#95;param":#set_param* *(* "int":class_int param, "float":class_float value *)*
+* "float":class_float *"get&#95;param":#get_param* *(* "int":class_int param *)* const
+* void *"set&#95;randomness":#set_randomness* *(* "int":class_int param, "float":class_float value *)*
+* "float":class_float *"get&#95;randomness":#get_randomness* *(* "int":class_int param *)* const
+* void *"set&#95;texture":#set_texture* *(* "Object":class_object texture *)*
+* "Texture":class_texture *"get&#95;texture":#get_texture* *(* *)* const
+* void *"set&#95;emissor&#95;offset":#set_emissor_offset* *(* "Vector2":class_vector2 offset *)*
+* "Vector2":class_vector2 *"get&#95;emissor&#95;offset":#get_emissor_offset* *(* *)* const
+* void *"set&#95;flip&#95;h":#set_flip_h* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;flipped&#95;h":#is_flipped_h* *(* *)* const
+* void *"set&#95;flip&#95;v":#set_flip_v* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;flipped&#95;v":#is_flipped_v* *(* *)* const
+* void *"set&#95;h&#95;frames":#set_h_frames* *(* "int":class_int enable *)*
+* "int":class_int *"get&#95;h&#95;frames":#get_h_frames* *(* *)* const
+* void *"set&#95;v&#95;frames":#set_v_frames* *(* "int":class_int enable *)*
+* "int":class_int *"get&#95;v&#95;frames":#get_v_frames* *(* *)* const
+* void *"set&#95;emission&#95;half&#95;extents":#set_emission_half_extents* *(* "Vector2":class_vector2 extents *)*
+* "Vector2":class_vector2 *"get&#95;emission&#95;half&#95;extents":#get_emission_half_extents* *(* *)* const
+* void *"set&#95;color&#95;phases":#set_color_phases* *(* "int":class_int phases *)*
+* "int":class_int *"get&#95;color&#95;phases":#get_color_phases* *(* *)* const
+* void *"set&#95;color&#95;phase&#95;color":#set_color_phase_color* *(* "int":class_int phase, "Color":class_color color *)*
+* "Color":class_color *"get&#95;color&#95;phase&#95;color":#get_color_phase_color* *(* "int":class_int phase *)* const
+* void *"set&#95;color&#95;phase&#95;pos":#set_color_phase_pos* *(* "int":class_int phase, "float":class_float pos *)*
+* "float":class_float *"get&#95;color&#95;phase&#95;pos":#get_color_phase_pos* *(* "int":class_int phase *)* const
+* void *"pre&#95;process":#pre_process* *(* "float":class_float time *)*
+* void *"set&#95;use&#95;local&#95;space":#set_use_local_space* *(* "bool":class_bool enable *)*
+* "bool":class_bool *"is&#95;using&#95;local&#95;space":#is_using_local_space* *(* *)* const
+* void *"set&#95;initial&#95;velocity":#set_initial_velocity* *(* "Vector2":class_vector2 velocity *)*
+* "Vector2":class_vector2 *"get&#95;initial&#95;velocity":#get_initial_velocity* *(* *)* const
+* void *"set&#95;explosiveness":#set_explosiveness* *(* "float":class_float amount *)*
+* "float":class_float *"get&#95;explosiveness":#get_explosiveness* *(* *)* const
+* void *"set&#95;emission&#95;points":#set_emission_points* *(* "Vector2Array":class_vector2array points *)*
+* "Vector2Array":class_vector2array *"get&#95;emission&#95;points":#get_emission_points* *(* *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *PARAM&#95;DIRECTION* = *0*
+* *PARAM&#95;SPREAD* = *1*
+* *PARAM&#95;LINEAR&#95;VELOCITY* = *2*
+* *PARAM&#95;SPIN&#95;VELOCITY* = *3*
+* *PARAM&#95;ORBIT&#95;VELOCITY* = *4*
+* *PARAM&#95;GRAVITY&#95;DIRECTION* = *5*
+* *PARAM&#95;GRAVITY&#95;STRENGTH* = *6*
+* *PARAM&#95;RADIAL&#95;ACCEL* = *7*
+* *PARAM&#95;TANGENTIAL&#95;ACCEL* = *8*
+* *PARAM&#95;DAMPING* = *9*
+* *PARAM&#95;INITIAL&#95;ANGLE* = *10*
+* *PARAM&#95;INITIAL&#95;SIZE* = *11*
+* *PARAM&#95;FINAL&#95;SIZE* = *12*
+* *PARAM&#95;HUE&#95;VARIATION* = *13*
+* *PARAM&#95;ANIM&#95;SPEED&#95;SCALE* = *14*
+* *PARAM&#95;ANIM&#95;INITIAL&#95;POS* = *15*
+* *PARAM&#95;MAX* = *16*
+* *MAX&#95;COLOR&#95;PHASES* = *4*
+
+h3(#member-function-description). Member Function Description

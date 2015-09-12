@@ -1,0 +1,92 @@
+h1(#filedialog). FileDialog
+
+h4(#inherits-confirmationdialog). *Inherits:* "ConfirmationDialog":class_confirmationdialog
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Dialog for selecting files or directories in the filesystem.
+
+h3(#member-functions). Member Functions
+
+* void *"clear&#95;filters":#clear_filters* *(* *)*
+* void *"add&#95;filter":#add_filter* *(* "String":class_string filter *)*
+* "String":class_string *"get&#95;current&#95;dir":#get_current_dir* *(* *)* const
+* "String":class_string *"get&#95;current&#95;file":#get_current_file* *(* *)* const
+* "String":class_string *"get&#95;current&#95;path":#get_current_path* *(* *)* const
+* void *"set&#95;current&#95;dir":#set_current_dir* *(* "String":class_string dir *)*
+* void *"set&#95;current&#95;file":#set_current_file* *(* "String":class_string file *)*
+* void *"set&#95;current&#95;path":#set_current_path* *(* "String":class_string path *)*
+* void *"set&#95;mode":#set_mode* *(* "int":class_int mode *)*
+* "int":class_int *"get&#95;mode":#get_mode* *(* *)* const
+* "VBoxContainer":class_vboxcontainer *"get&#95;vbox":#get_vbox* *(* *)*
+* void *"set&#95;access":#set_access* *(* "int":class_int access *)*
+* "int":class_int *"get&#95;access":#get_access* *(* *)* const
+* void *"set&#95;show&#95;hidden&#95;files":#set_show_hidden_files* *(* "bool":class_bool arg0 *)*
+* "bool":class_bool *"is&#95;showing&#95;hidden&#95;files":#is_showing_hidden_files* *(* *)* const
+* void *"invalidate":#invalidate* *(* *)*
+
+h3(#signals). Signals
+
+* *files&#95;selected* *(* "StringArray":class_stringarray paths *)*
+* *dir&#95;selected* *(* "String":class_string dir *)*
+* *file&#95;selected* *(* "String":class_string path *)*
+
+h3(#numeric-constants). Numeric Constants
+
+* *MODE&#95;OPEN&#95;FILE* = *0* &#45; Editor will not allow to select nonexistent files.
+* *MODE&#95;OPEN&#95;FILES* = *1*
+* *MODE&#95;OPEN&#95;DIR* = *2*
+* *MODE&#95;SAVE&#95;FILE* = *3* &#45; Editor will warn when a file exists.
+* *ACCESS&#95;RESOURCES* = *0*
+* *ACCESS&#95;USERDATA* = *1*
+* *ACCESS&#95;FILESYSTEM* = *2*
+
+h3(#description). Description
+
+FileDialog is a preset dialog used to choose files and directories in the filesystem. It supports filter masks.
+
+h3(#member-function-description). Member Function Description
+
+h4(#clear_filters). <a name="clear_filters">clear&#95;filters</a>
+
+* void *clear&#95;filters* *(* *)*
+
+Clear all the added filters in the dialog.
+
+h4(#add_filter). <a name="add_filter">add&#95;filter</a>
+
+* void *add&#95;filter* *(* "String":class_string filter *)*
+
+Add a custom filter. Filter format is: &quot;mask ; description&quot;, example (C&#43;&#43;): dialog&#45;&quot;lt;add&#95;filter(&quot;&#42;.png ; PNG Images&quot;);
+
+h4(#get_current_dir). <a name="get_current_dir">get&#95;current&#95;dir</a>
+
+* "String":class_string *get&#95;current&#95;dir* *(* *)* const
+
+Get the current working directory of the file dialog.
+
+h4(#get_current_file). <a name="get_current_file">get&#95;current&#95;file</a>
+
+* "String":class_string *get&#95;current&#95;file* *(* *)* const
+
+Get the current selected file of the file dialog (empty if none).
+
+h4(#get_current_path). <a name="get_current_path">get&#95;current&#95;path</a>
+
+* "String":class_string *get&#95;current&#95;path* *(* *)* const
+
+Get the current selected path (directory and file) of the file dialog (empty if none).
+
+h4(#set_mode). <a name="set_mode">set&#95;mode</a>
+
+* void *set&#95;mode* *(* "int":class_int mode *)*
+
+Set the file dialog mode from the MODE&#95;&#42; enum.
+
+h4(#get_mode). <a name="get_mode">get&#95;mode</a>
+
+* "int":class_int *get&#95;mode* *(* *)* const
+
+Get the file dialog mode from the MODE&#95;&#42; enum.

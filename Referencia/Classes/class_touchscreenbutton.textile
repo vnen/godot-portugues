@@ -1,0 +1,30 @@
+h1(#touchscreenbutton). TouchScreenButton
+
+h4(#inherits-node2d). *Inherits:* "Node2D":class_node2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;texture":#set_texture* *(* "Object":class_object texture *)*
+* "Object":class_object *"get&#95;texture":#get_texture* *(* *)* const
+* void *"set&#95;texture&#95;pressed":#set_texture_pressed* *(* "Object":class_object texture&#95;pressed *)*
+* "Object":class_object *"get&#95;texture&#95;pressed":#get_texture_pressed* *(* *)* const
+* void *"set&#95;bitmask":#set_bitmask* *(* "Object":class_object bitmask *)*
+* "Object":class_object *"get&#95;bitmask":#get_bitmask* *(* *)* const
+* void *"set&#95;action":#set_action* *(* "String":class_string action *)*
+* "String":class_string *"get&#95;action":#get_action* *(* *)* const
+* void *"set&#95;visibility&#95;mode":#set_visibility_mode* *(* "int":class_int mode *)*
+* "int":class_int *"get&#95;visibility&#95;mode":#get_visibility_mode* *(* *)* const
+* void *"set&#95;passby&#95;press":#set_passby_press* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"is&#95;passby&#95;press&#95;enabled":#is_passby_press_enabled* *(* *)* const
+* "bool":class_bool *"is&#95;pressed":#is_pressed* *(* *)* const
+
+h3(#signals). Signals
+
+* *released* *(* *)*
+* *pressed* *(* *)*
+
+h3(#member-function-description). Member Function Description

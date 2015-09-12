@@ -1,0 +1,9 @@
+h1(#vscrollbar). VScrollBar
+
+h4(#inherits-scrollbar). *Inherits:* "ScrollBar":class_scrollbar
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Vertical version of "ScrollBar":class_scrollbar, which goes from left (min) to right (max).

@@ -1,0 +1,32 @@
+h1(#boxshape). BoxShape
+
+h4(#inherits-shape). *Inherits:* "Shape":class_shape
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Box shape resource.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;extents":#set_extents* *(* "Vector3":class_vector3 extents *)*
+* "Vector3":class_vector3 *"get&#95;extents":#get_extents* *(* *)* const
+
+h3(#description). Description
+
+Box shape resource, which can be set into a "PhysicsBody":class_physicsbody or area.
+
+h3(#member-function-description). Member Function Description
+
+h4(#set_extents). <a name="set_extents">set&#95;extents</a>
+
+* void *set&#95;extents* *(* "Vector3":class_vector3 extents *)*
+
+Set the half extents for the shape.
+
+h4(#get_extents). <a name="get_extents">get&#95;extents</a>
+
+* "Vector3":class_vector3 *get&#95;extents* *(* *)* const
+
+Return the half extents of the shape.

@@ -1,0 +1,14 @@
+h1(#sphereshape). SphereShape
+
+h4(#inherits-shape). *Inherits:* "Shape":class_shape
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;radius":#set_radius* *(* "float":class_float radius *)*
+* "float":class_float *"get&#95;radius":#get_radius* *(* *)* const
+
+h3(#member-function-description). Member Function Description

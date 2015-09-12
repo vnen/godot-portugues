@@ -1,0 +1,85 @@
+h2(#exporting-projects). Exporting Projects
+
+h3(#why-exporting). Why Exporting?
+
+Originally, Godot did not have any means to export projects. The developers would compile the proper binaries and build the packages for each platform manually.
+
+When more developers (and even non&#45;programmers) started using it, and when our company started taking more projects at the same time, it became evident that this was a bottleneck.
+
+h4(#on-pc). On PC
+
+Distributing a game project on PC with Godot is rather easy. Just drop the godot.exe (or godot) binary together in the same place as the engine.cfg file, zip it and you are done. This can be taken advantage to make custom installers.
+
+It sounds simple, but there are probably a few reasons why the developer may not want to do this. The first one is that it may not be desirable to distribute loads of files. Some developers may not like curious users peeking at how the game was made, others may just find it inelegant, etc.
+
+Another reason is that, for distribution, the developer might use a specially compiled binary, which is smaller in size, more optimized and does not include tools inside (like the editor, debugger, etc).
+
+Finally, Godot has a simple but efficient system for creating DLCs as extra package files.
+
+h4(#on-mobile). On Mobile
+
+The same scenario in mobile is a little worse. To distribute a project in those devices, a binary for each of those platforms is built, then added to a native project together with the game data.
+
+This can be troublesome because it means that the developer must be familiarized with the SDK of each platform before even being able to export. In other words, while learning each SDK is always encouraged, it can be frustrating to be forced to do it at an undesired time.
+
+There is also another problem with this approach, which is the fact that different devices prefer some data in different formats to run. The main example of this is texture compression. All PC hardware uses S3TC (BC) compression and that has been standardized for more than a decade, but mobile devices use different formats for texture compression, such as PVRCT (iOS) or ETC (Android)
+
+h3(#export-dialog). Export Dialog
+
+After many attempts at different export workflows, the current one has worked the best.At the time of this writing, not all platforms are supported yet, but that will change soon.
+
+To open the export dialog, just click the &quot;Export&quot; Button:
+
+<p align="center">
+<img src="images/export.png">
+</p>
+The dialog will open, showing all the supported export platforms:
+
+<p align="center">
+<img src="images/export_dialog.png">
+</p>
+The default options are often enough to export, so tweaking them is not necessary until it's needed. However, many platforms require additional tools (SDKs) to be installed to be able to export. Additionally, Godot needs exports templates installed to create packages. The export dialog will complain when something is missing and will not allow the user to export for that platform until he or she resolves it:
+
+<p align="center">
+<img src="images/export_error.png">
+</p>
+At that time, the user is expected to come back to the wiki and follow instructions on how to properly set up that platform.
+
+h3(#export-templates). Export Templates
+
+Apart from setting up the platform, the export templates must be installed to be able to export projects. They can be downloaded as a .zip file from the wiki.
+
+Once downloaded, they can be installed using the &quot;Install Export Templates&quot; option in the editor:
+
+<p align="center">
+<img src="images/exptemp.png">
+</p>
+h3(#export-mode). Export Mode
+
+When exporting, Godot makes a list of all the files to export and then creates the package. There are 3 different modes for exporting:
+
+* Export every single file in the project
+* Export only resources (&#43;custom filter), this is default.
+* Export only selected resources (&#43;custom filter)
+
+<p align="center">
+<img src="images/expres.png">
+</p>
+h4(#export-every-single-file). Export every single file
+
+This mode exports every single file in the project. This is good to test if something is being forgotten, but developers often have a lot of unrelated stuff around in the dev dir, which makes it a bad idea.
+
+h4(#export-only-resources). Export only resources
+
+Only resources are exported. For most projects, this is enough. However many developers like to use custom datafiles in their games. To compensate for this, filters can be added for extra extensions (like, _.txt, _.csv, etc).
+
+h4(#export-only-selected-resources). Export only selected resources
+
+Only select resources from a list are exported. This is probably overkill for most projects, but in some cases it is justified (usually huge projects). This mode offers total control of what is exported. Individual resources can be selected and dependency detection is performed to ensure that everything needed is added. As a plus, this mode allows to &quot;Bundle&quot; scenes and dependencies into a single file, which is _really_ useful for games distributed on optical media.
+
+<p align="center">
+<img src="images/expselected.png">
+</p>
+<ol start="3" style="list-style-type: lower-alpha;">
+<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+</ol>

@@ -1,0 +1,13 @@
+h1(#hboxcontainer). HBoxContainer
+
+h4(#inherits-boxcontainer). *Inherits:* "BoxContainer":class_boxcontainer
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Horizontal box container.
+
+h3(#description). Description
+
+Horizontal box container. See "BoxContainer":class_boxcontainer.

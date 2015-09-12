@@ -1,0 +1,7 @@
+h1(#spatialsoundserversw). SpatialSoundServerSW
+
+h4(#inherits-spatialsoundserver). *Inherits:* "SpatialSoundServer":class_spatialsoundserver
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description

@@ -1,0 +1,74 @@
+h1(#acceptdialog). AcceptDialog
+
+h4(#inherits-windowdialog). *Inherits:* "WindowDialog":class_windowdialog
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Base dialog for user notification.
+
+h3(#member-functions). Member Functions
+
+* "Object":class_object *"get&#95;ok":#get_ok* *(* *)*
+* "Object":class_object *"get&#95;label":#get_label* *(* *)*
+* void *"set&#95;hide&#95;on&#95;ok":#set_hide_on_ok* *(* "bool":class_bool enabled *)*
+* "bool":class_bool *"get&#95;hide&#95;on&#95;ok":#get_hide_on_ok* *(* *)* const
+* "Button":class_button *"add&#95;button":#add_button* *(* "String":class_string text, "bool":class_bool right=false, "String":class_string action=&quot;&quot; *)*
+* "Button":class_button *"add&#95;cancel":#add_cancel* *(* "String":class_string name *)*
+* void *"register&#95;text&#95;enter":#register_text_enter* *(* "Object":class_object line&#95;edit *)*
+* void *"set&#95;text":#set_text* *(* "String":class_string text *)*
+* "String":class_string *"get&#95;text":#get_text* *(* *)* const
+
+h3(#signals). Signals
+
+* *confirmed* *(* *)*
+* *custom&#95;action* *(* "String":class_string action *)*
+
+h3(#description). Description
+
+This dialog is useful for small notifications to the user about an event. It can only be accepted or closed, with the same result.
+
+h3(#member-function-description). Member Function Description
+
+h4(#get_ok). <a name="get_ok">get&#95;ok</a>
+
+* "Object":class_object *get&#95;ok* *(* *)*
+
+Return the OK Button.
+
+h4(#get_label). <a name="get_label">get&#95;label</a>
+
+* "Object":class_object *get&#95;label* *(* *)*
+
+Return the label used for built&#45;in text.
+
+h4(#set_hide_on_ok). <a name="set_hide_on_ok">set&#95;hide&#95;on&#95;ok</a>
+
+* void *set&#95;hide&#95;on&#95;ok* *(* "bool":class_bool enabled *)*
+
+Set whether the dialog is hidden when accepted (default true).
+
+h4(#get_hide_on_ok). <a name="get_hide_on_ok">get&#95;hide&#95;on&#95;ok</a>
+
+* "bool":class_bool *get&#95;hide&#95;on&#95;ok* *(* *)* const
+
+Return true if the dialog will be hidden when accepted (default true).
+
+h4(#register_text_enter). <a name="register_text_enter">register&#95;text&#95;enter</a>
+
+* void *register&#95;text&#95;enter* *(* "Object":class_object line&#95;edit *)*
+
+Register a "LineEdit":class_lineedit in the dialog. When the enter key is pressed, the dialog will be accepted.
+
+h4(#set_text). <a name="set_text">set&#95;text</a>
+
+* void *set&#95;text* *(* "String":class_string text *)*
+
+Set the built&#45;in label text.
+
+h4(#get_text). <a name="get_text">get&#95;text</a>
+
+* "String":class_string *get&#95;text* *(* *)* const
+
+Return the built&#45;in label text.

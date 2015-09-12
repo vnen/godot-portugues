@@ -1,0 +1,29 @@
+h1(#soundplayer2d). SoundPlayer2D
+
+h4(#inherits-node2d). *Inherits:* "Node2D":class_node2d
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Base class for playing spatial 2D sound.
+
+h3(#member-functions). Member Functions
+
+* void *"set&#95;param":#set_param* *(* "int":class_int param, "float":class_float value *)*
+* "float":class_float *"get&#95;param":#get_param* *(* "int":class_int param *)* const
+
+h3(#numeric-constants). Numeric Constants
+
+* *PARAM&#95;VOLUME&#95;DB* = *0*
+* *PARAM&#95;PITCH&#95;SCALE* = *1*
+* *PARAM&#95;ATTENUATION&#95;MIN&#95;DISTANCE* = *2*
+* *PARAM&#95;ATTENUATION&#95;MAX&#95;DISTANCE* = *3*
+* *PARAM&#95;ATTENUATION&#95;DISTANCE&#95;EXP* = *4*
+* *PARAM&#95;MAX* = *5*
+
+h3(#description). Description
+
+Base class for playing spatial 2D sound.
+
+h3(#member-function-description). Member Function Description

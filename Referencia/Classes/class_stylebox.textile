@@ -1,0 +1,62 @@
+h1(#stylebox). StyleBox
+
+h4(#inherits-resource). *Inherits:* "Resource":class_resource
+
+h4(#category-core). *Category:* Core
+
+h3(#brief-description). Brief Description
+
+Base class for dawing stylized boxes for the UI.
+
+h3(#member-functions). Member Functions
+
+* "bool":class_bool *"test&#95;mask":#test_mask* *(* "Vector2":class_vector2 point, "Rect2":class_rect2 rect *)* const
+* void *"set&#95;default&#95;margin":#set_default_margin* *(* "int":class_int margin, "float":class_float offset *)*
+* "float":class_float *"get&#95;default&#95;margin":#get_default_margin* *(* "int":class_int margin *)* const
+* "float":class_float *"get&#95;margin":#get_margin* *(* "int":class_int margin *)* const
+* "Vector2":class_vector2 *"get&#95;minimum&#95;size":#get_minimum_size* *(* *)* const
+* "Vector2":class_vector2 *"get&#95;center&#95;size":#get_center_size* *(* *)* const
+* "Vector2":class_vector2 *"get&#95;offset":#get_offset* *(* *)* const
+* void *"draw":#draw* *(* "RID":class_rid arg0, "Rect2":class_rect2 arg1 *)* const
+
+h3(#description). Description
+
+StyleBox is "Resource":class_resource that provides an abstract base class for dawing stylized boxes for the UI. StyleBoxes are used for dawing the styles of buttons, line edit backgrounds, tree backgrounds, etc. and also for testing a transparency mask for pointer signals. If mask test fails on a StyleBox assigned as mask to a control, clicks and motion signals will go through it to the one below.
+
+h3(#member-function-description). Member Function Description
+
+h4(#test_mask). <a name="test_mask">test&#95;mask</a>
+
+* "bool":class_bool *test&#95;mask* *(* "Vector2":class_vector2 point, "Rect2":class_rect2 rect *)* const
+
+Test a position in a rectangle, return wether it pases the mask test.
+
+h4(#set_default_margin). <a name="set_default_margin">set&#95;default&#95;margin</a>
+
+* void *set&#95;default&#95;margin* *(* "int":class_int margin, "float":class_float offset *)*
+
+Set the default offset &quot;offset&quot; of the margin &quot;margin&quot; (see MARGIN&#95;&#42; enum) for a StyleBox, Controls that draw styleboxes with context inside need to know the margin, so the border of the stylebox is not occluded.
+
+h4(#get_default_margin). <a name="get_default_margin">get&#95;default&#95;margin</a>
+
+* "float":class_float *get&#95;default&#95;margin* *(* "int":class_int margin *)* const
+
+Return the default offset of the margin &quot;margin&quot; (see MARGIN&#95;&#42; enum) of a StyleBox, Controls that draw styleboxes with context inside need to know the margin, so the border of the stylebox is not occluded.
+
+h4(#get_margin). <a name="get_margin">get&#95;margin</a>
+
+* "float":class_float *get&#95;margin* *(* "int":class_int margin *)* const
+
+Return the offset of margin &quot;margin&quot; (see MARGIN&#95;&#42; enum).
+
+h4(#get_minimum_size). <a name="get_minimum_size">get&#95;minimum&#95;size</a>
+
+* "Vector2":class_vector2 *get&#95;minimum&#95;size* *(* *)* const
+
+Return the minimum size that this stylebox can be shrunk to.
+
+h4(#get_offset). <a name="get_offset">get&#95;offset</a>
+
+* "Vector2":class_vector2 *get&#95;offset* *(* *)* const
+
+Return the &quot;offset&quot; of a stylebox, this is a helper function, like writing Point2( style.get&#95;margin(MARGIN&#95;LEFT), style.get&#95;margin(MARGIN&#95;TOP) )
