@@ -1,167 +1,150 @@
-h1(#scripting). Scripting
+h1. Programando
 
-h3(#introduction). Introduction
+h2. Introdução
 
-Much has been said about tools that allow users to create video games without programming. It's been a dream for many independent developers to create games without learning how to code. This need has been around for a long time, even inside companies, where game designers wish to have more control of the game flow.
+Muito já foi dito sobre sobre ferramentas que permitem que os usuários criarem jogos sem programação. É um sonho de muitos desenvolvedores independentes essa possibilidade de criar jogos sem precisar aprender linguagens e lógica de programação. Tal necessidade está por aí há muito tempo, mesmo dentro de empresas, na qual os designers de jogos desejam ter maior controle sobre o fluxo de produção.
 
-Many products have been shipped promising a no&#45;programming environment, but the result is often incomplete, too complex or inefficient compared to traditional code. As a result, programming is here to stay for a long time. In fact, the general direction in game engines has been to add tools that try to reduce the amount of code that needs to be written for specific tasks, to speed up development.
+Muitos produtos foram distribuídos prometendo um ambiente sem programação, mas o resulta é frequentemente incompleto, muito complexo, ou ineficiente se comparado ao código tradicional. Como resultado, a programação está aqui para ficar por um bom tempo. De fato, a direção geral dos motores de jogos é adicionar ferramentas que tentam reduzir a quantidade de código que precisa ser escrita para tarefas específicas, acelerando o desenvolvimento.
 
-In that sense, Godot has taken some useful design decisions towards that goal. The first and most important is the scene system. The aim of it is not obvious at first, but works well later on. That is, to relieve programmers from the responsibility of architecting code.
+Nesse sentido, a Godot tomou algumas decisões de projeto na direção de tal objetivo. O primeiro e mais importante é o sistema de cenas. A meta deste pode não parecer óbvio logo de cara, mas funciona bem no futuro. Isto é, para aliviar os programadores da responsabilidade de arquitetar código.
 
-When designing games using the scene system, the whole project is fragmented in _complementary_ scenes (not individual ones). Scenes complement each other, instead of being separate. There will be plenty of examples about this later on, but it's very important to remember it.
+Quando se projeta jogos usando o sistema de cenas, o projeto inteiro é fragmentado em +cenas complementares+ (e não individuais). As cenas se complementam em vez de serem separadas. Haverá diversos exemplos disso mais para a frente, mas é muito importante recordar-se disso.
 
-For those with a good amount of programming expertise, this means a different design pattern to MVC. Godot promises efficiency at the expense of dropping the MVC habits, which are replaced by the _scenes as a complement_ pattern.
+Para aqueles com uma boa experiência de programação, isso significa um padrão de projeto diferente do MVC. A Godot promete eficiência sob o custo de dispensar os hábitos do MVC, que são substituídos pelo padrão de +cenas como um complemento+.
 
-Godot also uses the "extend":http://c2.com/cgi/wiki?EmbedVsExtend pattern for scripting, meaning that scripts extends from all the available engine classes.
+Também é usado o padrão "_extend_":http://c2.com/cgi/wiki?EmbedVsExtend nos scripts, sendo assim eles estendem cada uma classes disponíveis no motor.
 
-h3(#gdscript). GDScript
+h2. GDScript
 
-"GDScript":gdscript (click link for reference) is a dynamically typed scripting language to fit inside Godot. It was designed with the following goals:
+[[GDScript]] (clique no link para ver a referência) é uma linguagem de tipagem dinâmica feita para se encaixar na Godot. Foi projetada com os seguintes objetivos:
 
-* First and most importantly, making it simple, familiar and as easy to learn as possible.
-* Making the code readable and error safe. The syntax is mostly borrowed from Python.
+* Primeiro e mais importante: ser simples, familiar e tão fácil de aprender quanto possível.
+* Tornar o código legível e seguro contra erros. A sintaxe é, em sua maioria, inspirada no Python.
 
-Programmers generally take a few days to learn it, and within two weeks feel comfortable with it.
+Os programadores geralmente levam alguns dias para aprendê-la e cerca de suas semanas para se sentirem confortáveis com ela.
 
-As with most dynamically typed languages though, the higher productivity (code is easier to learn, faster to write, no compilation, etc) is balanced with a performance penalty, but most critical code is written in C&#43;&#43; already in the engine (vector ops, physics, math, indexing, etc), making the resulting performance more than enough for most types of games.
+No entanto, como na maioria das linguagens de tipagem dinâmica, a maior produtividade (código é fácil de aprender, rápido para escrever, sem compilação, etc.) é balanceada com uma pena de desempenho, mas o código mais crítico é escrito em C++ e já está na Engine (operações vetoriais, física, matemática, indexação, etc.) tornando o desempenho obtido mais do que suficiente para a maioria dos jogos.
 
-In any case, if more performance is required, critical sections can be rewritten in C&#43;&#43; and exposed transparently to the script. This allows for replacing a GDScript class with a C&#43;&#43; class without altering the rest of the game.
+De qualquer forma, se há necessidade de melhor desempenho, as partes críticas podem ser reescritas em C++ e expostas de forma transparente aos scripts. Isto permite substituir uma classe GDScript com uma classe C++ sem alterar o resto do jogo.
 
-h3(#scripting-a-scene). Scripting a Scene
+h2. Colocando script numa cena
 
-Before continuing, please make sure to read the "GDScript":gdscript reference. It's a simple language and the reference is short, should not take more than a few minutes to glance.
+Antes de continuar, por favor certifique-se de ler a referência do [[GDScript]]. É uma linguagem simples e a referência é curta, não deve tomar mais do que alguns minutos para dar uma olhada.
 
-h4(#scene-setup). Scene Setup
+h3. Configuração da Cena
 
-This tutorial will begin by scripting a simple GUI scene. Use the add node dialog to create the following hierarchy, with the following nodes:
+Este tutorial começará pela criação de um script para uma cena de GUI (_interface gráfica de usuário_) simples. Use o diálogo de adicionar nós para criar a seguinte hierarquia, com esses nós:
 
-* Panel
+*  Panel
 ** Label
 ** Button
 
-It should look like this in the scene tree:
+A árvore da cena deve se parecer com isso.
 
-<p align="center">
-<img src="images/scriptscene.png">
-</p>
-And try to make it look like this in the 2D editor, so it makes sense:
+p=. !http://www.godotengine.org/attachments/40/download!
 
-<p align="center">
-<img src="images/scriptsceneimg.png">
-</p>
-Finally, save the scene, a fitting name could be &quot;sayhello.scn&quot;
+E tente fazer as coisas ficarem desse jeito no editor 2D, para que faça sentido:
 
-h4(#adding-a-script). Adding a Script
+p=. !http://www.godotengine.org/attachments/41/download!
 
-Select the Panel node, then press the &quot;Add Script&quot; Icon as follows:
+Finalmente, salve a cena. Um nome apropriado poderia ser: "sayhello.scn".
 
-<p align="center">
-<img src="images/addscript.png">
-</p>
-The script creation diallog will popup. This dialog allows to select the language, class name, etc. GDScript does not use class names in script files, so that field is not editable. The script should inherit from &quot;Panel&quot; (as it is meant to extend the node, which is of Panel type, this is automatically filled anyway). Select the filename for the script (if you saved the scene previously, one will be automatically generated as sayhello.gd) and push &quot;Create&quot;:
+h3. Adicionando um Script
 
-<p align="center">
-<img src="images/scriptcreate.png">
-</p>
-Once this is done, the script will be created and added to the node. You can see this both as an extra icon in the node, as well as in the script property:
+Selecione o nó Panel, então pressione o ícone "Add Script" (_adicionar script_) como mostra a imagem:
 
-<p align="center">
-<img src="images/scriptadded.png">
-</p>
-To edit the script, pushing the icon above should do it (although, the UI will take you directly to the Script editor screen). So, here's the template script:
+p=. !http://www.godotengine.org/attachments/33/download!
 
-<p align="center">
-<img src="images/script_template.png">
-</p>
-There is not much in there. The &quot;&#95;ready()&quot; function is called when the node (and all it's children) entered the active scene. (Remember, It's not a constructor, the constructor is &quot;&#95;init()&quot; ).
+O diálogo de criação de script irá aparecer. Este diálogo permite que você selecione a linguagem, o nome da classe, etc. GDScript não usa nomes de classe em arquivos de script, então este campo não é editável.
 
-h4(#the-role-of-the-script). The Role of the Script
+O script deve herdar de "Panel" (pois tem a intenção de estender o nó, que é do tipo Panel, e isso é preenchido automaticamente de qualquer forma). Selecione o nome do arquivo para o script (se você salvou a cena previamente, um nome como "sayhello.gd" será gerado automaticamente) e clique em "Create" (_Criar_):
 
-A script basically adds a behavior to a node. It is used to control the node functions as well as other nodes (children, parent, siblings, etc). The local scope of the script is the node (just like in regular inheritance) and the virtual functions of the node are captured by the script.
+p=. !http://www.godotengine.org/attachments/38/download!
 
-<p align="center">
-<img src="images/brainslug.jpg">
-</p>
-h4(#handling-a-signal). Handling a Signal
+Assim que isso for feito, o script será criado e adicionado ao nó. Você pode ver isso tanto como um ícone extra no nó quanto na propriedade "Script":
 
-Signals are used mostly in GUI nodes, (although other nodes have them too). Signals are &quot;emitted&quot; when some specific kind of action happens, and can be connected to any function of any script instance. In this step, the &quot;pressed&quot; signal from the button will be connected to a custom function.
+p=. !http://www.godotengine.org/attachments/37/download!
 
-There is a GUI for connecting signals, just select the node and press the &quot;Signals&quot; button:
+Para editar o script, basta apertar o ícone acima (apesar de que você já será levado diretamente a tela do editor de Scripts). Então virá o modelo de script:
 
-<p align="center">
-<img src="images/signals.png">
-</p>
-Which will show the list of signals a Button can emit.
+p=. !http://www.godotengine.org/attachments/36/download!
 
-<p align="center">
-<img src="images/button_connections.png">
-</p>
-But this example will not use it. We don't want to make things _too_ easy. So please close that screen! In any case, at this point it is clear that that we are interested in the &quot;pressed&quot; signal, so instead of doing it with the visual interface, the connection will be done using code.
+Não há muita coisa por aqui. A função @_ready()@ é chamada quando o nó (e todos os seus filhos) entraram na cena ativa. (Lembre-se de que não é um construtor, pois este é a função @_init()@).
 
-For this, there is a function that is probably the one that Godot programmers will use the most, this is "get&#95;node":class_node#get_node(). This function uses paths to fetch nodes in the current tree or anywhere in the scene, relative to the node holding the script.
+h3. O Papel do Script
 
-To fetch the button, the following must be used:
+Um script basicamente adiciona comportamento a um nó. Ele é usado para controlar as funções do nó ao qual é anexado e também de outros nós (filhos, pais, irmãos, etc.). O escopo local do script é o nó (da mesma forma que herança tradicional) e as funções virtuais do nó são capturadas pelo script.
 
-<pre class="python">
+p=. !http://www.godotengine.org/attachments/34/download!
 
-get_node(&quot;Button&quot;)
+h3. Lidando com sinais
 
-</pre>
+Sinais em geral são usados em nós para GUI (embora outros nós também os possuam). Os sinais são *emitidos* quando algum tipo de ação específico acontece e pode ser conectado a qualquer função de qualquer instância de script. Nesse passo, o sinal "pressed" (_pressionado_) do botão será conectado a uma função personalizada.
 
-So, next, a callback will be added for when a button is pressed, that will change the label's text:
+Aqui vemos a interface para conectar sinais. Apenas selecione o nó e pressione o botão "Signals" (_Sinais_):
 
-<pre class="python">
+p=. !http://www.godotengine.org/attachments/42/download!
 
-func _on_button_pressed():  
-    get_node(&quot;Label&quot;).set_text(&quot;HELLO!&quot;)
+Que irá mostrar a lista de sinais que um Button pode emitir.
 
-</pre>
+p=. !http://www.godotengine.org/attachments/35/download!
 
-Finally, the button &quot;pressed&quot; signal will be connected to that callback in &#95;ready(), by using "connect":class_object#connect().
+Mas neste exemplo não o usaremos. Não queremos tornar as coisas fáceis +demais+. Então por favor feche essa tela!
 
-<pre class="python">
+De qualquer forma, neste ponto fica claro que estamos interessados no sinal "pressed", então em vez de fazer isso pela interface visual, a conexão será feita via código.
 
+Para isso, há uma função que é provavelmente das que serão mais usadas pelos programadores Godot, que é a "@get_node()@":https://github.com/okamstudio/godot/wiki/class_node#get_node. Esta função usa caminhos para recuperar nós na árvore atual ou em qualquer lugar da cena, relativos ao nó que contem o script.
+
+Para recuperar o botão, o seguinte deve ser usado:
+
+<pre><code class="python">
+get_node("Button")
+</code></pre>
+
+Em seguida, um _callback_ (chamada de retorno) será adicionado para quando o botão for pressionado, que irá trocar o texto da Label:
+
+<pre><code class="python">
+func _on_button_pressed():	
+	get_node("Label").set_text("HELLO!")
+</code></pre>
+
+Finalmente, o sinal "pressed" do botão será conectaod a tal callback dentro da função @_ready()@, usando a função "@connect@":https://github.com/okamstudio/godot/wiki/class_object#connect().
+
+<pre><code class="python">
 func _ready():
-    get_node(&quot;Button&quot;).connect(&quot;pressed&quot;,self,&quot;_on_button_pressed&quot;)
-</pre>
+	get_node("Button").connect("pressed",self,"_on_button_pressed")
+</code></pre>
 
-The final script should look like this:
+No final o script deve se parecer com isso:
 
-<pre class="python">
-
-
+<pre><code class="python">
 extends Panel
 
 # member variables here, example:
-
 # var a=2
-# var b=&quot;textvar&quot;
+# var b="textvar"
 
 func _on_button_pressed():
-    get_node(&quot;Label&quot;).set_text(&quot;HELLO!&quot;)
+	get_node("Label").set_text("HELLO!")
 
 func _ready():
-    get_node(&quot;Button&quot;).connect(&quot;pressed&quot;,self,&quot;_on_button_pressed&quot;)
+	get_node("Button").connect("pressed",self,"_on_button_pressed")
+</code></pre>
 
+Ao rodar a cena o seguinte resultado é esperado ao pressionar o botão:
 
-</pre>
+p=. !http://www.godotengine.org/attachments/39/download!
 
-Running the scene should have the expected result when pressing the button:
+*Nota*: Como é um engano comum neste tutorial, vamos deixar claro que @get_node(caminho)@ retorna os filhos imediatos ao nó controlados pelo script (_Panel_ nesse caso), então _Button_ deve ser um filho de _Panel_ para o código acima funcionar. Para dar mais contexto a esta clarificação, se _Button_ fosse filho de _Label_, o código para recuperá-lo seria o seguinte:
 
-<p align="center">
-<img src="images/scripthello.png">
-</p>
-*Note:* As it is a common mistake in this tutorial, let's clarify again that get&#95;node(path) works by returning the immediate children to the node controlled by the script (in this case, _Panel_), so _Button_ must be a child of _Panel_ for the above code to work. To give this clarification more context, if _Button_ was a child of _Label_, the code to obtain it would be:
-
-bc(python). # not for this case
+<pre><code class="python">
+# not for this case
 # but just in case
 get_node("Label/Button") 
+</code></pre>
 
+Além disso, lembre-se de que os nós são referenciados por nome e não por tipo.
 
-And, also, try to remember that nodes are referenced by name, not by type.
+_(c) Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license._
 
-&#45;&#45;&#45; //"Juan Linietsky":reduzio@gmail.com 2013/12/08 07:54//
-
-<ol start="3" style="list-style-type: lower-alpha;">
-<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
-</ol>
+_Traduzido por George Marques. Distribuído sob a licença Creative "Commons By-SA":https://creativecommons.org/licenses/by-sa/4.0/legalcode ._
