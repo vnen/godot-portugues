@@ -1,66 +1,71 @@
-h1(#materials). Materials
+h1. Materiais
 
-h2(#introduction). Introduction
+h2. Introdução
 
-Materials can be applied to most visible 3D objects, they basically are a description to how light reacts to that object. There are many types of materials, but the main ones are the "FixedMaterial":class_fixedmaterial and "ShaderMaterial":class_shadermaterial. Tutorials for each of them exist "here (FixedMaterial)":tutorial_fixed_materials and "here (ShaderMaterial)":tutorial_shader_materials. This tutorial is about the basic properties shared between them.
+Materiais podem ser aplicados à maioria dos objetos visíveis, eles são descritos simplesmente como a luz reage ao encostar na superfície. Há vários tipos de materiais, mas os mais comuns são os _FixedMaterial_ e os _ShaderMaterial_. Dentro desse site há tutoriais para ambos, mas essa página fala sobre as propriedades simples compartilhada por eles.
 
-<p align="center">
-<img src="images/material_flags.png">
-</p>
-h2(#flags). Flags
+p=. !http://godotengine.org/attachments/190/download!
 
-Materials, no matter which type they are, have a set of flags associated. Each has a different use and will be explained as follows.
+h2. Flags (Bandeiras)
 
-h3(#visible). Visible
+Independente de qual tipo de material ele for, ele vai ter bandeiras associadas. Cada bandeira tem um uso diferente e será explicado em seguida.
 
-Toggles whether the material is visible. If unchecked, the object will not be shown.
+h3. Visible (visível)
 
-h3(#double-sided-invert-faces). Double Sided &amp; Invert Faces
+Muda se o material é visível. Se essa opção for desmarcada, o objeto não aparecerá.
 
-Godot by default only shows geometry faces (triangles) when facing the camera. To do this it needs them to be in view in clockwise order. This saves a lot of GPU power by ensuring that not visible triangles are not drawn. Some flat objects might need to be drawn all the times though, for this the &quot;double sided&quot; flag will make sure that no matter the facing, the triangle will always be drawn. It is also possible to invert this check and draw counter&#45;clockwise looking faces too, though it's not very useful except for a few cases (like drawing outlines).
+h3. Double Sided & Invert Faces (Faces duplas e Faces invertidas)
 
-h3(#unshaded). Unshaded
+Por padrão a Godot apenas exibe faces geométricas (triângulos) que estejam virados para a câmera. Isso economiza muito processamento da GPU, garantindo que ela triângulos não visíveis não serão desenhados.
 
-Objects are always black unless light affects them, and their shading changes according to the type and direction of lights. When this flag is turned on, the diffuse color is displayed right the same as it appears in the texture or parameter:
+Alguns objetos planos tem de mostrar seus dois lados o tempo todo, para isso há a bandeira _Double Sided_ que fará o objeto ser exibido, independente de estar virado para a câmera. Também é possível inverter o lado que será exibido do triângulo, mas isso não é muito útil, exceto em alguns casos como desenhar o contorno do objeto (_outlines_).
 
-<p align="center">
-<img src="images/material_unshaded.png">
-</p>
-h3(#on-top). On Top
+h3. Unshaded (sem sombreamento)
 
-When this flag is turned on, te object will be drawn after everything else has been drawn and without a depth test. This is generally only useful for HUD effects or gizmos.
+Os objetos sempre serão pretos, a menos que um luz caia sobre ele e o seu material seja calculado a partir da direção da luz. Quando essa bandeira é ativada, a cor difusa é apresentada da mesma forma que aparece no paramtro de textura do material:
 
-h3(#ligthmap-on-uv2). Ligthmap on UV2
+p=. !http://godotengine.org/attachments/191/download!
+_Com sombra, sem sombra_
 
-When using lightmapping (see the "Baked Light":tutorial_lightmapping tutorial), this option determines that the lightmap should be accessed on the UV2 array instead of regular UV.
+h3. On Top (No topo)
 
-h2(#parameters). Parameters
+Quando essa bandeira está ativada, os objetos afetados serão desenhados em cima dos outros objetos, sem um teste de profundidade. Isso geralmente é usado apenas nas HUD e nos gizmos.
 
-Some parameters also exist for controlling drawing and blending:
+h3. Lightmap ou UV2 (Mapa de iluminação no UV2)
 
-h3(#blend-mode). Blend Mode
+Quando usamos mapas de luz (veja o tutorial de _Light Baking_), essa opção faz com que o lighmap seja acessado do UV2 e não do UV padrão.
 
-Objects are usually blended in Mix mode. Other blend modes (Add and Sub) exist for special cases (usually particle effects, light rays, etc) but materials can be set to them:
+h2. Parâmetros
 
-<p align="center">
-<img src="images/fixed_material_blend.png">
-</p>
-h3(#line-width). Line Width
+Alguns parâmetros existem para controlar o visual e a mistura:
 
-When drawing lines, the size of them can be adjusted here per material.
+h3. Blend Mode (Modo de mistura)
 
-h3(#depth-draw-mode). Depth Draw Mode
+Normalmente os objetos são exibidos em Mix Mode (objetos sem transparência não serão transparentes). Outros modos de mistura (Add e Sub) existem para momentos especiais (geralmente efeitos de partículas, raios de luz, etc.), mas materiais também podem usar esses modos de mistura
 
-This is a tricky but very useful setting. By default, opaque objects are drawn using the depth buffer and translucent objects are not (but are sorted by depth). This behavior can be changed here. The options are:
+p=. !http://godotengine.org/attachments/188/download!
 
-* *Always*: Draw objects with depth always, even those with alpha. This often results in glitches like the one in the first image (which is why it's not the default).
-* *Opaque Only*: Draw objects with depth only when they are opaque, and do not se depth for alpha. This is the default because it's fast, but it's not the most correct setting. Objects with transparency that self&#45;intersect will always look wrong, specially those that mix opaque and transparent areas, like grass tree leaves, etc. Objects with transparency also can't cast shadows, this is evident i the second image.
-* *Alpha Pre&#45;Pass*: The same as above, but a depth pass is performed for the opaque areas of objects with transparency. This makes objects with transparency look much more correct. In the third image it is evident how the leaves cast shadows between them and into the floor. This setting is turned off by default because, while on PC this is not very costly, mobile devices suffer a lot when this setting is turned on, so use it with care.
-* *Never*: Never use the depth buffer for this material. This is mostly useful in combination with the &quot;On Top&quot; flag explained above.
+h3. Line Width (espessura da linha)
 
-<p align="center">
-<img src="images/material_depth_draw.png">
-</p>
-<ol start="3" style="list-style-type: lower-alpha;">
-<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
-</ol>
+Quando estamos desenhando linhas, a sua espessura pode ser ajustada aqui, por material.
+
+h3. Depth Draw Mode (Desenho por profundidade)
+
+Isso é um truque, mas é muito útil. Por padrão, objetos opacos são desenhados usando os valores da distância (_depth buffer_), mas objetos transparentes não são (mas são ordenados pela distância). Esse comportamento pode ser ajustado aqui.
+
+* *Always* (_Sempre_): Desenhar os objetos sempre ordenados pela distância, mesmo que eles tenham alguma transparência. O resultado disso são alguns erros, como o da primeira imagem (isso explica porque não é o padrão)
+* *Opaque Only* (_Apenas Opacos_): Desenha os objetos pela distância apenas quando eles são opacos e não calcula isso para os transparentes. Esse é o padrão, porque isso é rápido, mas não é a forma mais correta de fazer isso. Objetos transparentes que se interagem sempre ficarão esquisitos, principalmente os que misturam transparência com opacidade, como grama e folhas de árvores. Objetos com transparência não podem gerar sombras, isso fica evidente na segunda imagem.
+* *Alpha Pre-Pass* (_Pré-passagem de Alfa_): Esse é igual ao de cima, mas o cálculo de profundidade é feito para as áreas escuras dos objetos com transparência. Isso faz os objetos com transparência ficarem com um visual correto. Na terceira imagem é mostrado que esse método exibe as sombras das folhas no chão. Esse método não é o padrão porque enquanto o computador lida bem com isso, os celulares não conseguem fazê-lo tão rapidamente. Use com cuidado.
+* *Never* (_Nunca_): Nunca calcular a distância para esse material. Isso pode ser útil se misturado com a bandeira _No Topo_, essa bandeira foi explicada lá em cima.
+
+p=. !http://godotengine.org/attachments/189/download!
+
+Texto original por Juan Linietsky, Ariel Manzur, Distribuído no sob a licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode.
+
+Tradução feita por Cairé
+
+Tradução revisada por George Marques.
+
+Tradução dsitribuída sob a licença "Creative Commons By-SA":https://creativecommons.org/licenses/by-sa/4.0/legalcode.
+
+Imagens por TheoXD.
