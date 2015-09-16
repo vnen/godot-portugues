@@ -1,115 +1,110 @@
-h1(#fixed-materials). Fixed Materials
+h1. Materiais Nativos _Fixed Materials_
 
-h2(#introduction). Introduction
+h2. Introdução
 
-Fixed materials (originally Fixed Pipeline Materials) are the most common type of materials, using the most common material options found in 3D DCCs (such as Maya, 3DS Max or Blender). The big advantage of using them is that 3D artists are very familiar with this layout. They also allow to try out different things quickly without the need of writing shaders. Fixed Materials inherit from "Material":class_material, which also has several options. If you haven't read it before, reading the "Materials":tutorial_materials tutorial is recommended.
+Materiais Nativos (originalmente _Fixed Pipeline Materials_ e posteriormente _Fixed Materials_) é o tipo mais comum de material, usado como a opção mais comum encontrada em programas de modelagem 3D (como o Maya, 3DS Max e Blender). A grande vantagem desse método é a facilidade para os artistas. Eles podem fazer muitas coisas diferentes, rapidamente, sem precisar escrever uma linha de código. Materiais Nativos tem suas opções herdadas da classe de _Materiais_. Se você ainda não leu é recomendado você ler antes de ler esse.
 
-h2(#options). Options
 
-Here is the list of all the options available for fixed materials:
+h2. Opções
 
-<p align="center">
-<img src="images/fixed_materials.png">
-</p>
-From this point, every option will be explained in detail:
+Aqui está a lista de opções disponíveis para os materiais nativos:
 
-h3(#fixed-flags). Fixed Flags
+p=. !http://godotengine.org/attachments/339/download!
 
-These are a set of flags that control general aspects of the material.
+A partir daqui todas as opções serão explicadas.
 
-h4(#use-alpha). Use Alpha
 
-This flag needs to be active for transparent materials to blend with what is behind, otherwise display will always be opaque. Do not enable this flag unless the material really needs it, because it can severely affect performance and quality. Materials with transparency will also not cast shadows (unless they contain opaque areas and the &quot;opaque pre&#45;pass&quot; hint is turned on, see the "Materials":tutorial_materials tutorial for more information).
+h2. Fixed Flags (Bandeiras)
 
-<p align="center">
-<img src="images/fixed_material_alpha.png">
-</p>
-h4(#use-vertex-colors). Use Vertex Colors
+Essas bandeiras controlam vários aspectos do material.
 
-Vertex color painting is a very common technique to add detail to geometry. 3D DCCs all support this, and many even support baking occlusion to it. Godot allows this information to be used in the fixed material by modulating the diffuse color when enabled.
+h3. Use Alpha (Usar o tranparência)
 
-<p align="center">
-<img src="images/fixed_material_vcols.png">
-</p>
-h4(#point-size). Point Size
+Essa bandeira precisa estar ativa para os materiais transparentes se misturarem corretamente com o que está atrás, de outra forma o material sempre será opaco. Não ative essa bandeira ao menos que você precise, porque ela pode atrapalhar tanto a performance quanto a qualidade do jogo. Por padrão materiais transparentes não projetarão sombras (Ao menos que contenham áreas opacas e a opção _opaque pre-pass_ esteja ativada, veja o tutorial sobre _Materiais_ para ter mais informações)
 
-Point size is used to set the point size (in pixels) for when rendering points. This feature is mostly used in tools and HUDs
+p=. !http://godotengine.org/attachments/331/download!
 
-h4(#discard-alpha). Discard Alpha
+h3. Use Vertex Color (Usar as cores da pintura de vértices)
 
-When alpha is enabled (see above) the invisible pixels are blended with what is behind them. In some combinations (of using alpha to render depth) it may be possible that invisible pixels cover other objects. If this is the case, enable this option for the material. This option is often used in combination with &quot;opaque pre&#45;pass&quot; hint (see the "Materials":tutorial_materials tutorial for more information).
+A pintura de vértices é uma forma comum de adicionar detalhes ao modelo. Todos os programas de modelagem aceitam isso e alguns permitem você gravar as informações de oclusão de ambiente na cor dos vértices. A Godot permite o uso dessas informações nos materiais nativos, por modulação da cor difusa, quando for acionado.
 
-h3(#parameters). Parameters
+p=. !http://godotengine.org/attachments/338/download!
 
-h4(#diffuse-specular-emission-and-specular-exponent). Diffuse, Specular, Emission and Specular Exponent
+h3. Point Size (Tamanho do ponto)
 
-These are the base colors for the material.
+O _Point Size_ serve para escolher o tamanho do ponto em pixels para a renderização do ponto. Essa opção é muito usada para HUDs e ferramentas.
 
-* Diffuse Color is responsible for the light that reaches the material, then gets diffused around. This color varies by the angle to the light and the distance (in the case of spot and omni lights). It is the color that best represents the material. It can also have alpha (transparency)
-* Specular color is the color of the reflected light and responsible for shines. It is affected by the specular exponent.
-* Emission is the color of the light generated within the material (althought it will not lit anything else around unless baking). This color is constant.
-* Specular Exponent (or &quot;Shininess&quot;/&quot;Intensity&quot; in some 3D DCCs) is the way light is reflected. If the value is high, light is reflected completely, otherwise it is diffused more and more.
+h3. Discard Alpha (Discartar tranparência)
 
-Below is an example of how they interact:
+Quando a transparência está ativada (Veja acima _Use Alpha_) os pixels invisíveis são misturados com o que está atrás deles. Em alguns casos (em imagens renderizadas com alpha) é possível que alguns pixels invisíveis sobreponha pixels visíveis. Se essa situação desconfortável acontecer, marque essa opção. Dica essa opção é normalmente usada com o _opaque pre-pass_ (Veja o tutorial _Materiais_ para mais informação)
 
-<p align="center">
-<img src="images/fixed_material_colors.png">
-</p>
-h4(#shader-shader-param). Shader &amp; Shader Param
 
-Regular shader materials allow custom lighting code. Fixed materials come with four predefined shader types:
+h2. Parametros
 
-* *Lambert*: The standard diffuse light, where the amount of light is proportional to the angle with the light emissor.
-* *Wrap*: A variation on Lambert, where the &quot;coverage&quot; of the light can be changed. This is useful for many types of materials such as wood, clay, hair, etc.
-* *Velvet*: This is similar to Lambert, but adds light scattering in the edges. It's useful for leathers and some types of metals.
-* *Toon*: Standard toon shading with a coverage parameter. The specular component also becomes toon&#45;ized.
+h3. Diffuse, Specular, Emission e Specular Exponent (Cor Difusa, Cor do Brilho, Cor de emissão e intensidade do brilho)
 
-<p align="center">
-<img src="images/fixed_material_shader.png">
-</p>
-h4(#detail-detail-mix). Detail &amp; Detail Mix
+Essas são as cores básicas dos materiais.
 
-Detail is a second diffuse texture which can be mixed with the first one (more on textures later!). Detail blend and mix control how these are added together, here's an example of what detail textures are for:
+* *Diffuse Color* é responsável pela luz que acerta o material e é difundida no ambiente. Essa cor varia conforme o ângulo da luz e a distância (nos casos de lâmpadas _spot_ e _omni_). Essa é a cor principal do material. Ela sempre pode aceitar a transparência.
+* *Specular* essa é a cor do reflexo responsável pelo brilho. Ela é afetada pelo _specular exponent_
+* *Emission* é a cor da luz gerada pelo material (ela não vai clarear nada, ao menos que você dê um _Bake_ na cena). Essa cor é constante
+* *Specular Exponent* é a forma que a luz é refletida. Se o valor for alto, a luz será refletida completamente, caso ela seja baixa a cor será mais difusa.
 
-<p align="center">
-<img src="images/fixed_material_detail.png">
-</p>
-h4(#normal-depth). Normal Depth
+Abaixo um exemplo de como esses parâmetro reagem
 
-Normal depth controls the inensity of the normal&#45;mapping as well as the direction. On 1 (the default) normalmapping applies normaly, on &#45;1 the map is inverted and on 0 is disabled. Intermediate or greater values are accepted. Here's how it's supposed to look:
+p=. !http://godotengine.org/attachments/333/download!
 
-<p align="center">
-<img src="images/fixed_material_normal_depth.png">
-</p>
-h4(#glow). Glow
+h3. Shader & Shader Param (Sombreamento)
 
-This value controls how much of the color is sent to the glow buffer. It can be greater than 1 for a stronger effect. For glow to work, a WorldEnvironment must exist with Glow activated.
+Shaders normais permitem que o usuário escreva seu próprio código. Materiais nativos vem com 4 tipos de sombreamentos predefinidos.
 
-<p align="center">
-<img src="images/fixed_material_glow.png">
-</p>
-h4(#blend-mode). Blend Mode
+* *Lambert*: É o shader padrão, a cor difusa é proporcional ao ângulo da face com o da lâmpada.
+* *Wrap*: Uma variação do _Lambert_, onde as áreas escondidas podem ser alteradas. Isso é útil para materiais como madeira, barro, cabelo, etc:
+* *Velvet*: É parecido com o _Lambert_, mas adiciona uma luz que passa pelo objeto (ou scattering). É útil para couro e alguns efeitos metalicos, como o aço corridos.
+* *Toon*: O sombreamento padrão para desenhos com um parametro de escurecer. O componente especular também pode se transformar em cartoon.
 
-Objects are usually blended in Mix mode. Other blend modes (Add and Sub) exist for special cases (usually particle effects, light rays, etc) but materials can be set to them:
+p=. !http://godotengine.org/attachments/337/download!
 
-<p align="center">
-<img src="images/fixed_material_blend.png">
-</p>
-h4(#point-size-line-width). Point Size, Line Width
+h3. Detail e Detail Mix (Detalhes e a mistura dos detalhes)
 
-When drawing points or lines, the size of them can be adjusted here per material.
+Os detalhes são a segunda textura difusa que pode ser misturada com a primeira (Mais sobre texturas depois). _Detail blend_ e _Detail mix_ servem para controlar quanto dessa textura será misturada, aqui um exemplo do uso dessa textura.
 
-h3(#textures). Textures
+p=. !http://godotengine.org/attachments/334/download!
 
-Almost all of the parameters above can have a texture assigned to them. There are four options to where they can get their UV coordinates:
+h3. Normal Depth (Profundidade)
 
-* *UV Coordinates (UV Array)*: This is the regular UV coordinate array that was imported with the model.
-* *UV x UV XForm*: UV Coordinates multiplied by the UV Xform matrix.
-* *UV2 Coordinates*: Some imported models might have come with a second set of UV coordinates. These are common for detail textures or for baked light textures.
-* *Sphere*: Spherical coordinates (difference of the normal at the pixel by the camera normal).
+Essa opção controla a intensidade que a textura normal afeta as direções da luz. No 1 (o padrão) a textura normal é aplicada normalmente, em -1 ela é aplicada de forma invertida, no 0 ela é desativada. Valores quebrados e valores maiores que 1 são aceitos. Aqui um exemplo:
 
-The value of every pixel of the texture is multiplied by the original parameter. This means that if a texture is loaded for diffuse, it will be multiplied by the color of the diffuse color parameter. Same applies to all the others except for specular exponent, which is replaced.
+p=. !http://godotengine.org/attachments/336/download!
 
-<ol start="3" style="list-style-type: lower-alpha;">
-<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
-</ol>
+h3. Glow (Incandescência)
+
+Esse valor controla quanto da cor será enviada para o _Glow Buffer_. Esse valor pode ser maior que 1 para um efeito mais forte. Para esse efeito funcionar o nó de _WorldEnvironment_ tem de existir com a opção _Glow_ ativada.
+
+p=. !http://godotengine.org/attachments/335/download!
+
+h3. Blend Mode (Modo de mistura)
+
+Normalmente os objetos são exibidos em Mix Mode (Objetos sem transparência não serão transparentes). Outros modos de mistura (Add e Sub) existem para momentos especiais, (geralmente efeitos de partículas, raios de luz, etc) mas materiais também podem usar esses modos de mistura
+
+p=. !http://godotengine.org/attachments/188/download!
+
+h3. Line Width (espessura da linha)
+
+Quando estamos desenhando linhas, a sua espessura pode ser ajustada aqui, por material.
+
+h2. Textures (Texturas)
+
+A maior parte dos parâmetros a cima podem ter uma textura. Há 4 opções de como as texturas podem ser projetadas:
+
+* *UV Coordinates (UV Array)*: Essa é a forma padrão quando um objeto é importado.
+* *UV x UV XForm*: Coordenadas UV multiplicadas pela matriz UV Xform
+* *UV2 Coordinates*: Alguns objetos podem vim com dois mapeamentos UV, o segundo pode ser dedicado para os detalhes ou para a luz _bake_
+* *Sphere*: A imagem sempre será projetada apontando para o jogador, com algumas deformidades devido o ângulo das faces.
+
+O valor de cada pixel da textura é multiplicado pelo parametro original. Quer dizer, se uma textura for carregada na difusa, ela será multiplicada pela cor difusa do material. O mesmo se aplica para todos as outras texturas, com exceção do _specular exponent_, que simplesmente sobrepõe.
+
+Juan Linietsky, Ariel Manzur, Distributed under the terms of the [[https://creativecommons.org/licenses/by/3.0/legalcode]] license.
+Traduzido por Cairé
+Tradução Revisada por
+Imagens por TheoXD
