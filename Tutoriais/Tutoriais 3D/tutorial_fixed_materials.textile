@@ -1,110 +1,107 @@
-h1. Materiais Nativos _Fixed Materials_
+h1. Materiais Nativos (_Fixed Materials_)
 
-h2. IntroduÁ„o
+h2. Introdu√ß√£o
 
-Materiais Nativos (originalmente _Fixed Pipeline Materials_ e posteriormente _Fixed Materials_) È o tipo mais comum de material, usado como a opÁ„o mais comum encontrada em programas de modelagem 3D (como o Maya, 3DS Max e Blender). A grande vantagem desse mÈtodo È a facilidade para os artistas. Eles podem fazer muitas coisas diferentes, rapidamente, sem precisar escrever uma linha de cÛdigo. Materiais Nativos tem suas opÁıes herdadas da classe de _Materiais_. Se vocÍ ainda n„o leu È recomendado vocÍ ler antes de ler esse.
+Materiais Nativos (originalmente _Fixed Pipeline Materials_ e posteriormente _Fixed Materials_) √© o tipo mais comum de material, usado como a op√ß√£o mais comum encontrada em programas de modelagem 3D (como o Maya, 3DS Max e Blender). A grande vantagem desse m√©todo √© a facilidade para os artistas. Eles podem fazer muitas coisas diferentes, rapidamente, sem precisar escrever uma linha de c√≥digo. Materiais Nativos tem suas op√ß√µes herdadas da classe de _[[Materiais]]._ Se voc√™ ainda n√£o leu √© recomendado voc√™ o faz√™-lo antes de ler esse.
 
+h2. Op√ß√µes
 
-h2. OpÁıes
-
-Aqui est· a lista de opÁıes disponÌveis para os materiais nativos:
+Aqui est√° a lista de op√ß√µes dispon√≠veis para os materiais nativos:
 
 p=. !http://godotengine.org/attachments/339/download!
 
-A partir daqui todas as opÁıes ser„o explicadas.
-
+A partir daqui todas as op√ß√µes ser√£o explicadas.
 
 h2. Fixed Flags (Bandeiras)
 
-Essas bandeiras controlam v·rios aspectos do material.
+Essas bandeiras controlam v√°rios aspectos do material.
 
-h3. Use Alpha (Usar o tranparÍncia)
+h3. Use Alpha (Usar a transpar√™ncia)
 
-Essa bandeira precisa estar ativa para os materiais transparentes se misturarem corretamente com o que est· atr·s, de outra forma o material sempre ser· opaco. N„o ative essa bandeira ao menos que vocÍ precise, porque ela pode atrapalhar tanto a performance quanto a qualidade do jogo. Por padr„o materiais transparentes n„o projetar„o sombras (Ao menos que contenham ·reas opacas e a opÁ„o _opaque pre-pass_ esteja ativada, veja o tutorial sobre _Materiais_ para ter mais informaÁıes)
+Essa bandeira precisa estar ativa para os materiais transparentes se misturarem corretamente com o que est√° atr√°s, de outra forma o material sempre ser√° opaco. N√£o ative essa bandeira ao menos que voc√™ precise, porque ela pode atrapalhar tanto a performance quanto a qualidade do jogo. Por padr√£o materiais transparentes n√£o projetar√£o sombras (Ao menos que contenham √°reas opacas e a op√ß√£o _opaque pre-pass_ esteja ativada, veja o tutorial sobre _Materiais_ para ter mais informa√ß√µes)
 
 p=. !http://godotengine.org/attachments/331/download!
 
-h3. Use Vertex Color (Usar as cores da pintura de vÈrtices)
+h3. Use Vertex Color (Usar as cores da pintura de v√©rtices)
 
-A pintura de vÈrtices È uma forma comum de adicionar detalhes ao modelo. Todos os programas de modelagem aceitam isso e alguns permitem vocÍ gravar as informaÁıes de oclus„o de ambiente na cor dos vÈrtices. A Godot permite o uso dessas informaÁıes nos materiais nativos, por modulaÁ„o da cor difusa, quando for acionado.
+A pintura de v√©rtices √© uma forma comum de adicionar detalhes ao modelo. Todos os programas de modelagem aceitam isso e alguns permitem voc√™ gravar as informa√ß√µes de oclus√£o de ambiente na cor dos v√©rtices. A Godot permite o uso dessas informa√ß√µes nos materiais nativos, por modula√ß√£o da cor difusa, quando for acionado.
 
 p=. !http://godotengine.org/attachments/338/download!
 
 h3. Point Size (Tamanho do ponto)
 
-O _Point Size_ serve para escolher o tamanho do ponto em pixels para a renderizaÁ„o do ponto. Essa opÁ„o È muito usada para HUDs e ferramentas.
+O _Point Size_ serve para escolher o tamanho do ponto em pixels para a renderiza√ß√£o do ponto. Essa op√ß√£o √© muito usada para HUDs e ferramentas.
 
-h3. Discard Alpha (Discartar tranparÍncia)
+h3. Discard Alpha (Descartar transpar√™ncia)
 
-Quando a transparÍncia est· ativada (Veja acima _Use Alpha_) os pixels invisÌveis s„o misturados com o que est· atr·s deles. Em alguns casos (em imagens renderizadas com alpha) È possÌvel que alguns pixels invisÌveis sobreponha pixels visÌveis. Se essa situaÁ„o desconfort·vel acontecer, marque essa opÁ„o. Dica essa opÁ„o È normalmente usada com o _opaque pre-pass_ (Veja o tutorial _Materiais_ para mais informaÁ„o)
+Quando a transpar√™ncia est√° ativada (Veja acima _Use Alpha_) os pixels invis√≠veis s√£o misturados com o que est√° atr√°s deles. Em alguns casos (em imagens renderizadas com alpha) √© poss√≠vel que alguns pixels invis√≠veis sobreponha pixels vis√≠veis. Se essa situa√ß√£o desconfort√°vel acontecer, marque essa op√ß√£o. Dica essa op√ß√£o √© normalmente usada com o _opaque pre-pass_ (Veja o tutorial _Materiais_ para mais informa√ß√£o)
 
 
-h2. Parametros
+h2. Par√¢metros
 
-h3. Diffuse, Specular, Emission e Specular Exponent (Cor Difusa, Cor do Brilho, Cor de emiss„o e intensidade do brilho)
+h3. Diffuse, Specular, Emission e Specular Exponent (Cor Difusa, Cor do Brilho, Cor de Emiss√£o e Intensidade do Brilho)
 
-Essas s„o as cores b·sicas dos materiais.
+Essas s√£o as cores b√°sicas dos materiais.
 
-* *Diffuse Color* È respons·vel pela luz que acerta o material e È difundida no ambiente. Essa cor varia conforme o ‚ngulo da luz e a dist‚ncia (nos casos de l‚mpadas _spot_ e _omni_). Essa È a cor principal do material. Ela sempre pode aceitar a transparÍncia.
-* *Specular* essa È a cor do reflexo respons·vel pelo brilho. Ela È afetada pelo _specular exponent_
-* *Emission* È a cor da luz gerada pelo material (ela n„o vai clarear nada, ao menos que vocÍ dÍ um _Bake_ na cena). Essa cor È constante
-* *Specular Exponent* È a forma que a luz È refletida. Se o valor for alto, a luz ser· refletida completamente, caso ela seja baixa a cor ser· mais difusa.
+* *Diffuse Color*: √© respons√°vel pela luz que acerta o material e √© difundida no ambiente. Essa cor varia conforme o √¢ngulo da luz e a dist√¢ncia (nos casos de l√¢mpadas _spot_ e _omni_). Essa √© a cor principal do material. Ela sempre pode aceitar a transpar√™ncia.
+* *Specular*: essa √© a cor do reflexo respons√°vel pelo brilho. Ela √© afetada pelo _specular exponent_.
+* *Emission*: √© a cor da luz gerada pelo material (ela n√£o vai clarear nada, ao menos que voc√™ d√™ um _Bake_ na cena). Essa cor √© constante
+* *Specular Exponent*: √© a forma que a luz √© refletida. Se o valor for alto, a luz ser√° refletida completamente, caso ela seja baixa a cor ser√° mais difusa.
 
-Abaixo um exemplo de como esses par‚metro reagem
+Abaixo um exemplo de como esses par√¢metro reagem:
 
 p=. !http://godotengine.org/attachments/333/download!
 
 h3. Shader & Shader Param (Sombreamento)
 
-Shaders normais permitem que o usu·rio escreva seu prÛprio cÛdigo. Materiais nativos vem com 4 tipos de sombreamentos predefinidos.
+Shaders normais permitem que o usu√°rio escreva seu pr√≥prio c√≥digo. Materiais nativos vem com 4 tipos de sombreamentos predefinidos.
 
-* *Lambert*: … o shader padr„o, a cor difusa È proporcional ao ‚ngulo da face com o da l‚mpada.
-* *Wrap*: Uma variaÁ„o do _Lambert_, onde as ·reas escondidas podem ser alteradas. Isso È ˙til para materiais como madeira, barro, cabelo, etc:
-* *Velvet*: … parecido com o _Lambert_, mas adiciona uma luz que passa pelo objeto (ou scattering). … ˙til para couro e alguns efeitos metalicos, como o aÁo corridos.
-* *Toon*: O sombreamento padr„o para desenhos com um parametro de escurecer. O componente especular tambÈm pode se transformar em cartoon.
+* *Lambert*: √â o shader padr√£o, a cor difusa √© proporcional ao √¢ngulo da face com o da l√¢mpada.
+* *Wrap*: Uma varia√ß√£o do _Lambert_, onde as √°reas escondidas podem ser alteradas. Isso √© √∫til para materiais como madeira, barro, cabelo, etc:
+* *Velvet*: √â parecido com o _Lambert_, mas adiciona uma luz que passa pelo objeto (ou _scattering_). √â √∫til para couro e alguns efeitos met√°licos, como o a√ßo corridos.
+* *Toon*: O sombreamento padr√£o para desenhos com um par√¢metro de escurecer. O componente especular tamb√©m pode se transformar em cartoon.
 
 p=. !http://godotengine.org/attachments/337/download!
 
 h3. Detail e Detail Mix (Detalhes e a mistura dos detalhes)
 
-Os detalhes s„o a segunda textura difusa que pode ser misturada com a primeira (Mais sobre texturas depois). _Detail blend_ e _Detail mix_ servem para controlar quanto dessa textura ser· misturada, aqui um exemplo do uso dessa textura.
+Os detalhes s√£o a segunda textura difusa que pode ser misturada com a primeira (mais sobre texturas depois). _Detail blend_ e _Detail mix_ servem para controlar quanto dessa textura ser√° misturada, aqui um exemplo do uso dessa textura.
 
 p=. !http://godotengine.org/attachments/334/download!
 
-h3. Normal Depth (Profundidade)
+h3. Normal Depth (Profundidade da Normal)
 
-Essa opÁ„o controla a intensidade que a textura normal afeta as direÁıes da luz. No 1 (o padr„o) a textura normal È aplicada normalmente, em -1 ela È aplicada de forma invertida, no 0 ela È desativada. Valores quebrados e valores maiores que 1 s„o aceitos. Aqui um exemplo:
+Essa op√ß√£o controla a intensidade que a textura normal afeta as dire√ß√µes da luz. No 1 (o padr√£o) a textura normal √© aplicada normalmente, em -1 ela √© aplicada de forma invertida, no 0 ela √© desativada. Valores quebrados e valores maiores que 1 s√£o aceitos. Aqui um exemplo:
 
 p=. !http://godotengine.org/attachments/336/download!
 
-h3. Glow (IncandescÍncia)
+h3. Glow (Incandesc√™ncia)
 
-Esse valor controla quanto da cor ser· enviada para o _Glow Buffer_. Esse valor pode ser maior que 1 para um efeito mais forte. Para esse efeito funcionar o nÛ de _WorldEnvironment_ tem de existir com a opÁ„o _Glow_ ativada.
+Esse valor controla quanto da cor ser√° enviada para o _Glow Buffer_. Esse valor pode ser maior que 1 para um efeito mais forte. Para esse efeito funcionar o n√≥ de _WorldEnvironment_ tem de existir com a op√ß√£o _Glow_ ativada.
 
 p=. !http://godotengine.org/attachments/335/download!
 
-h3. Blend Mode (Modo de mistura)
+h3. Blend Mode (Modo de Mistura)
 
-Normalmente os objetos s„o exibidos em Mix Mode (Objetos sem transparÍncia n„o ser„o transparentes). Outros modos de mistura (Add e Sub) existem para momentos especiais, (geralmente efeitos de partÌculas, raios de luz, etc) mas materiais tambÈm podem usar esses modos de mistura
+Normalmente os objetos s√£o exibidos em _Mix Mode_ (objetos sem transpar√™ncia n√£o ser√£o transparentes). Outros modos de mistura (_Add_ e _Sub_, ou _adi√ß√£o_ e _subtra√ß√£o_) existem para momentos especiais (geralmente efeitos de part√≠culas, raios de luz, etc.), mas materiais tamb√©m podem usar esses modos de mistura.
 
 p=. !http://godotengine.org/attachments/188/download!
 
-h3. Line Width (espessura da linha)
+h3. Line Width (Espessura da Linha)
 
 Quando estamos desenhando linhas, a sua espessura pode ser ajustada aqui, por material.
 
 h2. Textures (Texturas)
 
-A maior parte dos par‚metros a cima podem ter uma textura. H· 4 opÁıes de como as texturas podem ser projetadas:
+A maior parte dos par√¢metros a cima podem ter uma textura. H√° 4 op√ß√µes de como as texturas podem ser projetadas:
 
-* *UV Coordinates (UV Array)*: Essa È a forma padr„o quando um objeto È importado.
-* *UV x UV XForm*: Coordenadas UV multiplicadas pela matriz UV Xform
+* *UV Coordinates (UV Array)*: Essa √© a forma padr√£o quando um objeto √© importado.
+* *UV x UV XForm*: Coordenadas UV multiplicadas pela matriz UV Xform.
 * *UV2 Coordinates*: Alguns objetos podem vim com dois mapeamentos UV, o segundo pode ser dedicado para os detalhes ou para a luz _bake_
-* *Sphere*: A imagem sempre ser· projetada apontando para o jogador, com algumas deformidades devido o ‚ngulo das faces.
+* *Sphere*: A imagem sempre ser√° projetada apontando para o jogador, com algumas deformidades devido o √¢ngulo das faces.
 
-O valor de cada pixel da textura È multiplicado pelo parametro original. Quer dizer, se uma textura for carregada na difusa, ela ser· multiplicada pela cor difusa do material. O mesmo se aplica para todos as outras texturas, com exceÁ„o do _specular exponent_, que simplesmente sobrepıe.
+O valor de cada pixel da textura √© multiplicado pelo par√¢metro original. Quer dizer, se uma textura for carregada na difusa, ela ser√° multiplicada pela cor difusa do material. O mesmo se aplica para todos as outras texturas, com exce√ß√£o do _specular exponent_, que simplesmente sobrep√µe.
 
-Juan Linietsky, Ariel Manzur, Distributed under the terms of the [[https://creativecommons.org/licenses/by/3.0/legalcode]] license.
-Traduzido por CairÈ
-TraduÁ„o Revisada por
-Imagens por TheoXD
+_(c) Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC by":https://creativecommons.org/licenses/by/3.0/legalcode license._
+
+_Traduzido por Cair√©. Revisado por George Marques. Distribu√≠do sob a licen√ßa "Creative Commons By-SA":https://creativecommons.org/licenses/by-sa/4.0/legalcode ._
