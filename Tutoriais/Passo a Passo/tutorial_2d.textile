@@ -4,13 +4,13 @@ h3(#pong). Pong
 
 Nesse tutorial básico, um jogo simples de Pong será criado. Existem uma série de outros exemplos, mais complexos nos demos da Godot, esse tutorial será uma introdução das funcionalidades básicas de um jogo 2D.
 
-h3(#assets). Assets *
+h3(#arquivos). Arquivos
 
-Alguns assets estão disponíveis para serem utilizados nesse tutorial, são eles "pong pads, the ball and the divisor":media/pong_assets.zip.
+Alguns arquivos estão disponíveis para serem utilizados nesse tutorial, são eles "pong pads, the ball and the divisor":media/pong_assets.zip.
 
 h3(#scene-setup). Configuração da Cena
 
-Por ma questão de nostalgia, o jogo vai ter uma resolução de 640x480 pixels. Isso pode ser configurado nas Configurações do Projeto (Project Settings) ("veja esse tutorial":http://godotengine.org/projects/godot-engine-em-portugues/wiki/Cenas_e_N%C3%B3s). A cor de fundo padrão será o preto:
+Por uma questão de nostalgia, o jogo vai ter uma resolução de 640x480 pixels. Isso pode ser configurado nas Configurações do Projeto (Project Settings) ("veja esse tutorial":http://godotengine.org/projects/godot-engine-em-portugues/wiki/Cenas_e_N%C3%B3s). A cor de fundo padrão será o preto:
 
 <p align="center">
 <img src="images/clearcolor.png">
