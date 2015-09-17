@@ -1,60 +1,54 @@
-h1(#simple-2d-game-pong). Um jogo 2D Simples (Pong!)
+h1. Um jogo 2D Simples (Pong!)
 
-h3(#pong). Pong
+h2. Pong
 
-Nesse tutorial básico, um jogo simples de Pong será criado. Existem uma série de outros exemplos, mais complexos nos demos da Godot, esse tutorial será uma introdução das funcionalidades básicas de um jogo 2D.
+Nesse tutorial básico, um jogo simples de Pong será criado. Existe uma série de outros exemplos mais complexos nas demos da Godot, esse tutorial será uma introdução das funcionalidades básicas de um jogo 2D.
 
-h3(#arquivos). Arquivos
+h2. Arquivos
 
-Alguns arquivos estão disponíveis para serem utilizados nesse tutorial, são eles "pong pads, the ball and the divisor":media/pong_assets.zip.
+Alguns arquivos estão disponíveis para serem utilizados nesse tutorial, são eles "pong pads, the ball and the divisor":http://www.godotengine.org/attachments/47/download.
 
-h3(#scene-setup). Configuração da Cena
+h2. Configuração da Cena
 
 Por uma questão de nostalgia, o jogo vai ter uma resolução de 640x480 pixels. Isso pode ser configurado nas Configurações do Projeto (Project Settings) ("veja esse tutorial":http://godotengine.org/projects/godot-engine-em-portugues/wiki/Cenas_e_N%C3%B3s). A cor de fundo padrão será o preto:
 
-<p align="center">
-<img src="images/clearcolor.png">
-</p>
-Crie um "Nó 2D (Node2D)":class_node2d para ser o nó principal do projeto. Nó 2D (Node2D) é o tipo base para a engine 2D da Godot. Após fazer isso, adicione alguns nós do tipo Sprite ("Sprite":class_sprite) e defina a textura correspondente de cada um. A cena final deverá se parecer com isso (nota: a bola está no meio!):
+p=. !http://www.godotengine.org/attachments/43/download!
 
-<p align="center">
-<img src="images/pong_layout.png">
-</p>
+Crie um Node2D (_Nó 2D_) para ser o nó principal do projeto. _Node2D_ é o tipo base para a engine 2D da Godot. Após fazer isso, adicione alguns nós do tipo _Sprite_ e defina a textura correspondente de cada um. A cena final deverá se parecer com isso (nota: a bola está no meio!):
+
+p=. !http://www.godotengine.org/attachments/45/download!
 
 Sua árvore de nós deve estar semelhante a essa:
-<p align="center">
-<img src="images/pong_nodes.png">
-</p>
 
-Salve a cena como como &quot;pong.scn&quot; e, nas propriedades do projeto, sete ela como a cena principal do seu projeto (main scene).
+p=. !http://www.godotengine.org/attachments/46/download!
 
-h3(#input-actions-setup). Configurações de Entrada do Jogador
+Salve a cena como como "pong.scn" e, nas propriedades do projeto, defina ela como a cena principal do seu projeto (_main scene_).
 
-Existem diversos métodos de entrada para o jogador interagir com um jogo... Teclado, Joystick, Mouse, Touchscreen (Multitouch). No entanto, isso é um Pong. A única entrada que importa é a que faz as barras (pads) dos jogadores irem para cima e para baixo.
+h2. Configurações de Entrada do Jogador
 
-Manipular todos o métodos possíveis de entrada pode ser um tanto frustrante e exigir muito código. E levando em consideração o fato de que a maioria dos jogos permite a personalização desses controles, torna tudo muito pior. Por isso a Godot criou as &quot;Ações de Entrada&quot;. Uma ação é definida, então os métodos de entrada que disparam essa ação são adicionados.
+Existem diversos métodos de entrada para o jogador interagir com um jogo... Teclado, Joystick, Mouse, Touchscreen (Multitouch). No entanto, isso é um Pong. A única entrada que importa é a que faz as barras (_pads_) dos jogadores irem para cima e para baixo.
 
-Abra a janela de Propriedades do Projeto mais uma vez, mas dessa vez selecione a aba &quot;Input Map&quot;. Vamos adicionar 4 ações: &quot;left&#95;move&#95;up&quot;,&quot;left&#95;move&#95;down&quot;,&quot;right&#95;move&#95;up&quot;,&quot;right&#95;move&#95;down&quot;. Defina as teclas que você deseja usar. A/Z para o jogador da esquerda e Up/Down para o da direita, devem funcionar na maioria dos casos.
+Manipular todos o métodos possíveis de entrada pode ser um tanto frustrante e exigir muito código. E levando em consideração o fato de que a maioria dos jogos permite a personalização desses controles, torna tudo muito pior. Por isso a Godot criou as "Ações de Entrada" (_Input Actions_). Uma ação é definida, então os métodos de entrada que disparam essa ação são adicionados.
 
-<p align="center">
-<img src="images/inputmap.png">
-</p>
-h3(#script). Programação
+Abra a janela de Propriedades do Projeto (_Project Settings_) mais uma vez, mas dessa vez selecione a aba "Input Map". Vamos adicionar 4 ações: "left_move_up", "left_move_down", "right_move_up", "right_move_down". Defina as teclas que você deseja usar. A/Z para o jogador da esquerda e Acima/Abaixo (setas do teclado) para o da direita devem funcionar na maioria dos casos.
 
-Crie um script para o nó principal e abra-o para edição (esse procedimento já deve ter sido visto no tutorial anterior). Este script irá herdar Node2D:
+p=. !http://www.godotengine.org/attachments/44/download!
 
-<pre class="python">
+h2. Programação
+
+Crie um script para o nó principal e abra-o para edição (esse procedimento já deve ter sido visto no tutorial anterior). Este script irá herdar _Node2D_:
+
+<pre><code class="python">
 extends Node2D
 
 func _ready():
     pass
 
-</pre>
+</code></pre>
 
 No construtor, duas coisas serão feitas. A primeira é permitir o processamento, e a segunda é armazenar alguns valores que serão úteis. Esses valores são as dimensões da tela e das barras dos jogadores:
 
-<pre class="python">
-
+<pre><code class="python">
 extends Node2D
 
 var screen_size
@@ -64,13 +58,11 @@ func _ready():
     screen_size = get_viewport_rect().size
     pad_size = get_node("left").get_texture().get_size()
     set_process(true)
-
-</pre>
+</code></pre>
 
 Então adicionamos algumas variáveis que serão utilizadas no jogo:
 
-<pre class="python">
-
+<pre><code class="python">
 #velocidade da bola (em pixels/segundos)
 var ball_speed = 80
 
@@ -79,85 +71,85 @@ var direction = Vector2(-1,0)
 
 #constante para a velocidade das barras (também em pixels/segundos)
 const PAD_SPEED = 150
+</code></pre>
 
-</pre>
+E finalmente declaramos a função __process_:
 
-E finalmente declaramos a função _process:
+<pre><code class="python">
+func _process(delta):
+</code></pre>
 
-bc(python). func _process(delta):
+Vamos pegar alguns valores úteis para cálculos. O primeiro é a posição da bola (a partir do nó), o segundo são os retângulos (Rect2) das barras dos jogadores. As _Sprites_, por padrão, centralizam as texturas, então deve ser feito um pequeno ajuste, dividindo o tamanho por 2.
 
-
-Vamos pegar alguns valores úteis para cálculos. O primeiro é a posição da bola (a partir do nó), o segundo śão os retângulos (Rect2) das barras dos jogadores. As Sprites, por padrão, centralizam as texturas, então deve ser feito um pequeno ajuste, dividindo o tamanho por 2.
-
-<pre class="python">
-
+<pre><code class="python">
     var ball_pos = get_node("ball").get_pos()
     var left_rect = Rect2( get_node("left").get_pos() - pad_size/2, pad_size )
     var right_rect = Rect2( get_node("right").get_pos() - pad_size/2, pad_size )
-</pre>
+</code></pre>
 
 Uma vez que a posição da bola é obtida, fica simples trabalhar com isso:
 
-bc(python).     ball_pos+=direction*ball_speed*delta
-
+<pre><code class="python">
+    ball_pos+=direction*ball_speed*delta
+</code></pre>
 
 Agora que a bola tem uma posição, temos que testar a posição dela em relação a tudo. Primeiro com o chão e o teto:
 
-<pre class="python">
-
+<pre><code class="python">
     if ( (ball_pos.y < 0 and direction.y < 0) or (ball_pos.y > screen_size.y and direction.y > 0)):
         direction.y = -direction.y
-</pre>
+</code></pre>
 
 Se uma das barras foi tocada, mude a direção e incremente um pouco a velocidade:
 
-bc(python).     if ( (left_rect.has_point(ball_pos) and direction.x < 0) or (right_rect.has_point(ball_pos) and direction.x > 0)):
+<pre><code class="python">
+    if ( (left_rect.has_point(ball_pos) and direction.x < 0) or (right_rect.has_point(ball_pos) and direction.x > 0)):
         direction.x=-direction.x
         ball_speed*=1.1
         direction.y=randf()*2.0-1
         direction = direction.normalized()
-
+</code></pre>
 
 Se a bola sair fora da da tela, o jogo reinicia:
 
-bc(python).     if (ball_pos.x<0 or ball_pos.x>screen_size.x):
+<pre><code class="python">
+    if (ball_pos.x<0 or ball_pos.x>screen_size.x):
         ball_pos=screen_size*0.5 #bola volta para o centro da tela
         ball_speed=80
         direction=Vector2(-1,0)
-
+</code></pre>
 
 Depois que tudo é verificado com a bola, o nó é atualizado com com nova posição:
 
-bc(python).     get_node("ball").set_pos(ball_pos)
+<pre><code class="python">
+    get_node("ball").set_pos(ball_pos)
+</code></pre>
 
 Atualizamos a posição das barras de acordo com a entrada do jogador:
 
-<pre class="python">
-
+<pre><code class="python">
     #move a barra esquerda 
     var left_pos = get_node("left").get_pos()
-    
     if (left_pos.y > 0 and Input.is_action_pressed("left_move_up")):
         left_pos.y+=-PAD_SPEED*delta
     if (left_pos.y < screen_size.y and Input.is_action_pressed("left_move_down")):
         left_pos.y+=PAD_SPEED*delta
-        
+
     get_node("left").set_pos(left_pos)
-        
+
     #move a barra direita
     var right_pos = get_node("right").get_pos()
-    
+
     if (right_pos.y > 0 and Input.is_action_pressed("right_move_up")):
         right_pos.y+=-PAD_SPEED*delta
     if (right_pos.y < screen_size.y and Input.is_action_pressed("right_move_down")):
         right_pos.y+=PAD_SPEED*delta
-        
+
     get_node("right").set_pos(right_pos)
-    
-</pre>
+</code></pre>
 
 E é isso. Um simples jogo Pong foi criado com algumas linhas de código.
 
-<ol start="3" style="list-style-type: lower-alpha;">
-<li>Juan Linietsky, Ariel Manzur, distribuido segundo os termos da licença "CC By.":https://creativecommons.org/licenses/by/3.0/legalcode </li>
-</ol>
+_Juan Linietsky, Ariel Manzur, distribuído segundo os termos da licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode ._
+
+_Traduzido por Relsi. Revisado por George Marques. Tradução distribuída sob a licença "CC By-SA":https://creativecommons.org/licenses/by-sa/4.0/legalcode ._
