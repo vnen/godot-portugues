@@ -1,44 +1,45 @@
-h1(#gui-tutorial). GUI Tutorial
+h1(#gui-tutorial). Introdução à GUI 
 
-h3(#introduction). Introduction
+h3(#introduction). Introdução
 
-If there is something that most programmers hate with passion, that is programming graphical user interfaces (GUIs). It's boring, tedious and unchallenging. Several aspects make matters worse such as:
+Se há uma coisa que programadores odeiam com paixão é programar interfaces gráficas para usuário (GUIs). É chato, tedioso e sem desafios. E vários aspectos pioram a situação, tais como:
 
-* Pixel alignment of UI elements is difficult (so it looks just like the designer intends).
-* UIs are changed constantly due to design and usability issues that appear during testing.
-* Handling proper screen re&#45;sizing for different display resolutions.
-* Animating several screen components, to make it look less static.
+* O alinhamento de Pixel das GUI é difícil (porque se parece com o que o designer pretende).
+* GUIs são alteradas constantemente devido a problemas de design e usabilidade que aparecem durante os testes.
+* Tratamento de redimensionamento de tela adequado para diferentes resoluções.
+* Animar vários componentes de tela para torná-la menos estática.
 
-GUI programming is one of the leading causes of programmer burnout. During the development of Godot (and previous engine iterations), several techniques and philosophies for UI development were put in practice, such as immediate mode, containers, anchors, scripting, etc. This was always done with the main goal of reducing the stress programmers had to face while putting together user interfaces.
+Programação GUI é uma das principais causas da perda de programadores. Durante o desenvolvimento de Godot (e versões anteriores da engine), várias técnicas e filosofias para o desenvolvimento de  GUI foram postas em prática, tais como o modode  visualização imediata, containers, âncoras, scripting, etc. Isto foi sempre feito com o objetivo principal de reduzir o estresse que os programadores sofrem ao construir interfaces de usuários.
 
-In the end, the resulting UI subsystem in Godot is an efficient solution to this problem, and works by mixing together a few different approaches. While the learning curve is a little steeper than in other toolkits, developers can put together complex user interfaces in very little time, by sharing the same set of tools with designers and animators.
+No final, o subsistema de GUI resultante na Godot é uma solução eficaz para este problema, e funciona através da mistura conjunta de algumas abordagens diferentes. Embora a curva de aprendizado seja um pouco maior do que em outras ferramentas, os desenvolvedores podem criar interfaces complexas em muito pouco tempo, compartilhando o mesmo conjunto de ferramentas com designers e animadores.
 
-h3(#control). Control
+h3(#control). Controle
 
-The basic node for UI elements is "Control":class_control (sometimes called &quot;Widget&quot; or &quot;Box&quot; in other toolkits). Every node that provides user interface functionality descends from it.
+O nó basico para elementos GUI é o  "Controle (Control)":class_control (algumas vezes chamado de &quot;Widget&quot; ou &quot;Box&quot; em outras ferramentas). Todo o nó que provê alguma funcionalidade de GUI, descende dele.
 
-When controls are put in a scene tree as a child of another control, it's coordinates (position, size) are always relative to the parent. This sets the basis for editing complex user interface quickly and visually.
+Quando os controles são colocados na árvore de uma cena como nó filho de outro controle, suas coordenadas (posição e tamanho) são sempre relacionadas ao nó pai. Isso define a base para a edição de uma complexa interface de usuário de forma rápida e visual.
 
-h3(#input-and-drawing). Input and Drawing
+h3(#input-and-drawing). Eventos de Entrada e Desenho
 
-Controls receive input events by means of the "&#95;input&#95;event":class_control#_input_event() callback. Only one control, the one in focus, will receive keyboard/joypad events (see "set&#95;focus&#95;mode":class_control#set_focus_mode() and "grab&#95;focus":class_control#grab_focus().
+Controles recebem eventos de entrada através da função callback "_input_event":class_control#_input_event(). Somente um controle, o que estiver com o foco, ira receber eventos do teclado/joystick (veja em "set_focus_mode":class_control#set_focus_mode() e em "grab_focus":class_control#grab_focus().
 
-Mouse Motion events are received by the control directly below the mouse pointer. When a control receives a mouse button pressed event, all subsequent motion events are received by the pressed control until that button is released, even if the pointer moves outside the control boundary.
+Eventos de movimento do mouse são recebidos pelo controle posicionado abaixo do cursor do mouse. Quando um controle recebe um evento de botão pressionado, do mouse, todos os eventos subsequentes são recebidos até que o botão seja solto, mesmo que o cursor esteja fora dos limites do controle.
 
-Like any class that inherits from "CanvasItem":class_canvasitem (Control does), a "&#95;draw":class_canvasitem#draw() callback will be received at the begining and every time the control needs to be redrawn (programmer needs to call "update":class_canvasitem#update() to enqueue the CanvasItem for redraw). If the control is not visible (yet aother CanvasItem property), the control does not receive any input.
+Como qualquer classe que herda de "CanvasItem":class_canvasitem (Controle faz isso), um callback "_draw":class_canvasitem#draw() será recebido no início, e cada vez que o controle precise ser redesenhado (o programador precisa chamar o método "update":class_canvasitem#update() para colocar o CanvasItem na fila para redesenhar). Se o controle não estiver visível, o controle não recebe qualquer evento de entrada.
 
-In general though, the programmer does not need to deal with drawing and input events directly when building UIs, (that is more useful when creating custom controls). Instead, controls emit different kinds of signals with contextural information for when action occurs. For example, a "Button":class_button emits a &quot;pressed&quot; signal when pressed, a "Slider":class_slider will emit a &quot;value&#95;changed&quot; when dragged, etc.
+Porém, no geral, o programador não precisa lidar diretamente com desenho e eventos de entrada quando está construindo GUIs (que é mais útil ao criar controles customizados). Uma vez que os controles emitem diferentes tipos de sinais com informações contextuais para quando ocorre uma ação. Por exemplo, um " Botão (Button)":class_button emite o sinal "pressed" quando pressionado, um "Slider":class_slider irá emitir "value_changed" quando arrastado, etc.
 
-h3(#custom-control-mini-tutorial). Custom Control Mini Tutorial
+h3(#custom-control-mini-tutorial). Mini Tutorial para Controles Customizados
 
-Before going into more depth, creating a custom control will be a good way to get the picture on how controls works, as they are not as complex as it might seem. Additionally, even though Godot comes with dozens of controls for different purposes, it happens often that it's just easier to attain a specific functionality by creating a new one.
+Antes de se aprofundar mais, criar um controle customizado é uma boa maneira de visualizar como os controles funcionam, e ver que eles não são tão complexos como parecem. A Godot vem com diversos controles prontos para vários propósitos, mas as vezes é mais fácil criar um novo para uma funcionaidade específica.
 
-To begin, create a single&#45;node scene. The node is of type &quot;Control&quot; and has a certain area of the screen in the 2D editor, like this:
+Para iniciar crie uma nova cena com um nó do tipo Controle, e terá uma área no editor 2D como essa:
 
 <p align="center">
 <img src="images/singlecontrol.png">
 </p>
-Add a script to that node, with the following code:
+
+Adicione um script no nó com o seguinte código:
 
 <pre class="python">
 
@@ -62,7 +63,7 @@ func _input_event(ev):
 
 </pre>
 
-Then run the scene. When the rectangle is clicked/taped, it will go from blue to red. That synnergy between the events and drawing is pretty much how most controls work internally.
+Execute a cena. Quando retângulo é clicado/pressionado, ele ira mudar de azul para vermelho. A sinergia entre os eventos e o desenho é linda, é mais ou menos como a maioria dos controles funciona internamente
 
 <p align="center">
 <img src="images/ctrl_normal.png">
@@ -70,33 +71,34 @@ Then run the scene. When the rectangle is clicked/taped, it will go from blue to
 <p align="center">
 <img src="images/ctrl_tapped.png">
 </p>
-h3(#ui-complexity). UI Complexity
 
-As mentioned before, Godot includes dozens of controls ready for using in a user interface. Such controls are divided in two categories. The first is a small set of controls that work well for creating most game user interfaces. The second (and most controls are of this type) are meant for complex user interfaces and uniform skinning trough styles. A description is presented as follows to help understand which one should be used in which case.
+h3(#ui-complexity). GUI Complexa
 
-h4(#simplified-ui-controls). Simplified UI Controls
+Como mencionado anteriormente, a Godot inclui dezenas de controles prontos para construção da interface de usuário. Tais controles são divididos em duas categorias. A primeira é um pequeno conjunto de controles que funcionam bem para a criação da maioria das interfaces de usuário dos jogos. A segunda (a maioria dos controles são desse tipo) São destinadas para interfaces de usuário mais complexas e estilo de texturizações uniformes. Segue uma explicação de cada um deles com uma ajuda para cada caso de uso.
 
-This set of controls is enough for most games, where complex interactions or ways to present information are not necessary. The can be skinned easily with regular textures.
+h4(#simplified-ui-controls). Controles Simples
 
-* "Label":class_label : Node used for showing text.
-* "TextureFrame":class_textureframe : Displays a single texture, which can be scaled or kept fixed.
-* "TextureButton":class_texturebutton : Displays a simple texture buttons, states such as pressed, hover, disabled, etc can be set.
-* "TextureProgress":class_textureprogress : Displays a single textured progress bar.
+Este conjunto de controles é suficiente para a maioria dos jogos, onde interações, ou maneiras de apresentar informações, complexas não são necessárias. E a aparência pode ser mudada facilmente com texturas comuns.
 
-Additionally, re&#45;positioning of controls is most efficiently done with anchors in this case (see the "Size and Anchors":tutorial_gui_repositioning tutorial for more info).
+* "Label":class_label : Nó usado para exibir um texto.
+* "TextureFrame":class_textureframe : Exibe uma textura, que pode ser redimensionada ou mantida fixa.
+* "TextureButton":class_texturebutton : Exibe uma textura de botão simples; estados como pressionado, desabilitado, etc. podem ser definidos.
+* "TextureProgress":class_textureprogress : Exibe uma textura de barra de progresso.
 
-In any case, it will happen often that even for simple games, more complex UI behaviors will be required. An example of this is a scrolling list of elements (for a high score table, for example), which needs a "ScrollContainer":class_scrollcontainer and a "VBoxContainer":class_vboxcontainer. These kind of more advanced controls can be mixed with the regular ones seamlessly (they are all controls anyway).
+Adicionalmente, o reposicionamento dos controles pode ser feito mais eficientemente com a utilização de âncoras (veja o tutorial "Dimensões e Âncoras":tutorial_gui_repositioning para mais informações).
 
-h4(#complex-ui-controls). Complex UI Controls
+Em qualquer caso, e isso vai acontecer várias vees, até para jogos mais simples, comportamentos de interface de usuário mais complexos serão necessários. Um exemplo disso é uma lista deslizante de elementos (para uma tabela de classificações, por exemplo), que precisa de um "ScrollContainer":class_scrollcontainer e um "VBoxContainer":class_vboxcontainer. Esse tipo de controle mais complexo, pode ser misturado com os controles simples sem problemas (afinal, são todos Controles).
 
-The rest of the controls (and there are dozens of them!) are meant for another set of scenarios, most commonly:
+h4(#complex-ui-controls). Controles Complexos
 
-* Games that require complex UIs, such as PC RPGs, MMOs, strategy, sims, etc.
-* Creating custom development tools to speed up content creation.
-* Creating Godot Editor Plugins, to extend the engine functionality.
+O resto dos controles (E há dezenas deles!) são voltados para um outro conjunto de situações, mais comumente:
 
-Re&#45;positioning controls for these kind of interfaces is more commonly done with containers (see the "Size and Anchors":tutorial_gui_repositioning tutorial for more info).
+* Jogos que requerem uma GUI mais complexa, como PC RPGs, MMOs, Jogos de Estratégia, Estilo The Sims, etc.
+* Criar ferramentas de desenvolvimento para aumentar a criação de conteúdo.
+* Criar o Editor de Plugins da Godot, para extender as funcionalidades da engine.
+
+Da mesma forma, o reposicionamento dos controles para esse tipo de interface pode ser feito mais eficientemente com a utilização de âncoras (veja o tutorial "Dimensões e Âncoras":tutorial_gui_repositioning para mais informações).
 
 <ol start="3" style="list-style-type: lower-alpha;">
-<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
+<li>Juan Linietsky, Ariel Manzur,distribuido segundo os termos da licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode</li>
 </ol>
