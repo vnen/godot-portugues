@@ -1,51 +1,48 @@
-h1(#shader-materials). Shader Materials
+h1. Materiais Programáveis (Shader Materials)
 
-h2(#introduction). Introduction
+h2. Introdução
 
-For the most common cases, "Fixed Materials":tutorial_fixed_materials are enough to create the desired textures or look and feel. Shader materials are a step beyond that adds a huge amount of flexibility. With them, it is possible to:
+Na maioria dos casos, os [[Materiais Nativos (Fixed Materials)|Materiais Nativos]] (_Fixed Materials_) são suficientes para criar as texturas e a sensação desejada. Os materiais programáveis são um passo além que traz mais flexibilidade. Com eles é possível:
 
-* Create procedural texures.
-* Create complex texture blendings.
-* Create animated materials, or materials that change with time.
-* Create refractive effects or other advanced effects.
-* Create special lighting shaders for more exotic materials.
-* Animate vertices, like tree leaves or grass.
-* And much more!
+* Criar texturas procedurais.
+* Criar misturas complexas entre texturas.
+* Criar materiais animados ou materiais que mudam com o tempo.
+* Criar efeito de refração ou outro efeito avançado.
+* Criar iluminação especial para alguns materiais mais exóticos.
+* Vértices animados, como as folhas de árvores ou a grama.
+* E muito mais!
 
-Traditionally, most engines will ask you to learn GLSL, HLSL or CG, which are pretty complex for the skillset of most artists. Godot uses a simplified version of a shader language that will detect errors as you type, so you can see your edited shaders in real&#45;time. Additionally, it is possible to edit shaders using a visual graph editor (NOTE: Currently disabled! work in progress!).
+A maioria das engines tradicionais vão exigir que você aprenda GLSL, HLSL ou CG, que são realmente complexos para as habilidades da maioria dos artistas. A Godot usa uma linguagem de shader simplificada, que vai detectar os erros que você escreve, e você pode ver seu material em tempo real. Também é possível editar os materiais usando o editor visual (*Nota:* este está temporariamente desabilitado. Trabalho em progresso).
 
-h2(#creating-a-shadermaterial). Creating a ShaderMaterial
+h2. Criando um Material Programável.
 
-Create a new ShaderMaterial in some object of your choice. Go to the &quot;Shader&quot; property, then create a new &quot;Shader&quot;:
+Crie um _ShaderMaterial_ em um objeto de sua escolha. Vá para a propriedade _Shader_, então crie um novo _Shader_.
 
-<p align="center">
-<img src="images/shader_material_create.png">
-</p>
-Edit the newly created shader, and the shader editor will open:
+p=. !http://godotengine.org/attachments/193/download!
 
-<p align="center">
-<img src="images/shader_material_editor.png">
-</p>
-There are three code tabs open, the first is for the vertex shader, the second for the fragment and the third for the lighting. The shader language is documented in it's "own section":shader so a small example will be presented next.
+Clique para editar o novo material e o editor de materiais vai abrir (_shader editor_):
 
-Create a very simple fragment shader that writes a color:
+p=. !http://godotengine.org/attachments/194/download!
 
-bc(cpp). uniform color col;
+Há três abas de códigos abertas, a primeira é para o material de vértices (Você pode controlar os vértices por ele), a segunda é para o Fragmento (Você pode editar pixels da tela, ou a tela toda), o terceiro é para a iluminação (controla coisas como o brilho specular). A linguagem de shader é documentada em [[Shader|uma seção própria]], então um pequeno exemplo será apresentado a seguir.
+
+Crie um shader muito simples que sobrepõe a cor:
+
+<pre>
+uniform color col;
 DIFFUSE = col.rgb;
+</pre>
 
+As mudanças no código acontecem em tempo real. Se o código for modificado, ele será instantaneamente recompilado e o objeto será atualizado. Se alguma coisa der errado, o editor vai notificar o erro:
 
-Code changes take place in real&#45;time. If the code is modified, it will be instantly recompiled and the object will be updated. If a typo is made, the editor will notify of the compilation failure:
+p=. !http://godotengine.org/attachments/195/download!
 
-<p align="center">
-<img src="images/shader_material_typo.png">
-</p>
-Finally, go back and edit the material, and the exported uniform will be instantly visible:
+Finalmente, vamos ao menu de edição do material e a cor uniforme foi carregada instantaneamente:
 
-<p align="center">
-<img src="images/shader_material_col.png">
-</p>
-This allows to very quickly create custom, complex materials for every type of object.
+p=. !http://godotengine.org/attachments/192/download!
 
-<ol start="3" style="list-style-type: lower-alpha;">
-<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
-</ol>
+Isso permite criar facilmente vários materiais customizados para cada tipo de objeto.
+
+_Juan Linietsky, Ariel Manzur, distribuído segundo os termos da licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode ._
+
+_Traduzido por Cairé. Revisado por George Marques. Tradução distribuída sob a licença "CC By-SA":https://creativecommons.org/licenses/by-sa/4.0/legalcode ._
