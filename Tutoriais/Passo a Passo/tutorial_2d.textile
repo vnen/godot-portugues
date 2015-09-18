@@ -1,58 +1,54 @@
-h1(#simple-2d-game-pong). Simple 2D Game (Pong!)
+h1. Um jogo 2D Simples (Pong!)
 
-h3(#pong). Pong
+h2. Pong
 
-In this simple tutorial, a basic game of Pong will be created. There are plenty of more complex examples in the demos included with the engine, but this should get introduced to basic functionality for 2D Games.
+Nesse tutorial básico, um jogo simples de Pong será criado. Existe uma série de outros exemplos mais complexos nas demos da Godot, esse tutorial será uma introdução das funcionalidades básicas de um jogo 2D.
 
-h3(#assets). Assets
+h2. Arquivos
 
-Some assets are included for this tutorial, the "pong pads, the ball and the divisor":media/pong_assets.zip.
+Alguns arquivos estão disponíveis para serem utilizados nesse tutorial, são eles "pong pads, the ball and the divisor":http://www.godotengine.org/attachments/47/download.
 
-h3(#scene-setup). Scene Setup
+h2. Configuração da Cena
 
-For the sake of the old times, the game will be in 640x400 pixels resolution. This can be configured in the Project Settings (see previous tutorials). The default background color should be set to black:
+Por uma questão de nostalgia, o jogo vai ter uma resolução de 640x480 pixels. Isso pode ser configurado nas Configurações do Projeto (Project Settings) ("veja esse tutorial":http://godotengine.org/projects/godot-engine-em-portugues/wiki/Cenas_e_N%C3%B3s). A cor de fundo padrão será o preto:
 
-<p align="center">
-<img src="images/clearcolor.png">
-</p>
-Create a "Node2D":class_node2d node for the project root. Node2D is the base type for the 2D engine. After this, add some sprites ("Sprite":class_sprite node) and set each to the corresponding texture. The final scene layour should look similar to this (note: the ball is in the middle!):
+p=. !http://www.godotengine.org/attachments/43/download!
 
-<p align="center">
-<img src="images/pong_layout.png">
-</p>
-The scene tree should, then look similar to this:
-<p align="center">
-<img src="images/pong_nodes.png">
-</p>
-Save the scene as &quot;pong.scn&quot; and set it as the main scene in the project properties.
+Crie um Node2D (_Nó 2D_) para ser o nó principal do projeto. _Node2D_ é o tipo base para a engine 2D da Godot. Após fazer isso, adicione alguns nós do tipo _Sprite_ e defina a textura correspondente de cada um. A cena final deverá se parecer com isso (nota: a bola está no meio!):
 
-h3(#input-actions-setup). Input Actions Setup
+p=. !http://www.godotengine.org/attachments/45/download!
 
-There are so many input methods for video games... Keyboard, Joypad, Mouse, Touchscreen (Multitouch). Yet this is pong. The only input that matters is for the pads going up and down.
+Sua árvore de nós deve estar semelhante a essa:
 
-Handling all possible input methods can be very frustrating and take a lot of code. The fact that most games allow controller customization makes this worse. For this, Godot created the &quot;Input Actions&quot;. An action is defined, then input methods that trigger it are added.
+p=. !http://www.godotengine.org/attachments/46/download!
 
-Open the project properties dialog again, but this time move to the &quot;Input Map&quot; tab. On it, add 4 actions: &quot;left&#95;move&#95;up&quot;,&quot;left&#95;move&#95;down&quot;,&quot;right&#95;move&#95;up&quot;,&quot;right&#95;move&#95;down&quot;. Assign the keys that you desire. A/Z for left and Up/Down as keys should work in most cases.
+Salve a cena como como "pong.scn" e, nas propriedades do projeto, defina ela como a cena principal do seu projeto (_main scene_).
 
-<p align="center">
-<img src="images/inputmap.png">
-</p>
-h3(#script). Script
+h2. Configurações de Entrada do Jogador
 
-Create a script for the root node of the scene and open it (should have been explained in the previous tutorial!). The script will inherit Node2D:
+Existem diversos métodos de entrada para o jogador interagir com um jogo... Teclado, Joystick, Mouse, Touchscreen (Multitouch). No entanto, isso é um Pong. A única entrada que importa é a que faz as barras (_pads_) dos jogadores irem para cima e para baixo.
 
-<pre class="python">
+Manipular todos o métodos possíveis de entrada pode ser um tanto frustrante e exigir muito código. E levando em consideração o fato de que a maioria dos jogos permite a personalização desses controles, torna tudo muito pior. Por isso a Godot criou as "Ações de Entrada" (_Input Actions_). Uma ação é definida, então os métodos de entrada que disparam essa ação são adicionados.
+
+Abra a janela de Propriedades do Projeto (_Project Settings_) mais uma vez, mas dessa vez selecione a aba "Input Map". Vamos adicionar 4 ações: "left_move_up", "left_move_down", "right_move_up", "right_move_down". Defina as teclas que você deseja usar. A/Z para o jogador da esquerda e Acima/Abaixo (setas do teclado) para o da direita devem funcionar na maioria dos casos.
+
+p=. !http://www.godotengine.org/attachments/44/download!
+
+h2. Programação
+
+Crie um script para o nó principal e abra-o para edição (esse procedimento já deve ter sido visto no tutorial anterior). Este script irá herdar _Node2D_:
+
+<pre><code class="python">
 extends Node2D
 
 func _ready():
     pass
 
-</pre>
+</code></pre>
 
-In the constructor, two things will be done. The first is to enable processing, and the second to store some useful values. Such values are the dimensions of the screen and the pad:
+No construtor, duas coisas serão feitas. A primeira é permitir o processamento, e a segunda é armazenar alguns valores que serão úteis. Esses valores são as dimensões da tela e das barras dos jogadores:
 
-<pre class="python">
-
+<pre><code class="python">
 extends Node2D
 
 var screen_size
@@ -60,105 +56,100 @@ var pad_size
 
 func _ready():
     screen_size = get_viewport_rect().size
-    pad_size = get_node(&quot;left&quot;).get_texture().get_size()
+    pad_size = get_node("left").get_texture().get_size()
     set_process(true)
+</code></pre>
 
-</pre>
+Então adicionamos algumas variáveis que serão utilizadas no jogo:
 
-Then, some variables used for in&#45;game will be added:
-
-<pre class="python">
-
-#speed of the ball (in pixels/second0
-
+<pre><code class="python">
+#velocidade da bola (em pixels/segundos)
 var ball_speed = 80
-#direction of the ball (normal vector)
 
+#direção da bola
 var direction = Vector2(-1,0)
-#constant for pad speed (also in pixels/second)
 
+#constante para a velocidade das barras (também em pixels/segundos)
 const PAD_SPEED = 150
+</code></pre>
 
-</pre>
+E finalmente declaramos a função __process_:
 
-Finally, the process function:
+<pre><code class="python">
+func _process(delta):
+</code></pre>
 
-bc(python). func _process(delta):
+Vamos pegar alguns valores úteis para cálculos. O primeiro é a posição da bola (a partir do nó), o segundo são os retângulos (Rect2) das barras dos jogadores. As _Sprites_, por padrão, centralizam as texturas, então deve ser feito um pequeno ajuste, dividindo o tamanho por 2.
 
+<pre><code class="python">
+    var ball_pos = get_node("ball").get_pos()
+    var left_rect = Rect2( get_node("left").get_pos() - pad_size/2, pad_size )
+    var right_rect = Rect2( get_node("right").get_pos() - pad_size/2, pad_size )
+</code></pre>
 
-Get some useful values for computation. The first is the ball position (from the node), the second is the rectangles (Rect2) of the pads. Sprites by defaut center the textures, so a small adjustment of size/2 must be added.
+Uma vez que a posição da bola é obtida, fica simples trabalhar com isso:
 
-<pre class="python">
+<pre><code class="python">
+    ball_pos+=direction*ball_speed*delta
+</code></pre>
 
-    var ball_pos = get_node(&quot;ball&quot;).get_pos()
-    var left_rect = Rect2( get_node(&quot;left&quot;).get_pos() - pad_size/2, pad_size )
-    var right_rect = Rect2( get_node(&quot;right&quot;).get_pos() - pad_size/2, pad_size )
-</pre>
+Agora que a bola tem uma posição, temos que testar a posição dela em relação a tudo. Primeiro com o chão e o teto:
 
-Since the ball pos was obtained, integrating it should be simple:
-
-bc(python).     ball_pos+=direction*ball_speed*delta
-
-
-Then, now that the ball has a new position, it should be tested against everything. First, the floor and the roof:
-
-<pre class="python">
-
-    if ( (ball_pos.y&lt;0 and direction.y &lt;0) or (ball_pos.y&gt;screen_size.y and direction.y&gt;0)):
+<pre><code class="python">
+    if ( (ball_pos.y < 0 and direction.y < 0) or (ball_pos.y > screen_size.y and direction.y > 0)):
         direction.y = -direction.y
-</pre>
+</code></pre>
 
-If one of the pads was touched, change direction and increase speed a little.
+Se uma das barras foi tocada, mude a direção e incremente um pouco a velocidade:
 
-bc(python).     if ( (left_rect.has_point(ball_pos) and direction.x < 0) or (right_rect.has_point(ball_pos) and direction.x > 0)):
+<pre><code class="python">
+    if ( (left_rect.has_point(ball_pos) and direction.x < 0) or (right_rect.has_point(ball_pos) and direction.x > 0)):
         direction.x=-direction.x
         ball_speed*=1.1
         direction.y=randf()*2.0-1
         direction = direction.normalized()
+</code></pre>
 
+Se a bola sair fora da da tela, o jogo reinicia:
 
-
-If the ball went out of the screen, it's game over. Game restarts:
-
-bc(python).     if (ball_pos.x<0 or ball_pos.x>screen_size.x):
-        ball_pos=screen_size*0.5 #ball goes to screen center
+<pre><code class="python">
+    if (ball_pos.x<0 or ball_pos.x>screen_size.x):
+        ball_pos=screen_size*0.5 #bola volta para o centro da tela
         ball_speed=80
         direction=Vector2(-1,0)
+</code></pre>
 
+Depois que tudo é verificado com a bola, o nó é atualizado com com nova posição:
 
-Once everything was done with the ball, the node is updated with the new position:
+<pre><code class="python">
+    get_node("ball").set_pos(ball_pos)
+</code></pre>
 
-bc(python).     get_node("ball").set_pos(ball_pos)
+Atualizamos a posição das barras de acordo com a entrada do jogador:
 
-
-Only updating the pads according to player input. the Input class is really useful here:
-
-<pre class="python">
-
-    #move left pad  
-    var left_pos = get_node(&quot;left&quot;).get_pos()
-    
-    if (left_pos.y &gt; 0 and Input.is_action_pressed(&quot;left_move_up&quot;)):
+<pre><code class="python">
+    #move a barra esquerda 
+    var left_pos = get_node("left").get_pos()
+    if (left_pos.y > 0 and Input.is_action_pressed("left_move_up")):
         left_pos.y+=-PAD_SPEED*delta
-    if (left_pos.y &lt; screen_size.y and Input.is_action_pressed(&quot;left_move_down&quot;)):
+    if (left_pos.y < screen_size.y and Input.is_action_pressed("left_move_down")):
         left_pos.y+=PAD_SPEED*delta
-        
-    get_node(&quot;left&quot;).set_pos(left_pos)
-        
-    #move right pad 
-    var right_pos = get_node(&quot;right&quot;).get_pos()
-    
-    if (right_pos.y &gt; 0 and Input.is_action_pressed(&quot;right_move_up&quot;)):
+
+    get_node("left").set_pos(left_pos)
+
+    #move a barra direita
+    var right_pos = get_node("right").get_pos()
+
+    if (right_pos.y > 0 and Input.is_action_pressed("right_move_up")):
         right_pos.y+=-PAD_SPEED*delta
-    if (right_pos.y &lt; screen_size.y and Input.is_action_pressed(&quot;right_move_down&quot;)):
+    if (right_pos.y < screen_size.y and Input.is_action_pressed("right_move_down")):
         right_pos.y+=PAD_SPEED*delta
-        
-    get_node(&quot;right&quot;).set_pos(right_pos)
-    
-</pre>
 
-And that's it! a simple Pong was written with a few lines of code.
+    get_node("right").set_pos(right_pos)
+</code></pre>
 
-<ol start="3" style="list-style-type: lower-alpha;">
-<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
-</ol>
+E é isso. Um simples jogo Pong foi criado com algumas linhas de código.
+
+_Juan Linietsky, Ariel Manzur, distribuído segundo os termos da licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode ._
+
+_Traduzido por Relsi. Revisado por George Marques. Tradução distribuída sob a licença "CC By-SA":https://creativecommons.org/licenses/by-sa/4.0/legalcode ._

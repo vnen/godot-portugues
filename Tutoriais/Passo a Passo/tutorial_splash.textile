@@ -1,40 +1,35 @@
-h1(#splash-screen). Splash Screen
+h1. Criando a Tela Inicial (Splash Screen)
 
-h3(#tutorial). Tutorial
+h2. Tutorial
 
-This will be a simple tutorial to cement the basic idea of how the GUI subsystem works. The goal will be to create a really simple, static, splash screen.
+Este será um simples tutorial para fixar como o subsistema GUI funciona. O objetivo é criar uma simples tela inicial para o jogo.
 
-Following is a file with the assets that will be used:
+Os seguintes arquivos estão disponíveis para utilização com esse tutorial:
 
-"robisplash&#95;assets.zip":media/robisplash_assets.zip
+"robisplash_assets.zip":http://godotengine.org/attachments/490/robisplash_assets.zip
 
-h3(#setting-up). Setting Up
+h3. Configurando
 
-Create a scene with screen resolution 800x450, and set it up like this:
+Crie uma cena com a resolução 800x450, e configure-a da seguinte forma:
 
-<p align="center">
-<img src="images/robisplashscene.png">
-</p>
-<p align="center">
-<img src="images/robisplashpreview.png">
-</p>
-The nodes 'background&quot; and &quot;logo&quot; are of "TextureFrame":class_textureframe type. These have a special property for setting the texture to be displayed, just load the corresponding file.
+p=. !robisplashscene.png!
 
-<p align="center">
-<img src="images/texframe.png">
-</p>
-The node &quot;start&quot; is a "TextureButton":class_texturebutton, it takes several images for different states, but only the normal and pressed will be supplied in this example:
+p=. !robisplashpreview.png!
 
-<p align="center">
-<img src="images/texbutton.png">
-</p>
-Finally, the node &quot;copyright&quot; is a "Label":class_label. Labels can be set a custom font by editing the following property:
+Os nós "background" e "logo" são do tipo "TextureFrame":class_textureframe. Eles tem uma propriedade especial para configurar a textura a ser exibida, basta carregar o arquivo correspondente.
 
-<p align="center">
-<img src="images/label.png">
-</p>
-As a side note, the font was imported from a TTF, there is a "specific tutorial":import_fonts for importing fonts.
+p=. !texframe.png!
 
-<ol start="3" style="list-style-type: lower-alpha;">
-<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
-</ol>
+O nó "start" é do tipo "TextureButton":class_texturebutton, ele usa diferentes imagens para diferentes estados, mas somente os estados "normal" e "pressed" serão fornecidos nesse exemplo:
+
+p=. !texbutton.png!
+
+Finalizando, o nó "copyright" é do tipo "Label":class_label. Podemos definir uma fonte personalizada para esse nó alterando a seguinte propriedade:
+
+p=. !label.png!
+
+Nota, a fonte será importada de um arquivo TTF,  [[Impotando Fontes|aqui há um tutorial específico]] sobre importação de fontes-.
+
+_Juan Linietsky, Ariel Manzur, distribuído segundo os termos da licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode ._
+
+_Traduzido por Relsi Maron. Revisado por George Marques. Tradução distribuída sob a licença "CC By-SA":https://creativecommons.org/licenses/by-sa/4.0/legalcode ._
