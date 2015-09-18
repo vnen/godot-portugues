@@ -1,43 +1,35 @@
-h1(#splash-screen). Criando a Tela Inicial (Splash Screen)
+h1. Criando a Tela Inicial (Splash Screen)
 
-h3(#tutorial). Tutorial
+h2. Tutorial
 
 Este será um simples tutorial para fixar como o subsistema GUI funciona. O objetivo é criar uma simples tela inicial para o jogo.
 
 Os seguintes arquivos estão disponíveis para utilização com esse tutorial:
 
-"robisplash_assets.zip":media/robisplash_assets.zip
+"robisplash_assets.zip":http://godotengine.org/attachments/490/robisplash_assets.zip
 
-h3(#setting-up). Configurando
+h3. Configurando
 
 Crie uma cena com a resolução 800x450, e configure-a da seguinte forma:
 
-<p align="center">
-<img src="images/robisplashscene.png">
-</p>
-<p align="center">
-<img src="images/robisplashpreview.png">
-</p>
+p=. !robisplashscene.png!
+
+p=. !robisplashpreview.png!
 
 Os nós "background" e "logo" são do tipo "TextureFrame":class_textureframe. Eles tem uma propriedade especial para configurar a textura a ser exibida, basta carregar o arquivo correspondente.
 
-<p align="center">
-<img src="images/texframe.png">
-</p>
+p=. !texframe.png!
 
 O nó "start" é do tipo "TextureButton":class_texturebutton, ele usa diferentes imagens para diferentes estados, mas somente os estados "normal" e "pressed" serão fornecidos nesse exemplo:
 
-<p align="center">
-<img src="images/texbutton.png">
-</p>
+p=. !texbutton.png!
 
 Finalizando, o nó "copyright" é do tipo "Label":class_label. Podemos definir uma fonte personalizada para esse nó alterando a seguinte propriedade:
 
-<p align="center">
-<img src="images/label.png">
-</p>
-Nota, a fonte será importada de um arquivo TTF, aqui há um "tutorial específico":import_fonts sobre importação de fontes.
+p=. !label.png!
 
-<ol start="3" style="list-style-type: lower-alpha;">
-<li>Juan Linietsky, Ariel Manzur, distribuido segundo os termos da licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode </li>
-</ol>
+Nota, a fonte será importada de um arquivo TTF,  [[Impotando Fontes|aqui há um tutorial específico]] sobre importação de fontes-.
+
+_Juan Linietsky, Ariel Manzur, distribuído segundo os termos da licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode ._
+
+_Traduzido por Relsi Maron. Revisado por George Marques. Tradução distribuída sob a licença "CC By-SA":https://creativecommons.org/licenses/by-sa/4.0/legalcode ._
