@@ -1,47 +1,45 @@
-h1(#gui-tutorial). Introdução à GUI 
+h1. Introdução à GUI 
 
-h3(#introduction). Introdução
+h2. Introdução
 
 Se há uma coisa que programadores odeiam com paixão é programar interfaces gráficas para usuário (GUIs). É chato, tedioso e sem desafios. E vários aspectos pioram a situação, tais como:
 
-* O alinhamento de Pixel das GUI é difícil (porque se parece com o que o designer pretende).
+* O alinhamento de pixel das GUI é difícil (porque se parece com o que o designer pretende).
 * GUIs são alteradas constantemente devido a problemas de design e usabilidade que aparecem durante os testes.
 * Tratamento de redimensionamento de tela adequado para diferentes resoluções.
 * Animar vários componentes de tela para torná-la menos estática.
 
-Programação GUI é uma das principais causas da perda de programadores. Durante o desenvolvimento de Godot (e versões anteriores da engine), várias técnicas e filosofias para o desenvolvimento de  GUI foram postas em prática, tais como o modode  visualização imediata, containers, âncoras, scripting, etc. Isto foi sempre feito com o objetivo principal de reduzir o estresse que os programadores sofrem ao construir interfaces de usuários.
+Programação GUI é uma das principais causas da perda de programadores. Durante o desenvolvimento de Godot (e versões anteriores da engine), várias técnicas e filosofias para o desenvolvimento de  GUI foram postas em prática, tais como o modo de  visualização imediata, contêineres, âncoras, _scripting_, etc. Isto foi sempre feito com o objetivo principal de reduzir o estresse que os programadores sofrem ao construir interfaces de usuários.
 
-No final, o subsistema de GUI resultante na Godot é uma solução eficaz para este problema, e funciona através da mistura conjunta de algumas abordagens diferentes. Embora a curva de aprendizado seja um pouco maior do que em outras ferramentas, os desenvolvedores podem criar interfaces complexas em muito pouco tempo, compartilhando o mesmo conjunto de ferramentas com designers e animadores.
+No final, o subsistema de GUI resultante na Godot é uma solução eficaz para este problema e funciona através da mistura conjunta de algumas abordagens diferentes. Embora a curva de aprendizado seja um pouco maior do que em outras ferramentas, os desenvolvedores podem criar interfaces complexas em muito pouco tempo, compartilhando o mesmo conjunto de ferramentas com designers e animadores.
 
-h3(#control). Controle
+h3. Controle
 
-O nó basico para elementos GUI é o  "Controle (Control)":class_control (algumas vezes chamado de &quot;Widget&quot; ou &quot;Box&quot; em outras ferramentas). Todo o nó que provê alguma funcionalidade de GUI, descende dele.
+O nó basico para elementos GUI é o  "Controle (_Control_)":https://github.com/okamstudio/godot/wiki/class_control (algumas vezes chamado de "Widget" ou "Box" em outras ferramentas). Todo o nó que provê alguma funcionalidade de GUI, descende dele.
 
 Quando os controles são colocados na árvore de uma cena como nó filho de outro controle, suas coordenadas (posição e tamanho) são sempre relacionadas ao nó pai. Isso define a base para a edição de uma complexa interface de usuário de forma rápida e visual.
 
-h3(#input-and-drawing). Eventos de Entrada e Desenho
+h3. Eventos de Entrada e Desenho
 
-Controles recebem eventos de entrada através da função callback "_input_event":class_control#_input_event(). Somente um controle, o que estiver com o foco, ira receber eventos do teclado/joystick (veja em "set_focus_mode":class_control#set_focus_mode() e em "grab_focus":class_control#grab_focus().
+Controles recebem eventos de entrada através da função callback "_input_event":https://github.com/okamstudio/godot/wiki/class_control#_input_event(). Somente um controle, o que estiver com o foco, irá receber eventos do teclado/joystick (veja em "set_focus_mode":https://github.com/okamstudio/godot/wiki/class_control#set_focus_mode() e em "grab_focus":https://github.com/okamstudio/godot/wiki/class_control#grab_focus().
 
 Eventos de movimento do mouse são recebidos pelo controle posicionado abaixo do cursor do mouse. Quando um controle recebe um evento de botão pressionado, do mouse, todos os eventos subsequentes são recebidos até que o botão seja solto, mesmo que o cursor esteja fora dos limites do controle.
 
-Como qualquer classe que herda de "CanvasItem":class_canvasitem (Controle faz isso), um callback "_draw":class_canvasitem#draw() será recebido no início, e cada vez que o controle precise ser redesenhado (o programador precisa chamar o método "update":class_canvasitem#update() para colocar o CanvasItem na fila para redesenhar). Se o controle não estiver visível, o controle não recebe qualquer evento de entrada.
+Como qualquer classe que herda de "CanvasItem":https://github.com/okamstudio/godot/wiki/class_canvasitem (Controle faz isso), um callback "_draw":https://github.com/okamstudio/godot/wiki/class_canvasitem#draw() será recebido no início, e cada vez que o controle precise ser redesenhado (o programador precisa chamar o método "update":https://github.com/okamstudio/godot/wiki/class_canvasitem#update() para colocar o CanvasItem na fila para redesenhar). Se o controle não estiver visível, o controle não recebe qualquer evento de entrada.
 
-Porém, no geral, o programador não precisa lidar diretamente com desenho e eventos de entrada quando está construindo GUIs (que é mais útil ao criar controles customizados). Uma vez que os controles emitem diferentes tipos de sinais com informações contextuais para quando ocorre uma ação. Por exemplo, um " Botão (Button)":class_button emite o sinal "pressed" quando pressionado, um "Slider":class_slider irá emitir "value_changed" quando arrastado, etc.
+Porém, no geral, o programador não precisa lidar diretamente com desenho e eventos de entrada quando está construindo GUIs (que é mais útil ao criar controles customizados). Uma vez que os controles emitem diferentes tipos de sinais com informações contextuais para quando ocorre uma ação. Por exemplo, um " Botão (Button)":https://github.com/okamstudio/godot/wiki/class_button emite o sinal "pressed" quando pressionado, um "Slider":https://github.com/okamstudio/godot/wiki/class_slider irá emitir "value_changed" quando arrastado, etc.
 
-h3(#custom-control-mini-tutorial). Mini Tutorial para Controles Customizados
+h3. Mini Tutorial para Controles Customizados
 
-Antes de se aprofundar mais, criar um controle customizado é uma boa maneira de visualizar como os controles funcionam, e ver que eles não são tão complexos como parecem. A Godot vem com diversos controles prontos para vários propósitos, mas as vezes é mais fácil criar um novo para uma funcionaidade específica.
+Antes de se aprofundar mais, criar um controle customizado é uma boa maneira de visualizar como os controles funcionam, e ver que eles não são tão complexos como parecem. A Godot vem com diversos controles prontos para vários propósitos, mas as vezes é mais fácil criar um novo para uma funcionalidade específica.
 
 Para iniciar crie uma nova cena com um nó do tipo Controle, e terá uma área no editor 2D como essa:
 
-<p align="center">
-<img src="images/singlecontrol.png">
-</p>
+p=. !singlecontrol.png!
 
 Adicione um script no nó com o seguinte código:
 
-<pre class="python">
+<pre><code class="python">
 
 extends Control
 
@@ -61,44 +59,41 @@ func _input_event(ev):
         tapped=true
         update()
 
-</pre>
+</code></pre>
 
-Execute a cena. Quando retângulo é clicado/pressionado, ele ira mudar de azul para vermelho. A sinergia entre os eventos e o desenho é linda, é mais ou menos como a maioria dos controles funciona internamente
+Execute a cena. Quando retângulo é clicado/pressionado, ele ira mudar de azul para vermelho. A sinergia entre os eventos e o desenho é bem parecido com o modo como a maioria dos controles funciona internamente.
 
-<p align="center">
-<img src="images/ctrl_normal.png">
-</p>
-<p align="center">
-<img src="images/ctrl_tapped.png">
-</p>
+p=. !ctrl_normal.png!
 
-h3(#ui-complexity). GUI Complexa
+p=. !ctrl_tapped.png!
 
-Como mencionado anteriormente, a Godot inclui dezenas de controles prontos para construção da interface de usuário. Tais controles são divididos em duas categorias. A primeira é um pequeno conjunto de controles que funcionam bem para a criação da maioria das interfaces de usuário dos jogos. A segunda (a maioria dos controles são desse tipo) São destinadas para interfaces de usuário mais complexas e estilo de texturizações uniformes. Segue uma explicação de cada um deles com uma ajuda para cada caso de uso.
+h2. GUI Complexa
 
-h4(#simplified-ui-controls). Controles Simples
+Como mencionado anteriormente, a Godot inclui dezenas de controles prontos para construção da interface de usuário. Tais controles são divididos em duas categorias. A primeira é um pequeno conjunto de controles que funcionam bem para a criação da maioria das interfaces de usuário dos jogos. A segunda (a maioria dos controles são desse tipo) é destinada para interfaces de usuário mais complexas e estilo de texturizações uniformes. Segue uma explicação de cada um deles com uma ajuda para cada caso de uso.
+
+h3. Controles Simples
 
 Este conjunto de controles é suficiente para a maioria dos jogos, onde interações, ou maneiras de apresentar informações, complexas não são necessárias. E a aparência pode ser mudada facilmente com texturas comuns.
 
-* "Label":class_label : Nó usado para exibir um texto.
-* "TextureFrame":class_textureframe : Exibe uma textura, que pode ser redimensionada ou mantida fixa.
-* "TextureButton":class_texturebutton : Exibe uma textura de botão simples; estados como pressionado, desabilitado, etc. podem ser definidos.
-* "TextureProgress":class_textureprogress : Exibe uma textura de barra de progresso.
+* "Label":https://github.com/okamstudio/godot/wiki/class_label (_Rótulo_): Nó usado para exibir um texto.
+* "TextureFrame":https://github.com/okamstudio/godot/wiki/class_textureframe (_Quadro com Textura_): Exibe uma textura, que pode ser redimensionada ou mantida fixa.
+* "TextureButton":https://github.com/okamstudio/godot/wiki/class_texturebutton (_Botão com Textura_): Exibe uma botão texturizado simples; estados como pressionado, desabilitado, etc. podem ser definidos.
+* "TextureProgress":https://github.com/okamstudio/godot/wiki/class_textureprogress (_Progresso com  Textura_): Exibe uma barra de progresso texturizada.
 
-Adicionalmente, o reposicionamento dos controles pode ser feito mais eficientemente com a utilização de âncoras (veja o tutorial "Dimensões e Âncoras":tutorial_gui_repositioning para mais informações).
+Adicionalmente, o reposicionamento dos controles pode ser feito mais eficientemente com a utilização de âncoras (veja o tutorial [[Dimensões e Âncoras]] para mais informações).
 
-Em qualquer caso, e isso vai acontecer várias vees, até para jogos mais simples, comportamentos de interface de usuário mais complexos serão necessários. Um exemplo disso é uma lista deslizante de elementos (para uma tabela de classificações, por exemplo), que precisa de um "ScrollContainer":class_scrollcontainer e um "VBoxContainer":class_vboxcontainer. Esse tipo de controle mais complexo, pode ser misturado com os controles simples sem problemas (afinal, são todos Controles).
+Em qualquer caso, e isso vai acontecer várias vezes, até para jogos mais simples, comportamentos de interface de usuário mais complexos serão necessários. Um exemplo disso é uma lista deslizante de elementos (para uma tabela de classificações, por exemplo), que precisa de um "ScrollContainer":https://github.com/okamstudio/godot/wiki/class_scrollcontainer e um "VBoxContainer":https://github.com/okamstudio/godot/wiki/class_vboxcontainer. Esse tipo de controle mais complexo, pode ser misturado com os controles simples sem problemas (afinal, são todos Controles).
 
-h4(#complex-ui-controls). Controles Complexos
+h3. Controles Complexos
 
-O resto dos controles (E há dezenas deles!) são voltados para um outro conjunto de situações, mais comumente:
+O resto dos controles (e há dezenas deles!) são voltados para um outro conjunto de situações, mais comumente:
 
 * Jogos que requerem uma GUI mais complexa, como PC RPGs, MMOs, Jogos de Estratégia, Estilo The Sims, etc.
 * Criar ferramentas de desenvolvimento para aumentar a criação de conteúdo.
-* Criar o Editor de Plugins da Godot, para extender as funcionalidades da engine.
+* Criar o Editor de Plugins da Godot, para estender as funcionalidades da engine.
 
-Da mesma forma, o reposicionamento dos controles para esse tipo de interface pode ser feito mais eficientemente com a utilização de âncoras (veja o tutorial "Dimensões e Âncoras":tutorial_gui_repositioning para mais informações).
+Da mesma forma, o reposicionamento dos controles para esse tipo de interface pode ser feito mais eficientemente com a utilização de âncoras (veja o tutorial [[Dimensões e Âncoras]] para mais informações).
 
-<ol start="3" style="list-style-type: lower-alpha;">
-<li>Juan Linietsky, Ariel Manzur,distribuido segundo os termos da licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode</li>
-</ol>
+_Juan Linietsky, Ariel Manzur, distribuído segundo os termos da licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode ._
+
+_Traduzido por Relsi Maron. Revisado por George Marques. Tradução distribuída sob a licença "CC By-SA":https://creativecommons.org/licenses/by-sa/4.0/legalcode ._
