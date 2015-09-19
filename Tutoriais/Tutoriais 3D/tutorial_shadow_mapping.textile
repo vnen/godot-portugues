@@ -1,99 +1,91 @@
-h1(#shadow-mapping). Shadow Mapping
+h1. Mapeamento de Sombras (_Shadow Mapping_)
 
-h2(#introduction). Introduction
+h2. Introdução
 
-Simply throwing a light is not enough to realistically illuminate a scene. It should be, in theory, but given the way video hardware works, parts of objects that should not be reached by light are lit anyway. Most people (including artists), see shadows as something projected by light, as if they were created by the light itself by darkening places that are hidden from the light source.
+Apenas jogar a luz não é o suficiente para tornar uma cena em algo realista. Em teoria sim, mas da forma que as placas de vídeo funcionam, partes dos objetos que não deveriam ser atingidos pela luz continuam claro da mesma forma. A maior parte das pessoas, incluindo os artistas, vê as sombras como algo projetado pela luz, como se fossem criadas pela própria luz escurecendo os lugares escondidos da lâmpada.
 
-This is actually not correct and it's important to understand that shadows are places where light simply does not reach. As a rule (and without counting indirect light) if a light is turned off, the places where shadow appear should remain the same. In other words, shadows should not be seen as something &quot;added&quot; to the scene, but as an area that &quot;remains dark&quot;.
+Isso não é correto e é importante que seja entendido que as sombras são colocadas em lugares onde a luz não bate. É uma regra (quando não há luz indireta) se a luz é apagada, os lugares onde as sombras eram projetadas continuam com a mesma aparência. A sombra não pode ser vista como algo *adicionado* a cena, tem de ser visto como algo que *continua escuro*.
 
-All light types in Godot can use shadow mapping, and all support several different techniques that trade quality by performance. Shadow mapping uses a texture storing the &quot;depth view&quot; of the light and checks against it in real&#45;time for each pixel it renders.
+Todos os tipos de luz na Godot podem usar mapeamento de sombra e todos eles possuem suporte para diferentes técnicas de otimização e qualidade. Mapeamento de sombra usa uma textura que armazena a "profundidade" da luz e checa isso em tempo real para cada pixel do jogo.
 
-The bigger the resolution of the shadow map texture, the more detail the shadow has, but more video memory and bandwidth consumed (which means frame&#45;rate goes down).
+Quanto maior a resolução da sombra, mais detalhes ela pode ter, porém mais memória e banda de vídeo ela vai consumir, podendo derrubar o frame-rate do jogo.
 
-h2(#shadows-by-light-type). Shadows by Light Type
+h2. Sombras por tipo de luz
 
-h3(#directional-light-shadows). Directional Light Shadows
+h3. Sombra de Luz Direcional (Directional Light Shadows)
 
-Directional lights can affect a really big area. The bigger the scene, the bigger the affected area. Given the shadow map resolution stays the same, the same amount of shadow pixels cover a bigger area, resulting in blocky shadows. Multiple techniques exist to deal with resolution problems, but the most common one is PSSM (Parallel Split Shadow Maps):
+Luzes direcionais podem alcançar uma área realmente grande. Quanto maior a cena, maior a área afetada por ela. Dado o tamanho do mapa de sombra continuar o mesmo, a mesma quantidade de pixels de sombra serão usados em uma área grande, resultando em sombras quadriculadas. Várias técnicas existem para tratar desses problemas, mas a mais comum é a PSSM (do inglês _Parallel Split Shadow Maps_).
 
-<p align="center">
-<img src="images/shadow_directional.png">
-</p>
-These techniques divide the view in 2 or 4 sections, and a shadow is rendered for each. This way, close obects can use larger shadow while further away objects will use one in less detail, but in proportion this seems to make the shadow map size increase while it's actually kept thr same. Of course, this technique is not free, the more splits the more the performance goes down. On mobile, generally it is convenient to not sure more tan 2 splits.
+p=. !http://godotengine.org/attachments/201/download!
 
-An alternative technique is PSM (Perspective Shadow Mapping). This technique is much cheaper than PSSM (as cheap as orthogonal), but it only really works for a few camera angles respect to the light. In other words, PSM is only useful for games where the camera direction and light direction are both fixed, and the light is not parallel to the camera (which is when PSM completely breaks).
+Essa técnica consiste em dividir a vista em 2 ou 4 seções e as sombras são renderizadas para cada uma. Dessa forma, objetos próximos podem ter uma sombra maior, enquanto objetos mais distantes usarão menos detalhes, mas em proporção isso parece fazer o tamanho do mapa de sombra aumentar enquanto, na verdade, permanece do mesmo tamanho. Certo, essa técnica não é gratuita, quanto mais você cortar a sombra, mais o desempenho vai cair. Nos celulares é conveniente não usar mais que 2 divisões.
 
-h3(#omni-light-shadows). Omni Light Shadows
+Uma alternativa a essa técnica é a PSM (Sombras em Perspectiva, do inglês _Perspective Shadow Mapping_). Essa técnica é muito mais barata que a PSSM (tão quanto a ortogonal), mas ela só funciona em alguns ângulos da câmera. Em outras palavras a PSM só funciona bem se a câmera e a luz estiverem fixas e a luz não for paralela a câmera (quando isso acontece a PSM quebra completamente).
 
-Omnidirectional lights are also troubesome. How to represent 360 degrees of light with a single texture? There are two alternatives, the first one is to use DPSM (Dual Paraboloid Shadow Mapping). This technique is fast, but it requires DISCARD to be used (which makes it not very usable on mobile). DPSM can also look rather bad if the geometry is not tesselated enough, so more vertices might be neccesary if it doesnt'r look tight. The second option is to simply not use a shadow map, and use a shadow cubemap. This is faster, but requires six passes to render all directions and is not supported on the current (GLES2) renderer.
+h3. Sombra de Luz Pontual (_Omni Light Shadows_)
 
-<p align="center">
-<img src="images/shadow_omni.png">
-</p>
-As few considerations when using DPSM shadow maps:
+Luzes pontuais sempre são problemáticas. Como representar uma sombra com 360 graus usando apenas uma textura? Há duas alternativas, a primeira é usar o DPSM (do inglês _Dual Paraboloid Shadow Mapping_). Essa técnica é rápida, mas necessita de um descarte para ser usada, o que torna em algo não muito usável nos celulares. DPSM pode não ficar muito bonito se a geometria não estiver tesselada o suficiente, então pode surgir a necessidade de mais vértices se ela não parecer correta. A segunda opção é não usar o mapa de sombras e usar um mapa cúbico de sombras (do inglês _Shadow Cubemap_). Isso é rápido, mas requer seis passes para renderizar todas as direções e não é suportado no GLES2.
 
-* Keep Slope&#45;Scale on 0.
-* Use a small value for Z&#45;Offset, if thigs look wrong, make it smaller.
-* ESM filtering can improve the look.
-* The seams between the two halfs of the shadow are generally noticeable, so rotate the light to make them show less.
+p=. !http://godotengine.org/attachments/208/download!
 
-h3(#spot-light-shadows). Spot Light Shadows
+Algumas considerações a quem vai usar o DPSM:
 
-Spot light shadows are generally the simpler, just needing a single texture and no special techniques.
+* Mantenha a _Slope-Scale_ em 0.
+* Use valores pequenos para o _Z-Offset_, se parecer errado, use um valor menor.
+* O filtro ESM pode melhorar o visual.
+* Geralmente as pessoas notam o corte das duas metades do mapa de sombra, então rotacione para mostrar menos.
 
-<p align="center">
-<img src="images/shadow_spot.png">
-</p>
-h2(#shadows-parameters). Shadows Parameters
+h3. Sombras das Luzes em Área (_Spot Light Shadows_)
 
-The fact that shadows are actually a texture can generate several problems. The most common is Z fighting (lines at the edge of the objects that cast the shadows. There are two ways to fix this, the first is to tweak the offset parameters, and the second is to use a filtered shadow algorithm, which generally looks better and has not as many glitches, but consumes more GPU time.
+Sombras de áreas geralmente são as mais simples, precisando apenas de uma única textura, sem técnicas especiais.
 
-h3(#adjusting-z-offset). Adjusting Z&#45;Offset
+h2. Parametros das sombras
 
-So, you have decided to go with non&#45;filtered shadows because they are faster, you want a little more detail or maybe you just like the sexy saw&#45;like shadow outlines because they remind you of your favorite previous&#45;gen games. Truth is this can kind of be a pain, but most of the time it can be solved to nice results. There is no magic number and whathever resut you come up will be different from scene to scene, it just takes a while of tweaking. Let's go step by step.
+O fato das sombras serem texturas podem causar diversos problemas. O mais comum é a guerra de Z (linhas nas bordas dos objetos que podem projetar sombras). Há duas formas de resolver isso: a primeira é um ajuste fino no parâmetro do offset, a segunda é usando uma algorítimo de filtragem das sombras, ele tem um visual muito melhor e possui menos erros, mas consome mais da GPU.
 
-First step is to turn on the shadows, let's assume that both Z&#45;Offset and Z&#45;Slope&#45;Scale are at 0. You will be greeted by this:
+h3. Ajustando o Z-Offset
 
-<p align="center">
-<img src="images/shadow_offset_1.png">
-</p>
-Holy crap, shadow is all around the place and extremely glitchy! this happens because the shadow is fighting with the same geometry that is casting it. This is called &quot;self&#45;shadowing&quot;. To avoid this meaningless fight, you realize you need to make peace between the shadow and the geometry, so you push back the shadow a little by adjusting the shadow Z&#45;Offset. This improves things a lot:
+Então você decidiu usar as sombras sem filtro, seja porque elas são mais rápidas, por você querer mais detalhes ou simplesmente você gosta desses detalhes sexy de serrote que as sombras geram, porque você se lembra dos seus jogos favoritos da geração anterior. Isso pode ser um pouco doloroso, mas na maioria das vezes isso pode ser resolvido para obter bons resultados. Não há um número mágico e os resultados podem reagir de forma diferente de cena para cena, mas isso só requer alguns ajustes. Vamos seguir passo a passo.
 
-<p align="center">
-<img src="images/shadow_offset_2.png">
-</p>
-But it's not quite perfect, self shadowing did not dissapear completely. So close to perfection but still not there.. so in a turn of greed you increase the Z&#45;Offset even more!
+Primeiro passo, ligue as sombras e ajuste o Z-Offset e o Z-Slope-Scale para 0. Você será recebido por isso:
 
-<p align="center">
-<img src="images/shadow_offset_3.png">
-</p>
-And it gets rid of those self&#45;shadowings! hooray! except something is wrong.. oh, right. Being pushed back too much, the shadows start disconnecting from their casters, which looks pretty awful. Ok, you go back to the previous Z&#45;offset. This is when Z&#45;Slope&#45;Scale comes to save the day. This setting makes shadow caster objects thinner, so the borders don't self&#45;shadow:
+p=. !http://godotengine.org/attachments/203/download!
 
-<p align="center">
-<img src="images/shadow_offset_4.png">
-</p>
-Aha! Finally something that looks acceptable. It's perfectly acceptable and you can perfectly ship a game that looks like this (imagine you are looking at Final Fantasy quality art btw, not this horribe attempt at 3D modelling). There may be very tiiny bits left of self shadowing that no one cares about, so your inextinguishable greed kicks in again and you raise the Z&#45;Slope Scale again:
+Uma porcaria, as sombras estão por todo lado e extremamente ruins! Isso acontece porque os polígonos que projetam as sombras estão recebendo elas, isso também é chamado de (_Self-shadowing_). Para se livrar dessa guerra, você tem que fazer a geometria e a sombra ficarem em paz, então você empurra a sombra mais para trás usando o Z-Offset. Isso melhora muito:
 
-<p align="center">
-<img src="images/shadow_offset_5.png">
-</p>
-Well, that was too much, shadows casted are way too thin and don't look good anymore. Well, though luck, the previous setting was good anyway, let's accept that perfection does not exist and move on to something else.
+p=. !http://godotengine.org/attachments/204/download!
 
-h3(#important). Important!
+Mas isso não é perfeito, o _self-shadowing_ não sumiu completamente. Muito perto da perfeição, mas não é perfeito… Então em um passo de ganância você aumenta o Z-Offset um pouco mais!
 
-If you are using shadow maps with directional lights, make sure that the *view distance* of the *camera* is set to an *optimal range*. This means, if the distance between your camera and the visible end of the scene is 100, then set the view distance to that value. If a greater than necessary value is used, the shadow maps will lose detail as they will try to cover a bigger area. So, always make sure to use the optimal range!
+p=. !http://godotengine.org/attachments/205/download!
 
-h3(#shadow-filtering). Shadow Filtering
+Então você conseguiu acabar com o _self-shadowing_! Parabéns! Exceto por algo de errado… Certo!? Você empurrou a sombra muito para trás e ela está se desconectando com o objeto que a produz, ficou incrivelmente horrível. Certo, então você volta para o ultimo Z-Offset.
+Essa é a hora que o Z-Slope-Scale vem para salvar o dia. Isso faz com que os objetos que produzem as sombras fiquem mais finos, então eles não recebem as sombras.
 
-Raw shadows are blocky. Increasing their resolution just makes smaller blocks, but they are still blocks. Godot offers a few ways to filter them (shadow in the example is low&#45;resolution on purpose!):
+p=. !http://godotengine.org/attachments/206/download!
 
-<p align="center">
-<img src="images/shadow_filter_options.png">
-</p>
-PCF5 and PCF13 are simple texture&#45;space filtering. Will make the texture a little more acceptable but still needs considerable resolution for it to look good.
+Ah! Finalmente algo aceitável. É perfeitamente aceitável e você sempre sonhou com um jogo assim (imagine que você está vendo uma arte nível Final Fantasy, não essa péssima tentativa de modelagem 3D). Ainda há alguns pixels perdidos pelo _self-shadowing_, ninguém se importa, mas sua ganância inesgotável faz você aumentar muito o Z-Slope-Scale:
 
-ESM is a more complex filter and has a few more tweaking parameters. ESM uses shadow blurring (amount of blur passes and multiplier can be adjusted).
+p=.!http://godotengine.org/attachments/207/download!
 
-<ol start="3" style="list-style-type: lower-alpha;">
-<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
-</ol>
+Pois bem, há muitas sombras projetadas e finas, você tentou diminuir, mas não fica mais com uma boa aparência. Talvez a melhor opção seja voltar a ultima configuração e aceitar que perfeição não existe e seguir adiante.
+
+h3. Importante!
+
+Se você estiver usando as sombras em lâmpadas direcionais, tenha certeza que a +distância de visão+ da +câmera+ esteja ajustada corretamente. Se a distância entre sua câmera e o objeto for 100, aumente o alcance da câmera para esse valor. Se você usar um valor acima disso, o mapa de sombras vai perder detalhes para tentar cobrir a grande área. Então tenha certeza que você está ajustando corretamente!
+
+h3. Filtros de sombra (Shadow Filtering)
+
+Sombras cruas são pixelizadas. Aumentar a resolução apenas fará elas diminuírem de tamanho, mas continuarão pixelizadas.
+
+A Godot oferece uma certa quantidade de filtros (as sombras do exemplo estão em baixa resolução de propósito!).
+
+p=. !http://godotengine.org/attachments/202/download!
+
+PCF5 e PCF13 são filtros mais simples para a textura. Farão as texturas algo aceitável, mas precisam de uma boa resolução para ficar bonito.
+
+ESM é um filtro mais complexo e possui mais parâmetros. ESM usa o filtro _blur_ ou _desfoque_ (a quantidade de vezes que o filtro passa e a quantidade de cor que é espalhada podem ser ajustadas).
+
+_Juan Linietsky, Ariel Manzur, distribuído segundo os termos da licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode ._
+
+_Traduzido por Cairé. Revisado por George Marques. Tradução distribuída sob a licença "CC By-SA":https://creativecommons.org/licenses/by-sa/4.0/legalcode ._
