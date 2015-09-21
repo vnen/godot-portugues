@@ -1,84 +1,86 @@
-h3. Performance e Limitações no 3D
+h1. Desempenho e Limitações no 3D
 
 h2. Introdução
 
-A Godot segue uma filosofia de performance balanceada. No mundo da performance, há formas de trocar a performance por outras coisas, consistem em trocar a velocidade pela usabilidade e pela flexibilidade. Alguns exemplos práticos disso:
+A Godot segue uma filosofia de desempenho balanceada. No mundo do desempenho, sempre há trocas, que consistem em trocar a velocidade por usabilidade e flexibilidade. Alguns exemplos práticos disso:
 
-* É fácil renderizar objetos em grande quantidade, mas quando uma cena muito grande deve ser renderizado, ela pode se tornar ineficiente. Para resolver isso, é possível colocar um limite para a visão do render, o que torna o render menos eficiente, mas ao mesmo tempo menos objetos serão renderizados, fazendo a eficiência média aumentar.
-* Configurar as propriedades de cada material, para cada objeto do render pode ser lento. Para resolver isso, os objetos são organizados por seus materiais para reduzir o custo, mas ao mesmo tempo, organizar assim tem um custo
-* Na física 3d a situação é parecida. Os melhores algorítimos para tratar muita física, como o SAP são realmente lentos para adicionar ou remover um objetos e para o raycast. Algorítimos rápidos para adicionar objetos, remover objetos e tratar o raycast não conseguem tratar muitos objetos com física.
+* É fácil renderizar objetos em grande quantidade, mas quando uma cena muito grande deve ser renderizada, ela pode se tornar ineficiente. Para resolver isso, é deve-se incluir a computação da visibilidade, o que torna o render menos eficiente, mas ao mesmo tempo menos objetos serão renderizados, tornando a eficiência média maior.
+* Configurar as propriedades de cada material, para cada objeto do render também é lento. Para resolver isso, os objetos são organizados por seus materiais para reduzir o custo, mas, ao mesmo tempo, organizar assim tem um custo.
+* Na física 3D a situação é parecida. Os melhores algoritmos para tratar muita física (como o SAP) são realmente lentos para adicionar ou remover objetos e para o raycast. Algoritmos rápidos para adicionar e remover objetos e tratar o raycast não conseguem tratar muitos objetos com física.
 
-Existem muito mais exemplos como esses! Game Engines se esforçam para cumprir vários propósitos, então algorítimos balanceados sempre se favorecem sobre os algorítimos que são rápidos em algumas situações e lentos em outras… Ou algorítimos que são rápidos, mas pouco práticos.
+Existem muito mais exemplos como esses! Motores de jogos se esforçam para cumprir vários propósitos, então algoritmos balanceados sempre se favorecem sobre os algoritmos que são rápidos em algumas situações e lentos em outras. Ou algoritmos que são rápidos, mas pouco práticos.
 
-A Godot não é uma exceção, enquanto ela foi projetada para ter backends trocáveis para algorítimos diferentes, por padrão ou por gosto os únicos que ainda estão priorizam algo balanceado entre de flexibilidade sobre performance.
+A Godot não é uma exceção, enquanto ela foi projetada para ter backends substituíveis para algoritmos diferentes, os padrões (ou melhor, aqueles que são o atual padrão) são os únicos que ainda estão priorizam equilíbrio e flexibilidade sobre o desempenho.
 
-Com isso explicado, o ponto desse tutorial é explicar como extrair o máximo de performance da Godot.
+Com isso dito, o ponto desse tutorial é explicar como extrair o máximo de desempenho da Godot.
 
 h2. Render
 
-A área 3d é a mais difícil de extrair  alguma performance, então essa seção será uma lista de dicas.
+O campo do 3D é o mais difícil de extrair desempenho, então essa seção será uma lista de dicas.
 
-h3. Reutilize os shaders e os materiais.
+h3. Reutilize os Shaders e os Materiais.
 
-O render da Godot é um pouco diferente do que se tem por ai. Ela foi projetada para minimizar a mudança da GPU o máximo possível. Os materiais nativos (_FixedMaterial_) fazem um bom trabalho reusando os materiais que precisam de uma aparência parecida, mas se você estiver usando os materiais que você programou, tenha certeza que está reusando o máximo possível. As prioridades da Godot serão:
+O renderzador da Godot é um pouco diferente do que se tem por aí. Ele foi projetado para minimizar a mudança de estados da GPU o máximo possível. Os [[Materiais Nativos (Fixed Materials)||materiais nativos (_FixedMaterial_)]] fazem um bom trabalho reusando os materiais que precisam de uma aparência parecida, mas se você estiver usando os materiais que você programou, tenha certeza que está reusando o máximo possível. As prioridades da Godot serão:
 
-* *Reuse os Materiais*: Quanto menos materiais estiver em uma cena, mais rápido ela será renderizada. Se uma cena tiver muitos objetos, entre centenas e milhares, tente reusar os materiais ou na pior das hipóteses, tente ao menos reusar as texturas, ou texturas atlas.
-* *Reuse Shaders*: Se você não consegue reutilizar os materiais, tente ao menos reusar os shaders (ou Materiais Nativos com diferentes parâmetros, mas com a mesma configuração)
+* *Reusar Materiais*: Quanto menos materiais estiver em uma cena, mais rápido ela será renderizada. Se uma cena tiver muitos objetos, entre centenas e milhares, tente reusar os materiais ou na pior das hipóteses, tente ao menos reusar as texturas, ou os atlas de texturas.
+* *Reusar Shaders*: Se você não consegue reutilizar os materiais, tente ao menos reusar os shaders (ou Materiais Nativos com diferentes parâmetros, mas com a mesma configuração).
 
-Se por exemplo uma cena tiver, 20000 objetos com 20000 materiais diferentes, o jogo vai rodar muito lento. Se a mesma cena tiver 20000 objetos, mas apenas 100 materiais, será rápido
+Se por exemplo uma cena tiver, 20.000 objetos com 20.000 materiais diferentes, o jogo vai rodar muito lento. Se a mesma cena tiver 20.000 objetos, mas apenas 100 materiais, será bem rápido.
 
-h2. Custo de pixels, contra os custos por vértice
+h2. Custo por Pixels versus Custos por Vértice
 
 É muito comum que acreditem que quanto menor a quantidade de polígonos em um objeto, mais rápido ele será renderizado. Isso é realmente relativo e depende de vários fatores.
 
-Nos computadores e consoles, o custo por vértice é muito, muito baixo. Originalmente a GPU apenas renderizava triângulos, então todos os vértices:
+Nos computadores e consoles modernos, o custo por vértice é muito, muito baixo. Originalmente a GPU apenas renderizava triângulos, então todos os vértices:
 
-* Tinha que ser transformados em triângulos pela CPU
+* Tinha que ser transformados em triângulos pela CPU.
 * Tinha que ser enviado para a GPU através da memória RAM do computador.
 
-Hoje, tudo isso é feito dentro da GPU, a performance é realmente rápida. Artistas 3D normalmente tem uma sensação errada sobre a quantidade de polígonos, porque os programas como o Blender, o 3Ds Mas precisam manter a geometria na memória da CPU, para ela ser editável, diminuindo muito a performance. A verdade é que um modelo renderizado por uma game engine é muito mais rápido que a forma que os programas de modelagem apresentam eles.
+Hoje tudo isso é feito dentro da GPU, o desempenho é realmente rápida. Artistas 3D normalmente tem uma sensação errada sobre a quantidade de polígonos, porque os programas como o Blender, o 3DS Max, etc. precisam manter a geometria na memória da CPU para que ela seja editável, diminuindo o desempenho bruto. A verdade é que um modelo renderizado por uma game engine é muito mais rápido dir que a forma que os programas de modelagem apresentam eles.
 
-Nos smartphones a história é diferente. As GPUs dos computadores e consoles são monstros de força bruta, que tem a energia necessária fornecida pela rede elétrica. As GPUs dos smartphones são limitadas por pequenas baterias, então elas precisam ser limitadas por essa energia.
+Nos smartphones a história é diferente. As GPUs dos computadores e consoles são monstros de força bruta que tem a energia necessária fornecida pela rede elétrica. As GPUs dos smartphones são limitadas por pequenas baterias, então elas precisam ser muito mais eficientes em termos de energia.
 
-Para ser mais eficiente as GPUs dos smartphones evitam a _sobreposição_ (do inglês _overdraw_). Isso significa que um pixel que será renderizado, com luz e outras coisa, só será feito uma vez. Imagine uma cidade, com muitas construções, a GPU não sabe o que é visível e o que está escondido até renderizar isso. Uma casa é renderizada e na frente dela é renderizada outra casa, a renderização aconteceu duas vezes no mesmo pixel. As GPUs do computador geralmente não se importam com isso e mandam outros processadores de pixels trabalharem para aumentar a performance, mas isso aumenta o consumo de energia.
+Para ser mais eficiente as GPUs dos smartphones evitam a _sobreposição_ (do inglês _overdraw_). Isso significa que um pixel que será renderizado, com luz e outras coisa, só será feito uma vez. Imagine uma cidade com muitas construções; a GPU não sabe o que é visível e o que está escondido até renderizar isso. Uma casa é renderizada e na frente dela é renderizada outra casa, a renderização aconteceu duas vezes no mesmo pixel. As GPUs do computador geralmente não se importam com isso e mandam outros processadores de pixels trabalharem para aumentar o desempenho, mas isso aumenta o consumo de energia.
 
-No celular, gastar mais energia não é uma opção, então a técnica chamada _Tile Based Rendering_ é usada, a maioria dos celulares usam alguma variante, que divide a tela em uma grade. Cada célula dessa mantêm uma lista dos triângulos que serão renderizados, com suas distâncias para minimizar o overdraw. Essa técnica aumenta a performance e reduz o consumo de energia, mas gasta muito mais com cada vértice. O resultado é que menos vértices e triângulos podem ser renderizados.
+No celular, gastar mais energia não é uma opção, então a técnica chamada _Tile Based Rendering_ (Renderização por Grade) é usada (a maioria dos celulares usam alguma variante), que consiste em dividir a tela em uma grade. Cada célula dessa mantêm uma lista dos triângulos que serão renderizados, com suas distâncias para minimizar o overdraw. Essa técnica aumenta o desempenho e reduz o consumo de energia, mas gasta muito mais com cada vértice. O resultado é que menos vértices e triângulos podem ser renderizados.
 
-Geralmente isso não é tão ruim, mas há um ponta no celular que precisa ser evitada, que é ter um objeto muito pequeno com muitos polígonos, em uma área pequena da tela. Isso faz com que a GPU do celular gaste muito tempo com apenas uma célula da tela, diminuindo muito a performance, fazendo com que todas as outras células esperem por ela para mostrar a imagem.
+Geralmente isso não é tão ruim, mas há um caso específico deve ser evitado no celular, que é ter um objeto muito pequeno com muitos polígonos, em uma área pequena da tela. Isso faz com que a GPU do celular gaste muito tempo com apenas uma célula da tela, diminuindo muito o desempenho, fazendo com que todas as outras células esperem por ela para mostrar a imagem.
 
-Para tornar isso mais simples, não se preocupe com a quantidade de vértice no celular, mas evite essa concentração em pequenas partes da tela. Se por exemple, um personagem, um NPC, um veículo, ou qualquer coisa estiver muito longe, então isso ficará pequeno, então você usa um modelo com um nível de detalhes menor ao invés do modelo original (LOD).
+Para tornar isso mais simples, não se preocupe com a quantidade de vértices no celular, mas evite essa concentração em pequenas partes da tela. Se, por exemplo, um personagem, um NPC, um veículo ou qualquer coisa estiver muito longe, então isso ficará pequeno, então você usa um modelo com um nível de detalhes (_LOD_ ou _Level Of Detail_) menor em vez do modelo original.
 
-Outra situação onde o consumo por vértice deve ser levado em consideração, são os objetos que possuem um processamento maior por vértice, como os:
+Outra situação em que o consumo por vértice deve ser levado em consideração são os objetos que possuem um processamento maior por vértice, como os:
 
-* Skinning (Objetos com animação por esqueleto)
-* Morphs (Ou _shape keys_, objetos que sofrem deformação sem ser por esqueleto)
-* Vértices iluminados (Comum em celulares e tablets)
+* Skinning (objetos com animação por esqueleto)
+* Morphs (ou _shape keys_, objetos que sofrem deformação sem ser por esqueleto)
+* Vértices Iluminados (comum em celulares e tablets)
 
 h3. Compressão da textura
 
-A Godot oferece uma compressão de texturas dos modelos 3d quando importados (Compressão VRAM). A Compressão Video RAM não é muito eficiente no tamanho quando guardada no HDD, mas aumenta a performance quando são renderizadas.
+A Godot oferece uma compressão de texturas dos modelos 3d quando importados (Compressão VRAM). A Compressão Video RAM não é muito eficiente no tamanho quando guardada no HDD, mas aumenta o desempenho quando são renderizadas.
 Isso porque o objetivo dessa compressão é reduzir a banda utilizada entre a memória e a GPU.
 
 No 3D a forma dos objetos dependem mais da geometria que das texturas, então a compressão muitas vezes não é notada. No 2D a forma depende muito da textura, então pequenos artefatos resultantes da compressão é muito mais notável.
 
-Cuidado, a maioria dos dispositivos Android não suportam texturas comprimidas com transparência, então tenha isso em mente.
+Cuidado, a maioria dos dispositivos Android não suportam compressão de texturas transparência, então tenha isso em mente.
 
 h3. Objetos transparentes
 
-Como mencionado antes, a Godot ordena objetos por materiais e shaders para melhorara performance. Contudo isso não pode ser feito com objetos transparentes. Objetos transparentes são renderizados de trás para frente, para poderem se misturar corretamente com o que está atrás. Como resultado, tente manter os objetos transparentes o mínimo possível! Se um objeto tem uma pequena parte transparante, faça essa parte ser um material diferente.
+Como mencionado antes, a Godot ordena objetos por materiais e shaders para melhorar o desempenho. Contudo, isso não pode ser feito com objetos transparentes. Objetos transparentes são renderizados de trás para frente, para poderem se misturar corretamente com o que está atrás. Como resultado, tente manter os objetos transparentes o mínimo possível! Se um objeto tem uma pequena parte transparante, faça essa parte ter um material diferente.
 
-h3. Níveis de detalhes (LOD)
+h3. Nível de Detalhes (LOD)
 
-Como mencionado anteriormente, usar objetos com menos vértices pode melhorar a performance em alguns casos. A Godot possui um sistema muito simples de níveis de detalhes, baseado no _GeometryInstance_, objetos podem ser definidos para aparecer a partir de sua distância com a câmera. Ter vários objetos diferentes para várias distâncias diferentes podem servir como LOD.
+Como mencionado anteriormente, usar objetos com menos vértices pode melhorar o desempenho em alguns casos. A Godot possui um sistema muito simples de níveis de detalhes, baseado no "_GeometryInstance_":https://github.com/okamstudio/godot/wiki/class_geometryinstance, objetos podem ser definidos para aparecer a partir de sua distância com a câmera. Ter vários objetos diferentes para várias distâncias diferentes podem servir como LOD.
 
-Usando instâncias (MultiMesh)
+h3. Usando instâncias (MultiMesh)
 
-Se muitos objetos idênticos tem de aparecer no mesmo lugar, ou próximos, tente usar o _MultiMesh_. O MuliMesh permite que seja renderizado vários e vários objetos com um custo muito baixo, sendo ideal para rebanhos, grama, partículas, stormtroopers, personagens de animes, etc.
-
+Se muitos objetos idênticos tem de aparecer no mesmo lugar, ou próximos, tente usar o "_MultiMesh_":https://github.com/okamstudio/godot/wiki/class_multimesh. O MuliMesh permite que seja renderizado dezenas de milhares de objetos com um custo muito baixo, sendo ideal para rebanhos, grama, partículas, etc.
 
 h3. Bake Lighting
 
-Pequenas lâmpadas não são problemas de performance. Sombras são um pouco mais problemáticas. Em geral, se muitas lâmpadas precisarem afetar a cena, é ideal fazer um _Light Baking_. Esse processo também pode ser usado para melhorar a qualidade da cena adicionando luzes indiretas. Se você estiver trabalhando com smartphones sempre é melhor você usar o processo de baking, ele sempre é mair rápido
+Pequenas lâmpadas não são problemas de desempenho. Sombras são um pouco mais problemáticas. Em geral, se muitas lâmpadas precisarem afetar a cena, é ideal fazer um _[[Light Baking]]_. Esse processo também pode ser usado para melhorar a qualidade da cena adicionando luzes indiretas.
 
-Juan Linietsky, Ariel Manzur, Distributed under the terms of the CC By license.
-Traduzido por Cairé, tradução revisada por
+Se você estiver trabalhando com smartphones, sempre é melhor você usar o processo de baking para textura, pois esse método é ainda mais rápido.
+
+_Juan Linietsky, Ariel Manzur, distribuído segundo os termos da licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode ._
+
+_Traduzido por Cairé. Revisado por George Marques. Tradução distribuída sob a licença "CC By-SA":https://creativecommons.org/licenses/by-sa/4.0/legalcode ._
