@@ -2,69 +2,68 @@ h1. Criando um jogos 3D
 
 h2. Introdução
 
-Criar um jogo 3d pode ser desafiante. Essa nova coordenada em Z acaba com vários truques que ajudam a tornar um jogo 2d algo simples. Para ajudar nessa mudança, eu devo ter mencionado que a Godot usa uma API muito similar para 2d e 3d. Vários nós são os mesmos e estão presentes para o 2d e para o 3d. É interessante que você o tutorial para fazer um jogo de plataforma 3d, ou o tutorial sobre o personagem 3d kinematico, eles são praticamente iguais aos seus respectivos 2d.
+Criar um jogo 3D pode ser desafiador. Essa nova coordenada em Z acaba com vários truques que ajudam a tornar um jogo 2D algo simples. Para ajudar nessa mudança, vale a pena mencionar que a Godot usa uma API muito similar para 2D e 3D. Vários nós são os mesmos e estão presentes em versões 2D e 3D. É interessante que você veja a demonstração do jogo de plataforma 3D, ou o tutorial sobre o personagem 3D cinemático, eles são praticamente iguais aos seus respectivos 2D.
 
-No 3d a matemática é um pouco mais complexa que no 2d, sempre cheque o _-Vector Math-_ na wiki (Ela foi especialmente criada para os desenvolvedores de jogos, não para matemáticos e engenheiros) ela vai ajudar você a construir um caminho mais eficiente para fazer jogos 3d.
+No 3D, a matemática é um pouco mais complexa que no 2D, sempre verifique o tutorial de [[Matemática Vetorial]] (que foi especialmente criado para os desenvolvedores de jogos, não para matemáticos e engenheiros) que vai te ajudar a construir um caminho mais eficiente para fazer jogos 3D.
 
-h2 Spatial Note ()
+h2. Spatial Node (_Nó Espacial_)
 
-_Node2D_ é o nó excencial para o 2d. _Control_ é excencial para a GUI. Seguindo esse raciocínio  a engine 3d usa o _Spatial_ para tudo dentro do 3d.
+"_Node2D_":https://github.com/okamstudio/godot/wiki/class_node2d é o nó essencial para o 2D. "_Control_":https://github.com/okamstudio/godot/wiki/class_control é essencial para a GUI. Seguindo esse raciocínio, a engine 3D usa o _Spatial_ para tudo que é 3D.
 
 p=. !http://www.godotengine.org/attachments/177/download!
 
-Nós no _Spatial_ tem a posição local, que é relativa ao nó pai (Quanto maior o aninhamento dos nós, maior será a sua herança). Essa posição pode ser acessada em uma 4x3 _Transform_, ou em 3 _Vector3_ que representarão a posição, a rotação Euler (x,y e o ângulo z) e o tamanho.
+Nós do tipo _Spatial_ tem a posição local, que é relativa ao nó pai (contanto que o nó pai seja ou herde também do _Spatial_). Essa posição pode ser acessada em uma "_Transform_":https://github.com/okamstudio/godot/wiki/class_transform 4x3, ou em 3 "_Vector3_":https://github.com/okamstudio/godot/wiki/class_vector3 que representarão a posição, a rotação Euler (x,y e o ângulo z) e a escala.
 
 p=. !http://www.godotengine.org/attachments/178/download!
 
 h2. Conteúdo em 3D
 
-Diferente do 2d, que as imagens podem ser carregadas e desenhadas, o 3D é um pouco mais difícil, precisa ser criado em uma ferramenta especial (comumente chamado de DCCs ou Programa de modelagem) e exportado para um formato válido e importado pela Godot (Os formatos 3D não possuem padrões tão rígidos quanto os de imagens).
+Diferente do 2D, que as imagens podem ser carregadas e desenhadas, o 3D é um pouco mais difícil. Este precisa ser criado em uma ferramenta especial (comumente chamado de DCCs ou Programa de Modelagem) e exportado para um formato válido e importado pela Godot (os formatos 3D não são tão padronizados quanto os de imagens).
 
-h3. DCC Modelos criados
+h3. Modelos criados em DCC
 
-Há dois caminhos para importar modelos para a Godot. O primeiro e mais comum é pelo importador _-Import 3D-_, que permite importar uma cena inteira (da forma que ela é no programa de modelagem)
+Há dois caminhos para importar modelos para a Godot. O primeiro e mais comum é pelo importador _[[Importador 3D|Import 3D]]_, que permite importar uma cena inteira (da forma que ela é no programa de modelagem).
 
-A segunda forma é pela importando a malha _-Import Meshes-_. Esse segundo método permite que você importe apenas as malhas dos objetos em formato .OBJ, que você pode jogar dentro do nó _MeshInstane_ para aparecer no jogo.
+A segunda forma é pela importando pelo _[[Importador de Meshes|Import Meshes]]_. Esse segundo método permite que você importe apenas as malhas (_meshes_) dos objetos em formato .OBJ, que você pode jogar dentro do nó "_MeshInstane_":https://github.com/okamstudio/godot/wiki/class_meshinstance para aparecer no jogo.
 
 h3. Modelos Gerados
 
-É possível criar uma geometria usando o diretamente os recursos do _Mesh_, crie sua matriz de vértices e use a função _Mesh.add_surface_ . Uma classe mais simples pode ser a _SurfaceTool_, que da mais recursos para ajudar na indexação, geração da face normal, etc.
+É possível criar uma geometria usando o diretamente o recurso "_Mesh_":https://github.com/okamstudio/godot/wiki/class_mesh, crie seu vetor de vértices e use a função "_Mesh.add_surface_":https://github.com/okamstudio/godot/wiki/class_mesh#add_surface. Uma classe mais simples pode ser a "_SurfaceTool_":https://github.com/okamstudio/godot/wiki/class_surfacetool, que fornece um interface mais direta para ajudar na indexação, geração da face normal, etc.
 
-Este método cogitado para criar objetos estáticos (Modelos que não sofrerão deformações), criar uma matriz de vértices e submeter a API pode prejudicar o desempenho do seu jogo.
+Este método é indicado para criar objetos estáticos (modelos que não sofrerão deformações), pois criar vetores de vértices e submetê-los a API 3D tem um sério custo de desempenho.
 
-h3. Geometria imediata
+h3. Geometria Imediata
 
-Se ao invés disso você precisar criar geometrias simples que podem sofrer alguma alteração, a Godot oferece um nó especial _ImmediateGeometry_ que usa o estilo do OpenGL 1.x immediate-mode para criar pontos, linhas, triângulos, etc.
+Se ao invés disso você precisar criar geometrias simples que podem sofrer alguma alteração, a Godot oferece um nó especial: "_ImmediateGeometry_":https://github.com/okamstudio/godot/wiki/class_immediategeometry que usa o estilo _immediate-mode_ do OpenGL 1.x para criar pontos, linhas, triângulos, etc.
 
 h3. 2D no 3D
 
-Embora que a Godot ofereça uma boa engine 2D, muitos jogos usam o 2D em ambientes 3D. Usando câmeras fixas (tanto na ortogonal quanto na perspectiva) que não giram, nós como o _Sprite3D_ e _AnimatedSprite3D_ podem ser usados para criar jogos 2d que usam planos de fundo 3d, para um paralaxe mais realista, efeitos de luz e sombra, etc.
+Embora que a Godot ofereça uma boa engine 2D, muitos jogos usam o 2D em ambientes 3D. Usando câmeras fixas (tanto na ortogonal quanto na perspectiva) que não giram, nós como o "_Sprite3D_":https://github.com/okamstudio/godot/wiki/class_sprite3d e "_AnimatedSprite3D_":https://github.com/okamstudio/godot/wiki/class_animatedsprite3d podem ser usados para criar jogos 2D que usam planos de fundo 3D, para um paralaxe mais realista, efeitos de luz e sombra, etc.
 
-A desvantagem, claro, é aumentar a complexabilidade e reduzir a performance de um visual apenas 2d, e perder a referência de trabalhar com pixels.
+A desvantagem, claro, é aumentar a complexabilidade e reduzir a performance de um visual apenas 2D, e perder a referência de trabalhar com pixels.
 
 
 h2. Environment (Ambiente)
 
-Ao invés de editar uma cena, é comum editar o ambiente. A Godot possui o nó _WorldEnvironment_ que permite você trocar a cor do plano de fundo, o modo (como colocar um skybox) e aplicar vários efeitos nativos de pós-processamento. O ambiente pode ser facilmente sobreescrevido dentro da câmera.
-
+Ao invés de editar uma cena, é comum editar o ambiente. A Godot possui o nó "_WorldEnvironment_":https://github.com/okamstudio/godot/wiki/class_worldenvironment que permite você trocar a cor do plano de fundo, o modo (como colocar um skybox) e aplicar vários efeitos nativos de pós-processamento. O ambiente pode ser facilmente sobrescrito dentro da câmera.
 
 h2. 3D  Viewport
 
-Editar cenas 3D é feito dentro da aba 3D. Essa aba pode ser selecionada manualmente, mas também pode ser selecionada automaticamente quando você selecionar o nó _Spatial_.
+Editar cenas 3D é feito dentro da aba 3D. Essa aba pode ser selecionada manualmente, mas também pode ser selecionada automaticamente quando você seleciona nós do tipo _Spatial_.
 
 p=. !http://www.godotengine.org/attachments/179/download!
 
-Os controles de navegação padrão são parecidos com o Blender (Apontando para ter algo consistente dentro do software livre), mas as opções permitem você alterar o comportamento do mouse para outras ferramentas parecidas dentro do _Editor Settings_:
+Os controles de navegação padrão são parecidos com o Blender (com o objetivo de ter algo consistente dentro do software livre), mas as opções permitem você alterar o comportamento do mouse para outras ferramentas parecidas dentro do _Editor Settings_:
 
 p=. !http://www.godotengine.org/attachments/180/download!
 
-h3. Sistema de coordenadas
+h3. Sistema de Coordenadas
 
-A Godot usa o sistema métrico _metric_ para tudo. A física 3d e outras áreas são otimizadas para isso, então cuidado ao usar outras escalas, normamente isso é uma má ideia (exceto se você souber o que está fazendo).
+A Godot usa o "sistema métrico":https://pt.wikipedia.org/wiki/Sistema_m%C3%A9trico para tudo. A física 3D e outras áreas são otimizadas para isso, então cuidado ao usar outras escalas, pois normamente isso é uma má ideia (exceto se você souber o que está fazendo).
 
-Quando você está trabalhando com objetos 3d, é melhor você usar a escala correta (Ajuste o seu programa de modelagem para o métrico). A Godot permite que você altere o tamanho depois de importar, na maioria dos casos vai funcionar bem, em situações raras pode acontecer alguns problemas com a precisão de números racionais (Como vértices no infinito, ou artefatos) em áreas delicadas, áreas que serão renderizadas, ou processadas pela física. Então, tenha certeza que seus artistas estão trabalhando sempre na escala certa.
+Quando você está trabalhando com objetos 3D, é melhor você usar a escala correta (ajuste o seu programa de modelagem para o métrico). A Godot permite que você altere o tamanho depois de importar, e embora na maioria dos casos vai funcionar bem, em situações raras pode acontecer alguns problemas com a precisão de números de ponto flutuante (como vértices no infinito, ou artefatos) em áreas delicadas, como a renderização e a física. Então, tenha certeza que seus artistas estão trabalhando sempre na escala correta!
 
-A coordenada Y é usada para cima, para a maior parte dos objetos que precisam do alinhamento (como lâmpadas, câmeras, capsulas de colisão, veículos, etc), o eixo Z é usado para a direção a frente. Essa convenção significa que:
+A coordenada Y é usada para cima, para a maior parte dos objetos que precisam do alinhamento (como lâmpadas, câmeras, cápsulas de colisão, veículos, etc.), o eixo Z é usado para a direção frontal. Essa convenção significa que:
 
 * *X* são os lados
 * *Y* é cima e baixo
@@ -72,17 +71,18 @@ A coordenada Y é usada para cima, para a maior parte dos objetos que precisam d
 
 h3. Espaço e a manipulação dos Gizmos
 
-Mover objetos na vista 3D é feita através dos manipuladores de gizmos. Cada eixo é representado por uma cor: Vermelho, Verde, Azul Representam X, Y, Z respectivamente. Essa convenção se aplica a grade e a outros gizmos (também para a programação de materiais, a ordem dos componentes para o _Vector3_, cor, etc).
+Mover objetos na vista 3D é feita através dos manipuladores de gizmos. Cada eixo é representado por uma cor: Vermelho, Verde, Azul representam X, Y, Z respectivamente. Essa convenção se aplica à grade e a outros gizmos (também para a programação de materiais, a ordem dos componentes para o _Vector3_, cor, etc).
 
 p=. !http://www.godotengine.org/attachments/181/download!
 
-Algumas teclas úteis
+Algumas teclas úteis:
+
 * Ferramenta de precisão, segure a tecla "S" enquanto move, redimensiona ou rotaciona.
 * Para centralizar a vista no objeto selecionado pressione a tecla "F"
 
 h3. Menu _View_
 
-As opções de vizualização são controladas pelo botão [view]. Preste atenção nesse pequeno menu, porque algumas vezes ele pode parecer pouco visível
+As opções de vizualização são controladas pelo menu @[view]@. Preste atenção nesse pequeno menu, porque algumas vezes ele pode passar despercebido.
 
 p=. !http://www.godotengine.org/attachments/182/download!
 
@@ -91,14 +91,14 @@ h3. Luzes padrão
 
 A visão 3D tem algumas opções padrões:
 
-* Está é uma luz direcional que torna os objetos visíveis durante o momento de edição, ela é aplicada por padrão. Ela não é visível quando o jogo inicia.
-* Essa é uma luz sútil para a iluminação do ambiente, para lugares que não são acertados pela luz continuem visíveis. Ela não é visível quando o jogo inicia, nem quando a luz padrão está desligada.
+* Há uma luz direcional que torna os objetos visíveis durante o momento de edição, ela é aplicada por padrão. Ela não é visível quando o jogo inicia.
+* Há uma luz sútil para a iluminação do ambiente, para lugares que não são acertados pela luz continuem visíveis. Ela não é visível quando o jogo inicia (nem quando a luz padrão está desligada).
 
 Essa pode ser desligada clicando na opção _Default Light_:
 
 p=. !http://www.godotengine.org/attachments/184/download!
 
-Alterar ela e outras opçoes é possível pelo menu _Settings_:
+Alterar ela e outras opções é possível pelo menu _Settings_:
 
 p=. !http://www.godotengine.org/attachments/183/download!
 
@@ -109,25 +109,26 @@ p=. !http://www.godotengine.org/attachments/185/download!
 
 h3. Câmeras
 
-Não importa quantos objetos estejam no ambiente 3d, nenhum vai aparecer ao menos que a _Camera_ também esteja adicionada a cena. Câmeras tanto podem trabalhar como orthogonal e perspectiva:
+Não importa quantos objetos estejam no ambiente 3D, nenhum vai aparecer ao menos que uma "_Camera_":https://github.com/okamstudio/godot/wiki/class_camera também esteja na cena. Câmeras podem trabalhar usar tanto a projeção ortogonal quanto a perspectiva:
 
 p=. !http://www.godotengine.org/attachments/186/download!
 
-Câmeras são associadas e só podem exibir coisas da viewport pai ou avó. Desde que o diretório raiz seja uma viewport as câmeras vão exibir ela por padrão, mas se uma sub-viewport (tanto para render ou para criar uma única imagem) é necessário que ela tenha sua própria câmera como filho.
+Câmeras são associadas e só podem exibir coisas do viewport pai ou avó. Como a raiz da árvora da cena é um viewport, as câmeras vão exibi-lo por padrão, mas se sub-viewports (tanto como alvo de render como para o efeito _"picture-in-picture"_) são desejados, é necessário que eles tenham suas próprias câmeras como filho para exibir.
 
 p=. !http://www.godotengine.org/attachments/187/download!
 
-Quando você está trantando várias câmeras, as regras a seguir serão validas para cada câmera:
+Quando você está trantando várias câmeras, as regras a seguir serão válidas para cada câmera:
 
-* Se não há câmeras na árvore da cena, a primeira câmera a ser colocada se tornará a câmera ativa. As câmeras que você adicionar depois serão ignoradas (Ao menos que você coloque elas como câmeras ativas).
-* Se a câmera tem a opção _current_, ela será usada independente das outras câmeras na cena. Se outra câmera for colocada com a propriedade _current_, ela se tornara ativa e mudará a ultima câmera.
+* Se não há câmeras na árvore da cena, a primeira câmera a ser colocada se tornará ativa. As câmeras que você adicionar depois serão ignoradas (ao menos que você coloque elas como câmeras ativas).
+* Se a câmera tem a opção _current_, ela será usada independente das outras câmeras na cena. Se outra câmera for colocada com a propriedade _current_, ela se tornará ativa e mudará a ultima câmera.
 * Se uma câmera for retirada da árvore de cena, a primeira câmera na árvore será colocada como padrão.
 
 h3. Luzes
 
-Não há limitação para o número de lâmpadas e tipos na Godot. A quantidade desejada pode ser adicionada (desde que a performance permita). Contudo os mapas de sombra são limitados. Quanto mais você adicionar, menor será a qualidade media.
+Não há limitação para o número de lâmpadas e tipos na Godot. A quantidade desejada pode ser adicionada (desde que o desempenho permita). Contudo os mapas de sombra são limitados. Quanto mais você adicionar, menor será a qualidade geral.
 
-É possível usar o _bake_ de luz para se livrar de usar tantas lâmpadas e melhorar a performance.
+É possível usar o [[Light Baking|bake de luz]] para se livrar de usar tantas lâmpadas e melhorar o desempenho.
 
-Juan Linietsky, Ariel Manzur, Distributed under the terms of the CC By license.
-Traduzido por Cairé
+_Juan Linietsky, Ariel Manzur, distribuído segundo os termos da licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode ._
+
+_Traduzido por Cairé. Revisado por George Marques. Tradução distribuída sob a licença "CC By-SA":https://creativecommons.org/licenses/by-sa/4.0/legalcode ._
