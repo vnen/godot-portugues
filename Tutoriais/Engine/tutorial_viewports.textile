@@ -1,111 +1,111 @@
-h3. Viewports
+h1. _Viewports_
 
-h2. Introduction.
+h2. Introdução
 
-A Godot tem uma pequena opção chamada viewports. A viewport é o retangulo em que o jogo aparece. Ela tem três usos principais, mas ela pode ser flexível e adaptada para muito mais. Tudo isso é feito pelo nó _Viewport_.
+A Godot tem um recurso pequeno, embora muito útil, chamado de _viewports_. A _viewport_ é o retângulo em que o jogo aparece. Ela tem três usos principais, mas é flexível e pode ser adaptada para muito mais. Tudo isso é feito pelo nó _Viewport_.
 
 p=. !http://godotengine.org/attachments/81/download!
 
 Os principais usos são:
 
-* *Raíz da cena*: A raiz da cena ativa é sempre uma viewport. Isso é o motivo que as cenas que o usuário criou são exibidas. (Você deve saber disso por ter lido os outros tutoriais!)
-* *Sub-viewport*: Isso pode ser feito quando a viewport é um filho de um _Control_
-* *Render de alvos*: A Viewport pode ser ajustada para _Renderizar um alvo_. Isso significa que a viewport não é diretamente visível, mas o seu conteúdo pode ser acessado pela _Texture_
+* *Raiz da Cena*: A raiz da cena ativa é sempre uma viewport. É o que exibe as cenas criadas pelo usuário. (Você deve saber disso por ter lido os outros tutoriais!)
+* *Sub-viewport*: Isso pode ser feito quando a viewport é um filho de um "_Control_":https://github.com/okamstudio/godot/wiki/class_control.
+* *Alvos de Render*: Viewports podem ser ajustadas para _RenderTarget_ (Alvo de Renderização). Isso significa que a viewport não é diretamente visível, mas o seu conteúdo pode ser acessado por uma "_Texture_":https://github.com/okamstudio/godot/wiki/class_texture.
 
-h2. Input
+h2. Entrada
 
-A viewport é responsável por entregar de forma correta e ajustada tudo o que for exibido por seus nós filhos. Tanto a viewport raiz quanto a sub-viewport fazem isso automaticamente, mas a viewport de alvos não. Porque se preciso o usuário tem que ajustar ela manualmente pela função _Viewport.input_.
+A viewport é responsável por entregar de forma correta e ajustada os eventos de entrada aos seus nós filhos. Tanto a viewport raiz quanto a sub-viewport fazem isso automaticamente, mas alvos de render não. Por causa disso, o usuário deve fazê-lo manualmente pela função "@Viewport.input@":https://github.com/okamstudio/godot/wiki/class_viewport#input se necessário.
 
-h2. Listener
+h2. "Ouvinte" (_Listener_)
 
-A Godot suporta áudio em tridimensional, tanto em 2d quanto em 3d, mais sobre isso pode ser visto em outro tutorial. Para esse tipo de som ser audivel, a viewport precisa estar marcada para ser audível, tanto no 3d quanto no 2d. Se você está usando uma outra viewport para mostrar o mundo, não se esqueça disso.
+A Godot suporta áudio em tridimensional, tanto em 2D quanto em 3D, mais sobre isso pode ser visto em outro tutorial (algum dia...). Para esse tipo de som ser audível, a viewport precisa estar marcada para ser audível, tanto no 3D quanto no 2D. Se você está usando uma outra viewport para mostrar o mundo, não se esqueça de habilitar isso!
 
-h2. Cameras 2D e 3D
+h2. Câmeras 2D e 3D
 
-Quando você estiver usando uma câmera, 2D ou 3D, as câmeras sempre mostraram a viewport pai mais próxima (indo até chegar a raíz). Por exemplo, na seguinte hierarquia:
+Quando você estiver usando uma "Camera":https://github.com/okamstudio/godot/wiki/class_camera ou "Camera2D":https://github.com/okamstudio/godot/wiki/class_camera2d, as câmeras sempre mostrarão a viewport pai mais próxima (indo até chegar à raiz). Por exemplo, na seguinte hierarquia:
 
-- Viewport
-- -Camera
+* Viewport
+** Camera
 
 A câmera vai mostrar a viewport pai, mas na seguinte:
 
-- Camera
-- - Viewport
+* Camera
+** Viewport
 
-A câmera não vai mostrar a nessa viewport, ou vai mostrar na raiz da cena.
+Isso não acontece (ou pode mostrar na viewport raiz, se esta for uma sub-cena).
 
-Apenas pode haver uma câmera ativa para cada viewport, então se você tiver mais de uma, tenha certeza que a que você quer está marcada como _current_, ou faça isso na câmera que quer usando a função
+Apenas pode haver uma câmera ativa para cada viewport, então se você tiver mais de uma, tenha certeza que a que você quer está marcada como _current_, ou faça isso na câmera que quer usando a função:
 
-<pre>
+<pre><code class="python">
 camera.make_current()
-</pre>
+</code></pre>
 
-h2. Proporção e achatamento
+h2. Proporção e Alongamento
 
-A viewport possui a propriedade _rect_. X e Y são raramente usados, apenas na viewport raiz ela é mais usada, nela o WIDTH e HEIGHT representam o tamanho da viewport em pixels. Nas Sub-viewports, esse valor é sobrescrito pelo controlador pai, mas no render alvo isso escolhe a sua resolução.
+A viewport possui a propriedade _rect_. X e Y são raramente usados (apenas na viewport raiz ela é realmente usada), enquanto o WIDTH e HEIGHT representam o tamanho da viewport em pixels. Nas Sub-Viewports, esse valor é sobrescrito por aqueles do controle pai, mas no alvo de render isso ajusta sua resolução.
 
-É possível redimensionar os objetos 2D para se ajustarem a resolução da viewport. A especificação deve ser essa:
+É possível redimensionar conteúdo 2D e fazê-lo se comportar como se a resolução da viewport é diferente da especificada em _rect_. Para isso basa usar as funções:
 
-<pre>
+<pre><code class="python">
 viewport.set_size_override(w, h) #Escolher o tamanho para o 2D
-Viewport.set_size_override_stretch(true/false) #Escolhe se a cena vai ficar achatada
-</pre>
+viewport.set_size_override_stretch(true/false) #Escolhe se a visão vai ficar alongada
+</code></pre>
 
-h2. Worlds (Mundo)
-No 3D, a viewport vai conter o _World_. Isso é basicamente, o universo que a física e o render será calculado. Os nós baseados no _Spatial_ vão usar o nó _World_ mais próximo da viewport. Por padrão, as novas viewports não contem um nó _World_, mas usam o world da viewport pai. O mundo pode ser editado na viewport usando a propriedade _world_ e isso separara os nós filhos dos nós pais daquela viewport. Isso pode ser muito útil quando por exemplo você querer mostrar um personagem em 3d por cima do jogo, como no starcraft.
+h2. _Worlds_ (Mundos)
 
-Para ajudar nas situações onde você quer que duas viewports mostrem um único objeto, sem ter de criar um novo mundo, as viewports tem a opção de usar o próprio _World_. Isso também pode ser muito útil quando você quiser renderizar um personagem ou objeto 3d em um mundo 2D.
+No 3D, a viewport vai conter um _World_. Isso é basicamente o universo que une a física e o render. Os nós baseados no _Spatial_ vão usar o nó _World_ mais próximo da viewport. Por padrão, as novas viewports não contem um nó _World_, mas usam o world da viewport pai (embora a viewport raiz contenha seu próprio World, em que os objetos são renderizados por padrão). O mundo pode ser definido na viewport usando a propriedade _world_ e isso impede que os nós filhos da interajam com o mundo do viewport pai. Isso pode ser muito útil quando, por exemplo, você querer mostrar um personagem em 3D por cima do jogo (como em Starcraft).
 
-No 2D cada viewport tem o seu próprio _World2D_. Geralmente ele é o suficiente, mas nos casos que você quer dividir a tela, é possível usar a API da viewport manualmente.
+Para ajudar nas situações onde você quer que duas viewports mostrem objetos separados sem ter de criar um novo mundo, as viewports tem a opção de usar o próprio _World_. Isso também pode ser muito útil quando você quiser renderizar um personagem ou objeto 3D em um mundo 2D.
+
+No 2D cada viewport tem o seu próprio _World2D_. Geralmente ele é o suficiente, mas nos casos que você quer dividir a tela, é possível usar a API da viewport manualmente para isso.
 
 h2. Captura de tela
 
-É possível capturar as informações da viewport. Para a viewport raíz é muito eficiente a captura de tela. Isso é feito com a seguinte função
+É possível capturar as informações da viewport. Para a viewport raiz isso é efetivamente uma captura de tela. Isso é feito com a seguinte função:
 
-<pre>
-h1. note que a fila da captura de tela não acontece imediatamente
+<pre><code class="python">
+# coloca a captura de tela na fila, pois esta não acontece imediatamente
 viewport.queue_screen_capture()
-</pre>
+</code></pre>
 
-Depois de um ou dois frame (check_process()), a captura estará pronta para uso
+Depois de um ou dois frames (verificando durante o "@_process()@":https://github.com/okamstudio/godot/wiki/class_node#_process), a captura estará pronta e você pode recuperá-la usando:
 
-<pre>
+<pre><code class="python">
 var capture = viewport.get_screen_capture()
-</pre>
+</code></pre>
 
-Se o resultado estiver vazio, a captura ainda não aconteceu, espere um pouco mais, essa função não é sincronizada.
+Se o resultado estiver vazio, a captura ainda não aconteceu, então espere um pouco mais, pois essa função é assíncrona.
 
-h2. sub-Viewport
+h2. Sub-Viewport
 
-Se a viewport for o filho de um controle, ela se tornara ativa e mostrara qualquer coisa dentro dela. Parecendo com isso:
+Se a viewport for o filho de um controle, ela se tornará ativa e mostrara qualquer coisa dentro dela. Parecendo com isso:
 
--Control
--Viewport
+* Control
+** Viewport
 
-A viewport vai cobrir a área do controle pai.
+A viewport vai cobrir completament a área do controle pai.
 
 p=. !http://godotengine.org/attachments/80/download!
 
-h2. Render Target
+h2. _Render Target_ (Alvo de Render)
 
-Para escolher um alvo de render, apenas mude a propriedade _render target_ da viewport. Note que independente do que estiver nela, não será visível no editor de cena. Para ser visível  a textura do render target precisa ser usada. Ela pode ser pedida por programação, por exemplo:
+Para definir um alvo de render, apenas mude a propriedade _render target_ da viewport. Note que independente do que estiver nela, não será visível no editor de cena. Para ser visível, a textura do render target precisa ser usada. Ela pode ser requisitada por programação, por exemplo:
 
-<pre>
+<pre><code class="python">
 var rtt = viewport.get_render_target_texture()
 strite.set_texture(rtt)
-</pre>
+</code></pre>
 
-Por padrão, a re-renderização do render target acontece quando o textura do render target é desenhada no frame. Se for visível, ela será renderizada, de outra forma, ela não será. Esse comportamento pode ser alterado manualmente, para renderizar uma única vez (once), ou para renderizar sempre (always) que não se preocupara se é visível ou não.
+Por padrão, a re-renderização do _render target_ acontece quando o textura deste é desenhada no frame. Se for visível, ela será renderizada, de outra forma, ela não será. Esse comportamento pode ser alterado manualmente, para renderizar uma única vez (_once_), ou para renderizar sempre (_always_) que não se preocupara se é visível ou não.
 
-Algumas classes existem para tornar mais fácil os casos mais comuns:
+Algumas classes existem para tornar mais fácil no editor os casos mais comuns:
 
-* _ViewportSprite_ (para o 2d)
-* _ViewportQuad_ (para o 3d)
-* _ViewportFrame_ (Para a Game User Interface)
+* "_ViewportSprite_":https://github.com/okamstudio/godot/wiki/class_viewportsprite (para o 2D)
+* "_ViewportQuad_":https://github.com/okamstudio/godot/wiki/class_viewportquad (para o 3D)
+* "_ViewportFrame_":https://github.com/okamstudio/godot/wiki/class_viewportframe (Para a GUI)
 
-Olhe as demonstrações da viewport! A pasta de viewport no arquivo demo.zip.
+Veja os projetos de demonstração da viewport. As demonstrações podem ser baixadas na "página de downloads":http://www.godotengine.org/projects/godot-engine-em-portugues/documents ou então no repositório do GitHub: https://github.com/okamstudio/godot/tree/master/demos/viewport.
 
-https://github.com/okamstudio/godot/tree/master/demos/viewport
+_(c) Juan Linietsky, Ariel Manzur, distribuído segundo os termos da licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode ._
 
-Juan Linietsky, Ariel Manzur, Distributed under the terms of the CC By license.
-Traduzido por Cairé, Revisado por
+_Traduzido por Cairé. Revisado por George Marques. Tradução distribuída sob a licença "CC By-SA":https://creativecommons.org/licenses/by-sa/4.0/legalcode ._
