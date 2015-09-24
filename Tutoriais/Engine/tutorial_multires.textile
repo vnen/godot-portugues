@@ -1,37 +1,40 @@
-h1. Proporções da tela e Múltiplas Resoluções
+h1. Proporções da Tela e Múltiplas Resoluções
 
 h2. Resolução base
 
-A Resolução básica do projeto pode ser especificada na _Project Settings_.
+A resolução de base do projeto pode ser especificada em _Project Settings_ (Definições do Projeto).
 
 p=. !http://godotengine.org/attachments/82/download!
 
-Contudo o que isso faz não é completamente obvio. Quando está rodando no PC, a engine vai tentar rodar a resolução, ou vai rodar um pouco mais baixa, caso falhe. No celular, video-game ou dispositivos com resolução fixas ou no full screen, essa resolução vai ser ignorada e usará a resolução nativa. Para compensar isso a Godot possui várias opções para controlar como a resolução vai se ajustar
+Contudo o que isso faz não é completamente óbvio. Quando está rodando no PC, a engine vai tentar manter a resolução (ou algo menor, em caso de falha). No celular, consoles ou dispositivos com resolução fixas ou quando em tela cheia, essa resolução vai ser ignorada e usará a resolução nativa. Para compensar isso a Godot possui várias opções para controlar como a resolução vai se ajustar a diferentes tamanhos de tela.
 
 h2. Redimensionando
 
-Há vários tipos de dispositivos, com vários tipos de telas, com diferentes densidades de pixels e diferentes resoluções. Controlar tudo isso pode ser muito trabalhoso, então a Godot tenta transformar a vida do desenvolvedor em algo mais simples. O nó _Viewport_ possui várias funções para trabalhar o redimensionamento e o nó raíz da cena também é uma viewport (A cena carregada é colocada como filho dessa viewport e pode ser acessada da forma 'get_tree().get_root()' ou 'get_node("/root")').
+Há vários tipos de dispositivos, com vários tipos de telas, com diferentes densidades de pixels e resoluções. Lidar com tudo isso pode ser muito trabalhoso, então a Godot tenta transformar a vida do desenvolvedor em algo mais simples. O nó "_Viewport_":https://github.com/okamstudio/godot/wiki/class_viewport possui várias funções para trabalhar o redimensionamento e o nó raíz da cena é sempre uma viewport (a cena carregada é colocada como filha dessa viewport e pode ser acessada da forma @get_tree().get_root()@ ou @get_node("/root")@).
 
-Na maioria dos casos trocar os parâmetros da viewport raiz é a solução mais flexível para tratar do problema, isso pode ser trabalhoso, programar e adivinhar, então a Godot disponibiliza uma quantidade de parâmetros e opções para trabalhar com várias resoluções.
+Na maioria dos casos, trocar os parâmetros da viewport raiz é a solução mais flexível para tratar do problema e como isso pode ser trabalhoso, custando muito código e tentativas, então a Godot disponibiliza uma quantidade de parâmetros e opções para lidar com várias resoluções.
 
-h2. Opções para Esticar
+h2. Opções para Alongar
 
-As opções para esticar estão na _Project Settings_ é apenas algumas configurações e variáveis que dão várias opções.
+As opções de alongamento estão em _Project Settings_. É um conjunto de configurações e variáveis que dão várias opções:
 
 p=. !http://godotengine.org/attachments/84/download!
 
-h3. stretch_mode
+h3. _Stretch Mode_ (Modo de Alongamento)
 
-* Disabled: Significa que a tela não será esticada de jeito nenhum. Quanto maior a janela ou o monitor, maior será a resolução, ela sempre será 1:1
-* 2D: Nessa opção as resoluções especificadas no display/width e display/height na _Project Settings_ será esticada para cobrir toda a tela. Isso significa que o 3d não será afetado e o 2d será renderizado em alta resolução, mas esticado.
-* Viewport: a Viewport Scaling é diferente, na _Viewport_ raíz é tratada como um alvo de render (explicado no tutorial anterior) e é renderizada na proporção determinada na seção _display_ do _project settings_. Então essa viewport é copiada e esticada para a resolução da tela. Isso é útil quando você está trabalhando com jogos com precisão de pixels, ou apenas quer salvar alguns frames do jogo.
+* *Disabled* (Desabilitado): significa que a tela não será alongada de jeito nenhum. Quanto maior a janela ou o monitor, maior será a resolução, ela sempre será 1:1.
+* *2D*: Nessa opção as resoluções especificadas no +display/width+ e +display/height+ em _Project Settings_ será alongada para cobrir toda a tela. Isso significa que o 3D não será afetado e o 2D será renderizado em alta resolução, embora esticado.
+* *Viewport*: _viewport scaling_ é diferente, a _Viewport_ raiz é tratada como um alvo de render (explicado no [[Viewports|tutorial anterior]]) e é renderizada na proporção determinada na seção _display_ das definições do projeto. Então essa viewport é copiada e esticada para a resolução da tela. Isso é útil quando você está trabalhando com jogos que dependem de precisão de pixels, ou apenas para mostrar numa resolução menor e melhorar o desempenho.
 
 p=. !http://godotengine.org/attachments/83/download!
 
-* *Ignore*: ignora a proporção da tela. Isso significa que a resolução original será esticada para encaixar perfeitamente na nova, seja larga ou fina.
-* *Keep*: mantém a proporção quando estica a tela. Isso significa que a resolução vai ser mantida e barras pretas vão ser adicionadas as laterais e as bases da tela.
-* *Keep Width*: Mantém a proporção quando a tela for esticada, mas se o resultado for maior que a tela do monitor, ela será esticada na vertical ao invés da horizontal. Essa é a melhor opção para se fazer a GUI ou a HUD, alguns botões podem ser ancorados na parte inferior (Gui Repositioning)
-* *Keep Height*: Mantém a proporção enquanto estica a tela, mas se a resolução final for maior que a largura, ela vai ser esticada na horizontal. Essa é a melhor opção para quem faz jogos 2d que corre para depois da tela (como runners e plataformas).
+h3. _Stretch Aspect_ (Alongamento de Proporções)
 
-Juan Linietsky, Ariel Manzur, Distributed under the terms of the CC By license.
-Traduzido por Cairé, Revisado por
+* *Ignore* (Ignorar): ignora a proporção da tela. Isso significa que a resolução original será esticada para encaixar perfeitamente na nova, seja larga ou estreita.
+* *Keep* (Manter): mantém a proporção quando estica a tela. Isso significa que a resolução vai ser mantida e barras pretas vão ser adicionadas às laterais ou às bases da tela.
+* *Keep Width* (Manter Largura): Mantém a proporção quando a tela for esticada, mas se o resultado for maior que a tela do monitor, ela será esticada na vertical e, proporcionalmente, uma resolução vertical maior será reportada à viewport. Essa é a melhor opção para se fazer a GUI ou a HUD que escalem, assim alguns botões podem ser ancorados na parte inferior.
+* *Keep Height* (Manter Altura): Mantém a proporção enquanto estica a tela, mas se a resolução final for maior que a largura, ela vai ser esticada na horizontal e, proporcionalmente, uma resolução horizontal maior será reportada à viewport. Essa é a melhor opção para quem faz jogos 2D que correm horizontalmente (como _runners_ e jogos de plataforma).
+
+_(c) Juan Linietsky, Ariel Manzur, distribuído segundo os termos da licença "CC By":https://creativecommons.org/licenses/by/3.0/legalcode ._
+
+_Traduzido por Cairé. Revisado por George Marques. Tradução distribuída sob a licença "CC By-SA":https://creativecommons.org/licenses/by-sa/4.0/legalcode ._
