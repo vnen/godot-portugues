@@ -1,43 +1,37 @@
-h1(#screen-scaling-multiple-resolutions). Screen Scaling &amp; Multiple Resolutions
+h1. Proporções da tela e Múltiplas Resoluções
 
-h3(#base-resolution). Base Resolution
+h2. Resolução base
 
-A base screen resolution for the project can be specified in the project settings.
+A Resolução básica do projeto pode ser especificada na _Project Settings_.
 
-<p align="center">
-<img src="images/screenres.png">
-</p>
-However, what it does is not completely obvious. When running on PC, the engine will attempt to set this resolution (or use something smaller if it fails). On mobile, consoles or devices with a fixed resolution or full screen rendering, this resolution will be ignored and the native resolution will be used instead. To compensate for this, Godot offers many ways to control how the screen will resize and stretch to different screen sizes.
+p=. !http://godotengine.org/attachments/82/download!
 
-h3(#resizing). Resizing
+Contudo o que isso faz não é completamente obvio. Quando está rodando no PC, a engine vai tentar rodar a resolução, ou vai rodar um pouco mais baixa, caso falhe. No celular, video-game ou dispositivos com resolução fixas ou no full screen, essa resolução vai ser ignorada e usará a resolução nativa. Para compensar isso a Godot possui várias opções para controlar como a resolução vai se ajustar
 
-There are several types of devices, with several types of screens, which in turn have different pixel density and resolutions. Handling all of them can be a lot of work, so Godot tries to make the developer's life a little easier. The "Viewport":class_viewport node has several functions to handle resizing, and the root node of the scene tree is always a viewport (scenes loaded are instanced as a child of it, and it can always be accessed by calling @get_tree().get_root()@ or @get_node("/root")@ ).
+h2. Redimensionando
 
-In any case, while changing the root Viewport params is probably the most flexible way to deal with the problem, it can be a lot of work, code and guessing, so Godot provides a simple set of parameters in the project settings to handle multiple resolutions.
+Há vários tipos de dispositivos, com vários tipos de telas, com diferentes densidades de pixels e diferentes resoluções. Controlar tudo isso pode ser muito trabalhoso, então a Godot tenta transformar a vida do desenvolvedor em algo mais simples. O nó _Viewport_ possui várias funções para trabalhar o redimensionamento e o nó raíz da cena também é uma viewport (A cena carregada é colocada como filho dessa viewport e pode ser acessada da forma 'get_tree().get_root()' ou 'get_node("/root")').
 
-h3(#stretch-settings). Stretch Settings
+Na maioria dos casos trocar os parâmetros da viewport raiz é a solução mais flexível para tratar do problema, isso pode ser trabalhoso, programar e adivinhar, então a Godot disponibiliza uma quantidade de parâmetros e opções para trabalhar com várias resoluções.
 
-Stretch settings are located in the project settings, it's just a bunch of configuration variables that provide several options:
+h2. Opções para Esticar
 
-<p align="center">
-<img src="images/stretchsettings.png">
-</p>
-h4(#stretch-mode). Stretch Mode
+As opções para esticar estão na _Project Settings_ é apenas algumas configurações e variáveis que dão várias opções.
 
-* *Disabled*: The first is the stretch mode. By default this is disabled, which means no stretching happens (the bigger the screen or window, the bigger the resolution, always matching pixels 1:1).
-* *2D*: In this mode, the resolution specified in display/width and display/height in the project settings will be stretched to cover the whole screen. This means that 3D will be unaffected (will just render to higher&#45;res) and 2D will also be rendered at higher&#45;res, just enlarged.
-* *Viewport*: Viewport scaling is different, the root "Viewport":class_viewport is set as a render target, and still renders precisely to the resolution specified in the @display/@ section of the project settings. Finally, this viewport is copied and scaled to fit the screen. This mode is useful when working with pixel&#45;precise games, or just for the sake of rendering to a lower resolution for improving performance.
+p=. !http://godotengine.org/attachments/84/download!
 
-<p align="center">
-<img src="images/stretch.png">
-</p>
-h4(#stretch-aspect). Stretch Aspect
+h3. stretch_mode
 
-* *Ignore*: Ignore the aspect ratio when stretching the screen. This means that the original resolution will be stretched to fit the new one, even if it's wider or narrower.
-* *Keep*: Keep aspect ratio when stretching the screen. This means that the original resolution will be kept when fitting the new one, and black bars will be added to the sides or the top/bottom of the screen.
-* *Keep Width*: Keep aspect ratio when stretching the screen, but if the resulting screen is taller than the specified resolution, it will be stretched vertically (and more vertical resolution will be reported in the viewport, proportionally). This is usually the best option for creating GUIs or HUDs that scale, so some controls can be anchored to the bottom ("See Tutorial":tutorial_gui_repositioning).
-* *Keep Height*: Keep aspect ratio when stretching the screen, but if the resulting screen is wider than the specified resolution, it will be stretched horizontally (and more horizontal resolution will be reported in the viewport, proportionally). This is usually the best option for 2D games that scroll horizontally (like runners or platformers).
+* Disabled: Significa que a tela não será esticada de jeito nenhum. Quanto maior a janela ou o monitor, maior será a resolução, ela sempre será 1:1
+* 2D: Nessa opção as resoluções especificadas no display/width e display/height na _Project Settings_ será esticada para cobrir toda a tela. Isso significa que o 3d não será afetado e o 2d será renderizado em alta resolução, mas esticado.
+* Viewport: a Viewport Scaling é diferente, na _Viewport_ raíz é tratada como um alvo de render (explicado no tutorial anterior) e é renderizada na proporção determinada na seção _display_ do _project settings_. Então essa viewport é copiada e esticada para a resolução da tela. Isso é útil quando você está trabalhando com jogos com precisão de pixels, ou apenas quer salvar alguns frames do jogo.
 
-<ol start="3" style="list-style-type: lower-alpha;">
-<li>Juan Linietsky, Ariel Manzur, Distributed under the terms of the "CC By":https://creativecommons.org/licenses/by/3.0/legalcode license.</li>
-</ol>
+p=. !http://godotengine.org/attachments/83/download!
+
+* *Ignore*: ignora a proporção da tela. Isso significa que a resolução original será esticada para encaixar perfeitamente na nova, seja larga ou fina.
+* *Keep*: mantém a proporção quando estica a tela. Isso significa que a resolução vai ser mantida e barras pretas vão ser adicionadas as laterais e as bases da tela.
+* *Keep Width*: Mantém a proporção quando a tela for esticada, mas se o resultado for maior que a tela do monitor, ela será esticada na vertical ao invés da horizontal. Essa é a melhor opção para se fazer a GUI ou a HUD, alguns botões podem ser ancorados na parte inferior (Gui Repositioning)
+* *Keep Height*: Mantém a proporção enquanto estica a tela, mas se a resolução final for maior que a largura, ela vai ser esticada na horizontal. Essa é a melhor opção para quem faz jogos 2d que corre para depois da tela (como runners e plataformas).
+
+Juan Linietsky, Ariel Manzur, Distributed under the terms of the CC By license.
+Traduzido por Cairé, Revisado por
