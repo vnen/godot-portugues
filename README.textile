@@ -1,3 +1,11 @@
+h1. NÃO USE ESSE REPOSITÓRIO PARA MANDAR TRADUÇÕES
+
+h2. A documentação da Godot Engine há muito tempo saiu desse formado, indo para para o "Read the Docs":https://readthedocs.org e não aceita traduções no momento. Atualizarei esse repositório com informações sobre tradução assim que haja uma decisão oficial para traduzir a documentação.
+
+Esse repositório existe apenas para fins históricos.
+
+----
+
 h1. Documentação da Godot Engine em Português
 
 Este repositório tem a finalidade de conter a documentação da Godot Engine em Português e facilitar a contribuição com traduções.
